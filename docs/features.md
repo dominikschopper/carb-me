@@ -9,7 +9,6 @@ Implementiere: Suche mit Fuzzy-Search, BE/KHE-Rechner, Favoriten mit localStorag
 
 Starte mit +page.svelte (Suche) und LebensmittelKarte.svelte
 
-
 ## Feature-Liste: Diabetiker Lebensmittel-App
 
 ### Prio 1 - Absolut essentiell
