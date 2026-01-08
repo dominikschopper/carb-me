@@ -1,0 +1,1991 @@
+{
+  "lebensmittel": [
+    {
+      "name": "Apfel",
+      "kh": 11,
+      "gBE": 109,
+      "gKHE": 91,
+      "categories": [["Obst", "Kernobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Birne",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "categories": [["Obst", "Kernobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Quitte",
+      "kh": 7,
+      "gBE": 171,
+      "gKHE": 143,
+      "categories": [["Obst", "Kernobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Kirsche",
+      "kh": 13,
+      "gBE": 92,
+      "gKHE": 77,
+      "categories": [["Obst", "Steinobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Pflaume",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "categories": [["Obst", "Steinobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Zwetschge",
+      "kh": 11,
+      "gBE": 109,
+      "gKHE": 91,
+      "categories": [["Obst", "Steinobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Pfirsich",
+      "kh": 9,
+      "gBE": 133,
+      "gKHE": 111,
+      "categories": [["Obst", "Steinobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Aprikose",
+      "kh": 9,
+      "gBE": 133,
+      "gKHE": 111,
+      "categories": [["Obst", "Steinobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Nektarine",
+      "kh": 11,
+      "gBE": 109,
+      "gKHE": 91,
+      "categories": [["Obst", "Steinobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Mirabelle",
+      "kh": 14,
+      "gBE": 86,
+      "gKHE": 71,
+      "categories": [["Obst", "Steinobst"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Erdbeeren",
+      "kh": 6,
+      "gBE": 200,
+      "gKHE": 167,
+      "categories": [["Obst", "Beeren"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Himbeeren",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Obst", "Beeren"]],
+      "tags": ["mittlereKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Heidelbeeren",
+      "kh": 7,
+      "gBE": 171,
+      "gKHE": 143,
+      "categories": [["Obst", "Beeren"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Brombeeren",
+      "kh": 6,
+      "gBE": 200,
+      "gKHE": 167,
+      "categories": [["Obst", "Beeren"]],
+      "tags": ["mittlereKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Johannisbeeren rot",
+      "kh": 8,
+      "gBE": 150,
+      "gKHE": 125,
+      "categories": [["Obst", "Beeren"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Johannisbeeren schwarz",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "categories": [["Obst", "Beeren"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Stachelbeeren",
+      "kh": 9,
+      "gBE": 133,
+      "gKHE": 111,
+      "categories": [["Obst", "Beeren"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Preiselbeeren",
+      "kh": 6,
+      "gBE": 200,
+      "gKHE": 167,
+      "categories": [["Obst", "Beeren"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Banane",
+      "kh": 23,
+      "gBE": 52,
+      "gKHE": 43,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Orange",
+      "kh": 9,
+      "gBE": 133,
+      "gKHE": 111,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Mandarine",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Clementine",
+      "kh": 9,
+      "gBE": 133,
+      "gKHE": 111,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Grapefruit",
+      "kh": 8,
+      "gBE": 150,
+      "gKHE": 125,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Zitrone",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Kiwi",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Mango",
+      "kh": 13,
+      "gBE": 92,
+      "gKHE": 77,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Ananas",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Papaya",
+      "kh": 7,
+      "gBE": 171,
+      "gKHE": 143,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Granatapfel",
+      "kh": 14,
+      "gBE": 86,
+      "gKHE": 71,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Lychee",
+      "kh": 15,
+      "gBE": 80,
+      "gKHE": 67,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Passionsfrucht",
+      "kh": 13,
+      "gBE": 92,
+      "gKHE": 77,
+      "categories": [["Obst", "Südfrüchte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Wassermelone",
+      "kh": 8,
+      "gBE": 150,
+      "gKHE": 125,
+      "categories": [["Obst", "Melonen"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Honigmelone",
+      "kh": 8,
+      "gBE": 150,
+      "gKHE": 125,
+      "categories": [["Obst", "Melonen"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Galiamelone",
+      "kh": 9,
+      "gBE": 133,
+      "gKHE": 111,
+      "categories": [["Obst", "Melonen"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Netzmelone",
+      "kh": 7,
+      "gBE": 171,
+      "gKHE": 143,
+      "categories": [["Obst", "Melonen"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Weintrauben hell",
+      "kh": 17,
+      "gBE": 71,
+      "gKHE": 59,
+      "categories": [["Obst", "Trauben"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Weintrauben dunkel",
+      "kh": 16,
+      "gBE": 75,
+      "gKHE": 63,
+      "categories": [["Obst", "Trauben"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Rosinen",
+      "kh": 68,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Trockenobst"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Datteln getrocknet",
+      "kh": 65,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Trockenobst"]],
+      "tags": ["vieleKH", "schnelleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Feigen getrocknet",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Trockenobst"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Aprikosen getrocknet",
+      "kh": 53,
+      "gBE": 23,
+      "gKHE": 19,
+      "categories": [["Trockenobst"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Pflaumen getrocknet",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Trockenobst"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Apfelringe getrocknet",
+      "kh": 60,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [["Trockenobst"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Bananenchips",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Trockenobst"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Cranberries getrocknet",
+      "kh": 75,
+      "gBE": 16,
+      "gKHE": 13,
+      "categories": [["Trockenobst"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Kartoffeln gekocht",
+      "kh": 15,
+      "gBE": 80,
+      "gKHE": 67,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Kartoffeln roh",
+      "kh": 14,
+      "gBE": 86,
+      "gKHE": 71,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Süßkartoffeln",
+      "kh": 20,
+      "gBE": 60,
+      "gKHE": 50,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Möhren roh",
+      "kh": 7,
+      "gBE": 171,
+      "gKHE": 143,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Möhren gekocht",
+      "kh": 6,
+      "gBE": 200,
+      "gKHE": 167,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Rote Bete",
+      "kh": 8,
+      "gBE": 150,
+      "gKHE": 125,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Pastinaken",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Petersilienwurzel",
+      "kh": 11,
+      "gBE": 109,
+      "gKHE": 91,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Sellerie Knolle",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Schwarzwurzel",
+      "kh": 15,
+      "gBE": 80,
+      "gKHE": 67,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Maniok",
+      "kh": 38,
+      "gBE": 32,
+      "gKHE": 26,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Topinambur",
+      "kh": 15,
+      "gBE": 80,
+      "gKHE": 67,
+      "categories": [["Gemüse", "Wurzel-/Knollengemüse"]],
+      "tags": ["mittlereKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Weißkohl",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Gemüse", "Kohlgemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Rotkohl",
+      "kh": 6,
+      "gBE": 200,
+      "gKHE": 167,
+      "categories": [["Gemüse", "Kohlgemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Wirsing",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Gemüse", "Kohlgemüse"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Sauerkraut",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Gemüse", "Kohlgemüse"]],
+      "tags": ["wenigeKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Hokkaido-Kürbis",
+      "kh": 7,
+      "gBE": 171,
+      "gKHE": 143,
+      "categories": [["Gemüse", "Kürbisgewächse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Butternut-Kürbis",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "categories": [["Gemüse", "Kürbisgewächse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Muskat-Kürbis",
+      "kh": 6,
+      "gBE": 200,
+      "gKHE": 167,
+      "categories": [["Gemüse", "Kürbisgewächse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Tomaten",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Gemüse", "Fruchtgemüse"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Paprika rot",
+      "kh": 6,
+      "gBE": 200,
+      "gKHE": 167,
+      "categories": [["Gemüse", "Fruchtgemüse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Paprika grün",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Gemüse", "Fruchtgemüse"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Erbsen getrocknet",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["vieleKH", "proteinreich", "ballaststoffreich"]
+    },
+    {
+      "name": "Kichererbsen getrocknet",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["vieleKH", "proteinreich", "ballaststoffreich"]
+    },
+    {
+      "name": "Linsen rot getrocknet",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["vieleKH", "proteinreich", "ballaststoffreich"]
+    },
+    {
+      "name": "Linsen grün getrocknet",
+      "kh": 45,
+      "gBE": 27,
+      "gKHE": 22,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["vieleKH", "proteinreich", "ballaststoffreich"]
+    },
+    {
+      "name": "Weiße Bohnen getrocknet",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["vieleKH", "proteinreich", "ballaststoffreich"]
+    },
+    {
+      "name": "Kidneybohnen getrocknet",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["vieleKH", "proteinreich", "ballaststoffreich"]
+    },
+    {
+      "name": "Schwarze Bohnen getrocknet",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["vieleKH", "proteinreich", "ballaststoffreich"]
+    },
+    {
+      "name": "Sojabohnen getrocknet",
+      "kh": 30,
+      "gBE": 40,
+      "gKHE": 33,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["vieleKH", "proteinreich"]
+    },
+    {
+      "name": "Erbsen gekocht",
+      "kh": 13,
+      "gBE": 92,
+      "gKHE": 77,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Kichererbsen gekocht",
+      "kh": 19,
+      "gBE": 63,
+      "gKHE": 53,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Linsen gekocht",
+      "kh": 16,
+      "gBE": 75,
+      "gKHE": 63,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["mittlereKH", "proteinreich", "ballaststoffreich"]
+    },
+    {
+      "name": "Weiße Bohnen gekocht",
+      "kh": 17,
+      "gBE": 71,
+      "gKHE": 59,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Kidneybohnen gekocht",
+      "kh": 18,
+      "gBE": 67,
+      "gKHE": 56,
+      "categories": [["Gemüse", "Hülsenfrüchte"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Zwiebeln",
+      "kh": 7,
+      "gBE": 171,
+      "gKHE": 143,
+      "categories": [["Gemüse", "Zwiebelgewächse"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Rote Zwiebeln",
+      "kh": 8,
+      "gBE": 150,
+      "gKHE": 125,
+      "categories": [["Gemüse", "Zwiebelgewächse"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Schalotten",
+      "kh": 14,
+      "gBE": 86,
+      "gKHE": 71,
+      "categories": [["Gemüse", "Zwiebelgewächse"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Lauch/Porree",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Gemüse", "Zwiebelgewächse"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Knoblauch",
+      "kh": 28,
+      "gBE": 43,
+      "gKHE": 36,
+      "categories": [["Gemüse", "Zwiebelgewächse"]],
+      "tags": ["vieleKH", "versteckteKH"]
+    },
+    {
+      "name": "Frühlingszwiebeln",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Gemüse", "Zwiebelgewächse"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Weizen Körner",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Roggen Körner",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Hafer Körner",
+      "kh": 60,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Gerste Körner",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Dinkel Körner",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Reis weiß roh",
+      "kh": 77,
+      "gBE": 16,
+      "gKHE": 13,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Reis Vollkorn roh",
+      "kh": 73,
+      "gBE": 16,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Mais Körner",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Hirse",
+      "kh": 69,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Quinoa",
+      "kh": 62,
+      "gBE": 19,
+      "gKHE": 16,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH", "proteinreich"]
+    },
+    {
+      "name": "Buchweizen",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Amaranth",
+      "kh": 65,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "tags": ["vieleKH", "proteinreich"]
+    },
+    {
+      "name": "Reis weiß gekocht",
+      "kh": 28,
+      "gBE": 43,
+      "gKHE": 36,
+      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Reis Vollkorn gekocht",
+      "kh": 24,
+      "gBE": 50,
+      "gKHE": 42,
+      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Quinoa gekocht",
+      "kh": 21,
+      "gBE": 57,
+      "gKHE": 48,
+      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "tags": ["vieleKH", "proteinreich"]
+    },
+    {
+      "name": "Bulgur gekocht",
+      "kh": 19,
+      "gBE": 63,
+      "gKHE": 53,
+      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Couscous gekocht",
+      "kh": 23,
+      "gBE": 52,
+      "gKHE": 43,
+      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Polenta gekocht",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Weizenmehl Type 405",
+      "kh": 72,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Weizenmehl Type 550",
+      "kh": 71,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Weizenmehl Type 1050",
+      "kh": 68,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Roggenmehl Type 1150",
+      "kh": 72,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Dinkelmehl Type 630",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Vollkornmehl Weizen",
+      "kh": 65,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Vollkornmehl Roggen",
+      "kh": 65,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Hartweizengrieß",
+      "kh": 72,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Weichweizengrieß",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Maismehl",
+      "kh": 75,
+      "gBE": 16,
+      "gKHE": 13,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Reismehl",
+      "kh": 80,
+      "gBE": 15,
+      "gKHE": 13,
+      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Haferflocken",
+      "kh": 60,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Dinkelflocken",
+      "kh": 65,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Cornflakes",
+      "kh": 85,
+      "gBE": 14,
+      "gKHE": 12,
+      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Müsli ohne Zucker",
+      "kh": 60,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Müsli mit Zucker",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Früchtemüsli",
+      "kh": 68,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Schoko-Müsli",
+      "kh": 72,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Haferkleie",
+      "kh": 40,
+      "gBE": 30,
+      "gKHE": 25,
+      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Weizenkleie",
+      "kh": 20,
+      "gBE": 60,
+      "gKHE": 50,
+      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Nudeln Hartweizen roh",
+      "kh": 72,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Spaghetti roh",
+      "kh": 72,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Penne roh",
+      "kh": 72,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Fusilli roh",
+      "kh": 72,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Vollkornnudeln roh",
+      "kh": 65,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Eiernudeln roh",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Spätzle roh",
+      "kh": 68,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Nudeln gekocht",
+      "kh": 25,
+      "gBE": 48,
+      "gKHE": 40,
+      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Vollkornnudeln gekocht",
+      "kh": 23,
+      "gBE": 52,
+      "gKHE": 43,
+      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Weißbrot/Toastbrot",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Weizenvollkornbrot",
+      "kh": 40,
+      "gBE": 30,
+      "gKHE": 25,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Roggenvollkornbrot",
+      "kh": 40,
+      "gBE": 30,
+      "gKHE": 25,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Roggenmischbrot",
+      "kh": 45,
+      "gBE": 27,
+      "gKHE": 22,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Weizenmischbrot",
+      "kh": 47,
+      "gBE": 26,
+      "gKHE": 21,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Pumpernickel",
+      "kh": 40,
+      "gBE": 30,
+      "gKHE": 25,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Mehrkornbrot",
+      "kh": 42,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Bauernbrot",
+      "kh": 46,
+      "gBE": 26,
+      "gKHE": 22,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Ciabatta",
+      "kh": 52,
+      "gBE": 23,
+      "gKHE": 19,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Baguette",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Backwaren", "Brot"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Weizenbrötchen",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Backwaren", "Brötchen"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Vollkornbrötchen",
+      "kh": 45,
+      "gBE": 27,
+      "gKHE": 22,
+      "categories": [["Backwaren", "Brötchen"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Mehrkornbrötchen",
+      "kh": 48,
+      "gBE": 25,
+      "gKHE": 21,
+      "categories": [["Backwaren", "Brötchen"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Rosinenbrötchen",
+      "kh": 52,
+      "gBE": 23,
+      "gKHE": 19,
+      "categories": [["Backwaren", "Brötchen"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Laugenbrötchen",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Backwaren", "Brötchen"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Laugenbrezeln",
+      "kh": 48,
+      "gBE": 25,
+      "gKHE": 21,
+      "categories": [["Backwaren", "Brötchen"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Croissant",
+      "kh": 45,
+      "gBE": 27,
+      "gKHE": 22,
+      "categories": [["Backwaren", "Brötchen"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Bagel",
+      "kh": 52,
+      "gBE": 23,
+      "gKHE": 19,
+      "categories": [["Backwaren", "Brötchen"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Knäckebrot",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Backwaren", "Knäckebrot/Zwieback"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Vollkorn-Knäckebrot",
+      "kh": 65,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Backwaren", "Knäckebrot/Zwieback"]],
+      "tags": ["vieleKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Zwieback",
+      "kh": 75,
+      "gBE": 16,
+      "gKHE": 13,
+      "categories": [["Backwaren", "Knäckebrot/Zwieback"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Butterkekse",
+      "kh": 73,
+      "gBE": 16,
+      "gKHE": 14,
+      "categories": [["Backwaren", "Knäckebrot/Zwieback"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Kekse (Durchschnitt)",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Haferkekse",
+      "kh": 65,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Schokokekse",
+      "kh": 68,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Muffins",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Schokomuffins",
+      "kh": 52,
+      "gBE": 23,
+      "gKHE": 19,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Butterkuchen",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Käsekuchen",
+      "kh": 35,
+      "gBE": 34,
+      "gKHE": 29,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Obstkuchen",
+      "kh": 40,
+      "gBE": 30,
+      "gKHE": 25,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Apfelkuchen",
+      "kh": 38,
+      "gBE": 32,
+      "gKHE": 26,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Rührkuchen",
+      "kh": 52,
+      "gBE": 23,
+      "gKHE": 19,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Donut",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Berliner/Krapfen",
+      "kh": 48,
+      "gBE": 25,
+      "gKHE": 21,
+      "categories": [["Backwaren", "Kuchen & Gebäck"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Honig",
+      "kh": 80,
+      "gBE": 15,
+      "gKHE": 13,
+      "categories": [["Brotaufstriche", "Süße Aufstriche"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Ahornsirup",
+      "kh": 67,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Brotaufstriche", "Süße Aufstriche"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Nutella (Durchschnitt)",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Brotaufstriche", "Süße Aufstriche"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Nuss-Nougat-Creme",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Brotaufstriche", "Süße Aufstriche"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Marmelade",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Brotaufstriche", "Fruchtaufstriche"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Konfitüre",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Brotaufstriche", "Fruchtaufstriche"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Gelee",
+      "kh": 65,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [["Brotaufstriche", "Fruchtaufstriche"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Fruchtaufstrich reduziert",
+      "kh": 40,
+      "gBE": 30,
+      "gKHE": 25,
+      "categories": [["Brotaufstriche", "Fruchtaufstriche"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Hummus",
+      "kh": 15,
+      "gBE": 80,
+      "gKHE": 67,
+      "categories": [["Brotaufstriche", "Herzhafte Aufstriche"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Erdnussbutter",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "categories": [["Brotaufstriche", "Herzhafte Aufstriche"]],
+      "tags": ["mittlereKH", "proteinreich", "versteckteKH"]
+    },
+    {
+      "name": "Mandelmus",
+      "kh": 8,
+      "gBE": 150,
+      "gKHE": 125,
+      "categories": [["Brotaufstriche", "Herzhafte Aufstriche"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Tahini (Sesammus)",
+      "kh": 14,
+      "gBE": 86,
+      "gKHE": 71,
+      "categories": [["Brotaufstriche", "Herzhafte Aufstriche"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Vollmilch 3,5%",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Fettarme Milch 1,5%",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Entrahmte Milch 0,3%",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Buttermilch",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Kondensmilch 10%",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Kondensmilch 4%",
+      "kh": 8,
+      "gBE": 150,
+      "gKHE": 125,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Sahne 30%",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Schlagsahne",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Creme fraiche",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Schmand",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Naturjoghurt 3,5%",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Naturjoghurt 1,5%",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Fruchtjoghurt",
+      "kh": 15,
+      "gBE": 80,
+      "gKHE": 67,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Griechischer Joghurt",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Quark Magerstufe",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH", "proteinreich"]
+    },
+    {
+      "name": "Quark 20%",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH", "proteinreich"]
+    },
+    {
+      "name": "Quark 40%",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH", "proteinreich"]
+    },
+    {
+      "name": "Frischkäse Doppelrahm",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Frischkäse light",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Hüttenkäse",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH", "proteinreich"]
+    },
+    {
+      "name": "Skyr",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "categories": [["Milch & Milchprodukte"]],
+      "tags": ["wenigeKH", "proteinreich"]
+    },
+    {
+      "name": "Vollmilchschokolade",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Zartbitterschokolade 70%",
+      "kh": 40,
+      "gBE": 30,
+      "gKHE": 25,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Zartbitterschokolade 85%",
+      "kh": 25,
+      "gBE": 48,
+      "gKHE": 40,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Weiße Schokolade",
+      "kh": 60,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Fruchtgummi",
+      "kh": 75,
+      "gBE": 16,
+      "gKHE": 13,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Gummibärchen",
+      "kh": 77,
+      "gBE": 16,
+      "gKHE": 13,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Lakritz",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Bonbons",
+      "kh": 95,
+      "gBE": 13,
+      "gKHE": 11,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
+      "name": "Kartoffelchips",
+      "kh": 50,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Salzstangen",
+      "kh": 75,
+      "gBE": 16,
+      "gKHE": 13,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Salzgebäck",
+      "kh": 70,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Popcorn",
+      "kh": 60,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Erdnussflips",
+      "kh": 55,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [["Süßigkeiten & Snacks"]],
+      "tags": ["vieleKH"]
+    },
+    {
+      "name": "Cashewnüsse",
+      "kh": 30,
+      "gBE": 40,
+      "gKHE": 33,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["vieleKH", "proteinreich", "versteckteKH"]
+    },
+    {
+      "name": "Erdnüsse",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Mandeln",
+      "kh": 7,
+      "gBE": 171,
+      "gKHE": 143,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["mittlereKH", "proteinreich", "ballaststoffreich"]
+    },
+    {
+      "name": "Walnüsse",
+      "kh": 7,
+      "gBE": 171,
+      "gKHE": 143,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["mittlereKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Haselnüsse",
+      "kh": 9,
+      "gBE": 133,
+      "gKHE": 111,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["mittlereKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Paranüsse",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Pistazien",
+      "kh": 18,
+      "gBE": 67,
+      "gKHE": 56,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Macadamia",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Pekannüsse",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Sonnenblumenkerne",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Kürbiskerne",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["mittlereKH", "proteinreich"]
+    },
+    {
+      "name": "Chiasamen",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["wenigeKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Leinsamen",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["wenigeKH", "ballaststoffreich"]
+    },
+    {
+      "name": "Sesam",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "categories": [["Nüsse & Samen"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Apfelsaft",
+      "kh": 11,
+      "gBE": 109,
+      "gKHE": 91,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Orangensaft",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Traubensaft",
+      "kh": 15,
+      "gBE": 80,
+      "gKHE": 67,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Multivitaminsaft",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Kirschsaft",
+      "kh": 13,
+      "gBE": 92,
+      "gKHE": 77,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Ananassaft",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Tomatensaft",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Gemüsesaft",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["wenigeKH"]
+    },
+    {
+      "name": "Cola",
+      "kh": 11,
+      "gBE": 109,
+      "gKHE": 91,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Limonade",
+      "kh": 10,
+      "gBE": 120,
+      "gKHE": 100,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Orangenlimonade",
+      "kh": 12,
+      "gBE": 100,
+      "gKHE": 83,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Eistee",
+      "kh": 8,
+      "gBE": 150,
+      "gKHE": 125,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Energy Drink",
+      "kh": 11,
+      "gBE": 109,
+      "gKHE": 91,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "schnelleKH"]
+    },
+    {
+      "name": "Bier Pils",
+      "kh": 3,
+      "gBE": 400,
+      "gKHE": 333,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["wenigeKH", "versteckteKH"]
+    },
+    {
+      "name": "Bier Weizen",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Bier Export",
+      "kh": 4,
+      "gBE": 300,
+      "gKHE": 250,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["wenigeKH", "versteckteKH"]
+    },
+    {
+      "name": "Bier Bockbier",
+      "kh": 6,
+      "gBE": 200,
+      "gKHE": 167,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH", "versteckteKH"]
+    },
+    {
+      "name": "Radler",
+      "kh": 5,
+      "gBE": 240,
+      "gKHE": 200,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH"]
+    },
+    {
+      "name": "Apfelschorle",
+      "kh": 6,
+      "gBE": 200,
+      "gKHE": 167,
+      "unit": "ml",
+      "categories": [["Getränke"]],
+      "tags": ["mittlereKH"]
+    }
+  ]
+}
