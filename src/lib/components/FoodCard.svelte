@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { FoodItem } from '$lib/types/food';
   import { foodStore } from '$lib/stores/foods.svelte';
+  import UnitDisplay from './UnitDisplay.svelte';
 
   let { food, onclick }: { food: FoodItem; onclick?: () => void } = $props();
 
@@ -38,9 +39,15 @@
         {food.kh}g KH / 100{food.unit || 'g'}
       </div>
 
-      <div class="mt-2 flex gap-2 text-xs">
-        <span class="rounded-md bg-green-50 px-2 py-1 dark:bg-green-900/30">1 BE = {food.gBE}g</span>
-        <span class="rounded-md bg-purple-50 px-2 py-1 dark:bg-purple-900/30">1 KHE = {food.gKHE}g</span>
+      <div class="mt-2 text-xs">
+        <UnitDisplay>
+          {#snippet beContent()}
+            <span class="rounded-md bg-green-50 px-2 py-1 dark:bg-green-900/30">1 BE = {food.gBE}g</span>
+          {/snippet}
+          {#snippet kheContent()}
+            <span class="rounded-md bg-purple-50 px-2 py-1 dark:bg-purple-900/30">1 KHE = {food.gKHE}g</span>
+          {/snippet}
+        </UnitDisplay>
       </div>
 
       {#if food.categories && food.categories.length > 0}

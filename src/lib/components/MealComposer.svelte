@@ -1,6 +1,7 @@
 <script lang="ts">
   import { mealStore } from '$lib/stores/meal.svelte';
   import { formatNumber } from '$lib/utils/formatting';
+  import UnitDisplay from './UnitDisplay.svelte';
 
   const items = $derived(mealStore.items);
   const totalBE = $derived(mealStore.totalBE);
@@ -50,9 +51,15 @@
           <div class="flex-1">
             <h3 class="font-semibold text-gray-900 dark:text-gray-100">{item.food.name}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400">{item.grams}g</p>
-            <div class="mt-2 flex gap-3 text-sm">
-              <span class="text-blue-600 dark:text-blue-400">{formatNumber(item.be)} BE</span>
-              <span class="text-purple-600 dark:text-purple-400">{formatNumber(item.khe)} KHE</span>
+            <div class="mt-2 text-sm">
+              <UnitDisplay>
+                {#snippet beContent()}
+                  <span class="text-blue-600 dark:text-blue-400">{formatNumber(item.be)} BE</span>
+                {/snippet}
+                {#snippet kheContent()}
+                  <span class="text-purple-600 dark:text-purple-400">{formatNumber(item.khe)} KHE</span>
+                {/snippet}
+              </UnitDisplay>
             </div>
           </div>
           <button
@@ -69,17 +76,18 @@
 
     <!-- Total summary (sticky footer) -->
     <div class="sticky bottom-16 rounded-xl bg-blue-600 p-4 text-white shadow-lg dark:bg-blue-500">
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-sm opacity-90">Gesamt</p>
-          <p class="text-2xl font-bold">{formatNumber(totalBE)} BE</p>
-        </div>
-        <div class="text-right">
-          <p class="text-sm opacity-90">oder</p>
-          <p class="text-2xl font-bold">{formatNumber(totalKHE)} KHE</p>
-        </div>
+      <div class="text-center">
+        <p class="text-sm opacity-90">Gesamt</p>
+        <UnitDisplay>
+          {#snippet beContent()}
+            <p class="text-3xl font-bold">{formatNumber(totalBE)} BE</p>
+          {/snippet}
+          {#snippet kheContent()}
+            <p class="text-3xl font-bold">{formatNumber(totalKHE)} KHE</p>
+          {/snippet}
+        </UnitDisplay>
+        <p class="mt-2 text-sm opacity-75">{items.length} Lebensmittel</p>
       </div>
-      <div class="mt-2 text-center text-sm opacity-75">{items.length} Lebensmittel</div>
     </div>
   {/if}
 </div>

@@ -42,41 +42,49 @@ Entwicklung einer SvelteKit Progressive Web App (PWA) für Diabetiker zur schnel
 ### ✅ 7. Main App
 - [x] `src/routes/+page.svelte` - Integration aller Components
 
+### ✅ 8. Settings & Legal Pages
+- [x] `src/lib/stores/settings.svelte.ts` - Settings Store mit BE/KHE Präferenz
+- [x] `src/lib/components/SettingsPage.svelte` - Settings UI
+- [x] `src/routes/legal/+page.svelte` - Haftungsausschluss & Datenschutz
+- [x] Settings Tab zur TabBar hinzugefügt
+- [x] SettingsPage in +page.svelte integriert
+- [ ] App-weite BE/KHE Präferenz anwenden (nur bevorzugte Einheit anzeigen)
+
 ---
 
 ## Phase 2: Enhanced Features (Prio 2)
 
-### ✅ 8. Meal Composition
+### ✅ 9. Meal Composition
 - [x] `src/lib/components/MealComposer.svelte`
 
-### ✅ 9. Custom Foods
+### ✅ 10. Custom Foods
 - [ ] `src/lib/components/CustomFoodForm.svelte`
 - [ ] `addCustomFood()` Methode im foodStore
 
-### ✅ 10. PWA Configuration
+### ✅ 11. PWA Configuration
 - [ ] `vite.config.ts` - SvelteKitPWA Plugin konfigurieren
 - [ ] `static/icon-192.png` - PWA Icon erstellen
 - [ ] `static/icon-512.png` - PWA Icon erstellen
 - [ ] `src/app.html` - PWA Meta-Tags hinzufügen
 - [ ] `src/routes/+layout.svelte` - Service Worker registrieren
 
-### ✅ 11. Offline Indicator
+### ✅ 12. Offline Indicator
 - [ ] `src/lib/components/OfflineIndicator.svelte`
 
 ---
 
 ## Phase 3: Nice-to-Have (Prio 3)
 
-### ✅ 12. Dark Mode
+### ✅ 13. Dark Mode
 - [ ] `src/lib/stores/theme.svelte.ts`
 - [ ] `src/lib/components/ThemeToggle.svelte`
 - [ ] Dark mode CSS Varianten
 
-### ✅ 13. History
+### ✅ 14. History
 - [ ] `src/lib/stores/history.svelte.ts`
 - [ ] `src/lib/components/HistoryList.svelte`
 
-### ✅ 14. Comparison View
+### ✅ 15. Comparison View
 - [ ] `src/lib/components/ComparisonView.svelte`
 
 ---

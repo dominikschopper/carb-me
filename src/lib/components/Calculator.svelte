@@ -3,6 +3,7 @@
   import { calculateNutrition } from '$lib/utils/calculator';
   import { formatNumber } from '$lib/utils/formatting';
   import { mealStore } from '$lib/stores/meal.svelte';
+  import UnitDisplay from './UnitDisplay.svelte';
 
   let { food, onClose }: { food: FoodItem | null; onClose: () => void } = $props();
 
@@ -113,14 +114,20 @@
       <!-- Results -->
       {#if result}
         <div class="mb-6 space-y-3 rounded-lg bg-blue-50 p-4 dark:bg-blue-900/30">
-          <div class="flex items-center justify-between">
-            <span class="font-medium text-gray-700 dark:text-gray-300">Broteinheiten (BE)</span>
-            <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">{formatNumber(result.be)}</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="font-medium text-gray-700 dark:text-gray-300">Kohlenhydrateinheiten (KHE)</span>
-            <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">{formatNumber(result.khe)}</span>
-          </div>
+          <UnitDisplay>
+            {#snippet beContent()}
+              <div class="flex items-center justify-between">
+                <span class="font-medium text-gray-700 dark:text-gray-300">Broteinheiten (BE)</span>
+                <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">{formatNumber(result.be)}</span>
+              </div>
+            {/snippet}
+            {#snippet kheContent()}
+              <div class="flex items-center justify-between">
+                <span class="font-medium text-gray-700 dark:text-gray-300">Kohlenhydrateinheiten (KHE)</span>
+                <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">{formatNumber(result.khe)}</span>
+              </div>
+            {/snippet}
+          </UnitDisplay>
           <div class="flex items-center justify-between border-t border-blue-200 pt-3 dark:border-blue-800">
             <span class="text-sm text-gray-600 dark:text-gray-400">Kohlenhydrate gesamt</span>
             <span class="text-lg font-semibold text-gray-700 dark:text-gray-300">{formatNumber(result.carbs)}g</span>

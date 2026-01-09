@@ -5,11 +5,12 @@
   import FoodList from '$lib/components/FoodList.svelte';
   import FavoritesList from '$lib/components/FavoritesList.svelte';
   import MealComposer from '$lib/components/MealComposer.svelte';
+  import SettingsPage from '$lib/components/SettingsPage.svelte';
   import Calculator from '$lib/components/Calculator.svelte';
   import { foodStore } from '$lib/stores/foods.svelte';
   import type { FoodItem } from '$lib/types/food';
 
-  let activeTab = $state<'search' | 'favorites' | 'meal'>('search');
+  let activeTab = $state<'search' | 'favorites' | 'meal' | 'settings'>('search');
   let selectedFood = $state<FoodItem | null>(null);
   let loading = $state(true);
 
@@ -29,10 +30,14 @@
   function closeCalculator() {
     selectedFood = null;
   }
+
+  function goToMeal() {
+    activeTab = 'meal';
+  }
 </script>
 
 <div class="min-h-screen pb-20">
-  <Header />
+  <Header onMealClick={goToMeal} />
 
   <main class="mx-auto max-w-4xl px-4 py-6">
     {#if activeTab === 'search'}
@@ -44,6 +49,8 @@
       <FavoritesList onFoodSelect={handleFoodSelect} />
     {:else if activeTab === 'meal'}
       <MealComposer />
+    {:else if activeTab === 'settings'}
+      <SettingsPage />
     {/if}
   </main>
 
