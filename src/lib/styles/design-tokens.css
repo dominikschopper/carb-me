@@ -1,0 +1,167 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* Import Material Symbols */
+@import './material-symbols.css';
+
+/* Josh's Custom CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Custom design tokens */
+@layer base {
+  :root {
+    /* Colors */
+    --color-primary: #3b82f6;
+    --color-primary-dark: #2563eb;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+
+    /* Spacing for touch targets */
+    --touch-target: 44px; /* iOS minimum */
+
+    /* Typography */
+    --font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .dark {
+    --color-bg: #1f2937;
+    --color-surface: #374151;
+    --color-text: #f9fafb;
+  }
+
+  /* Safe areas for iOS notch */
+  .safe-area-inset {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+}
+
+/* Touch-optimized components */
+@layer components {
+  .btn-touch {
+    @apply min-h-[44px] min-w-[44px] px-4 py-2.5 rounded-lg font-medium active:scale-95 transition-transform;
+  }
+
+  .input-touch {
+    @apply min-h-[44px] px-4 text-base border-2 rounded-lg border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-200 dark:border-gray-700;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+  }
+}
+
+/* Material Symbols size utilities */
+@layer utilities {
+  .material-symbols-outlined {
+    font-size: 24px;
+  }
+
+  .material-symbols-outlined.text-sm {
+    font-size: 20px;
+  }
+
+  .material-symbols-outlined.text-lg {
+    font-size: 28px;
+  }
+
+  .material-symbols-outlined.text-xl {
+    font-size: 32px;
+  }
+
+  .material-symbols-outlined.text-2xl {
+    font-size: 36px;
+  }
+
+  .material-symbols-outlined.text-3xl {
+    font-size: 48px;
+  }
+
+  .material-symbols-outlined.text-4xl {
+    font-size: 56px;
+  }
+
+  .material-symbols-outlined.text-5xl {
+    font-size: 64px;
+  }
+}

@@ -9,43 +9,45 @@ Entwicklung einer SvelteKit Progressive Web App (PWA) für Diabetiker zur schnel
 ## Phase 1: Core Foundation (Prio 1 - Essentiell)
 
 ### ✅ 1. Type Definitions & Utilities
-- [ ] `src/lib/types/food.ts` - TypeScript Interfaces
-- [ ] `src/lib/utils/calculator.ts` - BE/KHE Berechnungslogik
-- [ ] `src/lib/utils/storage.ts` - Type-safe localStorage Wrapper
-- [ ] `src/lib/utils/formatting.ts` - Deutsche Zahlen-/Datumsformatierung
+- [x] `src/lib/types/food.ts` - TypeScript Interfaces
+- [x] `src/lib/utils/calculator.ts` - BE/KHE Berechnungslogik
+- [x] `src/lib/utils/storage.ts` - Type-safe localStorage Wrapper
+- [x] `src/lib/utils/formatting.ts` - Deutsche Zahlen-/Datumsformatierung
 
 ### ✅ 2. Search Implementation
-- [ ] `pnpm install fuse.js` ausführen
-- [ ] `src/lib/utils/search.ts` - Fuzzy-Search mit Fuse.js
+- [x] `pnpm install fuse.js` ausführen
+- [x] `src/lib/utils/search.ts` - Fuzzy-Search mit Fuse.js
 
 ### ✅ 3. State Management
-- [ ] `src/lib/stores/foods.svelte.ts` - FoodStore mit Svelte 5 runes
-- [ ] `src/lib/stores/meal.svelte.ts` - MealStore
+- [x] `src/lib/stores/foods.svelte.ts` - FoodStore mit Svelte 5 runes
+- [x] `src/lib/stores/meal.svelte.ts` - MealStore
 
 ### ✅ 4. Core Components
-- [ ] `src/lib/components/SearchBar.svelte`
-- [ ] `src/lib/components/FoodCard.svelte`
-- [ ] `src/lib/components/FoodList.svelte`
-- [ ] `src/lib/components/Calculator.svelte`
-- [ ] `src/lib/components/FavoritesList.svelte`
+- [x] `src/lib/components/SearchBar.svelte`
+- [x] `src/lib/components/FoodCard.svelte`
+- [x] `src/lib/components/FoodList.svelte`
+- [x] `src/lib/components/Calculator.svelte` (mit `<dialog>`)
+- [x] `src/lib/components/FavoritesList.svelte`
 
 ### ✅ 5. Layout Components
-- [ ] `src/lib/components/Header.svelte`
-- [ ] `src/lib/components/TabBar.svelte`
+- [x] `src/lib/components/Header.svelte`
+- [x] `src/lib/components/TabBar.svelte`
+- [x] Material Symbols Icons integriert
 
 ### ✅ 6. Styling System
-- [ ] `src/lib/styles/design-tokens.css`
-- [ ] Import in `src/routes/layout.css`
+- [x] `src/lib/styles/design-tokens.css` (mit Josh Comeau CSS Reset)
+- [x] `src/lib/styles/material-symbols.css`
+- [x] Import in `src/routes/layout.css`
 
 ### ✅ 7. Main App
-- [ ] `src/routes/+page.svelte` - Integration aller Components
+- [x] `src/routes/+page.svelte` - Integration aller Components
 
 ---
 
 ## Phase 2: Enhanced Features (Prio 2)
 
 ### ✅ 8. Meal Composition
-- [ ] `src/lib/components/MealComposer.svelte`
+- [x] `src/lib/components/MealComposer.svelte`
 
 ### ✅ 9. Custom Foods
 - [ ] `src/lib/components/CustomFoodForm.svelte`

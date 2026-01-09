@@ -44,5 +44,8 @@
     "vite-plugin-pwa": "^1.2.0",
     "vitest": "^4.0.15",
     "vitest-browser-svelte": "^2.0.1"
+  },
+  "dependencies": {
+    "fuse.js": "^7.1.0"
   }
 }
