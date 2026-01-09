@@ -54,11 +54,14 @@ class FoodStore {
   }
 
   toggleFavorite(name: string) {
-    if (this.favorites.has(name)) {
-      this.favorites.delete(name);
+    // Create new Set to trigger reactivity in Svelte 5
+    const newFavorites = new Set(this.favorites);
+    if (newFavorites.has(name)) {
+      newFavorites.delete(name);
     } else {
-      this.favorites.add(name);
+      newFavorites.add(name);
     }
+    this.favorites = newFavorites;
     this.saveFavorites();
   }
 

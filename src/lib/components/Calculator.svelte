@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import type { FoodItem } from '$lib/types/food';
   import { calculateNutrition } from '$lib/utils/calculator';
   import { formatNumber } from '$lib/utils/formatting';
@@ -8,6 +7,7 @@
   let { food, onClose }: { food: FoodItem | null; onClose: () => void } = $props();
 
   let dialog: HTMLDialogElement;
+  let inputElement: HTMLInputElement;
   let grams = $state(100);
 
   const result = $derived.by(() => {
@@ -17,6 +17,8 @@
 
   function setQuickAmount(amount: number) {
     grams = amount;
+    // Select the text after updating
+    setTimeout(() => inputElement?.select(), 0);
   }
 
   function addToMeal() {
@@ -41,6 +43,11 @@
   $effect(() => {
     if (food && dialog) {
       dialog.showModal();
+      // Focus and select the input after dialog opens
+      setTimeout(() => {
+        inputElement?.focus();
+        inputElement?.select();
+      }, 0);
     }
   });
 </script>
@@ -77,9 +84,11 @@
         </label>
         <input
           id="grams-input"
+          bind:this={inputElement}
           type="number"
           bind:value={grams}
           onkeydown={handleKeyDown}
+          onfocus={(e) => e.currentTarget.select()}
           min="1"
           step="1"
           inputmode="numeric"
@@ -90,10 +99,10 @@
 
       <!-- Quick presets -->
       <div class="mb-6 flex gap-2">
-        {#each [50, 100, 150, 200] as amount}
+        {#each [50, 150, 200, 250] as amount}
           <button
             onclick={() => setQuickAmount(amount)}
-            class="btn-touch flex-1 bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+            class="btn-touch flex-1 bg-gray-100 px-2 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
             type="button"
           >
             {amount}g

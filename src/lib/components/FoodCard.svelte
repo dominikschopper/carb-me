@@ -34,10 +34,11 @@
         </h3>
       </div>
 
-      <div class="mt-2 flex flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-300">
-        <span class="rounded-md bg-blue-50 px-2 py-1 dark:bg-blue-900/30">
-          {food.kh}g KH / 100{food.unit || 'g'}
-        </span>
+      <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+        {food.kh}g KH / 100{food.unit || 'g'}
+      </div>
+
+      <div class="mt-2 flex gap-2 text-xs">
         <span class="rounded-md bg-green-50 px-2 py-1 dark:bg-green-900/30">1 BE = {food.gBE}g</span>
         <span class="rounded-md bg-purple-50 px-2 py-1 dark:bg-purple-900/30">1 KHE = {food.gKHE}g</span>
       </div>
@@ -55,11 +56,11 @@
 
     <button
       onclick={toggleFavorite}
-      class="flex-shrink-0 rounded-full p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
+      class="flex flex-shrink-0 items-center justify-center rounded-full p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
       aria-label={isFavorite ? 'Von Favoriten entfernen' : 'Zu Favoriten hinzufügen'}
       type="button"
     >
-      <span class="material-symbols-outlined {isFavorite ? 'text-yellow-500' : 'text-gray-400'}">
+      <span class="material-symbols-outlined leading-none {isFavorite ? 'text-yellow-500' : 'text-gray-400'}">
         {isFavorite ? 'star' : 'star_outline'}
       </span>
     </button>
