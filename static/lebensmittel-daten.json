@@ -693,7 +693,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -701,7 +701,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -709,7 +709,7 @@
       "kh": 60,
       "gBE": 20,
       "gKHE": 17,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {
@@ -717,7 +717,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -725,7 +725,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -733,7 +733,7 @@
       "kh": 77,
       "gBE": 16,
       "gKHE": 13,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -741,7 +741,7 @@
       "kh": 73,
       "gBE": 16,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {
@@ -749,7 +749,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -757,7 +757,7 @@
       "kh": 69,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -765,7 +765,7 @@
       "kh": 62,
       "gBE": 19,
       "gKHE": 16,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH", "proteinreich"]
     },
     {
@@ -773,7 +773,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -781,7 +781,7 @@
       "kh": 65,
       "gBE": 18,
       "gKHE": 15,
-      "categories": [["Getreide & Getreideprodukte", "Getreide roh"]],
+      "categories": [["Getreide", "ungekocht"]],
       "tags": ["vieleKH", "proteinreich"]
     },
     {
@@ -789,7 +789,7 @@
       "kh": 28,
       "gBE": 43,
       "gKHE": 36,
-      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "categories": [["Getreide", "gekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -797,7 +797,7 @@
       "kh": 24,
       "gBE": 50,
       "gKHE": 42,
-      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "categories": [["Getreide", "gekocht"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {
@@ -805,7 +805,7 @@
       "kh": 21,
       "gBE": 57,
       "gKHE": 48,
-      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "categories": [["Getreide", "gekocht"]],
       "tags": ["vieleKH", "proteinreich"]
     },
     {
@@ -813,7 +813,7 @@
       "kh": 19,
       "gBE": 63,
       "gKHE": 53,
-      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "categories": [["Getreide", "gekocht"]],
       "tags": ["mittlereKH"]
     },
     {
@@ -821,7 +821,7 @@
       "kh": 23,
       "gBE": 52,
       "gKHE": 43,
-      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "categories": [["Getreide", "gekocht"]],
       "tags": ["vieleKH"]
     },
     {
@@ -829,7 +829,7 @@
       "kh": 12,
       "gBE": 100,
       "gKHE": 83,
-      "categories": [["Getreide & Getreideprodukte", "Getreide gekocht"]],
+      "categories": [["Getreide", "gekocht"]],
       "tags": ["mittlereKH"]
     },
     {
@@ -837,7 +837,7 @@
       "kh": 72,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH"]
     },
     {
@@ -845,7 +845,7 @@
       "kh": 71,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH"]
     },
     {
@@ -853,7 +853,7 @@
       "kh": 68,
       "gBE": 18,
       "gKHE": 15,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH"]
     },
     {
@@ -861,7 +861,7 @@
       "kh": 72,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH"]
     },
     {
@@ -869,7 +869,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH"]
     },
     {
@@ -877,7 +877,7 @@
       "kh": 65,
       "gBE": 18,
       "gKHE": 15,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {
@@ -885,7 +885,7 @@
       "kh": 65,
       "gBE": 18,
       "gKHE": 15,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {
@@ -893,7 +893,7 @@
       "kh": 72,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH"]
     },
     {
@@ -901,7 +901,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH"]
     },
     {
@@ -909,7 +909,7 @@
       "kh": 75,
       "gBE": 16,
       "gKHE": 13,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH"]
     },
     {
@@ -917,7 +917,7 @@
       "kh": 80,
       "gBE": 15,
       "gKHE": 13,
-      "categories": [["Getreide & Getreideprodukte", "Mehl/Grieß"]],
+      "categories": [["Getreide", "Mehl/Grieß"]],
       "tags": ["vieleKH"]
     },
     {
@@ -925,7 +925,7 @@
       "kh": 60,
       "gBE": 20,
       "gKHE": 17,
-      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "categories": [["Getreide", "Flocken/Müsli"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {
@@ -933,7 +933,7 @@
       "kh": 65,
       "gBE": 18,
       "gKHE": 15,
-      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "categories": [["Getreide", "Flocken/Müsli"]],
       "tags": ["vieleKH"]
     },
     {
@@ -941,7 +941,7 @@
       "kh": 85,
       "gBE": 14,
       "gKHE": 12,
-      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "categories": [["Getreide", "Flocken/Müsli"]],
       "tags": ["vieleKH"]
     },
     {
@@ -949,7 +949,7 @@
       "kh": 60,
       "gBE": 20,
       "gKHE": 17,
-      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "categories": [["Getreide", "Flocken/Müsli"]],
       "tags": ["vieleKH"]
     },
     {
@@ -957,7 +957,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "categories": [["Getreide", "Flocken/Müsli"]],
       "tags": ["vieleKH"]
     },
     {
@@ -965,7 +965,7 @@
       "kh": 68,
       "gBE": 18,
       "gKHE": 15,
-      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "categories": [["Getreide", "Flocken/Müsli"]],
       "tags": ["vieleKH"]
     },
     {
@@ -973,7 +973,7 @@
       "kh": 72,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "categories": [["Getreide", "Flocken/Müsli"]],
       "tags": ["vieleKH"]
     },
     {
@@ -981,7 +981,7 @@
       "kh": 40,
       "gBE": 30,
       "gKHE": 25,
-      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "categories": [["Getreide", "Flocken/Müsli"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {
@@ -989,7 +989,7 @@
       "kh": 20,
       "gBE": 60,
       "gKHE": 50,
-      "categories": [["Getreide & Getreideprodukte", "Flocken/Müsli"]],
+      "categories": [["Getreide", "Flocken/Müsli"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {
@@ -997,7 +997,7 @@
       "kh": 72,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "categories": [["Getreide", "Teigwaren"]],
       "tags": ["vieleKH"]
     },
     {
@@ -1005,7 +1005,7 @@
       "kh": 72,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "categories": [["Getreide", "Teigwaren"]],
       "tags": ["vieleKH"]
     },
     {
@@ -1013,7 +1013,7 @@
       "kh": 72,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "categories": [["Getreide", "Teigwaren"]],
       "tags": ["vieleKH"]
     },
     {
@@ -1021,7 +1021,7 @@
       "kh": 72,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "categories": [["Getreide", "Teigwaren"]],
       "tags": ["vieleKH"]
     },
     {
@@ -1029,7 +1029,7 @@
       "kh": 65,
       "gBE": 18,
       "gKHE": 15,
-      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "categories": [["Getreide", "Teigwaren"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {
@@ -1037,7 +1037,7 @@
       "kh": 70,
       "gBE": 17,
       "gKHE": 14,
-      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "categories": [["Getreide", "Teigwaren"]],
       "tags": ["vieleKH"]
     },
     {
@@ -1045,7 +1045,7 @@
       "kh": 68,
       "gBE": 18,
       "gKHE": 15,
-      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "categories": [["Getreide", "Teigwaren"]],
       "tags": ["vieleKH"]
     },
     {
@@ -1053,7 +1053,7 @@
       "kh": 25,
       "gBE": 48,
       "gKHE": 40,
-      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "categories": [["Getreide", "Teigwaren"]],
       "tags": ["vieleKH"]
     },
     {
@@ -1061,7 +1061,7 @@
       "kh": 23,
       "gBE": 52,
       "gKHE": 43,
-      "categories": [["Getreide & Getreideprodukte", "Teigwaren"]],
+      "categories": [["Getreide", "Teigwaren"]],
       "tags": ["vieleKH", "ballaststoffreich"]
     },
     {

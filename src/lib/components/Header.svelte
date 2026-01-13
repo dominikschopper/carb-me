@@ -14,7 +14,7 @@
 </script>
 
 <header class="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur dark:border-gray-700 dark:bg-gray-900/95">
-  <div class="mx-auto max-w-4xl px-4 py-4">
+  <div class="container mx-auto max-w-[720px] px-4 py-4">
     <div class="flex items-center justify-between">
       <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">carb-me</h1>
 

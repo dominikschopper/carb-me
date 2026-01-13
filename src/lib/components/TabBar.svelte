@@ -9,7 +9,7 @@
 </script>
 
 <nav class="safe-area-inset fixed bottom-0 left-0 right-0 z-40 border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
-  <div class="mx-auto flex max-w-4xl">
+  <div class="container mx-auto flex max-w-[720px]">
     <button
       onclick={() => setTab('search')}
       class="flex flex-1 flex-col items-center gap-0.5 py-2 text-[10px] transition-colors sm:gap-1 sm:text-xs {activeTab === 'search'
