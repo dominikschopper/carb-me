@@ -15,6 +15,7 @@
   let loading = $state(true);
 
   const filteredFoods = $derived(foodStore.filteredFoods);
+  const isSearching = $derived(foodStore.isSearching);
 
   // Initialize food store
   $effect(() => {
@@ -43,7 +44,7 @@
     {#if activeTab === 'search'}
       <div class="space-y-4">
         <SearchBar />
-        <FoodList foods={filteredFoods} onFoodSelect={handleFoodSelect} {loading} />
+        <FoodList foods={filteredFoods} onFoodSelect={handleFoodSelect} {loading} {isSearching} />
       </div>
     {:else if activeTab === 'favorites'}
       <FavoritesList onFoodSelect={handleFoodSelect} />

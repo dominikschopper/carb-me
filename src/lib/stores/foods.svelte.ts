@@ -10,6 +10,8 @@ class FoodStore {
   isLoading = $state(true);
 
   // Derived states
+  isSearching = $derived(this.searchQuery.trim().length > 0);
+
   filteredFoods = $derived.by(() => {
     const allAvailableFoods = [...this.allFoods, ...this.customFoods];
 

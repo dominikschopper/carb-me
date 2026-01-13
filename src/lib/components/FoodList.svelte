@@ -3,7 +3,7 @@
   import FoodCard from './FoodCard.svelte';
   import { groupFoodsByCategories } from '$lib/utils/grouping';
 
-  let { foods, onFoodSelect, loading = false }: { foods: FoodItem[]; onFoodSelect: (food: FoodItem) => void; loading?: boolean } = $props();
+  let { foods, onFoodSelect, loading = false, isSearching = false }: { foods: FoodItem[]; onFoodSelect: (food: FoodItem) => void; loading?: boolean; isSearching?: boolean } = $props();
 
   const groupedFoods = $derived(groupFoodsByCategories(foods));
 </script>
@@ -29,8 +29,13 @@
         <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">Versuche einen anderen Suchbegriff</p>
       </div>
     </div>
+  {:else if isSearching}
+    <!-- Flat list when searching (sorted by fuzzy score) -->
+    {#each foods as food (food.name)}
+      <FoodCard {food} onclick={() => onFoodSelect(food)} />
+    {/each}
   {:else}
-    <!-- Grouped food cards -->
+    <!-- Grouped food cards when not searching -->
     {#each groupedFoods as group, groupIndex (group.uberschrift + ':' + (group.unteruberschrift ?? 'null'))}
       <!-- Show Überschrift header only when it changes -->
       {#if groupIndex === 0 || groupedFoods[groupIndex - 1].uberschrift !== group.uberschrift}
