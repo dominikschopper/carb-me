@@ -35,10 +35,14 @@
   function goToMeal() {
     activeTab = 'meal';
   }
+
+  function goToHome() {
+    activeTab = 'search';
+  }
 </script>
 
 <div class="min-h-screen pb-20">
-  <Header onMealClick={goToMeal} />
+  <Header onMealClick={goToMeal} onHomeClick={goToHome} />
 
   <main class="container mx-auto max-w-[720px] px-4 py-6">
     {#if activeTab === 'search'}

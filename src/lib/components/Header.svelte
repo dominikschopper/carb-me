@@ -3,7 +3,7 @@
   import { formatNumber } from '$lib/utils/formatting';
   import UnitDisplay from './UnitDisplay.svelte';
 
-  let { onMealClick }: { onMealClick?: () => void } = $props();
+  let { onMealClick, onHomeClick }: { onMealClick?: () => void; onHomeClick?: () => void } = $props();
 
   const hasMealItems = $derived(mealStore.items.length > 0);
   const totalCarbs = $derived(mealStore.items.reduce((sum, item) => sum + (item.grams / 100) * item.food.kh, 0));
@@ -11,12 +11,18 @@
   function handleMealClick() {
     onMealClick?.();
   }
+
+  function handleHomeClick() {
+    onHomeClick?.();
+  }
 </script>
 
 <header class="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur dark:border-gray-700 dark:bg-gray-900/95">
   <div class="container mx-auto max-w-[720px] px-4 py-4">
     <div class="flex items-center justify-between">
-      <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">carb-me</h1>
+      <button onclick={handleHomeClick} class="text-2xl font-bold text-blue-600 transition-opacity hover:opacity-75 active:scale-95 dark:text-blue-400" aria-label="Zur Startseite" type="button">
+        carb-me
+      </button>
 
       {#if hasMealItems}
         <button
