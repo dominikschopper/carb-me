@@ -12,9 +12,7 @@
   }
 
   function clearAll() {
-    if (confirm('Möchtest du wirklich alle Einträge löschen?')) {
-      mealStore.clear();
-    }
+    mealStore.clear();
   }
 </script>
 
