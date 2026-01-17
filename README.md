@@ -1,59 +1,60 @@
 # carb-me 🍞🍎🧮
 
-Eine kostenlose Web-App zur Berechnung von Broteinheiten (BE) und Kohlenhydrateinheiten (KHE) für Menschen mit Diabetes.
+A free web app for calculating bread units (BE) and carbohydrate units (KHE) for people with diabetes.
 
 **Live:** [carb-me.de](https://carb-me.de)
 
 ## Features
 
-- Umfangreiche Lebensmittel-Datenbank mit BE/KHE-Werten
-- Schnelle Suche mit Fuzzy-Matching
-- Mahlzeiten zusammenstellen und Gesamtwerte berechnen
-- Favoriten speichern für häufig genutzte Lebensmittel
-- Wahl zwischen BE (12g KH) und KHE (10g KH) als Anzeigeeinheit
-- Offline-fähig als Progressive Web App (PWA)
-- Keine Registrierung, keine Datenübertragung - alles bleibt lokal auf deinem Gerät
+- Food database with BE/KHE values
+- Fast search with fuzzy matching
+- Compose meals and calculate total values
+- Save favorites for frequently used foods
+- Choice between BE (12g carbs) and KHE (10g carbs) as display unit
+- Offline-capable as Progressive Web App (PWA)
+- Printable food list
+- No registration, no data transfer - everything stays local on your device
 
-## Technologie
+## Technology
 
-- SvelteKit mit Svelte 5
+- SvelteKit with Svelte 5
 - Tailwind CSS 4
 - TypeScript
-- Statisches Hosting auf GitHub Pages
+- Static hosting on GitHub Pages
 
-## Haftungsausschluss
+## Disclaimer
 
-**Diese App dient ausschließlich zu Informationszwecken und stellt keine medizinische Beratung, Diagnose oder Behandlung dar.**
+**This app is for informational purposes only and does not constitute medical advice, diagnosis, or treatment.**
 
-Die bereitgestellten Informationen zu Kohlenhydraten, Broteinheiten (BE) und Kohlenhydrateinheiten (KHE) ersetzen nicht die professionelle Beratung durch qualifiziertes medizinisches Fachpersonal.
+The information provided about carbohydrates, bread units (BE), and carbohydrate units (KHE) does not replace professional advice from qualified medical personnel.
 
-- Die Nutzung dieser App erfolgt auf eigene Verantwortung
-- Trotz sorgfältiger Recherche können die Nährwertangaben Fehler enthalten
-- Änderungen an der Diabetes-Therapie sollten nur nach Rücksprache mit dem behandelnden Arzt erfolgen
-- Im Notfall: Notruf 112
+- Use of this app is at your own risk
+- Despite careful research, nutritional values may contain errors
+- Changes to diabetes therapy should only be made after consulting your physician
+- In case of emergency: Call 112 (EU) or your local emergency number
 
-## Datenschutz
+## Privacy
 
-Diese App wurde nach dem Prinzip "Privacy by Design" entwickelt:
+This app was developed following the "Privacy by Design" principle:
 
-- Keine Datenübertragung an Server
-- Keine Cookies
-- Kein Tracking
-- Alle Daten bleiben ausschließlich auf deinem Gerät (localStorage)
+- No data transfer to servers
+- No cookies
+- No tracking
+- All data stays exclusively on your device (localStorage)
 
-## Entwicklung
+## Development
 
 ```bash
-# Abhängigkeiten installieren
+# Install dependencies
 pnpm install
 
-# Entwicklungsserver starten
+# Start development server
 pnpm dev
 
-# Produktions-Build erstellen
+# Create production build
 pnpm build
 ```
 
-## Lizenz
+## License
 
 MIT
