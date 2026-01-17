@@ -1,0 +1,17 @@
+/* Main CSS entry point */
+
+/* Define layer order (lowest to highest priority) */
+@layer reset, base, components, utilities, print;
+
+/* Tailwind */
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* Import custom styles into their respective layers */
+@import './reset.css' layer(reset);
+@import './material-symbols.css' layer(base);
+@import './design-tokens.css' layer(base);
+@import './components.css' layer(components);
+@import './utilities.css' layer(utilities);
+@import './print.css' layer(print);

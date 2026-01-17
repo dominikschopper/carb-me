@@ -1,0 +1,33 @@
+/* Material Symbols size utilities */
+
+.material-symbols-outlined {
+  font-size: 24px;
+}
+
+.material-symbols-outlined.text-sm {
+  font-size: 20px;
+}
+
+.material-symbols-outlined.text-lg {
+  font-size: 28px;
+}
+
+.material-symbols-outlined.text-xl {
+  font-size: 32px;
+}
+
+.material-symbols-outlined.text-2xl {
+  font-size: 36px;
+}
+
+.material-symbols-outlined.text-3xl {
+  font-size: 48px;
+}
+
+.material-symbols-outlined.text-4xl {
+  font-size: 56px;
+}
+
+.material-symbols-outlined.text-5xl {
+  font-size: 64px;
+}

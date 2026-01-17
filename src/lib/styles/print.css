@@ -1,0 +1,110 @@
+/* Print styles for A4 food list */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  /* Reset background colors */
+  * {
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-size: 10pt;
+    line-height: 1.3;
+  }
+
+  /* Hide elements not needed for print */
+  header,
+  nav,
+  .no-print,
+  [data-no-print],
+  button,
+  input,
+  .material-symbols-outlined {
+    display: none !important;
+  }
+
+  /* Show header text for print */
+  .print-header {
+    display: block !important;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10mm;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3mm;
+  }
+
+  /* Main container adjustments */
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Food list layout for print - column layout */
+  .print-grid {
+    column-count: 3;
+    column-gap: 3mm;
+  }
+
+  /* Category headers in print */
+  .print-category-header {
+    column-span: all;
+    font-size: 11pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    padding: 2mm 0;
+    margin-top: 4mm;
+    margin-bottom: 2mm;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .print-subcategory-header {
+    column-span: all;
+    font-size: 9pt;
+    font-weight: 600;
+    color: #555 !important;
+    padding: 1mm 0;
+    margin-bottom: 2mm;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Food card for print */
+  .print-card {
+    border: 0.5pt solid #ccc;
+    padding: 2mm;
+    margin-bottom: 2mm;
+    font-size: 8pt;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+  }
+
+  .print-card-name {
+    font-weight: bold;
+    font-size: 9pt;
+    margin-bottom: 1mm;
+  }
+
+  .print-card-info {
+    font-size: 7pt;
+    color: #333 !important;
+  }
+
+  /* Hide screen-only content */
+  .screen-only {
+    display: none !important;
+  }
+}

@@ -1,290 +1,39 @@
-@import 'tailwindcss';
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
+/* Design tokens - CSS custom properties */
 
-/* Import Material Symbols */
-@import './material-symbols.css';
+:root {
+  /* Colors */
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
 
-/* Josh's Custom CSS Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+  /* Spacing for touch targets */
+  --touch-target: 44px; /* iOS minimum */
+
+  /* Typography */
+  --font-family: system-ui, -apple-system, sans-serif;
 }
 
-* {
-  margin: 0;
+.dark {
+  --color-bg: #1f2937;
+  --color-surface: #374151;
+  --color-text: #f9fafb;
 }
 
-/* Allow Tailwind margin utilities to work */
-.mx-auto,
-[class*="mx-"],
-[class*="ml-"],
-[class*="mr-"],
-[class*="my-"],
-[class*="mt-"],
-[class*="mb-"],
-[class*="m-"] {
-  margin: revert-layer;
+/* Safe areas for iOS notch */
+.safe-area-inset {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    interpolate-size: allow-keywords;
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-p {
-  text-wrap: pretty;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-}
-
-#root,
-#__next {
-  isolation: isolate;
-}
-
-/* Custom design tokens */
-@layer base {
-  :root {
-    /* Colors */
-    --color-primary: #3b82f6;
-    --color-primary-dark: #2563eb;
-    --color-success: #10b981;
-    --color-warning: #f59e0b;
-    --color-danger: #ef4444;
-
-    /* Spacing for touch targets */
-    --touch-target: 44px; /* iOS minimum */
-
-    /* Typography */
-    --font-family: system-ui, -apple-system, sans-serif;
-  }
-
-  .dark {
-    --color-bg: #1f2937;
-    --color-surface: #374151;
-    --color-text: #f9fafb;
-  }
-
-  /* Safe areas for iOS notch */
-  .safe-area-inset {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
-
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
-  }
-}
-
-/* Touch-optimized components */
-@layer components {
-  .btn-touch {
-    @apply min-h-[44px] min-w-[44px] px-4 py-2.5 rounded-lg font-medium active:scale-95 transition-transform;
-  }
-
-  .input-touch {
-    @apply min-h-[44px] px-4 text-base border-2 rounded-lg border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100;
-  }
-
-  .card {
-    @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-200 dark:border-gray-700;
-  }
-
-  .skeleton {
-    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
-  }
-}
-
-/* Material Symbols size utilities */
-@layer utilities {
-  .material-symbols-outlined {
-    font-size: 24px;
-  }
-
-  .material-symbols-outlined.text-sm {
-    font-size: 20px;
-  }
-
-  .material-symbols-outlined.text-lg {
-    font-size: 28px;
-  }
-
-  .material-symbols-outlined.text-xl {
-    font-size: 32px;
-  }
-
-  .material-symbols-outlined.text-2xl {
-    font-size: 36px;
-  }
-
-  .material-symbols-outlined.text-3xl {
-    font-size: 48px;
-  }
-
-  .material-symbols-outlined.text-4xl {
-    font-size: 56px;
-  }
-
-  .material-symbols-outlined.text-5xl {
-    font-size: 64px;
-  }
-}
-
-/* Print styles for A4 food list */
-@media print {
-  @page {
-    size: A4;
-    margin: 15mm;
-  }
-
-  /* Reset background colors */
-  * {
-    background: white !important;
-    color: black !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  body {
-    font-size: 10pt;
-    line-height: 1.3;
-  }
-
-  /* Hide elements not needed for print */
-  header,
-  nav,
-  .no-print,
-  [data-no-print],
-  button,
-  input,
-  .material-symbols-outlined {
-    display: none !important;
-  }
-
-  /* Show header text for print */
-  .print-header {
-    display: block !important;
-    font-size: 14pt;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10mm;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 3mm;
-  }
-
-  /* Main container adjustments */
-  main {
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  /* Food list layout for print - column layout */
-  .print-grid {
-    column-count: 3;
-    column-gap: 3mm;
-  }
-
-  /* Category headers in print */
-  .print-category-header {
-    column-span: all;
-    font-size: 11pt;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-bottom: 1px solid #333;
-    padding: 2mm 0;
-    margin-top: 4mm;
-    margin-bottom: 2mm;
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  .print-subcategory-header {
-    column-span: all;
-    font-size: 9pt;
-    font-weight: 600;
-    color: #555 !important;
-    padding: 1mm 0;
-    margin-bottom: 2mm;
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  /* Food card for print */
-  .print-card {
-    border: 0.5pt solid #ccc;
-    padding: 2mm;
-    margin-bottom: 2mm;
-    font-size: 8pt;
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-    break-inside: avoid;
-    page-break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-  }
-
-  .print-card-name {
-    font-weight: bold;
-    font-size: 9pt;
-    margin-bottom: 1mm;
-  }
-
-  .print-card-info {
-    font-size: 7pt;
-    color: #333 !important;
-  }
-
-  /* Hide screen-only content */
-  .screen-only {
-    display: none !important;
-  }
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
 }

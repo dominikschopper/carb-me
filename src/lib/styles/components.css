@@ -1,0 +1,17 @@
+/* Touch-optimized components */
+
+.btn-touch {
+  @apply min-h-[44px] min-w-[44px] px-4 py-2.5 rounded-lg font-medium active:scale-95 transition-transform;
+}
+
+.input-touch {
+  @apply min-h-[44px] px-4 text-base border-2 rounded-lg border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 border border-gray-200 dark:border-gray-700;
+}
+
+.skeleton {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+}
