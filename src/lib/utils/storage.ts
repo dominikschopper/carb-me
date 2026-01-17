@@ -8,6 +8,7 @@ export const STORAGE_KEYS = {
   HISTORY: 'carbme_history',
   THEME: 'carbme_theme',
   SETTINGS: 'carbme_settings',
+  DISCLAIMER_ACCEPTED: 'carbme_disclaimer_accepted',
 } as const;
 
 export const DEFAULT_SETTINGS: AppSettings = {
@@ -72,3 +73,5 @@ export const mealStorage = new Storage<MealItem[]>(STORAGE_KEYS.CURRENT_MEAL, []
 export const historyStorage = new Storage<HistoryEntry[]>(STORAGE_KEYS.HISTORY, []);
 
 export const settingsStorage = new Storage<AppSettings>(STORAGE_KEYS.SETTINGS, DEFAULT_SETTINGS);
+
+export const disclaimerStorage = new Storage<boolean>(STORAGE_KEYS.DISCLAIMER_ACCEPTED, false);

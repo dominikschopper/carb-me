@@ -1,19 +1,32 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { page } from '$app/state';
+  import { disclaimerStorage } from '$lib/utils/storage';
+
+  const isOnboarding = $derived(page.url.searchParams.get('onboarding') === 'true');
+
+  function acceptDisclaimer() {
+    disclaimerStorage.set(true);
+    goto('/');
+  }
 </script>
 
 <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
   <header class="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur dark:border-gray-700 dark:bg-gray-900/95">
     <div class="mx-auto flex max-w-4xl items-center gap-3 px-4 py-4">
-      <button
-        onclick={() => goto('/')}
-        class="rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-        aria-label="Zurück"
-        type="button"
-      >
-        <span class="material-symbols-outlined leading-none">arrow_back</span>
-      </button>
-      <h1 class="text-xl font-bold text-gray-900 dark:text-gray-100">Rechtliches & Datenschutz</h1>
+      {#if !isOnboarding}
+        <button
+          onclick={() => goto('/')}
+          class="rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+          aria-label="Zurück"
+          type="button"
+        >
+          <span class="material-symbols-outlined leading-none">arrow_back</span>
+        </button>
+      {/if}
+      <h1 class="text-xl font-bold text-gray-900 dark:text-gray-100">
+        {isOnboarding ? 'Willkommen bei carb-me' : 'Rechtliches & Datenschutz'}
+      </h1>
     </div>
   </header>
 
@@ -78,6 +91,17 @@
           die App auf eigene Verantwortung verwenden.
         </p>
       </div>
+
+      {#if isOnboarding}
+        <button
+          onclick={acceptDisclaimer}
+          class="btn-touch mt-6 w-full bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+          type="button"
+        >
+          <span class="material-symbols-outlined mr-2 inline-block align-middle leading-none">check_circle</span>
+          Verstanden & Weiter
+        </button>
+      {/if}
     </div>
 
     <!-- Datenschutz -->

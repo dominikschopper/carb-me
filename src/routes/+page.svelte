@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import Header from '$lib/components/Header.svelte';
   import TabBar from '$lib/components/TabBar.svelte';
   import SearchBar from '$lib/components/SearchBar.svelte';
@@ -8,6 +9,7 @@
   import SettingsPage from '$lib/components/SettingsPage.svelte';
   import Calculator from '$lib/components/Calculator.svelte';
   import { foodStore } from '$lib/stores/foods.svelte';
+  import { disclaimerStorage } from '$lib/utils/storage';
   import type { FoodItem } from '$lib/types/food';
 
   let activeTab = $state<'search' | 'favorites' | 'meal' | 'settings'>('search');
@@ -16,6 +18,16 @@
 
   const filteredFoods = $derived(foodStore.filteredFoods);
   const isSearching = $derived(foodStore.isSearching);
+
+  // Check for disclaimer acceptance on mount
+  $effect(() => {
+    if (typeof window !== 'undefined') {
+      const hasAccepted = disclaimerStorage.get();
+      if (!hasAccepted) {
+        goto('/legal?onboarding=true');
+      }
+    }
+  });
 
   // Initialize food store
   $effect(() => {
