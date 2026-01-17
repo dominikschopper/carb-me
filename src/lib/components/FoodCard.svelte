@@ -18,7 +18,7 @@
 </script>
 
 <div
-  class="card w-full cursor-pointer text-left transition-all hover:shadow-md active:scale-[0.98]"
+  class="card w-full cursor-pointer text-left transition-all mb-1 hover:shadow-md active:scale-[0.98]"
   onclick={handleCardClick}
   role="button"
   tabindex="0"

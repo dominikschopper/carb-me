@@ -48,7 +48,7 @@
     {/if}
 
     <!-- Haftungsausschluss -->
-    <div class="card space-y-4">
+    <div class="card space-y-4 mb-1.5">
       <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Haftungsausschluss</h2>
 
       <p class="text-sm text-gray-600 dark:text-gray-400">Stand: {new Date().toLocaleDateString('de-DE')}</p>
