@@ -31,6 +31,22 @@
   </header>
 
   <main class="mx-auto max-w-4xl space-y-6 px-4 py-8">
+    {#if isOnboarding}
+      <!-- Onboarding hint -->
+      <div class="rounded-xl border-2 border-blue-500 bg-blue-50 p-4 dark:border-blue-400 dark:bg-blue-900/30">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-blue-600 dark:text-blue-400">info</span>
+          <div>
+            <p class="font-semibold text-blue-800 dark:text-blue-200">Bitte sorgfältig lesen</p>
+            <p class="mt-1 text-sm text-blue-700 dark:text-blue-300">
+              Lies dir den folgenden Haftungsausschluss bitte aufmerksam durch. Am Ende kannst du mit einem Klick auf
+              "Verstanden & Weiter" bestätigen, dass du alles gelesen und verstanden hast.
+            </p>
+          </div>
+        </div>
+      </div>
+    {/if}
+
     <!-- Haftungsausschluss -->
     <div class="card space-y-4">
       <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Haftungsausschluss</h2>
