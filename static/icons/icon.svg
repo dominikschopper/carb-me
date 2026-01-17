@@ -1,7 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Background circle -->
-  <circle cx="256" cy="256" r="256" fill="#3b82f6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background -->
+  <rect width="100" height="100" fill="#3b82f6" rx="20"/>
 
-  <!-- Letter C for carb -->
-  <text x="256" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="280" font-weight="bold" fill="white" text-anchor="middle">C</text>
+  <!-- Bread (top left) - simplified loaf shape -->
+  <ellipse cx="30" cy="28" rx="18" ry="12" fill="#f59e0b"/>
+  <rect x="12" y="28" width="36" height="10" fill="#d97706"/>
+  <ellipse cx="30" cy="38" rx="18" ry="4" fill="#d97706"/>
+
+  <!-- Apple (right) - simple apple shape -->
+  <circle cx="68" cy="52" r="16" fill="#ef4444"/>
+  <ellipse cx="62" cy="48" rx="4" ry="6" fill="#dc2626"/>
+  <path d="M68 36 Q72 30 68 28 Q64 30 68 36" fill="#22c55e"/>
+  <rect x="67" y="32" width="2" height="8" fill="#854d0e"/>
+
+  <!-- Calculator (bottom left) - simplified -->
+  <rect x="14" y="58" width="28" height="34" rx="3" fill="#1e293b"/>
+  <rect x="17" y="61" width="22" height="8" fill="#6ee7b7"/>
+  <rect x="17" y="72" width="5" height="5" rx="1" fill="#94a3b8"/>
+  <rect x="25" y="72" width="5" height="5" rx="1" fill="#94a3b8"/>
+  <rect x="33" y="72" width="5" height="5" rx="1" fill="#f97316"/>
+  <rect x="17" y="80" width="5" height="5" rx="1" fill="#94a3b8"/>
+  <rect x="25" y="80" width="5" height="5" rx="1" fill="#94a3b8"/>
+  <rect x="33" y="80" width="5" height="5" rx="1" fill="#f97316"/>
 </svg>
