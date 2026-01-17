@@ -6,3 +6,4 @@ this site just serves as a lookup tool for carbs in foods.
 
 still wip
 
+is clickable

@@ -1,18 +1,21 @@
 // Service Worker for carb-me PWA
 const CACHE_NAME = 'carb-me-v1';
 
-// Assets to cache immediately on install
+// Get the base path from the service worker's location
+const BASE_PATH = new URL('.', self.location).pathname.replace(/\/$/, '');
+
+// Assets to cache immediately on install (relative to base path)
 const PRECACHE_ASSETS = [
-  '/',
+  '',
   '/lebensmittel-daten.json',
   '/manifest.json'
-];
+].map(path => BASE_PATH + path || '/');
 
 // Install event - precache essential assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[SW] Precaching app shell');
+      console.log('[SW] Precaching app shell, base:', BASE_PATH);
       return cache.addAll(PRECACHE_ASSETS);
     })
   );
@@ -85,7 +88,7 @@ self.addEventListener('fetch', (event) => {
       }).catch(() => {
         // Network failed and no cache - return offline page for navigation
         if (request.mode === 'navigate') {
-          return caches.match('/');
+          return caches.match(BASE_PATH || '/');
         }
         return new Response('Offline', { status: 503 });
       });

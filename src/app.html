@@ -2,9 +2,24 @@
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>carb-me - BE & KHE Rechner für Diabetiker</title>
     <meta name="description" content="Schneller Kohlenhydrat-Rechner für Diabetiker. Berechne Broteinheiten (BE) und Kohlenhydrateinheiten (KHE) für über 240 deutsche Lebensmittel." />
+
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="%sveltekit.assets%/manifest.json" />
+    <meta name="theme-color" content="#3b82f6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1e3a8a" media="(prefers-color-scheme: dark)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="carb-me" />
+
+    <!-- App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/icons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%sveltekit.assets%/icons/icon-16.png" />
+    <link rel="apple-touch-icon" href="%sveltekit.assets%/icons/icon-192.png" />
+
     %sveltekit.head%
   </head>
   <body data-sveltekit-preload-data="hover">
