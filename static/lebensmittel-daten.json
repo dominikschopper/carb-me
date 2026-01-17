@@ -1353,6 +1353,14 @@
       "tags": ["vieleKH", "schnelleKH"]
     },
     {
+      "name": "Zucker",
+      "kh": 100,
+      "gBE": 12,
+      "gKHE": 10,
+      "categories": [["Brotaufstriche", "Süße Aufstriche"]],
+      "tags": ["vieleKH", "schnelleKH"]
+    },
+    {
       "name": "Nutella (Durchschnitt)",
       "kh": 55,
       "gBE": 22,
