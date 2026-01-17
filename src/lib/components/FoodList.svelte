@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { FoodItem } from '$lib/types/food';
   import FoodCard from './FoodCard.svelte';
+  import PrintFoodCard from './PrintFoodCard.svelte';
   import { groupFoodsByCategories } from '$lib/utils/grouping';
 
   let { foods, onFoodSelect, loading = false, isSearching = false }: { foods: FoodItem[]; onFoodSelect: (food: FoodItem) => void; loading?: boolean; isSearching?: boolean } = $props();
@@ -8,7 +9,11 @@
   const groupedFoods = $derived(groupFoodsByCategories(foods));
 </script>
 
-<div class="space-y-3">
+<!-- Print header (hidden on screen, shown in print) -->
+<div class="print-header hidden print:block">carb-me - Lebensmittelliste</div>
+
+<!-- Screen view (hidden in print) -->
+<div class="space-y-3 print:hidden">
   {#if loading}
     <!-- Loading skeleton -->
     {#each Array(3) as _}
@@ -64,4 +69,28 @@
       </div>
     {/each}
   {/if}
+</div>
+
+<!-- Print view (hidden on screen, shown in print) -->
+<div class="hidden print:block print-grid">
+  {#each groupedFoods as group, groupIndex (group.uberschrift + ':' + (group.unteruberschrift ?? 'null') + '-print')}
+    <!-- Show Überschrift header only when it changes -->
+    {#if groupIndex === 0 || groupedFoods[groupIndex - 1].uberschrift !== group.uberschrift}
+      <div class="print-category-header">
+        {group.uberschrift}
+      </div>
+    {/if}
+
+    <!-- Show Unterüberschrift header if it exists -->
+    {#if group.unteruberschrift}
+      <div class="print-subcategory-header">
+        {group.unteruberschrift}
+      </div>
+    {/if}
+
+    <!-- Foods in this group -->
+    {#each group.foods as food (food.name + '-print')}
+      <PrintFoodCard {food} />
+    {/each}
+  {/each}
 </div>
