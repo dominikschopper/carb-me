@@ -26,7 +26,7 @@
       "gKHE": 189,
       "categories": [
         [
-          "Alkoholische Getränke"
+          "Alkoholische Getränke", "Bier"
         ]
       ],
       "tags": [
@@ -314,7 +314,8 @@
       "gKHE": 157,
       "categories": [
         [
-          "Alkoholische Getränke"
+          "Alkoholische Getränke",
+          "Bier"
         ]
       ],
       "tags": [
@@ -480,13 +481,14 @@
       "unit": "ml"
     },
     {
-      "name": "Hefeweizen/Weizenbier",
+      "name": "Weizenbier/Hefeweizen",
       "kh": 5.3,
       "gBE": 226,
       "gKHE": 189,
       "categories": [
         [
-          "Alkoholische Getränke"
+          "Alkoholische Getränke",
+          "Bier"
         ]
       ],
       "tags": [
@@ -601,7 +603,8 @@
       "gKHE": 227,
       "categories": [
         [
-          "Alkoholische Getränke"
+          "Alkoholische Getränke",
+          "Bier"
         ]
       ],
       "tags": [
@@ -658,7 +661,8 @@
       "gKHE": 174,
       "categories": [
         [
-          "Alkoholische Getränke"
+          "Alkoholische Getränke",
+          "Bier"
         ]
       ],
       "tags": [
@@ -886,7 +890,8 @@
       "gKHE": 163,
       "categories": [
         [
-          "Alkoholische Getränke"
+          "Alkoholische Getränke",
+          "Bier"
         ]
       ],
       "tags": [
@@ -2870,7 +2875,7 @@
       "blsCode": "X551363"
     },
     {
-      "name": "Auberginenscheiben im Backteig (mit Bier) frittiert",
+      "name": "Auberginenscheiben im Backteig frittiert",
       "kh": 20.5,
       "gBE": 59,
       "gKHE": 49,
@@ -3516,7 +3521,7 @@
       "blsCode": "X531413"
     },
     {
-      "name": "Blumenkohl im Backteig (mit Bier) frittiert",
+      "name": "Blumenkohl im Backteig frittiert",
       "kh": 21.4,
       "gBE": 56,
       "gKHE": 47,
@@ -3839,7 +3844,7 @@
       "blsCode": "X532142"
     },
     {
-      "name": "Broccoli im Backteig (mit Bier) frittiert",
+      "name": "Broccoli im Backteig frittiert",
       "kh": 17.7,
       "gBE": 68,
       "gKHE": 56,
@@ -4281,7 +4286,7 @@
       "blsCode": "X511043"
     },
     {
-      "name": "Champignons im Backteig (mit Bier) frittiert",
+      "name": "Champignons im Backteig frittiert",
       "kh": 17.7,
       "gBE": 68,
       "gKHE": 56,
@@ -7834,7 +7839,7 @@
       "blsCode": "X363143"
     },
     {
-      "name": "Karotten im Backteig (mit Bier) frittiert",
+      "name": "Karotten im Backteig frittiert",
       "kh": 20.8,
       "gBE": 58,
       "gKHE": 48,
@@ -14124,7 +14129,7 @@
       "blsCode": "X2A1150"
     },
     {
-      "name": "Selleriescheiben im Backteig (mit Bier) frittiert",
+      "name": "Selleriescheiben im Backteig frittiert",
       "kh": 19.3,
       "gBE": 62,
       "gKHE": 52,
@@ -16351,7 +16356,7 @@
       "blsCode": "X548443"
     },
     {
-      "name": "Zwiebelringe im Backteig (mit Bier) frittiert",
+      "name": "Zwiebelringe im Backteig frittiert",
       "kh": 20.2,
       "gBE": 59,
       "gKHE": 50,
@@ -18034,7 +18039,7 @@
       "blsCode": "Y997043"
     },
     {
-      "name": "Entenfleisch im Backteig (mit Bier) frittiert",
+      "name": "Entenfleisch im Backteig frittiert",
       "kh": 15.2,
       "gBE": 79,
       "gKHE": 66,
@@ -19904,7 +19909,7 @@
       "blsCode": "Y621922"
     },
     {
-      "name": "Kabeljaufilet im Backteig (mit Bier) frittiert",
+      "name": "Kabeljaufilet im Backteig frittiert",
       "kh": 12.8,
       "gBE": 93,
       "gKHE": 78,
@@ -20210,7 +20215,7 @@
       "blsCode": "Y860453"
     },
     {
-      "name": "Karpfen im Backteig (mit Bier) frittiert",
+      "name": "Karpfen im Backteig frittiert",
       "kh": 13.5,
       "gBE": 89,
       "gKHE": 74,
@@ -23542,7 +23547,7 @@
       "blsCode": "Y9A2040"
     },
     {
-      "name": "Tintenfischringe im Backteig (mit Bier) frittiert",
+      "name": "Tintenfischringe im Backteig frittiert",
       "kh": 10.3,
       "gBE": 117,
       "gKHE": 97,
