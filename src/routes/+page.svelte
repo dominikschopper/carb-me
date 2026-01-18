@@ -18,6 +18,7 @@
 
   const filteredFoods = $derived(foodStore.filteredFoods);
   const isSearching = $derived(foodStore.isSearching);
+  const searchQuery = $derived(foodStore.searchQuery);
 
   // Check for disclaimer acceptance on mount
   $effect(() => {
@@ -60,7 +61,7 @@
     {#if activeTab === 'search'}
       <div class="space-y-4">
         <SearchBar />
-        <FoodList foods={filteredFoods} onFoodSelect={handleFoodSelect} {loading} {isSearching} />
+        <FoodList foods={filteredFoods} onFoodSelect={handleFoodSelect} {loading} {isSearching} {searchQuery} />
       </div>
     {:else if activeTab === 'favorites'}
       <FavoritesList onFoodSelect={handleFoodSelect} />

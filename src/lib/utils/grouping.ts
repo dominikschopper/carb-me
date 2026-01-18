@@ -1,96 +1,93 @@
 import type { FoodItem } from '$lib/types/food';
 
-// String enum for all main categories
-export enum CategoryEnum {
-	Getreide = 'Getreide',
-	Brotaufstriche = 'Brotaufstriche',
-	Obst = 'Obst',
-	Trockenobst = 'Trockenobst',
-	Gemuese = 'Gemüse',
-	NuesseSamen = 'Nüsse & Samen',
-	MilchMilchprodukte = 'Milch & Milchprodukte',
-	Getraenke = 'Getränke',
-	Backwaren = 'Backwaren',
-	SuessigkeitenSnacks = 'Süßigkeiten & Snacks'
+// BLS-based category enum
+export enum Category {
+  Getreide = 'Getreide',
+  Teigwaren = 'Teigwaren',
+  BrotBackwaren = 'Brot & Backwaren',
+  Suessgebaeck = 'Süßgebäck',
+  Obst = 'Obst',
+  Gemuese = 'Gemüse',
+  Kartoffeln = 'Kartoffeln',
+  HuelsenfruechteNuesse = 'Hülsenfrüchte & Nüsse',
+  Milchprodukte = 'Milchprodukte',
+  Suesswaren = 'Süßwaren',
+  Getraenke = 'Getränke',
+  AlkoholischeGetraenke = 'Alkoholische Getränke',
+  Fertiggerichte = 'Fertiggerichte',
+  FertiggerichteSuess = 'Fertiggerichte (süß)',
 }
 
 // Ordered array of categories for sorting
 export const CATEGORY_ORDER = [
-	CategoryEnum.Getreide,
-	CategoryEnum.Brotaufstriche,
-	CategoryEnum.Obst,
-	CategoryEnum.Trockenobst,
-	CategoryEnum.Gemuese,
-	CategoryEnum.NuesseSamen,
-	CategoryEnum.MilchMilchprodukte,
-	CategoryEnum.Getraenke,
-	CategoryEnum.Backwaren,
-	CategoryEnum.SuessigkeitenSnacks
+  Category.Getreide,
+  Category.Teigwaren,
+  Category.BrotBackwaren,
+  Category.Suessgebaeck,
+  Category.Obst,
+  Category.Gemuese,
+  Category.Kartoffeln,
+  Category.HuelsenfruechteNuesse,
+  Category.Milchprodukte,
+  Category.Suesswaren,
+  Category.Getraenke,
+  Category.AlkoholischeGetraenke,
+  Category.Fertiggerichte,
+  Category.FertiggerichteSuess,
 ] as const;
 
 export interface FoodGroup {
-	uberschrift: string; // Main heading (e.g., "Getreide")
-	unteruberschrift: string | null; // Sub-heading (e.g., "gekocht") or null
-	foods: FoodItem[];
+  uberschrift: string; // Category heading
+  foods: FoodItem[];
 }
 
 /**
- * Groups food items by their categories (Überschrift and Unterüberschrift)
+ * Groups food items by their category (single level)
  * and sorts them according to the predefined category order.
  */
 export function groupFoodsByCategories(foods: FoodItem[]): FoodGroup[] {
-	// Map structure: Überschrift -> Unterüberschrift -> FoodItem[]
-	const groupMap = new Map<string, Map<string | null, FoodItem[]>>();
+  // Map structure: Category -> FoodItem[]
+  const groupMap = new Map<string, FoodItem[]>();
 
-	// Group foods by categories
-	for (const food of foods) {
-		if (!food.categories || food.categories.length === 0) {
-			continue;
-		}
+  // Group foods by categories
+  for (const food of foods) {
+    if (!food.categories || food.categories.length === 0) {
+      continue;
+    }
 
-		// Use the first category path
-		const [uberschrift, unteruberschrift = null] = food.categories[0];
+    // Use the first category (single level now)
+    const category = food.categories[0][0];
 
-		if (!groupMap.has(uberschrift)) {
-			groupMap.set(uberschrift, new Map());
-		}
+    if (!groupMap.has(category)) {
+      groupMap.set(category, []);
+    }
 
-		const subMap = groupMap.get(uberschrift)!;
-		if (!subMap.has(unteruberschrift)) {
-			subMap.set(unteruberschrift, []);
-		}
+    groupMap.get(category)!.push(food);
+  }
 
-		subMap.get(unteruberschrift)!.push(food);
-	}
+  // Convert to array and sort by category order
+  const result: FoodGroup[] = [];
 
-	// Convert to flat array and sort by category order
-	const result: FoodGroup[] = [];
+  // Add categories in predefined order
+  for (const category of CATEGORY_ORDER) {
+    const foods = groupMap.get(category);
+    if (!foods || foods.length === 0) continue;
 
-	for (const categoryValue of CATEGORY_ORDER) {
-		const subMap = groupMap.get(categoryValue);
-		if (!subMap) continue;
+    result.push({
+      uberschrift: category,
+      foods,
+    });
+  }
 
-		for (const [unteruberschrift, foods] of subMap) {
-			result.push({
-				uberschrift: categoryValue,
-				unteruberschrift,
-				foods
-			});
-		}
-	}
+  // Add any categories not in the predefined order (e.g., custom categories)
+  for (const [category, foods] of groupMap) {
+    if (CATEGORY_ORDER.includes(category as Category)) continue;
 
-	// Add any categories not in the predefined order (e.g., custom categories)
-	for (const [uberschrift, subMap] of groupMap) {
-		if (CATEGORY_ORDER.includes(uberschrift as CategoryEnum)) continue;
+    result.push({
+      uberschrift: category,
+      foods,
+    });
+  }
 
-		for (const [unteruberschrift, foods] of subMap) {
-			result.push({
-				uberschrift,
-				unteruberschrift,
-				foods
-			});
-		}
-	}
-
-	return result;
+  return result;
 }

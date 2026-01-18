@@ -13,7 +13,8 @@
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint .",
     "test:unit": "vitest",
-    "test": "npm run test:unit -- --run"
+    "test": "pnpm run test:unit -- --run",
+    "convert-bls": "tsx scripts/convert-bls-to-json.ts"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.1",
@@ -39,6 +40,7 @@
     "svelte": "^5.46.4",
     "svelte-check": "^4.3.5",
     "tailwindcss": "^4.1.18",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.53.0",
     "vite": "^7.3.1",

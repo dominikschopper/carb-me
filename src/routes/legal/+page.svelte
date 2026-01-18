@@ -188,5 +188,31 @@
         </p>
       </div>
     </div>
+
+    <!-- Datenquellen -->
+    <div class="card space-y-4">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Datenquellen</h2>
+
+      <div class="space-y-4 text-sm">
+        <section>
+          <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100">Bundeslebensmittelschlüssel (BLS)</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Die Nährwertdaten in dieser App basieren auf dem Bundeslebensmittelschlüssel (BLS) Version 4.0,
+            herausgegeben vom Max Rubner-Institut (MRI) im Auftrag des Bundesministeriums für Ernährung und
+            Landwirtschaft (BMEL).
+          </p>
+          <p class="mt-2 text-gray-700 dark:text-gray-300">
+            Mehr Informationen: <a href="https://www.blsdb.de" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">www.blsdb.de</a>
+          </p>
+        </section>
+      </div>
+
+      <div class="mt-6 rounded-lg bg-blue-50 p-4 dark:bg-blue-900/30">
+        <p class="font-semibold text-blue-800 dark:text-blue-200">Offizielle Datenquelle</p>
+        <p class="mt-2 text-sm text-blue-700 dark:text-blue-300">
+          Der BLS ist die offizielle deutsche Nährwertdatenbank und wird regelmäßig vom Max Rubner-Institut aktualisiert.
+        </p>
+      </div>
+    </div>
   </main>
 </div>
