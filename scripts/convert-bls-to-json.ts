@@ -17,6 +17,14 @@ const PROJECT_ROOT = resolve(__dirname, '..');
 // Minimum carbohydrate threshold (g/100g)
 const MIN_KH = 4;
 
+// Grouping configuration
+const GROUPING_CONFIG = {
+  enabled: true,
+  blsPrefixLength: 4, // Group by first 4 characters (e.g., C213 = Weizenmehl)
+  maxKhDifference: 15, // Max KH difference within a group
+  excludeCategories: ['X', 'Y'], // Don't group prepared meals
+};
+
 // BLS code first letter to category mapping
 const BLS_CATEGORY_MAP: Record<string, string> = {
   B: 'Brot & Backwaren',
@@ -44,8 +52,16 @@ const BLS_CATEGORY_MAP: Record<string, string> = {
 // Categories that should use "ml" as unit
 const BEVERAGE_CATEGORIES = new Set(['N', 'P']);
 
+// BLS codes to exclude (spirits/Schnäpse - P6xx and P7xx)
+// P1xx-P4xx = Beer, Wine, Cider (keep)
+// P5xx = Liqueurs (keep)
+// P6xx = Brandy, Cognac, Calvados (exclude)
+// P7xx = Vodka, Rum, Whisky, Gin, etc. (exclude)
+const EXCLUDE_BLS_PREFIXES = ['P6', 'P7'];
+
 interface FoodItem {
   name: string;
+  subtitle?: string;
   kh: number;
   gBE: number;
   gKHE: number;
@@ -55,6 +71,14 @@ interface FoodItem {
   kcal?: number;
   kj?: number;
   blsCode?: string;
+}
+
+interface ParsedFood {
+  name: string;
+  kh: number;
+  kcal: number;
+  kj: number;
+  blsCode: string;
 }
 
 /**
@@ -130,6 +154,120 @@ function getCategory(blsCode: string): string {
 }
 
 /**
+ * Calculate median of numeric array
+ */
+function calculateMedian(values: number[]): number {
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+}
+
+/**
+ * Find first common word among food names
+ * e.g., ["Weizenbrötchen mit Kürbiskernen", "Weizenbrötchen mit Sesam"] -> "Weizenbrötchen"
+ */
+function findCommonPrefix(names: string[]): string {
+  if (names.length === 0) return '';
+  if (names.length === 1) return names[0];
+
+  // Get first word of each name
+  const firstWords = names.map((n) => n.split(/\s+/)[0]);
+
+  // Check if all first words match (case-insensitive)
+  const firstWord = firstWords[0];
+  if (firstWords.every((w) => w.toLowerCase() === firstWord.toLowerCase())) {
+    // Return first word, cleaned up (remove trailing comma if any)
+    return firstWord.replace(/,\s*$/, '').trim();
+  }
+
+  // No common first word - return empty
+  return '';
+}
+
+/**
+ * Group similar foods by BLS prefix and KH similarity
+ */
+function groupSimilarFoods(foods: ParsedFood[]): (ParsedFood & { subtitle?: string })[] {
+  if (!GROUPING_CONFIG.enabled) {
+    return foods;
+  }
+
+  // Group by BLS prefix
+  const groups = new Map<string, ParsedFood[]>();
+
+  for (const food of foods) {
+    const category = food.blsCode.charAt(0);
+
+    // Skip excluded categories
+    if (GROUPING_CONFIG.excludeCategories.includes(category)) {
+      const key = food.blsCode; // Use full code as unique key
+      groups.set(key, [food]);
+      continue;
+    }
+
+    const prefix = food.blsCode.substring(0, GROUPING_CONFIG.blsPrefixLength);
+    if (!groups.has(prefix)) {
+      groups.set(prefix, []);
+    }
+    groups.get(prefix)!.push(food);
+  }
+
+  const result: (ParsedFood & { subtitle?: string })[] = [];
+  let groupedCount = 0;
+
+  for (const [_prefix, groupFoods] of groups) {
+    if (groupFoods.length === 1) {
+      result.push(groupFoods[0]);
+      continue;
+    }
+
+    // Check KH difference within group
+    const khValues = groupFoods.map((f) => f.kh);
+    const khMin = Math.min(...khValues);
+    const khMax = Math.max(...khValues);
+
+    if (khMax - khMin <= GROUPING_CONFIG.maxKhDifference) {
+      // Merge the group
+      const names = groupFoods.map((f) => f.name);
+      const baseName = findCommonPrefix(names);
+
+      // Create subtitle from all original names (without the common prefix)
+      const subtitle = names
+        .map((n) => n.replace(baseName, '').replace(/^[,\s]+/, '').trim())
+        .filter((s) => s !== '')
+        .join(', ');
+
+      // Use median values
+      const medianKh = calculateMedian(groupFoods.map((f) => f.kh));
+      const medianKcal = calculateMedian(groupFoods.map((f) => f.kcal));
+      const medianKj = calculateMedian(groupFoods.map((f) => f.kj));
+
+      // Concatenate all BLS codes for uniqueness
+      const allBlsCodes = groupFoods.map((f) => f.blsCode).join('+');
+
+      const merged: ParsedFood & { subtitle?: string } = {
+        name: baseName || groupFoods[0].name,
+        subtitle: subtitle || undefined,
+        kh: medianKh,
+        kcal: medianKcal,
+        kj: medianKj,
+        blsCode: allBlsCodes,
+      };
+
+      result.push(merged);
+      groupedCount += groupFoods.length - 1;
+    } else {
+      // KH difference too large - keep individual entries
+      result.push(...groupFoods);
+    }
+  }
+
+  console.log(`  Grouped entries: ${groupedCount} items merged`);
+
+  return result;
+}
+
+/**
  * Main conversion function
  */
 function convertBLStoJSON(): void {
@@ -146,7 +284,8 @@ function convertBLStoJSON(): void {
 
   console.log(`Processing ${dataLines.length} entries...`);
 
-  const foods: FoodItem[] = [];
+  // Step 1: Parse all foods into raw data
+  const parsedFoods: ParsedFood[] = [];
   const seenNames = new Set<string>();
   let filtered = 0;
   let duplicates = 0;
@@ -168,6 +307,12 @@ function convertBLStoJSON(): void {
       continue;
     }
 
+    // Exclude spirits (Schnäpse)
+    if (EXCLUDE_BLS_PREFIXES.some((prefix) => blsCode.startsWith(prefix))) {
+      filtered++;
+      continue;
+    }
+
     // Skip duplicates (keep first occurrence)
     if (seenNames.has(name)) {
       duplicates++;
@@ -175,34 +320,46 @@ function convertBLStoJSON(): void {
     }
     seenNames.add(name);
 
-    // Calculate BE and KHE
-    // 1 BE = 12g carbs, so gBE = 1200 / kh (grams needed for 1 BE)
-    // 1 KHE = 10g carbs, so gKHE = 1000 / kh (grams needed for 1 KHE)
-    const gBE = Math.round(1200 / kh);
-    const gKHE = Math.round(1000 / kh);
+    parsedFoods.push({ name, kh, kcal, kj, blsCode });
+  }
 
-    const category = getCategory(blsCode);
-    const tags = generateTags(kh, blsCode);
+  const beforeGrouping = parsedFoods.length;
+
+  // Step 2: Group similar foods
+  const groupedFoods = groupSimilarFoods(parsedFoods);
+
+  // Step 3: Convert to final FoodItem format
+  const foods: FoodItem[] = groupedFoods.map((parsed) => {
+    const kh = Math.round(parsed.kh * 10) / 10; // Round to 1 decimal
+    const gBE = Math.round(1200 / parsed.kh);
+    const gKHE = Math.round(1000 / parsed.kh);
+    const category = getCategory(parsed.blsCode);
+    const tags = generateTags(parsed.kh, parsed.blsCode);
 
     const food: FoodItem = {
-      name,
-      kh: Math.round(kh * 10) / 10, // Round to 1 decimal
+      name: parsed.name,
+      kh,
       gBE,
       gKHE,
       categories: [[category]],
       tags,
-      kcal: Math.round(kcal),
-      kj: Math.round(kj),
-      blsCode,
+      kcal: Math.round(parsed.kcal),
+      kj: Math.round(parsed.kj),
+      blsCode: parsed.blsCode,
     };
 
+    // Add subtitle if present
+    if ('subtitle' in parsed && parsed.subtitle) {
+      food.subtitle = parsed.subtitle as string;
+    }
+
     // Add unit for beverages
-    if (BEVERAGE_CATEGORIES.has(blsCode.charAt(0))) {
+    if (BEVERAGE_CATEGORIES.has(parsed.blsCode.charAt(0))) {
       food.unit = 'ml';
     }
 
-    foods.push(food);
-  }
+    return food;
+  });
 
   // Sort by category, then by name
   foods.sort((a, b) => {
@@ -221,7 +378,8 @@ function convertBLStoJSON(): void {
   console.log(`  Total processed: ${dataLines.length}`);
   console.log(`  Filtered (KH < ${MIN_KH}g): ${filtered}`);
   console.log(`  Duplicates skipped: ${duplicates}`);
-  console.log(`  Output items: ${foods.length}`);
+  console.log(`  Before grouping: ${beforeGrouping}`);
+  console.log(`  After grouping: ${foods.length}`);
   console.log(`  Output file: ${outputPath}`);
 
   // Show category distribution

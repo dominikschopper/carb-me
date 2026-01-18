@@ -65,7 +65,7 @@
     </div>
   {:else}
     <!-- Search results (flat list sorted by fuzzy score) -->
-    {#each foods as food (food.name)}
+    {#each foods as food (food.blsCode || food.name)}
       <FoodCard {food} onclick={() => onFoodSelect(food)} />
     {/each}
   {/if}
@@ -74,7 +74,7 @@
 <!-- Print view (hidden on screen, shown in print) - only shows search results -->
 {#if isSearching && foods.length > 0}
   <div class="hidden print:block print-grid">
-    {#each foods as food (food.name + '-print')}
+    {#each foods as food ((food.blsCode || food.name) + '-print')}
       <PrintFoodCard {food} />
     {/each}
   </div>

@@ -4,22 +4,26 @@ import type { FoodItem } from '$lib/types/food';
 const fuseOptions: IFuseOptions<FoodItem> = {
   keys: [
     { name: 'name', weight: 0.7 },
+    { name: 'subtitle', weight: 0.5 },
     { name: 'categories', weight: 0.2 },
     { name: 'tags', weight: 0.1 },
   ],
-  threshold: 0.4, // Lower = stricter matching
-  ignoreLocation: true, // Match anywhere in string
+  threshold: 0.4,
+  ignoreLocation: true,
   minMatchCharLength: 2,
   includeScore: true,
+  shouldSort: true, // Let Fuse handle initial sorting
 };
 
 let fuseInstance: Fuse<FoodItem> | null = null;
+let lastFoodsLength = 0;
 
 /**
  * Initialize Fuse.js instance with food data
  */
 export function initializeSearch(foods: FoodItem[]): void {
   fuseInstance = new Fuse(foods, fuseOptions);
+  lastFoodsLength = foods.length;
 }
 
 /**
@@ -30,40 +34,52 @@ export function fuzzySearch(foods: FoodItem[], query: string): FoodItem[] {
     return foods;
   }
 
-  // Reinitialize if foods changed or not initialized
-  if (!fuseInstance) {
+  // Only reinitialize if foods array changed
+  if (!fuseInstance || foods.length !== lastFoodsLength) {
     initializeSearch(foods);
   }
 
-  const results = fuseInstance!.search(query);
+  const results = fuseInstance!.search(query, { limit: 100 });
   const lowerQuery = query.toLowerCase().trim();
 
-  // Sort results with custom priority
-  const sortedResults = results.sort((a, b) => {
-    const nameA = a.item.name.toLowerCase();
-    const nameB = b.item.name.toLowerCase();
+  // Pre-compute lowercase names once
+  const scored = results.map((r) => ({
+    item: r.item,
+    score: r.score ?? 1,
+    lowerName: r.item.name.toLowerCase(),
+  }));
 
+  // Sort with custom priority
+  scored.sort((a, b) => {
     // Priority 1: Exact match
-    const exactA = nameA === lowerQuery ? 1000 : 0;
-    const exactB = nameB === lowerQuery ? 1000 : 0;
-    if (exactA !== exactB) return exactB - exactA;
+    if (a.lowerName === lowerQuery) return -1;
+    if (b.lowerName === lowerQuery) return 1;
 
-    // Priority 2: Starts with query
-    const startsA = nameA.startsWith(lowerQuery) ? 500 : 0;
-    const startsB = nameB.startsWith(lowerQuery) ? 500 : 0;
-    if (startsA !== startsB) return startsB - startsA;
+    // Priority 2: Starts with query as complete word (e.g., "Apfel roh" for "apfel")
+    const wordBoundaryA = a.lowerName.startsWith(lowerQuery + ' ') || a.lowerName === lowerQuery;
+    const wordBoundaryB = b.lowerName.startsWith(lowerQuery + ' ') || b.lowerName === lowerQuery;
+    if (wordBoundaryA !== wordBoundaryB) return wordBoundaryA ? -1 : 1;
 
-    // Priority 3: Contains query
-    const containsA = nameA.includes(lowerQuery) ? 100 : 0;
-    const containsB = nameB.includes(lowerQuery) ? 100 : 0;
-    if (containsA !== containsB) return containsB - containsA;
+    // Priority 3: Starts with query (prefix match, e.g., "Apfelkorn")
+    const startsA = a.lowerName.startsWith(lowerQuery);
+    const startsB = b.lowerName.startsWith(lowerQuery);
+    if (startsA !== startsB) return startsA ? -1 : 1;
 
-    // Priority 4: Fuzzy score (lower score is better in Fuse.js)
-    return (a.score ?? 1) - (b.score ?? 1);
+    // Priority 4: Contains query as word boundary
+    const wordInA = a.lowerName.includes(' ' + lowerQuery) || a.lowerName.includes(',' + lowerQuery);
+    const wordInB = b.lowerName.includes(' ' + lowerQuery) || b.lowerName.includes(',' + lowerQuery);
+    if (wordInA !== wordInB) return wordInA ? -1 : 1;
+
+    // Priority 5: Contains query anywhere
+    const containsA = a.lowerName.includes(lowerQuery);
+    const containsB = b.lowerName.includes(lowerQuery);
+    if (containsA !== containsB) return containsA ? -1 : 1;
+
+    // Priority 6: Fuzzy score
+    return a.score - b.score;
   });
 
-  // Return just the items (not scores)
-  return sortedResults.map((result) => result.item);
+  return scored.map((s) => s.item);
 }
 
 /**

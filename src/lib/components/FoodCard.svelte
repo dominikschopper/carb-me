@@ -27,12 +27,17 @@
   <div class="flex items-start justify-between gap-3">
     <div class="flex-1">
       <div class="flex items-center gap-2">
+        <hgroup>
         <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {food.name}
           {#if food.isCustom}
             <span class="ml-1 text-xs text-blue-600 dark:text-blue-400">(Eigenes)</span>
           {/if}
         </h3>
+        {#if food.subtitle}
+          <p class="text-sm text-gray-500 dark:text-gray-400">{food.subtitle}</p>
+        {/if}
+        </hgroup>
       </div>
 
       <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">

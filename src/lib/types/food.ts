@@ -8,6 +8,7 @@ export type UnitType = (typeof UNIT_TYPES)[keyof typeof UNIT_TYPES];
 
 export interface FoodItem {
   name: string;
+  subtitle?: string; // Variant details (e.g., "Type 405, 550, Vollkorn")
   kh: number; // Carbohydrates per 100g
   gBE: number; // Grams per Bread Unit
   gKHE: number; // Grams per Carb Unit

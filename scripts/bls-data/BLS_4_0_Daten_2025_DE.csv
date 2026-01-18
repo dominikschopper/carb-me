@@ -2,9 +2,9 @@ BLS Code,Lebensmittelbezeichnung,Food name,ENERCJ Energie (Kilojoule) [kJ/100g],
 C131000,"Hafer ganzes Korn, roh","Oat whole grain, raw",1443,343,53.7,0,-,1.08,1.05,0.03,0,1.08,52.6
 C133000,Hafer Flocken,Oat flakes,1465,348,53.3,<LOD or <LOQ,-,0.74,0.71,0.03,0,0.74,52.6
 C141000,"Gerste ganzes Korn, roh","Barley whole grain, raw",1403,332,62.6,0.1,-,1.51,0.99,0.52,0,1.71,60.9
-C243000,Gerste Mehl,Barley flour,1434,340,62.6,0.1,-,1.51,0.99,0.52,0,1.71,60.9
+C243000,Gerstemehl,Barley flour,1434,340,62.6,0.1,-,1.51,0.99,0.52,0,1.71,60.9
 C341000,Mais roh,Maize raw,1418,336,62.84,0.09,-,1.2,1.2,-,0,1.39,61.45
-C443000,Mais Mehl,Maize flour,1395,330,62.84,0.09,-,1.2,1.2,-,0,1.39,61.45
+C443000,Maismehl,Maize flour,1395,330,62.84,0.09,-,1.2,1.2,-,0,1.39,61.45
 C352000,"Reis poliert, roh",White rice raw,1488,351,77.1,0.02,-,0.15,0.15,<LOD or <LOQ,0,0.28,76.8
 C359000,"Reis parboiled, poliert, roh","Rice parboiled, raw",1413,333,72.1,0.02,-,0.21,0.21,0,0,0.34,71.8
 E401000,"Teigwaren eifrei, roh","Pasta egg-free, raw",1467,346,68.833,0.2,0,1.715,0.286,1.429,0,2.015,66.818
@@ -62,7 +62,7 @@ V523100,"Schwein Hirn, roh","Pork brain, raw",513,123,0,0,0,0,0,0,0,0,0
 V524100,"Schaf Hirn, roh","Sheep brain, raw",494,119,0,0,0,0,0,0,0,0,0
 C232000,Hafer Schrot,Oat coarse meal,1443,343,53.7,0,-,1.08,1.05,0.03,0,1.08,52.6
 C137000,Hafer Grütze,Oat groats,1478,351,53.3,0,-,0.74,0.71,0.03,0,0.74,52.6
-C233000,Hafer Mehl,Oat flour,1513,360,53.2,0.03,-,0.51,0.49,0.02,0,0.61,52.6
+C233000,Hafermehl,Oat flour,1513,360,53.2,0.03,-,0.51,0.49,0.02,0,0.61,52.6
 C138000,Hafer Kleie,Oat bran flakes,1559,371,53.3,0,-,0.74,0.71,0.03,0,0.74,52.6
 C148000,Gerste Graupen,Pearl barley,1328,313,62.6,0.1,-,1.51,0.99,0.52,0,1.71,60.9
 C242000,Gerste Schrot,Barley coarse meal,1403,332,62.6,0.1,-,1.51,0.99,0.52,0,1.71,60.9
@@ -70,7 +70,7 @@ C147000,Gerste Grütze,Barley groats,1337,316,62.01,0.1,-,1.51,0.99,0.52,0,1.71,
 C143000,Gerste Flocken,Barley flakes,1403,332,62.6,0.1,-,1.51,0.99,0.52,0,1.71,60.9
 C146000,Gerste Grieß,Barley semolina,1434,340,62.6,0.1,-,1.51,0.99,0.52,0,1.71,60.9
 C446000,Mais Stärke,Maize starch,1479,348,85.9,0,-,0,0,0,0,0,85.9
-C453000,Reis Mehl,Rice flour,1473,347,77.1,0.02,-,0.15,0.15,0,0,0.28,76.8
+C453000,Reismehl,Rice flour,1473,347,77.1,0.02,-,0.15,0.15,0,0,0.28,76.8
 C351000,"Reis unpoliert, roh",Brown rice raw,1523,360,73.43,0.02,-,0.6,0.6,0,0,0.73,72.7
 C346000,Mais Grieß,Maize semolina,1395,330,62.84,0.09,-,1.2,1.2,-,0,1.39,61.45
 C347000,Mais Grütze,Maize grits,1395,330,62.84,0.09,-,1.2,1.2,-,0,1.39,61.45
@@ -204,13 +204,13 @@ C114000,Weizen Keim,Wheat germ,1358,324,24.54,0.04676,TR,2.27743,2.12849,0.14894
 C118000,"Quinoa weiß, roh","Quinoa white, raw",1521,361,59.65,0.03134,TR,1.49894,1.49532,0.00362,0,1.75005,57.9
 C211000,Weizen Vollkornmehl,Wheat wholemeal flour,1431,339,61.78,0.01519,TR,0.69587,0.31835,0.37752,0,0.74378,61.04
 C212000,"Weizen Backschrot, Type 1700","Wheat coarse meal, Type 1700",1441,341,62.39,0.01724,TR,1.06458,0.29575,0.76883,0,1.13144,61.26
-C213100,"Weizen Mehl, Type 812","Wheat flour, Type 812",1493,352,69.29,0.01383,TR,0.44687,0.20717,0.2397,0,0.48536,68.8
-C213200,"Weizen Mehl, Type 1050","Wheat flour, Type 1050",1491,352,67.91,0.0142,TR,0.48646,0.31316,0.1733,0,0.52632,67.38
-C213500,"Weizen Mehl, Type 1600","Wheat flour, Type 1600",1433,339,59.27,0.01364,TR,0.63947,0.38258,0.25689,0,0.68615,58.58
-C214100,"Weizen Mehl, Type 405","Wheat flour, Type 405",1475,348,71.77,0.01492,TR,0.26629,0.08706,0.17923,0,0.30701,71.46
-C214200,"Weizen Mehl, Type 550","Wheat flour, Type 550",1482,349,70.55,0.01504,TR,0.4227,0.12732,0.29538,0,0.46708,70.08
+C213100,"Weizenmehl, Type 812","Wheat flour, Type 812",1493,352,69.29,0.01383,TR,0.44687,0.20717,0.2397,0,0.48536,68.8
+C213200,"Weizenmehl, Type 1050","Wheat flour, Type 1050",1491,352,67.91,0.0142,TR,0.48646,0.31316,0.1733,0,0.52632,67.38
+C213500,"Weizenmehl, Type 1600","Wheat flour, Type 1600",1433,339,59.27,0.01364,TR,0.63947,0.38258,0.25689,0,0.68615,58.58
+C214100,"Weizenmehl, Type 405","Wheat flour, Type 405",1475,348,71.77,0.01492,TR,0.26629,0.08706,0.17923,0,0.30701,71.46
+C214200,"Weizenmehl, Type 550","Wheat flour, Type 550",1482,349,70.55,0.01504,TR,0.4227,0.12732,0.29538,0,0.46708,70.08
 C217000,Weizen Kleie,Wheat bran,1105,266,18.92,0.02722,TR,1.23846,0.78299,0.45547,0,1.36327,17.56
-C223100,"Roggen Mehl, Type 815","Rye flour, Type 815",1365,323,65.17,0.0443,TR,1.011,0.797,0.2142,0,1.107,64.06
+C223100,"Roggenmehl, Type 815","Rye flour, Type 815",1365,323,65.17,0.0443,TR,1.011,0.797,0.2142,0,1.107,64.06
 C235000,Dinkel Vollkornmehl,Spelt wholemeal flour,1417,335,60.13,0.069,TR,0.869,0.621,0.24767,0,1.046,59.08
 C322000,Buchweizen roh,Buckwheat raw,1434,339,61.86,0.02002,TR,0.99192,0.99192,<LOD,0,1.05096,60.81
 C332000,Hirse roh,Millet raw,1492,352,67.6,0.00802,TR,0.48512,0.48454,<LOD,0,0.55507,67.04
@@ -545,28 +545,28 @@ C111000,"Weizen ganzes Korn, roh","Wheat whole grain, raw",1398,331,59.213,0.042
 C219300,Hartweizen Grieß,Durum wheat semolina,1492,352,68.92,0.01378,TR,1.02288,0.16594,0.85694,0,1.0625,67.86
 C215000,Weizen Dunst,Wheat middlings (dunst),1504,355,73.72,0.01148,TR,0.8118,0.07425,0.73755,0,0.84562,72.87
 C218000,Weichweizen Grieß,Soft wheat semolina,1505,355,73.97,0.0118,TR,0.72884,0.07948,0.64936,0,0.76504,73.2
-C223200,"Roggen Mehl, Type 997","Rye flour, Type 997",1355,321,63.73,0.0437,TR,1.2057,0.9133,0.2924,0,1.2982,62.43
+C223200,"Roggenmehl, Type 997","Rye flour, Type 997",1355,321,63.73,0.0437,TR,1.2057,0.9133,0.2924,0,1.2982,62.43
 C126000,Roggen Grieß,Rye semolina,1365,323,65.17,0.0443,0,1.011,0.797,0.2142,0,1.107,64.06
 C221000,Roggen Vollkornmehl,Rye wholemeal flour,1316,312,56.56,0.0413,TR,1.734,1.2,0.5337,0,1.816,54.74
-C223300,"Roggen Mehl, Type 1150","Rye flour, Type 1150",1347,319,61.74,0.0432,TR,1.3914,1.0212,0.3702,0,1.4757,60.26
-C223600,"Roggen Mehl, Type 1740","Rye flour, Type 1740",1326,315,57.46,0.061,TR,1.9213,1.3892,0.5321,0,2.039,55.42
-C223400,"Roggen Mehl, Type 1370","Rye flour, Type 1370",1343,318,59.18,0.0588,TR,1.663,1.2439,0.419,0,1.78,57.4
+C223300,"Roggenmehl, Type 1150","Rye flour, Type 1150",1347,319,61.74,0.0432,TR,1.3914,1.0212,0.3702,0,1.4757,60.26
+C223600,"Roggenmehl, Type 1740","Rye flour, Type 1740",1326,315,57.46,0.061,TR,1.9213,1.3892,0.5321,0,2.039,55.42
+C223400,"Roggenmehl, Type 1370","Rye flour, Type 1370",1343,318,59.18,0.0588,TR,1.663,1.2439,0.419,0,1.78,57.4
 C222000,"Roggen Backschrot, Type 1800","Rye coarse meal, Type 1800",1313,312,55.91,0.0382,TR,1.768,1.2365,0.531,0,1.846,54.06
 C238000,Dinkel Grieß,Spelt semolina,1447,342,65.75,0.03658,TR,0.59367,0.40453,0.18914,0,0.66693,65.08
 C236000,"Dinkel ganzes Korn, roh","Spelt whole grain, raw",1425,337,58.82,0.0348,TR,0.97401,0.69793,0.27608,0,1.04027,57.78
 C235100,Dinkel Vollkornschrot,Spelt coarse meal,1429,338,58.73,0.03641,TR,0.97154,0.67894,0.2926,0,1.04101,57.69
-C234000,"Dinkel Mehl, Type 630","Spelt flour, Type 630",1489,352,68.35,0.0368,TR,0.37557,0.27257,0.103,0,0.44354,67.91
+C234000,"Dinkelmehl, Type 630","Spelt flour, Type 630",1489,352,68.35,0.0368,TR,0.37557,0.27257,0.103,0,0.44354,67.91
 C311000,"Grünkern ganzes Korn, roh","Green spelt whole grain, raw",1391,329,59.18,0.3869,TR,1.9439,1.25166,0.69224,0,2.48354,56.7
-C234200,"Dinkel Mehl, Type 1050","Spelt flour, Type 1050",1475,348,65.06,0.0402,TR,0.76748,0.62272,0.14476,0,0.83842,64.22
-C234100,"Dinkel Mehl, Type 812","Spelt flour, Type 812",1490,352,67.58,0.03084,TR,0.49936,0.34756,0.1518,0,0.56084,67.02
+C234200,"Dinkelmehl, Type 1050","Spelt flour, Type 1050",1475,348,65.06,0.0402,TR,0.76748,0.62272,0.14476,0,0.83842,64.22
+C234100,"Dinkelmehl, Type 812","Spelt flour, Type 812",1490,352,67.58,0.03084,TR,0.49936,0.34756,0.1518,0,0.56084,67.02
 C237000,Dinkel Kleie,Spelt bran,1123,270,18.24,0.04002,TR,2.50328,1.93538,0.5679,0,2.58956,15.65
 C421000,Buchweizen Vollkornmehl,Buckwheat wholemeal flour,1503,355,68.201,0.02002,0,0.99192,0.99192,0,0,1.05096,67.15
-C424000,Buchweizen Mehl,Buckwheat flour,1482,350,65.08,0.016,TR,0.97579,0.97579,<LOD,0,1.0183,64.06
+C424000,Buchweizenmehl,Buckwheat flour,1482,350,65.08,0.016,TR,0.97579,0.97579,<LOD,0,1.0183,64.06
 C422000,Buchweizen Schrot,Buckwheat coarse meal,1434,339,61.86,0.02002,0,0.99192,0.99192,0,0,1.05096,60.81
 C327000,Buchweizen Grütze,Buckwheat groats,1363,322,61.16,0.02002,0,0.29,0.29,0,0,0.349,60.81
 C432000,Hirse Schrot,Millet coarse meal,1492,352,67.6,0.00802,0,0.48512,0.48454,0.00058,0,0.55507,67.04
 C333100,Hirse Flocken,Millet wholegrain flakes,1492,352,67.6,0.00802,0,0.48512,0.48454,0.00058,0,0.55507,67.04
-C433000,Hirse Mehl,Millet flour,1600,378,71.6,0,0,0.4,0.3,0.11,0,1.7,69.9
+C433000,Hirsemehl,Millet flour,1600,378,71.6,0,0,0.4,0.3,0.11,0,1.7,69.9
 C515100,"Cornflakes gesüßt, angereichert mit Vitaminen","Cornflakes sweetened, fortified with vitamins",1553,366,79.35,0.4,0,0.73,0.73,0,0,1.29,78.05
 C532000,"Reis gepufft, ungesüßt","Rice puffed, unsweetened",1546,365,77.47,0,0,0.42,0.42,0,0,0.42,77.05
 C533000,Popcorn ungesüßt,Popcorn unsweetened,1425,338,55.3,0.07,0,0.72,0.72,0,0,0.86,54.4
@@ -1016,7 +1016,7 @@ C413000,Grünkern Vollkornmehl,Green spelt flour,1354,321,59.18,0.3869,0,1.9439,
 C412000,Grünkern Vollkornschrot,Green spelt coarse meal,1391,329,59.18,0.3869,0,1.9439,1.25166,0.69224,0,2.48354,56.7
 C317000,Grünkern Grütze,Green spelt groats,1391,329,59.18,0.3869,0,1.9439,1.25166,0.69224,0,2.48354,56.7
 C326000,Buchweizen Grieß,Buckwheat semolina,1482,350,65.08,0.016,0,0.97579,0.97579,0,0,1.0183,64.06
-C433100,Braunhirse Mehl,Brown millet flour,1418,337,55.81,0.02033,TR,0.64359,0.64359,<LOD,0,0.73077,55.08
+C433100,Braunhirsemehl,Brown millet flour,1418,337,55.81,0.02033,TR,0.64359,0.64359,<LOD,0,0.73077,55.08
 C534200,"Cerealien extrudiert, gesüßt, ungefüllt, mit Zimtgeschmack, angereichert mit Vitaminen und Mineralstoffen","Extruded cereals sweetened, unfilled, cinnamon flavoured, fortified with vitamins and minerals",1789,424,73.36,0,0,21.94,20.74,1.2,0,23.41,49.95
 E131100,Entenei roh,Duck egg raw,756,182,0.34,0,0,0,0,0,0,0.34,0
 F112600,Apfelsaft angereichert mit Vitamin C,Apple juice fortified with vitamin C,188,44,10.585,6.235,-,1.135,1.135,0,0,9.585,0
@@ -1422,7 +1422,7 @@ D657100,Kathrinchen (Honigteigplätzchen),"""Kathrinchen"" honey gingerbread bis
 G486132,Frühlingszwiebel/Lauchzwiebel (ohne Laub) gekocht,"Spring onion, bulb only, boiled",157,37,6.91,2.09,0,1.704,1.704,0,0,6.91,0
 W217000,Knacker einfach/Schüblinge einfach/Servela einfach,Knacker sausage simple,870,210,0.08,0,0,0,0,0,0,0,0.08
 C558000,Fleischersatz glutenhaltig (Seitan),Meat substitute containing gluten (seitan),834,199,4,0.0625,0,0.325,0.0375,0.2875,0,0.475,3.525
-Y273032,"Kalbsleber mehliert, gebraten","Veal liver floured, fried",594,141,9.2,0.00079,0,0.01405,0.00459,0.00946,0,0.0162,9.18
+Y273032,"Kalbslebermehliert, gebraten","Veal liver floured, fried",594,141,9.2,0.00079,0,0.01405,0.00459,0.00946,0,0.0162,9.18
 B591000,Mehrkornbrötchen,Multigrain roll,1275,302,50,0.1,0,1.5,0.457,1,0,1.8,48
 B8A2000,Brötchen glutenfrei,Roll gluten-free,1284,303,61,0.1,0,0.076,0.076,0,0,2.3,59
 X572712,Grünkohl gedünstet (mit Fett und Salz),Curly kale stewed (with fat and salt),320,77,3.7,0.81,0,0.431,0.429,0.002,0,1.95,1.6

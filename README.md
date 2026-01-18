@@ -42,6 +42,26 @@ This app was developed following the "Privacy by Design" principle:
 - No tracking
 - All data stays exclusively on your device (localStorage)
 
+## Data Source
+
+The food database is based on the **Bundeslebensmittelschlüssel (BLS) 3.02** - the German Federal Food Key, a standardized food composition database.
+
+### Data Processing
+
+The original BLS CSV data is processed with the following transformations:
+
+1. **Filtering**: Only foods with ≥4g carbohydrates per 100g are included
+2. **Exclusions**: Spirits (BLS codes P6xx, P7xx) are excluded
+3. **Grouping**: Similar foods with the same BLS prefix (first 4 characters) and ≤15g KH difference are merged into single entries with subtitles showing variants
+4. **Values**: Grouped entries use median values for KH, kcal, and kJ
+
+To regenerate the food database from updated BLS data:
+
+```bash
+# Place BLS CSV in scripts/bls-data/
+pnpm convert-bls
+```
+
 ## Development
 
 ```bash

@@ -9,6 +9,9 @@
 
 <div class="print-card">
   <div class="print-card-name">{food.name}</div>
+  {#if food.subtitle}
+    <div class="print-card-subtitle">{food.subtitle}</div>
+  {/if}
   <div class="print-card-info">
     {food.kh}g KH / 100{food.unit || 'g'}
   </div>
