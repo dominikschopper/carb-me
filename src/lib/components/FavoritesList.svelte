@@ -25,7 +25,7 @@
   {:else}
     <!-- Favorites grid -->
     <div class="grid gap-3 sm:grid-cols-2">
-      {#each favoriteFoods as food (food.name)}
+      {#each favoriteFoods as food (food.blsCode)}
         <FoodCard {food} onclick={() => onFoodSelect(food)} />
       {/each}
     </div>

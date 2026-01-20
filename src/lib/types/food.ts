@@ -18,7 +18,7 @@ export interface FoodItem {
   isCustom?: boolean; // For user-created foods
   kcal?: number; // Kilocalories per 100g
   kj?: number; // Kilojoules per 100g
-  blsCode?: string; // BLS reference code
+  blsCode: string; // BLS reference code
 }
 
 export interface MealItem {

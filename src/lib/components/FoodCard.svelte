@@ -5,11 +5,11 @@
 
   let { food, onclick }: { food: FoodItem; onclick?: () => void } = $props();
 
-  const isFavorite = $derived(foodStore.favorites.has(food.name));
+  const isFavorite = $derived(foodStore.favorites.has(food.blsCode));
 
   function toggleFavorite(event: MouseEvent) {
     event.stopPropagation();
-    foodStore.toggleFavorite(food.name);
+    foodStore.toggleFavorite(food.blsCode);
   }
 
   function handleCardClick() {

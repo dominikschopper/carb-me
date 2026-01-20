@@ -1,6 +1,7 @@
 import { fuzzySearch, initializeSearch } from '$lib/utils/search';
 import { customFoodsStorage, favoritesStorage } from '$lib/utils/storage';
 import type { FoodItem } from '$lib/types/food';
+import { SvelteSet } from 'svelte/reactivity';
 
 class FoodStore {
   allFoods = $state<FoodItem[]>([]);
@@ -23,7 +24,7 @@ class FoodStore {
   });
 
   favoriteFoods = $derived.by(() => {
-    return [...this.allFoods, ...this.customFoods].filter((f) => this.favorites.has(f.name));
+    return [...this.allFoods, ...this.customFoods].filter((f) => this.favorites.has(f.blsCode));
   });
 
   constructor() {
@@ -52,16 +53,16 @@ class FoodStore {
   loadFromStorage() {
     this.customFoods = customFoodsStorage.get();
     const favoritesArray = favoritesStorage.get();
-    this.favorites = new Set(favoritesArray);
+    this.favorites = new SvelteSet(favoritesArray);
   }
 
-  toggleFavorite(name: string) {
+  toggleFavorite(blsCode: string) {
     // Create new Set to trigger reactivity in Svelte 5
-    const newFavorites = new Set(this.favorites);
-    if (newFavorites.has(name)) {
-      newFavorites.delete(name);
+    const newFavorites = new SvelteSet(this.favorites);
+    if (newFavorites.has(blsCode)) {
+      newFavorites.delete(blsCode);
     } else {
-      newFavorites.add(name);
+      newFavorites.add(blsCode);
     }
     this.favorites = newFavorites;
     this.saveFavorites();
