@@ -1,0 +1,169 @@
+{
+  "prefixes": {
+    "Brot": [
+      "B710700",
+      "B231000",
+      "B131000",
+      "B291000",
+      "B226800",
+      "B227300",
+      "B221000",
+      "B271000",
+      "B277700",
+      "B275700",
+      "B276700",
+      "B121000",
+      "B122000",
+      "B8A4000",
+      "B8A5000",
+      "B8A7000",
+      "B8A6000",
+      "B8A8000",
+      "B107900",
+      "B106000",
+      "B101000",
+      "B8A9000",
+      "B8B3000",
+      "B311000",
+      "B782100",
+      "B257700",
+      "B256000",
+      "B255700",
+      "B251000",
+      "B259000",
+      "B254000",
+      "B314000",
+      "B111000",
+      "B111700",
+      "B111300",
+      "B111400",
+      "B111800",
+      "B111600",
+      "B111500",
+      "B111200",
+      "B309000"
+    ],
+    "Knäckebrot": [
+      "B6A5200",
+      "B6A6000",
+      "B6A4000",
+      "B6A4100",
+      "B6A2100",
+      "B6A3200",
+      "B6A1000",
+      "B6A1100",
+      "B6A1200",
+      "B6A1300",
+      "B6A1400",
+      "B6A1500",
+      "B6A1600"
+    ],
+    "Mehl": [
+      "C421000",
+      "C424000",
+      "C235000",
+      "C234000",
+      "C241000",
+      "C240000",
+      "C219000",
+      "C443000",
+      "C453000",
+      "C221000",
+      "C223100",
+      "C211000",
+      "C213100",
+      "C214100"
+    ],
+    "Milch": [
+      "M113200",
+      "M1A3100",
+      "M1A5200",
+      "M1A7300",
+      "M114200",
+      "M112300",
+      "M111300"
+    ]
+  },
+  "mergeGroups": [
+    {
+      "name": "Roggenbrot",
+      "blsCodes": ["B221000", "B226800", "B227300"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Roggenmischbrot",
+      "blsCodes": ["B271000", "B275700", "B276700", "B277700"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Weizenmischbrot",
+      "blsCodes": ["B251000", "B255700", "B256000", "B257700"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Vollkornbrot",
+      "blsCodes": ["B101000", "B106000", "B107900"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Roggenbrötchen",
+      "blsCodes": ["B521100", "B526300"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Roggenvollkornbrötchen",
+      "blsCodes": ["B421000", "B426800"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Roggenvollkornbrot",
+      "blsCodes": ["B121000", "B122000"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Vollkornbrötchen",
+      "blsCodes": ["B401000", "B406000"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Weizenbrötchen",
+      "blsCodes": ["B511000", "B516300"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Weizenvollkornbrötchen",
+      "blsCodes": ["B411000", "B416000"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Weizenmehl",
+      "blsCodes": ["C213100", "C214100"],
+      "subtitle": "Type 405, 550, 1050"
+    },
+    {
+      "name": "Weizenvollkornknäckebrot",
+      "blsCodes": ["B6A1100", "B6A1200", "B6A1300", "B6A1400", "B6A1500", "B6A1600"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Roggenvollkornknäckebrot",
+      "blsCodes": ["B6A2100", "B6A3200"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "H-Milch fettarm laktosefrei",
+      "blsCodes": ["M1A3100", "M1A5200", "M1A7300", "M114200"],
+      "subtitle": "verschiedene Fettstufen"
+    },
+    {
+      "name": "Weizenvollkornbrot",
+      "blsCodes": ["B111000", "B111700", "B111300", "B111400", "B111800", "B111600", "B111500"],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Sauerteigbrot glutenfrei",
+      "blsCodes": ["B8A4000", "B8A5000", "B8A7000", "B8A6000"],
+      "subtitle": "verschiedene Varianten"
+    }
+  ]
+}

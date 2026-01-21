@@ -6,7 +6,7 @@ import { SvelteSet } from 'svelte/reactivity';
 class FoodStore {
   allFoods = $state<FoodItem[]>([]);
   customFoods = $state<FoodItem[]>([]);
-  favorites = $state<Set<string>>(new Set());
+  favorites = $state<SvelteSet<string>>(new SvelteSet());
   searchQuery = $state('');
   isLoading = $state(true);
 

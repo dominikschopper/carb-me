@@ -26,7 +26,7 @@
       "gKHE": 189,
       "categories": [
         [
-          "Alkoholische Getränke", "Bier"
+          "Alkoholische Getränke"
         ]
       ],
       "tags": [
@@ -314,8 +314,7 @@
       "gKHE": 157,
       "categories": [
         [
-          "Alkoholische Getränke",
-          "Bier"
+          "Alkoholische Getränke"
         ]
       ],
       "tags": [
@@ -481,14 +480,13 @@
       "unit": "ml"
     },
     {
-      "name": "Weizenbier/Hefeweizen",
+      "name": "Hefeweizen/Weizenbier",
       "kh": 5.3,
       "gBE": 226,
       "gKHE": 189,
       "categories": [
         [
-          "Alkoholische Getränke",
-          "Bier"
+          "Alkoholische Getränke"
         ]
       ],
       "tags": [
@@ -603,8 +601,7 @@
       "gKHE": 227,
       "categories": [
         [
-          "Alkoholische Getränke",
-          "Bier"
+          "Alkoholische Getränke"
         ]
       ],
       "tags": [
@@ -661,8 +658,7 @@
       "gKHE": 174,
       "categories": [
         [
-          "Alkoholische Getränke",
-          "Bier"
+          "Alkoholische Getränke"
         ]
       ],
       "tags": [
@@ -890,8 +886,7 @@
       "gKHE": 163,
       "categories": [
         [
-          "Alkoholische Getränke",
-          "Bier"
+          "Alkoholische Getränke"
         ]
       ],
       "tags": [
@@ -941,6 +936,374 @@
       "blsCode": "B8A1000"
     },
     {
+      "name": "Brot: Dinkelbrot",
+      "kh": 41,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 247,
+      "kj": 1041,
+      "blsCode": "B710700+B710500+B710800+B710600+B710900",
+      "subtitle": "mit Nüssen, mit Ölsamen, mit Kürbiskernen, mit Sonnenblumenkernen"
+    },
+    {
+      "name": "Brot: Haferbrot",
+      "kh": 39,
+      "gBE": 31,
+      "gKHE": 26,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 212,
+      "kj": 897,
+      "blsCode": "B231000"
+    },
+    {
+      "name": "Brot: Hafervollkornbrot",
+      "kh": 34,
+      "gBE": 35,
+      "gKHE": 29,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 194,
+      "kj": 817,
+      "blsCode": "B131000"
+    },
+    {
+      "name": "Brot: Mehrkornbrot mit Ölsamen",
+      "kh": 42,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 248,
+      "kj": 1044,
+      "blsCode": "B291000"
+    },
+    {
+      "name": "Brot: Roggenbrot",
+      "kh": 40,
+      "gBE": 30,
+      "gKHE": 25,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 220,
+      "kj": 931,
+      "blsCode": "B226800+B226500+B226700+B226000+B227300+B227700+B221000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Brot: Roggenmischbrot",
+      "kh": 42,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 220,
+      "kj": 931,
+      "blsCode": "B271000+B277700+B277300+B275700+B275500+B276700+B276500+B276000+B276800",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Brot: Roggenvollkornbrot",
+      "kh": 32.7,
+      "gBE": 37,
+      "gKHE": 31,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 200,
+      "kj": 842,
+      "blsCode": "B121000+B121200+B121300+B121600+B121500+B121100+B121400+B122000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Brot: Sauerteigbrot glutenfrei",
+      "kh": 30.8,
+      "gBE": 39,
+      "gKHE": 33,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 230,
+      "kj": 966,
+      "blsCode": "B8A7000+B8A6000+B8A4000+B8A5000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Brot: Toastbrot",
+      "kh": 49,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 246,
+      "kj": 1040,
+      "blsCode": "B8A8000+B8A8072",
+      "subtitle": "glutenfrei, glutenfrei, getoastet"
+    },
+    {
+      "name": "Brot: Vollkornbrot",
+      "kh": 38,
+      "gBE": 32,
+      "gKHE": 26,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 213,
+      "kj": 896,
+      "blsCode": "B107900+B107300+B106000+B106500+B106700+B106800+B101000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Brot: Vollkornbrot glutenfrei",
+      "kh": 32,
+      "gBE": 38,
+      "gKHE": 31,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 227,
+      "kj": 952,
+      "blsCode": "B8A9000"
+    },
+    {
+      "name": "Brot: Vollkornknusperbrot",
+      "kh": 63.7,
+      "gBE": 19,
+      "gKHE": 16,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 348,
+      "kj": 1466,
+      "blsCode": "B8B3000"
+    },
+    {
+      "name": "Brot: Weißbrot glutenfrei",
+      "kh": 45,
+      "gBE": 27,
+      "gKHE": 22,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 224,
+      "kj": 946,
+      "blsCode": "B309000"
+    },
+    {
+      "name": "Brot: Weizenbrot/Weißbrot",
+      "kh": 50.5,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 272,
+      "kj": 1152,
+      "blsCode": "B311000"
+    },
+    {
+      "name": "Brot: Weizenfladenbrot",
+      "kh": 47,
+      "gBE": 26,
+      "gKHE": 21,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 248,
+      "kj": 1050,
+      "blsCode": "B782100"
+    },
+    {
+      "name": "Brot: Weizenmischbrot",
+      "kh": 41.3,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 220,
+      "kj": 930,
+      "blsCode": "B257700+B257300+B256000+B256500+B256700+B255700+B255500+B251000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Brot: Weizenmischbrot mit Kürbiskernen",
+      "kh": 41,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 238,
+      "kj": 1005,
+      "blsCode": "B259000"
+    },
+    {
+      "name": "Brot: Weizenmischtoastbrot",
+      "kh": 49.5,
+      "gBE": 24,
+      "gKHE": 20,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 272,
+      "kj": 1148,
+      "blsCode": "B254000+B254072",
+      "subtitle": "getoastet"
+    },
+    {
+      "name": "Brot: Weizentoastbrot/Buttertoastbrot",
+      "kh": 52,
+      "gBE": 23,
+      "gKHE": 19,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 301,
+      "kj": 1268,
+      "blsCode": "B314000+B314100+B314200+B314072+B314172+B314272",
+      "subtitle": "Weizentoastbrot/Buttertoastbrot, Weizentoastbrot mit Roggen, Mehrkorntoastbrot mit Ölsamen, Weizentoastbrot/Buttertoastbrot, getoastet, Weizentoastbrot mit Roggen, getoastet, Mehrkorntoastbrot mit Ölsamen, getoastet"
+    },
+    {
+      "name": "Brot: Weizenvollkornbrot",
+      "kh": 38,
+      "gBE": 32,
+      "gKHE": 26,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 235,
+      "kj": 991,
+      "blsCode": "B111400+B111600+B111700+B111500+B111300+B111800+B111000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Brot: Weizenvollkorntoastbrot",
+      "kh": 41,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 249,
+      "kj": 1048,
+      "blsCode": "B111200"
+    },
+    {
       "name": "Brötchen glutenfrei",
       "kh": 61,
       "gBE": 20,
@@ -975,24 +1338,6 @@
       "blsCode": "B8A3000"
     },
     {
-      "name": "Brot: Dinkelbrot",
-      "kh": 41,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 247,
-      "kj": 1041,
-      "blsCode": "B710700+B710500+B710800+B710600+B710900",
-      "subtitle": "mit Nüssen, mit Ölsamen, mit Kürbiskernen, mit Sonnenblumenkernen"
-    },
-    {
       "name": "Dinkelbrötchen",
       "kh": 50,
       "gBE": 24,
@@ -1011,7 +1356,7 @@
       "subtitle": "mit Ölsamen, mit Kürbiskernen, mit Sonnenblumenkernen, mit Nüssen"
     },
     {
-      "name": "Brot: Dinkelknusperbrot",
+      "name": "Dinkelknusperbrot",
       "kh": 69.3,
       "gBE": 17,
       "gKHE": 14,
@@ -1063,24 +1408,6 @@
       "subtitle": "mit Ölsamen, mit Sonnenblumenkernen, mit Kürbiskernen, mit Nüssen"
     },
     {
-      "name": "Brot: Dinkelvollkornknäckebrot",
-      "kh": 45,
-      "gBE": 27,
-      "gKHE": 22,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 424,
-      "kj": 1775,
-      "blsCode": "B6A5200+B6A5100+B6A5000",
-      "subtitle": "mit Ölsamen und Hartkäse, mit Ölsamen, mit Müslizutaten, gesüßt"
-    },
-    {
       "name": "Eiweißbrot/Proteinbrot",
       "kh": 13.5,
       "gBE": 89,
@@ -1097,23 +1424,6 @@
       "kj": 1160,
       "blsCode": "B881100+B881200",
       "subtitle": "Eiweißbrot/Proteinbrot, Eiweißbrötchen/Proteinbrötchen"
-    },
-    {
-      "name": "Brot: Haferbrot",
-      "kh": 39,
-      "gBE": 31,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 212,
-      "kj": 897,
-      "blsCode": "B231000"
     },
     {
       "name": "Haferbrötchen",
@@ -1133,24 +1443,7 @@
       "blsCode": "B531000"
     },
     {
-      "name": "Brot: Hafervollkornbrot",
-      "kh": 34,
-      "gBE": 35,
-      "gKHE": 29,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 194,
-      "kj": 817,
-      "blsCode": "B131000"
-    },
-    {
-      "name": "Brot: Hirsebrot glutenfrei",
+      "name": "Hirsebrot glutenfrei",
       "kh": 37.2,
       "gBE": 32,
       "gKHE": 27,
@@ -1167,7 +1460,7 @@
       "blsCode": "B717000"
     },
     {
-      "name": "Brot: Kastanienbrot glutenfrei",
+      "name": "Kastanienbrot glutenfrei",
       "kh": 45,
       "gBE": 27,
       "gKHE": 22,
@@ -1184,7 +1477,25 @@
       "blsCode": "B718000"
     },
     {
-      "name": "Brot: Knäckebrot glutenfrei, laktosefrei",
+      "name": "Knäckebrot: Dinkelvollkornknäckebrot",
+      "kh": 45,
+      "gBE": 27,
+      "gKHE": 22,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 424,
+      "kj": 1775,
+      "blsCode": "B6A5200+B6A5100+B6A5000",
+      "subtitle": "mit Ölsamen und Hartkäse, mit Ölsamen, mit Müslizutaten, gesüßt"
+    },
+    {
+      "name": "Knäckebrot: Knäckebrot glutenfrei, laktosefrei",
       "kh": 71,
       "gBE": 17,
       "gKHE": 14,
@@ -1201,7 +1512,94 @@
       "blsCode": "B6A6000"
     },
     {
-      "name": "Brot: Knusperbrot glutenfrei",
+      "name": "Knäckebrot: Mehrkornvollkornknäckebrot",
+      "kh": 60,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 339,
+      "kj": 1429,
+      "blsCode": "B6A4000"
+    },
+    {
+      "name": "Knäckebrot: Mehrkornvollkornknäckebrot mit Ölsamen",
+      "kh": 43,
+      "gBE": 28,
+      "gKHE": 23,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 415,
+      "kj": 1736,
+      "blsCode": "B6A4100"
+    },
+    {
+      "name": "Knäckebrot: Roggenvollkornknäckebrot",
+      "kh": 56.5,
+      "gBE": 21,
+      "gKHE": 18,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 341,
+      "kj": 1433,
+      "blsCode": "B6A2100+B6A2300+B6A2800+B6A2500+B6A2600+B6A2900+B6A2400+B6A2700+B6A2000+B6A2200+B6A3200+B6A3000+B6A3100",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Knäckebrot: Weizenknäckebrot mit Sesam",
+      "kh": 62,
+      "gBE": 19,
+      "gKHE": 16,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 405,
+      "kj": 1706,
+      "blsCode": "B6A1000"
+    },
+    {
+      "name": "Knäckebrot: Weizenvollkornknäckebrot",
+      "kh": 47,
+      "gBE": 26,
+      "gKHE": 21,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 431,
+      "kj": 1803,
+      "blsCode": "B6A1500+B6A1200+B6A1300+B6A1400+B6A1600+B6A1100",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Knusperbrot glutenfrei",
       "kh": 73.6,
       "gBE": 16,
       "gKHE": 14,
@@ -1236,23 +1634,6 @@
       "subtitle": "mit Sesam, mit Käse, mit Kürbiskernen, (Hagelsalz entfernt), mit Sonnenblumenkernen, mit Hagelsalz, mit Käse und Schinkenspeck"
     },
     {
-      "name": "Brot: Mehrkornbrot mit Ölsamen",
-      "kh": 42,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 248,
-      "kj": 1044,
-      "blsCode": "B291000"
-    },
-    {
       "name": "Mehrkornbrötchen",
       "kh": 50,
       "gBE": 24,
@@ -1270,7 +1651,7 @@
       "blsCode": "B591000"
     },
     {
-      "name": "Brot: Mehrkornknusperbrot angereichert mit Vitaminen und Spurenelementen",
+      "name": "Mehrkornknusperbrot angereichert mit Vitaminen und Spurenelementen",
       "kh": 66.4,
       "gBE": 18,
       "gKHE": 15,
@@ -1285,40 +1666,6 @@
       "kcal": 353,
       "kj": 1492,
       "blsCode": "B8B1000"
-    },
-    {
-      "name": "Brot: Mehrkornvollkornknäckebrot",
-      "kh": 60,
-      "gBE": 20,
-      "gKHE": 17,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 339,
-      "kj": 1429,
-      "blsCode": "B6A4000"
-    },
-    {
-      "name": "Brot: Mehrkornvollkornknäckebrot mit Ölsamen",
-      "kh": 43,
-      "gBE": 28,
-      "gKHE": 23,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 415,
-      "kj": 1736,
-      "blsCode": "B6A4100"
     },
     {
       "name": "Paniermehl glutenfrei",
@@ -1372,62 +1719,9 @@
       "blsCode": "B780500"
     },
     {
-      "name": "Brot: Roggenbrot",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 224,
-      "kj": 944,
-      "blsCode": "B226800+B226500+B226700+B226000",
-      "subtitle": "mit Nüssen, mit Sonnenblumenkernen, mit Kürbiskernen, mit Ölsamen"
-    },
-    {
-      "name": "Brot: Roggenbrot",
-      "kh": 40,
-      "gBE": 30,
-      "gKHE": 25,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 210,
-      "kj": 886,
-      "blsCode": "B227300+B227700",
-      "subtitle": "mit Buttermilch, mit Quark"
-    },
-    {
-      "name": "Brot: Roggenbrot",
-      "kh": 43,
-      "gBE": 28,
-      "gKHE": 23,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 220,
-      "kj": 931,
-      "blsCode": "B221000"
-    },
-    {
       "name": "Roggenbrötchen",
-      "kh": 45,
-      "gBE": 27,
+      "kh": 46.5,
+      "gBE": 26,
       "gKHE": 22,
       "categories": [
         [
@@ -1437,31 +1731,13 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 281,
-      "kj": 1182,
-      "blsCode": "B526300+B526000+B526700+B526500+B526400",
-      "subtitle": "mit Sesam, mit Ölsamen, mit Kürbiskernen, mit Sonnenblumenkernen, mit Mohn"
+      "kcal": 276,
+      "kj": 1160,
+      "blsCode": "B526300+B526000+B526700+B526500+B526400+B521100+B521000+B521200",
+      "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Roggenbrötchen",
-      "kh": 48,
-      "gBE": 25,
-      "gKHE": 21,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 270,
-      "kj": 1138,
-      "blsCode": "B521100+B521000+B521200",
-      "subtitle": "mit Kümmel und Salz, mit Schinkenspeck"
-    },
-    {
-      "name": "Brot: Roggenknusperbrot",
+      "name": "Roggenknusperbrot",
       "kh": 66.4,
       "gBE": 18,
       "gKHE": 15,
@@ -1478,99 +1754,10 @@
       "blsCode": "B8B2000"
     },
     {
-      "name": "Brot: Roggenmischbrot",
-      "kh": 42,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 218,
-      "kj": 923,
-      "blsCode": "B271000"
-    },
-    {
-      "name": "Brot: Roggenmischbrot",
-      "kh": 43,
-      "gBE": 28,
-      "gKHE": 23,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 222,
-      "kj": 939,
-      "blsCode": "B277700+B277300",
-      "subtitle": "mit Quark, mit Buttermilch"
-    },
-    {
-      "name": "Brot: Roggenmischbrot",
-      "kh": 42,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 218,
-      "kj": 921,
-      "blsCode": "B275700+B275500",
-      "subtitle": "mit Kümmel, mit Zwiebeln"
-    },
-    {
-      "name": "Brot: Roggenmischbrot",
-      "kh": 41,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 237,
-      "kj": 1001,
-      "blsCode": "B276700+B276500+B276000+B276800",
-      "subtitle": "mit Kürbiskernen, mit Sonnenblumenkernen, mit Ölsamen, mit Nüssen"
-    },
-    {
-      "name": "Brot: Roggenvollkornbrot",
-      "kh": 33,
-      "gBE": 36,
-      "gKHE": 30,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 207,
-      "kj": 871,
-      "blsCode": "B121000+B121200+B121300+B121600+B121500+B121100+B121400",
-      "subtitle": "mit Nüssen, mit Ölsamen, mit Quark, mit Buttermilch, mit Kürbiskernen, mit Sonnenblumenkernen"
-    },
-    {
       "name": "Roggenvollkornbrötchen",
-      "kh": 43,
-      "gBE": 28,
-      "gKHE": 23,
+      "kh": 41.5,
+      "gBE": 29,
+      "gKHE": 24,
       "categories": [
         [
           "Brot & Backwaren"
@@ -1579,83 +1766,13 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 256,
-      "kj": 1075,
-      "blsCode": "B421000"
+      "kcal": 262,
+      "kj": 1101,
+      "blsCode": "B421000+B426800+B426000+B426700+B426500",
+      "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Roggenvollkornbrötchen",
-      "kh": 40,
-      "gBE": 30,
-      "gKHE": 25,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 269,
-      "kj": 1127,
-      "blsCode": "B426800+B426000+B426700+B426500",
-      "subtitle": "mit Nüssen, mit Ölsamen, mit Kürbiskernen, mit Sonnenblumenkernen"
-    },
-    {
-      "name": "Brot: Roggenvollkornknäckebrot",
-      "kh": 59.3,
-      "gBE": 20,
-      "gKHE": 17,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 332,
-      "kj": 1397,
-      "blsCode": "B6A2100+B6A2300+B6A2800+B6A2500+B6A2600+B6A2900+B6A2400+B6A2700+B6A2000+B6A2200",
-      "subtitle": "Roggenvollkornknäckebrot, Roggenvollkornknäckebrot mit Milch, Roggenvollkornknäckebrot mit Kürbiskernen, Roggenvollkornknäckebrot mit Gerstenmalz, Roggenvollkornknäckebrot mit Kleie und Ölsamen, Roggenvollkornknäckebrot mit Leinsamen und Weizenkeimen, Roggenvollkornknäckebrot mit Dinkel, Roggenvollkornknäckebrot mit Kümmel, Roggenknäckebrot, Roggenvollkornknäckebrot mit Buttermilch"
-    },
-    {
-      "name": "Brot: Roggenvollkornknäckebrot",
-      "kh": 53.8,
-      "gBE": 22,
-      "gKHE": 19,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 350,
-      "kj": 1469,
-      "blsCode": "B6A3200+B6A3000+B6A3100",
-      "subtitle": "mit Sonnenblumenkernen, mit Ölsamen, mit Sesam"
-    },
-    {
-      "name": "Brot: Roggenvollkornschrotbrot",
-      "kh": 32.5,
-      "gBE": 37,
-      "gKHE": 31,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 193,
-      "kj": 812,
-      "blsCode": "B122000"
-    },
-    {
-      "name": "Brot: Rosinenbrot glutenfrei",
+      "name": "Rosinenbrot glutenfrei",
       "kh": 51,
       "gBE": 24,
       "gKHE": 20,
@@ -1672,165 +1789,9 @@
       "blsCode": "B719000"
     },
     {
-      "name": "Brot: Sauerteigbrot glutenfrei",
-      "kh": 34.4,
-      "gBE": 35,
-      "gKHE": 29,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 180,
-      "kj": 760,
-      "blsCode": "B8A4000"
-    },
-    {
-      "name": "Brot: Sauerteigbrot mit Kürbiskernen, glutenfrei",
-      "kh": 30.6,
-      "gBE": 39,
-      "gKHE": 33,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 234,
-      "kj": 982,
-      "blsCode": "B8A5000"
-    },
-    {
-      "name": "Brot: Sauerteigbrot mit Ölsamen, glutenfrei",
-      "kh": 30.6,
-      "gBE": 39,
-      "gKHE": 33,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 229,
-      "kj": 961,
-      "blsCode": "B8A6000"
-    },
-    {
-      "name": "Brot: Sauerteigbrot mit Sonnenblumenkernen, glutenfrei",
-      "kh": 30.9,
-      "gBE": 39,
-      "gKHE": 32,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 231,
-      "kj": 971,
-      "blsCode": "B8A7000"
-    },
-    {
-      "name": "Brot: Toastbrot",
-      "kh": 49,
-      "gBE": 24,
-      "gKHE": 20,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 246,
-      "kj": 1040,
-      "blsCode": "B8A8000+B8A8072",
-      "subtitle": "glutenfrei, glutenfrei, getoastet"
-    },
-    {
-      "name": "Brot: Vollkornbrot",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 213,
-      "kj": 896,
-      "blsCode": "B107900+B107300",
-      "subtitle": "mit Quark, mit Buttermilch"
-    },
-    {
-      "name": "Brot: Vollkornbrot",
-      "kh": 37,
-      "gBE": 32,
-      "gKHE": 27,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 231,
-      "kj": 971,
-      "blsCode": "B106000+B106500+B106700+B106800",
-      "subtitle": "mit Ölsamen, mit Sonnenblumenkernen, mit Kürbiskernen, mit Nüssen"
-    },
-    {
-      "name": "Brot: Vollkornbrot",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 210,
-      "kj": 885,
-      "blsCode": "B101000"
-    },
-    {
-      "name": "Brot: Vollkornbrot glutenfrei",
-      "kh": 32,
-      "gBE": 38,
-      "gKHE": 31,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 227,
-      "kj": 952,
-      "blsCode": "B8A9000"
-    },
-    {
       "name": "Vollkornbrötchen",
-      "kh": 45,
-      "gBE": 27,
+      "kh": 46.5,
+      "gBE": 26,
       "gKHE": 22,
       "categories": [
         [
@@ -1840,61 +1801,10 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 296,
-      "kj": 1245,
-      "blsCode": "B406000+B406700+B406800+B406500",
-      "subtitle": "mit Ölsamen, mit Kürbiskernen, mit Nüssen, mit Sonnenblumenkernen"
-    },
-    {
-      "name": "Vollkornbrötchen",
-      "kh": 48,
-      "gBE": 25,
-      "gKHE": 21,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 282,
-      "kj": 1191,
-      "blsCode": "B401000"
-    },
-    {
-      "name": "Brot: Vollkornknusperbrot",
-      "kh": 63.7,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 348,
-      "kj": 1466,
-      "blsCode": "B8B3000"
-    },
-    {
-      "name": "Brot: Weißbrot glutenfrei",
-      "kh": 45,
-      "gBE": 27,
-      "gKHE": 22,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 224,
-      "kj": 946,
-      "blsCode": "B309000"
+      "kcal": 289,
+      "kj": 1218,
+      "blsCode": "B406000+B406700+B406800+B406500+B401000",
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weizenbaguette",
@@ -1948,23 +1858,6 @@
       "blsCode": "B781300"
     },
     {
-      "name": "Brot: Weizenbrot/Weißbrot",
-      "kh": 50.5,
-      "gBE": 24,
-      "gKHE": 20,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 272,
-      "kj": 1152,
-      "blsCode": "B311000"
-    },
-    {
       "name": "Weizenbrötchen",
       "kh": 55,
       "gBE": 22,
@@ -1977,28 +1870,10 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 291,
-      "kj": 1229,
-      "blsCode": "B511000+B511100+B511200",
-      "subtitle": "mit Kümmel und Salz, mit Schinkenspeck"
-    },
-    {
-      "name": "Weizenbrötchen",
-      "kh": 55,
-      "gBE": 22,
-      "gKHE": 18,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 299,
-      "kj": 1263,
-      "blsCode": "B516300+B516700+B516400+B516500+B516000",
-      "subtitle": "mit Sesam, mit Kürbiskernen, mit Mohn, mit Sonnenblumenkernen, mit Ölsamen"
+      "kcal": 295,
+      "kj": 1246,
+      "blsCode": "B511000+B511100+B511200+B516300+B516700+B516400+B516500+B516000",
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weizenbrötchen mit Quark",
@@ -2035,41 +1910,7 @@
       "blsCode": "B515500"
     },
     {
-      "name": "Brot: Weizenfladenbrot",
-      "kh": 47,
-      "gBE": 26,
-      "gKHE": 21,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 248,
-      "kj": 1050,
-      "blsCode": "B782100"
-    },
-    {
-      "name": "Weizenknäckebrot mit Sesam",
-      "kh": 62,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 405,
-      "kj": 1706,
-      "blsCode": "B6A1000"
-    },
-    {
-      "name": "Brot: Weizenknusperbrot",
+      "name": "Weizenknusperbrot",
       "kh": 71.2,
       "gBE": 17,
       "gKHE": 14,
@@ -2086,7 +1927,7 @@
       "blsCode": "B8B4000"
     },
     {
-      "name": "Brot: Weizenknusperbrot (mit Butter)",
+      "name": "Weizenknusperbrot (mit Butter)",
       "kh": 71.8,
       "gBE": 17,
       "gKHE": 14,
@@ -2101,94 +1942,6 @@
       "kcal": 398,
       "kj": 1681,
       "blsCode": "B8B5000"
-    },
-    {
-      "name": "Brot: Weizenmischbrot",
-      "kh": 43,
-      "gBE": 28,
-      "gKHE": 23,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 223,
-      "kj": 944,
-      "blsCode": "B257700+B257300",
-      "subtitle": "mit Quark, mit Buttermilch"
-    },
-    {
-      "name": "Brot: Weizenmischbrot",
-      "kh": 41,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 237,
-      "kj": 999,
-      "blsCode": "B256000+B256500+B256700",
-      "subtitle": "mit Ölsamen, mit Sonnenblumenkernen, mit Nüssen"
-    },
-    {
-      "name": "Brot: Weizenmischbrot",
-      "kh": 41.5,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 217,
-      "kj": 917,
-      "blsCode": "B255700+B255500",
-      "subtitle": "mit Kümmel, mit Zwiebeln"
-    },
-    {
-      "name": "Brot: Weizenmischbrot",
-      "kh": 37.3,
-      "gBE": 32,
-      "gKHE": 27,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 207,
-      "kj": 874,
-      "blsCode": "B251000"
-    },
-    {
-      "name": "Brot: Weizenmischbrot mit Kürbiskernen",
-      "kh": 41,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 238,
-      "kj": 1005,
-      "blsCode": "B259000"
     },
     {
       "name": "Weizenmischbrötchen",
@@ -2207,42 +1960,6 @@
       "kj": 1234,
       "blsCode": "B551200+B551000+B551500+B551300+B551600+B551400+B551100+B551700+B551800",
       "subtitle": "mit Mohn, mit Sonnenblumenkernen, mit Ölsamen, mit Kümmel und Salz, mit Sesam, mit Kürbiskernen, mit Schinkenspeck, mit Zwiebeln"
-    },
-    {
-      "name": "Brot: Weizenmischtoastbrot",
-      "kh": 49.5,
-      "gBE": 24,
-      "gKHE": 20,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 272,
-      "kj": 1148,
-      "blsCode": "B254000+B254072",
-      "subtitle": "getoastet"
-    },
-    {
-      "name": "Brot: Weizentoastbrot/Buttertoastbrot",
-      "kh": 52,
-      "gBE": 23,
-      "gKHE": 19,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 301,
-      "kj": 1268,
-      "blsCode": "B314000+B314100+B314200+B314072+B314172+B314272",
-      "subtitle": "Weizentoastbrot/Buttertoastbrot, Weizentoastbrot mit Roggen, Mehrkorntoastbrot mit Ölsamen, Weizentoastbrot/Buttertoastbrot, getoastet, Weizentoastbrot mit Roggen, getoastet, Mehrkorntoastbrot mit Ölsamen, getoastet"
     },
     {
       "name": "Weizentortilla",
@@ -2279,230 +1996,8 @@
       "blsCode": "B781500"
     },
     {
-      "name": "Brot: Weizenvollkornbrot",
-      "kh": 31.9,
-      "gBE": 38,
-      "gKHE": 31,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 180,
-      "kj": 760,
-      "blsCode": "B111000"
-    },
-    {
-      "name": "Brot: Weizenvollkornbrot mit Buttermilch",
-      "kh": 40,
-      "gBE": 30,
-      "gKHE": 25,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 222,
-      "kj": 937,
-      "blsCode": "B111700"
-    },
-    {
-      "name": "Brot: Weizenvollkornbrot mit Kürbiskernen",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 237,
-      "kj": 999,
-      "blsCode": "B111300"
-    },
-    {
-      "name": "Brot: Weizenvollkornbrot mit Nüssen",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 242,
-      "kj": 1018,
-      "blsCode": "B111400"
-    },
-    {
-      "name": "Brot: Weizenvollkornbrot mit Ölsamen",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 235,
-      "kj": 991,
-      "blsCode": "B111500"
-    },
-    {
-      "name": "Brot: Weizenvollkornbrot mit Quark",
-      "kh": 40,
-      "gBE": 30,
-      "gKHE": 25,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 223,
-      "kj": 944,
-      "blsCode": "B111800"
-    },
-    {
-      "name": "Brot: Weizenvollkornbrot mit Sonnenblumenkernen",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 236,
-      "kj": 993,
-      "blsCode": "B111600"
-    },
-    {
       "name": "Weizenvollkornbrötchen",
-      "kh": 45.5,
-      "gBE": 26,
-      "gKHE": 22,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 300,
-      "kj": 1262,
-      "blsCode": "B416000+B416700+B416500+B416800",
-      "subtitle": "mit Ölsamen, mit Kürbiskernen, mit Sonnenblumenkernen, mit Nüssen"
-    },
-    {
-      "name": "Weizenvollkornbrötchen",
-      "kh": 49,
-      "gBE": 24,
-      "gKHE": 20,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 288,
-      "kj": 1214,
-      "blsCode": "B411000"
-    },
-    {
-      "name": "Weizenvollkornknäckebrot mit Käse, Ölsamen und Tomaten",
-      "kh": 49,
-      "gBE": 24,
-      "gKHE": 20,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 410,
-      "kj": 1721,
-      "blsCode": "B6A1100"
-    },
-    {
-      "name": "Weizenvollkornknäckebrot mit Müslizutaten, gesüßt",
-      "kh": 50,
-      "gBE": 24,
-      "gKHE": 20,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 438,
-      "kj": 1835,
-      "blsCode": "B6A1200"
-    },
-    {
-      "name": "Weizenvollkornknäckebrot mit Ölsamen",
-      "kh": 40,
-      "gBE": 30,
-      "gKHE": 25,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 433,
-      "kj": 1808,
-      "blsCode": "B6A1300"
-    },
-    {
-      "name": "Weizenvollkornknäckebrot mit Ölsamen und Hartkäse",
-      "kh": 39,
-      "gBE": 31,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 442,
-      "kj": 1849,
-      "blsCode": "B6A1400"
-    },
-    {
-      "name": "Weizenvollkornknäckebrot mit Ölsamen, Hartkäse und Möhre",
-      "kh": 48,
+      "kh": 47.3,
       "gBE": 25,
       "gKHE": 21,
       "categories": [
@@ -2513,46 +2008,13 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 417,
-      "kj": 1749,
-      "blsCode": "B6A1500"
+      "kcal": 294,
+      "kj": 1238,
+      "blsCode": "B416000+B416700+B416500+B416800+B411000",
+      "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Weizenvollkornknäckebrot mit Ölsamen, Hartkäse und Zwiebeln",
-      "kh": 46,
-      "gBE": 26,
-      "gKHE": 22,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 429,
-      "kj": 1798,
-      "blsCode": "B6A1600"
-    },
-    {
-      "name": "Brot: Weizenvollkorntoastbrot",
-      "kh": 41,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 249,
-      "kj": 1048,
-      "blsCode": "B111200"
-    },
-    {
-      "name": "Brot: Weizenvollkorntoastbrot getoastet",
+      "name": "Weizenvollkorntoastbrot getoastet",
       "kh": 48,
       "gBE": 25,
       "gKHE": 21,
@@ -2875,7 +2337,7 @@
       "blsCode": "X551363"
     },
     {
-      "name": "Auberginenscheiben im Backteig frittiert",
+      "name": "Auberginenscheiben im Backteig (mit Bier) frittiert",
       "kh": 20.5,
       "gBE": 59,
       "gKHE": 49,
@@ -3521,7 +2983,7 @@
       "blsCode": "X531413"
     },
     {
-      "name": "Blumenkohl im Backteig frittiert",
+      "name": "Blumenkohl im Backteig (mit Bier) frittiert",
       "kh": 21.4,
       "gBE": 56,
       "gKHE": 47,
@@ -3844,7 +3306,7 @@
       "blsCode": "X532142"
     },
     {
-      "name": "Broccoli im Backteig frittiert",
+      "name": "Broccoli im Backteig (mit Bier) frittiert",
       "kh": 17.7,
       "gBE": 68,
       "gKHE": 56,
@@ -4286,7 +3748,7 @@
       "blsCode": "X511043"
     },
     {
-      "name": "Champignons im Backteig frittiert",
+      "name": "Champignons im Backteig (mit Bier) frittiert",
       "kh": 17.7,
       "gBE": 68,
       "gKHE": 56,
@@ -7839,7 +7301,7 @@
       "blsCode": "X363143"
     },
     {
-      "name": "Karotten im Backteig frittiert",
+      "name": "Karotten im Backteig (mit Bier) frittiert",
       "kh": 20.8,
       "gBE": 58,
       "gKHE": 48,
@@ -14129,7 +13591,7 @@
       "blsCode": "X2A1150"
     },
     {
-      "name": "Selleriescheiben im Backteig frittiert",
+      "name": "Selleriescheiben im Backteig (mit Bier) frittiert",
       "kh": 19.3,
       "gBE": 62,
       "gKHE": 52,
@@ -16356,7 +15818,7 @@
       "blsCode": "X548443"
     },
     {
-      "name": "Zwiebelringe im Backteig frittiert",
+      "name": "Zwiebelringe im Backteig (mit Bier) frittiert",
       "kh": 20.2,
       "gBE": 59,
       "gKHE": 50,
@@ -18039,7 +17501,7 @@
       "blsCode": "Y997043"
     },
     {
-      "name": "Entenfleisch im Backteig frittiert",
+      "name": "Entenfleisch im Backteig (mit Bier) frittiert",
       "kh": 15.2,
       "gBE": 79,
       "gKHE": 66,
@@ -19909,7 +19371,7 @@
       "blsCode": "Y621922"
     },
     {
-      "name": "Kabeljaufilet im Backteig frittiert",
+      "name": "Kabeljaufilet im Backteig (mit Bier) frittiert",
       "kh": 12.8,
       "gBE": 93,
       "gKHE": 78,
@@ -20215,7 +19677,7 @@
       "blsCode": "Y860453"
     },
     {
-      "name": "Karpfen im Backteig frittiert",
+      "name": "Karpfen im Backteig (mit Bier) frittiert",
       "kh": 13.5,
       "gBE": 89,
       "gKHE": 74,
@@ -23547,7 +23009,7 @@
       "blsCode": "Y9A2040"
     },
     {
-      "name": "Tintenfischringe im Backteig frittiert",
+      "name": "Tintenfischringe im Backteig (mit Bier) frittiert",
       "kh": 10.3,
       "gBE": 117,
       "gKHE": 97,
@@ -28318,40 +27780,6 @@
       "blsCode": "C422032"
     },
     {
-      "name": "Buchweizen Vollkornmehl",
-      "kh": 68.2,
-      "gBE": 18,
-      "gKHE": 15,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 355,
-      "kj": 1503,
-      "blsCode": "C421000"
-    },
-    {
-      "name": "Buchweizenmehl",
-      "kh": 65.1,
-      "gBE": 18,
-      "gKHE": 15,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 350,
-      "kj": 1482,
-      "blsCode": "C424000"
-    },
-    {
       "name": "Bulgur (Hartweizen) gekocht",
       "kh": 29.1,
       "gBE": 41,
@@ -28576,23 +28004,6 @@
       "blsCode": "C237000"
     },
     {
-      "name": "Dinkel Vollkornmehl",
-      "kh": 60.1,
-      "gBE": 20,
-      "gKHE": 17,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 335,
-      "kj": 1417,
-      "blsCode": "C235000"
-    },
-    {
       "name": "Dinkel Vollkornschrot",
       "kh": 58.7,
       "gBE": 20,
@@ -28625,24 +28036,6 @@
       "kcal": 51,
       "kj": 217,
       "blsCode": "C235132"
-    },
-    {
-      "name": "Dinkelmehl",
-      "kh": 67.6,
-      "gBE": 18,
-      "gKHE": 15,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 352,
-      "kj": 1489,
-      "blsCode": "C234000+C234200+C234100",
-      "subtitle": "Type 630, Type 1050, Type 812"
     },
     {
       "name": "Einkorn Flocken",
@@ -28696,23 +28089,6 @@
       "blsCode": "C241100"
     },
     {
-      "name": "Einkorn Vollkornmehl",
-      "kh": 58.9,
-      "gBE": 20,
-      "gKHE": 17,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 337,
-      "kj": 1424,
-      "blsCode": "C241000"
-    },
-    {
       "name": "Emmer Flocken",
       "kh": 63.3,
       "gBE": 19,
@@ -28762,23 +28138,6 @@
       "kcal": 342,
       "kj": 1448,
       "blsCode": "C240100"
-    },
-    {
-      "name": "Emmer Vollkornmehl",
-      "kh": 63.3,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 342,
-      "kj": 1448,
-      "blsCode": "C240000"
     },
     {
       "name": "Fleischersatz gluten-, milch- und sojahaltig",
@@ -29497,23 +28856,6 @@
       "blsCode": "C219132"
     },
     {
-      "name": "Hartweizen Vollkornmehl",
-      "kh": 60.9,
-      "gBE": 20,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 346,
-      "kj": 1461,
-      "blsCode": "C219000"
-    },
-    {
       "name": "Hirse Flocken",
       "kh": 67.6,
       "gBE": 18,
@@ -29787,7 +29129,144 @@
       "blsCode": "C446000"
     },
     {
-      "name": "Maismehl",
+      "name": "Maiswaffeln gesalzen",
+      "kh": 79.4,
+      "gBE": 15,
+      "gKHE": 13,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 389,
+      "kj": 1649,
+      "blsCode": "C533100"
+    },
+    {
+      "name": "Mehl: Buchweizen Vollkornmehl",
+      "kh": 68.2,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 355,
+      "kj": 1503,
+      "blsCode": "C421000"
+    },
+    {
+      "name": "Mehl: Buchweizenmehl",
+      "kh": 65.1,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 350,
+      "kj": 1482,
+      "blsCode": "C424000"
+    },
+    {
+      "name": "Mehl: Dinkel Vollkornmehl",
+      "kh": 60.1,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 335,
+      "kj": 1417,
+      "blsCode": "C235000"
+    },
+    {
+      "name": "Mehl: Dinkelmehl",
+      "kh": 67.6,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 352,
+      "kj": 1489,
+      "blsCode": "C234000+C234200+C234100",
+      "subtitle": "Type 630, Type 1050, Type 812"
+    },
+    {
+      "name": "Mehl: Einkorn Vollkornmehl",
+      "kh": 58.9,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 337,
+      "kj": 1424,
+      "blsCode": "C241000"
+    },
+    {
+      "name": "Mehl: Emmer Vollkornmehl",
+      "kh": 63.3,
+      "gBE": 19,
+      "gKHE": 16,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 342,
+      "kj": 1448,
+      "blsCode": "C240000"
+    },
+    {
+      "name": "Mehl: Hartweizen Vollkornmehl",
+      "kh": 60.9,
+      "gBE": 20,
+      "gKHE": 16,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 346,
+      "kj": 1461,
+      "blsCode": "C219000"
+    },
+    {
+      "name": "Mehl: Maismehl",
       "kh": 62.8,
       "gBE": 19,
       "gKHE": 16,
@@ -29804,9 +29283,9 @@
       "blsCode": "C443000"
     },
     {
-      "name": "Maiswaffeln gesalzen",
-      "kh": 79.4,
-      "gBE": 15,
+      "name": "Mehl: Reismehl",
+      "kh": 77.1,
+      "gBE": 16,
       "gKHE": 13,
       "categories": [
         [
@@ -29816,9 +29295,79 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 389,
-      "kj": 1649,
-      "blsCode": "C533100"
+      "kcal": 347,
+      "kj": 1473,
+      "blsCode": "C453000"
+    },
+    {
+      "name": "Mehl: Roggen Vollkornmehl",
+      "kh": 56.6,
+      "gBE": 21,
+      "gKHE": 18,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 312,
+      "kj": 1316,
+      "blsCode": "C221000"
+    },
+    {
+      "name": "Mehl: Roggenmehl",
+      "kh": 61.7,
+      "gBE": 19,
+      "gKHE": 16,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 319,
+      "kj": 1347,
+      "blsCode": "C223100+C223200+C223300+C223600+C223400",
+      "subtitle": "Type 815, Type 997, Type 1150, Type 1740, Type 1370"
+    },
+    {
+      "name": "Mehl: Weizen Vollkornmehl",
+      "kh": 61.8,
+      "gBE": 19,
+      "gKHE": 16,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 339,
+      "kj": 1431,
+      "blsCode": "C211000"
+    },
+    {
+      "name": "Mehl: Weizenmehl",
+      "kh": 69.5,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 350,
+      "kj": 1485,
+      "blsCode": "C213100+C213200+C213500+C214100+C214200",
+      "subtitle": "Type 405, 550, 1050"
     },
     {
       "name": "Mehlmischung",
@@ -30438,23 +29987,6 @@
       "subtitle": "ungesüßt, ungesüßt, angereichert mit Vitaminen und Calcium"
     },
     {
-      "name": "Reismehl",
-      "kh": 77.1,
-      "gBE": 16,
-      "gKHE": 13,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 347,
-      "kj": 1473,
-      "blsCode": "C453000"
-    },
-    {
       "name": "Reismischung mit Wildreis, gekocht",
       "kh": 27.3,
       "gBE": 44,
@@ -30693,23 +30225,6 @@
       "blsCode": "C126000"
     },
     {
-      "name": "Roggen Vollkornmehl",
-      "kh": 56.6,
-      "gBE": 21,
-      "gKHE": 18,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 312,
-      "kj": 1316,
-      "blsCode": "C221000"
-    },
-    {
       "name": "Roggen Vollkornschrot",
       "kh": 56.5,
       "gBE": 21,
@@ -30742,24 +30257,6 @@
       "kcal": 47,
       "kj": 198,
       "blsCode": "C221132"
-    },
-    {
-      "name": "Roggenmehl",
-      "kh": 61.7,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 319,
-      "kj": 1347,
-      "blsCode": "C223100+C223200+C223300+C223600+C223400",
-      "subtitle": "Type 815, Type 997, Type 1150, Type 1740, Type 1370"
     },
     {
       "name": "Tortillachips (Nachos)",
@@ -31102,23 +30599,6 @@
       "blsCode": "C216000"
     },
     {
-      "name": "Weizen Vollkornmehl",
-      "kh": 61.8,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 339,
-      "kj": 1431,
-      "blsCode": "C211000"
-    },
-    {
       "name": "Weizen Vollkornschrot",
       "kh": 59.2,
       "gBE": 20,
@@ -31185,42 +30665,6 @@
       "kcal": 394,
       "kj": 1672,
       "blsCode": "C551000"
-    },
-    {
-      "name": "Weizenmehl",
-      "kh": 67.9,
-      "gBE": 18,
-      "gKHE": 15,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 352,
-      "kj": 1491,
-      "blsCode": "C213100+C213200+C213500",
-      "subtitle": "Type 812, Type 1050, Type 1600"
-    },
-    {
-      "name": "Weizenmehl",
-      "kh": 71.2,
-      "gBE": 17,
-      "gKHE": 14,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 349,
-      "kj": 1479,
-      "blsCode": "C214100+C214200",
-      "subtitle": "Type 405, Type 550"
     },
     {
       "name": "Weizenpops/Weizen gepufft, gesüßt",
@@ -34383,75 +33827,6 @@
       "blsCode": "M857000"
     },
     {
-      "name": "H-Milch entrahmt, höchstens 0,5 % Fett, laktosefrei, ultrahocherhitzt",
-      "kh": 5,
-      "gBE": 241,
-      "gKHE": 201,
-      "categories": [
-        [
-          "Milchprodukte"
-        ]
-      ],
-      "tags": [
-        "wenigeKH"
-      ],
-      "kcal": 36,
-      "kj": 153,
-      "blsCode": "M1A3100"
-    },
-    {
-      "name": "H-Milch fettarm, 1,5 % Fett, laktosefrei, ultrahocherhitzt",
-      "kh": 4.6,
-      "gBE": 260,
-      "gKHE": 217,
-      "categories": [
-        [
-          "Milchprodukte"
-        ]
-      ],
-      "tags": [
-        "wenigeKH"
-      ],
-      "kcal": 46,
-      "kj": 192,
-      "blsCode": "M1A5200"
-    },
-    {
-      "name": "H-Milch fettarm, 1,5 % Fett, ultrahocherhitzt",
-      "kh": 4.2,
-      "gBE": 285,
-      "gKHE": 238,
-      "categories": [
-        [
-          "Milchprodukte"
-        ]
-      ],
-      "tags": [
-        "wenigeKH"
-      ],
-      "kcal": 44,
-      "kj": 186,
-      "blsCode": "M113200+M113300+M113100",
-      "subtitle": "H-Milch fettarm, 1,5 % Fett, ultrahocherhitzt, H-Vollmilch 3,5 % Fett, ultrahocherhitzt, H-Milch entrahmt, höchstens 0,5 % Fett, ultrahocherhitzt"
-    },
-    {
-      "name": "H-Vollmilch 3,5 % Fett, laktosefrei, ultrahocherhitzt",
-      "kh": 4.6,
-      "gBE": 261,
-      "gKHE": 218,
-      "categories": [
-        [
-          "Milchprodukte"
-        ]
-      ],
-      "tags": [
-        "wenigeKH"
-      ],
-      "kcal": 63,
-      "kj": 264,
-      "blsCode": "M1A7300"
-    },
-    {
       "name": "Joghurt",
       "kh": 13.1,
       "gBE": 92,
@@ -34936,10 +34311,28 @@
       "blsCode": "M884000"
     },
     {
-      "name": "Milch fettarm, 1,5 % Fett, laktosefrei, pasteurisiert",
+      "name": "Milch: H-Milch fettarm laktosefrei",
+      "kh": 4.6,
+      "gBE": 261,
+      "gKHE": 217,
+      "categories": [
+        [
+          "Milchprodukte"
+        ]
+      ],
+      "tags": [
+        "wenigeKH"
+      ],
+      "kcal": 45,
+      "kj": 190,
+      "blsCode": "M114200+M114300+M114100+M1A5200+M1A7300+M1A3100",
+      "subtitle": "verschiedene Fettstufen"
+    },
+    {
+      "name": "Milch: H-Milch fettarm, 1,5 % Fett, ultrahocherhitzt",
       "kh": 4.2,
-      "gBE": 289,
-      "gKHE": 241,
+      "gBE": 285,
+      "gKHE": 238,
       "categories": [
         [
           "Milchprodukte"
@@ -34949,9 +34342,44 @@
         "wenigeKH"
       ],
       "kcal": 44,
-      "kj": 187,
-      "blsCode": "M114200+M114300+M114100",
-      "subtitle": "Milch fettarm, 1,5 % Fett, laktosefrei, pasteurisiert, Vollmilch 3,5 % Fett, laktosefrei, pasteurisiert, Milch entrahmt, höchstens 0,1 % Fett, laktosefrei, pasteurisiert"
+      "kj": 186,
+      "blsCode": "M113200+M113300+M113100",
+      "subtitle": "H-Milch fettarm, 1,5 % Fett, ultrahocherhitzt, H-Vollmilch 3,5 % Fett, ultrahocherhitzt, H-Milch entrahmt, höchstens 0,5 % Fett, ultrahocherhitzt"
+    },
+    {
+      "name": "Milch: Rohmilch/Vorzugsmilch, mind. 3,5 % Fett",
+      "kh": 4.7,
+      "gBE": 254,
+      "gKHE": 212,
+      "categories": [
+        [
+          "Milchprodukte"
+        ]
+      ],
+      "tags": [
+        "wenigeKH"
+      ],
+      "kcal": 67,
+      "kj": 278,
+      "blsCode": "M112300"
+    },
+    {
+      "name": "Milch: Vollmilch frisch, 3,5 % Fett, pasteurisiert",
+      "kh": 4.4,
+      "gBE": 272,
+      "gKHE": 227,
+      "categories": [
+        [
+          "Milchprodukte"
+        ]
+      ],
+      "tags": [
+        "wenigeKH"
+      ],
+      "kcal": 48,
+      "kj": 201,
+      "blsCode": "M111300+M111100",
+      "subtitle": "Vollmilch frisch, 3,5 % Fett, pasteurisiert, Milch entrahmt, frisch, höchstens 0,1 % Fett, pasteurisiert"
     },
     {
       "name": "Milchmischgetränk",
@@ -35210,23 +34638,6 @@
       "kcal": 167,
       "kj": 700,
       "blsCode": "M861000"
-    },
-    {
-      "name": "Rohmilch/Vorzugsmilch, mind. 3,5 % Fett",
-      "kh": 4.7,
-      "gBE": 254,
-      "gKHE": 212,
-      "categories": [
-        [
-          "Milchprodukte"
-        ]
-      ],
-      "tags": [
-        "wenigeKH"
-      ],
-      "kcal": 67,
-      "kj": 278,
-      "blsCode": "M112300"
     },
     {
       "name": "Sahnejoghurt mind. 10 % Fett, gesüßt",
@@ -35639,24 +35050,6 @@
       "kcal": 75,
       "kj": 319,
       "blsCode": "M2J7100"
-    },
-    {
-      "name": "Vollmilch frisch, 3,5 % Fett, pasteurisiert",
-      "kh": 4.4,
-      "gBE": 272,
-      "gKHE": 227,
-      "categories": [
-        [
-          "Milchprodukte"
-        ]
-      ],
-      "tags": [
-        "wenigeKH"
-      ],
-      "kcal": 48,
-      "kj": 201,
-      "blsCode": "M111300+M111100",
-      "subtitle": "Vollmilch frisch, 3,5 % Fett, pasteurisiert, Milch entrahmt, frisch, höchstens 0,1 % Fett, pasteurisiert"
     },
     {
       "name": "Vollmilchpulver",

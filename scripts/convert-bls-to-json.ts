@@ -7,12 +7,32 @@
  * Output: static/lebensmittel-daten.json
  */
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = resolve(__dirname, '..');
+
+// Configuration file for manual prefixes and merge groups
+interface BlsConfig {
+  prefixes: Record<string, string[]>;
+  mergeGroups: Array<{
+    name: string;
+    blsCodes: string[];
+    subtitle?: string;
+  }>;
+}
+
+function loadBlsConfig(): BlsConfig {
+  const configPath = resolve(PROJECT_ROOT, 'scripts/bls-data/bls-config.json');
+  if (!existsSync(configPath)) {
+    console.log('  No bls-config.json found, using defaults');
+    return { prefixes: {}, mergeGroups: [] };
+  }
+  console.log('  Loading BLS config from:', configPath);
+  return JSON.parse(readFileSync(configPath, 'utf-8'));
+}
 
 // Minimum carbohydrate threshold (g/100g)
 const MIN_KH = 4;
@@ -268,6 +288,114 @@ function groupSimilarFoods(foods: ParsedFood[]): (ParsedFood & { subtitle?: stri
 }
 
 /**
+ * Apply manual merge groups from config (after automatic grouping)
+ */
+function applyManualMergeGroups(
+  foods: (ParsedFood & { subtitle?: string })[],
+  mergeGroups: BlsConfig['mergeGroups']
+): (ParsedFood & { subtitle?: string })[] {
+  if (mergeGroups.length === 0) {
+    return foods;
+  }
+
+  const result: (ParsedFood & { subtitle?: string })[] = [];
+  const mergedBlsCodes = new Set<string>();
+  let manualMergeCount = 0;
+
+  // Process each merge group
+  for (const group of mergeGroups) {
+    // Find foods that match any of the BLS codes in this group
+    // BLS codes in foods can be combined (e.g., "B226800+B226500")
+    const matchingFoods = foods.filter((f) => {
+      const foodCodes = f.blsCode.split('+');
+      return group.blsCodes.some((configCode) =>
+        foodCodes.some((foodCode) => foodCode.startsWith(configCode))
+      );
+    });
+
+    if (matchingFoods.length > 1) {
+      // Mark these as merged
+      for (const f of matchingFoods) {
+        mergedBlsCodes.add(f.blsCode);
+      }
+
+      // Calculate median values
+      const medianKh = calculateMedian(matchingFoods.map((f) => f.kh));
+      const medianKcal = calculateMedian(matchingFoods.map((f) => f.kcal));
+      const medianKj = calculateMedian(matchingFoods.map((f) => f.kj));
+
+      // Combine all BLS codes
+      const allBlsCodes = matchingFoods.map((f) => f.blsCode).join('+');
+
+      result.push({
+        name: group.name,
+        subtitle: group.subtitle,
+        kh: medianKh,
+        kcal: medianKcal,
+        kj: medianKj,
+        blsCode: allBlsCodes,
+      });
+
+      manualMergeCount += matchingFoods.length - 1;
+    } else if (matchingFoods.length === 1) {
+      // Only one match - just rename it
+      mergedBlsCodes.add(matchingFoods[0].blsCode);
+      result.push({
+        ...matchingFoods[0],
+        name: group.name,
+        subtitle: group.subtitle || matchingFoods[0].subtitle,
+      });
+    }
+  }
+
+  // Add all foods that weren't manually merged
+  for (const food of foods) {
+    if (!mergedBlsCodes.has(food.blsCode)) {
+      result.push(food);
+    }
+  }
+
+  if (manualMergeCount > 0) {
+    console.log(`  Manual merge groups: ${manualMergeCount} items merged`);
+  }
+
+  return result;
+}
+
+/**
+ * Build prefix lookup map from config
+ */
+function buildPrefixMap(prefixes: BlsConfig['prefixes']): Map<string, string> {
+  const prefixMap = new Map<string, string>();
+  for (const [prefix, codes] of Object.entries(prefixes)) {
+    for (const code of codes) {
+      prefixMap.set(code, prefix + ': ');
+    }
+  }
+  return prefixMap;
+}
+
+/**
+ * Get prefix for a food item based on its BLS code(s)
+ */
+function getPrefix(combinedBlsCode: string, prefixMap: Map<string, string>): string {
+  const codes = combinedBlsCode.split('+');
+  for (const code of codes) {
+    // Check for exact match first
+    const exactPrefix = prefixMap.get(code);
+    if (exactPrefix) return exactPrefix;
+
+    // Check for prefix match (e.g., "B22" matches "B221000")
+    for (const [configCode, prefix] of prefixMap) {
+      if (code.startsWith(configCode)) {
+        return prefix;
+      }
+    }
+  }
+  return '';
+}
+
+/**
  * Main conversion function
  */
 function convertBLStoJSON(): void {
@@ -325,19 +453,29 @@ function convertBLStoJSON(): void {
 
   const beforeGrouping = parsedFoods.length;
 
-  // Step 2: Group similar foods
-  const groupedFoods = groupSimilarFoods(parsedFoods);
+  // Load BLS config for manual merges and prefixes
+  const config = loadBlsConfig();
+  const prefixMap = buildPrefixMap(config.prefixes);
 
-  // Step 3: Convert to final FoodItem format
-  const foods: FoodItem[] = groupedFoods.map((parsed) => {
+  // Step 2: Automatic grouping (by BLS prefix + KH similarity)
+  const autoGroupedFoods = groupSimilarFoods(parsedFoods);
+
+  // Step 3: Manual merge groups (from config, after automatic grouping)
+  const manualGroupedFoods = applyManualMergeGroups(autoGroupedFoods, config.mergeGroups);
+
+  // Step 4: Convert to final FoodItem format and apply prefixes
+  const foods: FoodItem[] = manualGroupedFoods.map((parsed) => {
     const kh = Math.round(parsed.kh * 10) / 10; // Round to 1 decimal
     const gBE = Math.round(1200 / parsed.kh);
     const gKHE = Math.round(1000 / parsed.kh);
     const category = getCategory(parsed.blsCode);
     const tags = generateTags(parsed.kh, parsed.blsCode);
 
+    // Apply prefix from config
+    const prefix = getPrefix(parsed.blsCode, prefixMap);
+
     const food: FoodItem = {
-      name: parsed.name,
+      name: prefix + parsed.name,
       kh,
       gBE,
       gKHE,
