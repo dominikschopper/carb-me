@@ -23,8 +23,8 @@
       </div>
     </div>
   {:else}
-    <!-- Favorites grid -->
-    <div class="grid gap-3 sm:grid-cols-2">
+    <!-- Favorites list -->
+    <div class="space-y-2">
       {#each favoriteFoods as food (food.blsCode)}
         <FoodCard {food} onclick={() => onFoodSelect(food)} />
       {/each}
