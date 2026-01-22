@@ -28,7 +28,7 @@
     <div class="flex-1">
       <div class="flex items-center gap-2">
         <hgroup>
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 wrap-anywhere">
           {food.name}
           {#if food.isCustom}
             <span class="ml-1 text-xs text-blue-600 dark:text-blue-400">(Eigenes)</span>

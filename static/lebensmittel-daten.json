@@ -132,7 +132,7 @@
       "kcal": 216,
       "kj": 909,
       "blsCode": "P560100+P560000",
-      "subtitle": "Bitterlikör 11 % vol, Bitterlikör/Kräuterlikör/Gewürzlikör",
+      "subtitle": "verschiedene Varianten",
       "unit": "ml"
     },
     {
@@ -324,7 +324,7 @@
       "kcal": 34,
       "kj": 143,
       "blsCode": "P1A3000+P1A3100",
-      "subtitle": "Colabier (Pilsner Bier mit Cola), Radler, alkoholfrei (Pilsner Bier, alkoholfrei, mit Zitronenlimonade)",
+      "subtitle": "verschiedene Varianten",
       "unit": "ml"
     },
     {
@@ -896,7 +896,7 @@
       "kcal": 41,
       "kj": 171,
       "blsCode": "P1A1120+P1A1130+P1A1100+P1A1110",
-      "subtitle": "Weizen-Radler, alkoholfrei (Weizenbier, alkoholfrei, mit Zitronenlimonade), Weizen-Radler (Weizenbier mit Zitronenlimonade), Colaweizen (Weizenbier mit Cola), Weizenbier mit Fruchtnektar",
+      "subtitle": "verschiedene Varianten",
       "unit": "ml"
     },
     {
@@ -936,6 +936,42 @@
       "blsCode": "B8A1000"
     },
     {
+      "name": "Brot: Brot: Sauerteig glutenfrei",
+      "kh": 30.8,
+      "gBE": 39,
+      "gKHE": 33,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 230,
+      "kj": 966,
+      "blsCode": "B8A7000+B8A6000+B8A4000+B8A5000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Brot: Brot: Weizen Vollkorn",
+      "kh": 38,
+      "gBE": 32,
+      "gKHE": 26,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 235,
+      "kj": 991,
+      "blsCode": "B111400+B111600+B111700+B111500+B111300+B111800+B111000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
       "name": "Brot: Dinkelbrot",
       "kh": 41,
       "gBE": 29,
@@ -951,7 +987,7 @@
       "kcal": 247,
       "kj": 1041,
       "blsCode": "B710700+B710500+B710800+B710600+B710900",
-      "subtitle": "mit Nüssen, mit Ölsamen, mit Kürbiskernen, mit Sonnenblumenkernen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Brot: Haferbrot",
@@ -1056,24 +1092,6 @@
       "kcal": 200,
       "kj": 842,
       "blsCode": "B121000+B121200+B121300+B121600+B121500+B121100+B121400+B122000",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
-      "name": "Brot: Sauerteigbrot glutenfrei",
-      "kh": 30.8,
-      "gBE": 39,
-      "gKHE": 33,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 230,
-      "kj": 966,
-      "blsCode": "B8A7000+B8A6000+B8A4000+B8A5000",
       "subtitle": "verschiedene Varianten"
     },
     {
@@ -1266,24 +1284,6 @@
       "kcal": 301,
       "kj": 1268,
       "blsCode": "B314000+B314100+B314200+B314072+B314172+B314272",
-      "subtitle": "Weizentoastbrot/Buttertoastbrot, Weizentoastbrot mit Roggen, Mehrkorntoastbrot mit Ölsamen, Weizentoastbrot/Buttertoastbrot, getoastet, Weizentoastbrot mit Roggen, getoastet, Mehrkorntoastbrot mit Ölsamen, getoastet"
-    },
-    {
-      "name": "Brot: Weizenvollkornbrot",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 235,
-      "kj": 991,
-      "blsCode": "B111400+B111600+B111700+B111500+B111300+B111800+B111000",
       "subtitle": "verschiedene Varianten"
     },
     {
@@ -1353,7 +1353,7 @@
       "kcal": 304,
       "kj": 1284,
       "blsCode": "B561300+B561100+B561400+B561200+B561000",
-      "subtitle": "mit Ölsamen, mit Kürbiskernen, mit Sonnenblumenkernen, mit Nüssen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Dinkelknusperbrot",
@@ -1405,7 +1405,7 @@
       "kcal": 297,
       "kj": 1252,
       "blsCode": "B491300+B491400+B491100+B491200+B491000",
-      "subtitle": "mit Ölsamen, mit Sonnenblumenkernen, mit Kürbiskernen, mit Nüssen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Eiweißbrot/Proteinbrot",
@@ -1423,7 +1423,7 @@
       "kcal": 277,
       "kj": 1160,
       "blsCode": "B881100+B881200",
-      "subtitle": "Eiweißbrot/Proteinbrot, Eiweißbrötchen/Proteinbrötchen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Haferbrötchen",
@@ -1492,7 +1492,7 @@
       "kcal": 424,
       "kj": 1775,
       "blsCode": "B6A5200+B6A5100+B6A5000",
-      "subtitle": "mit Ölsamen und Hartkäse, mit Ölsamen, mit Müslizutaten, gesüßt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Knäckebrot: Knäckebrot glutenfrei, laktosefrei",
@@ -1510,6 +1510,42 @@
       "kcal": 382,
       "kj": 1614,
       "blsCode": "B6A6000"
+    },
+    {
+      "name": "Knäckebrot: Knäckebrot: Roggen Vollkorn",
+      "kh": 56.5,
+      "gBE": 21,
+      "gKHE": 18,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 341,
+      "kj": 1433,
+      "blsCode": "B6A2100+B6A2300+B6A2800+B6A2500+B6A2600+B6A2900+B6A2400+B6A2700+B6A2000+B6A2200+B6A3200+B6A3000+B6A3100",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Knäckebrot: Knäckebrot: Weizen Vollkorn",
+      "kh": 47,
+      "gBE": 26,
+      "gKHE": 21,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 431,
+      "kj": 1803,
+      "blsCode": "B6A1500+B6A1200+B6A1300+B6A1400+B6A1600+B6A1100",
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Knäckebrot: Mehrkornvollkornknäckebrot",
@@ -1546,24 +1582,6 @@
       "blsCode": "B6A4100"
     },
     {
-      "name": "Knäckebrot: Roggenvollkornknäckebrot",
-      "kh": 56.5,
-      "gBE": 21,
-      "gKHE": 18,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 341,
-      "kj": 1433,
-      "blsCode": "B6A2100+B6A2300+B6A2800+B6A2500+B6A2600+B6A2900+B6A2400+B6A2700+B6A2000+B6A2200+B6A3200+B6A3000+B6A3100",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
       "name": "Knäckebrot: Weizenknäckebrot mit Sesam",
       "kh": 62,
       "gBE": 19,
@@ -1579,24 +1597,6 @@
       "kcal": 405,
       "kj": 1706,
       "blsCode": "B6A1000"
-    },
-    {
-      "name": "Knäckebrot: Weizenvollkornknäckebrot",
-      "kh": 47,
-      "gBE": 26,
-      "gKHE": 21,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 431,
-      "kj": 1803,
-      "blsCode": "B6A1500+B6A1200+B6A1300+B6A1400+B6A1600+B6A1100",
-      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Knusperbrot glutenfrei",
@@ -1631,7 +1631,7 @@
       "kcal": 277,
       "kj": 1169,
       "blsCode": "B723300+B723500+B723200+B723100+B723400+B723000+B723600",
-      "subtitle": "mit Sesam, mit Käse, mit Kürbiskernen, (Hagelsalz entfernt), mit Sonnenblumenkernen, mit Hagelsalz, mit Käse und Schinkenspeck"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mehrkornbrötchen",
@@ -1959,7 +1959,7 @@
       "kcal": 292,
       "kj": 1234,
       "blsCode": "B551200+B551000+B551500+B551300+B551600+B551400+B551100+B551700+B551800",
-      "subtitle": "mit Mohn, mit Sonnenblumenkernen, mit Ölsamen, mit Kümmel und Salz, mit Sesam, mit Kürbiskernen, mit Schinkenspeck, mit Zwiebeln"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weizentortilla",
@@ -23976,7 +23976,7 @@
       "kcal": 293,
       "kj": 1217,
       "blsCode": "Q590000+Q590100",
-      "subtitle": "Basis Pflanzenfett, vegan, Basis Pflanzenfett, vegan, angereichert mit Vitamin B12 und Calcium"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Remoulade (Fertigprodukt)",
@@ -24062,7 +24062,7 @@
       "kcal": 171,
       "kj": 719,
       "blsCode": "T934200+T934292+T934262+T934282",
-      "subtitle": "paniert, tiefgefroren, paniert, tiefgefroren, frittiert, paniert, tiefgefroren, gebraten ohne Fett (Ofen), paniert, tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Alaska-Seelachs im Backteig, tiefgefroren",
@@ -24080,7 +24080,7 @@
       "kcal": 205,
       "kj": 859,
       "blsCode": "T930700+T930100+T930800+T930792+T930892+T930182+T930882+T930862+T930782+T930762+T930162",
-      "subtitle": "Alaska-Seelachs im Backteig, tiefgefroren, Fischstäbchen (Alaska-Seelachs) paniert, tiefgefroren, Fischfrikadelle (Alaska-Seelachs) paniert, tiefgefroren, Alaska-Seelachs im Backteig, tiefgefroren, frittiert, Fischfrikadelle (Alaska-Seelachs) paniert, tiefgefroren, frittiert, Fischstäbchen (Alaska-Seelachs) paniert, tiefgefroren, gebraten ohne Fett (Pfanne), Fischfrikadelle (Alaska-Seelachs) paniert, tiefgefroren, gebraten ohne Fett (Pfanne), Fischfrikadelle (Alaska-Seelachs) paniert, tiefgefroren, gebraten ohne Fett (Ofen), Alaska-Seelachs im Backteig, tiefgefroren, gebraten ohne Fett (Pfanne), Alaska-Seelachs im Backteig, tiefgefroren, gebraten ohne Fett (Ofen), Fischstäbchen (Alaska-Seelachs) paniert, tiefgefroren, gebraten ohne Fett (Ofen)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Bratmakrele Konserve, abgetropft",
@@ -24098,7 +24098,7 @@
       "kcal": 183,
       "kj": 764,
       "blsCode": "T830802+T830102",
-      "subtitle": "Bratmakrele Konserve, abgetropft, Brathering Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Dorsch/Kabeljau, paniert, gebraten ohne Fett (Pfanne)",
@@ -24133,7 +24133,7 @@
       "kcal": 319,
       "kj": 1332,
       "blsCode": "T936100+T936182",
-      "subtitle": "paniert, tiefgefroren, paniert, tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Heringsfilet",
@@ -24151,7 +24151,7 @@
       "kcal": 179,
       "kj": 746,
       "blsCode": "T822900+T822100",
-      "subtitle": "in Tomatencreme/Tomatensauce, Konserve, in Dillcreme, Konserve"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kabeljau im Backteig, tiefgefroren",
@@ -24186,7 +24186,7 @@
       "kcal": 172,
       "kj": 723,
       "blsCode": "T933100+T933182",
-      "subtitle": "im Backteig, roh, im Backteig, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kaviarcreme/Kaviarpaste",
@@ -24306,7 +24306,7 @@
       "kcal": 131,
       "kj": 546,
       "blsCode": "T935200+T935262",
-      "subtitle": "Bordelaise (Alaska-Seelachs) tiefgefroren, Bordelaise (Alaska-Seelachs) tiefgefroren, gebraten ohne Fett (Ofen)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Seelachs",
@@ -24324,7 +24324,7 @@
       "kcal": 252,
       "kj": 1056,
       "blsCode": "T932200+T932282+T932262",
-      "subtitle": "im Backteig, tiefgefroren, im Backteig, tiefgefroren, gebraten ohne Fett (Pfanne), im Backteig, tiefgefroren, gebraten ohne Fett (Ofen)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Seelachs",
@@ -24342,7 +24342,7 @@
       "kcal": 204,
       "kj": 857,
       "blsCode": "T931200+T931292+T931262+T931282",
-      "subtitle": "paniert, tiefgefroren, paniert, tiefgefroren, frittiert, paniert, tiefgefroren, gebraten ohne Fett (Ofen), paniert, tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Surimi (Krebsfleischimitat aus Fischmuskeleiweiß geformt)",
@@ -24411,7 +24411,7 @@
       "kcal": 100,
       "kj": 416,
       "blsCode": "U990100+U990200+U990400",
-      "subtitle": "Bratensoße dunkel, Konserve, Meerrettichsoße Konserve, Sauce Hollandaise, Konserve"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gulaschsuppe Konserve",
@@ -24463,7 +24463,7 @@
       "kcal": 159,
       "kj": 670,
       "blsCode": "U080100+U080132+U080182+U080200+U080232+U080282",
-      "subtitle": "Leberhack, roh, Leberhack, gekocht, Leberhack, gebraten ohne Fett (Pfanne), Leberhack, tiefgefroren, Leberhack, tiefgefroren, gekocht, Leberhack, tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rind",
@@ -24481,7 +24481,7 @@
       "kcal": 222,
       "kj": 927,
       "blsCode": "U013100+U013162+U013182+U013172",
-      "subtitle": "Frikadelle, roh, Frikadelle, gebraten ohne Fett (Ofen), Frikadelle, gebraten ohne Fett (Pfanne), Frikadelle, gegrillt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rind/Schwein",
@@ -24499,7 +24499,7 @@
       "kcal": 230,
       "kj": 958,
       "blsCode": "U051100+U051182+U051172+U051162",
-      "subtitle": "Frikadelle, roh, Frikadelle, gebraten ohne Fett (Pfanne), Frikadelle, gegrillt, Frikadelle, gebraten ohne Fett (Ofen)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Schwein",
@@ -24517,7 +24517,7 @@
       "kcal": 262,
       "kj": 1087,
       "blsCode": "U025100+U025182+U025172+U025162",
-      "subtitle": "Frikadelle, roh, Frikadelle, gebraten ohne Fett (Pfanne), Frikadelle, gegrillt, Frikadelle, gebraten ohne Fett (Ofen)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Schwein Filetmedaillon, paniert, gebraten ohne Fett (Pfanne)",
@@ -24586,7 +24586,7 @@
       "kcal": 219,
       "kj": 914,
       "blsCode": "V913400+V913200+V913300+V913600+V913500",
-      "subtitle": "Entenpastete gebacken, Pastete von Hasenfleisch, gebacken, Wildschweinpastete imitiert, mit Mürbeteig, gebacken, Hähnchenpastete gebacken, Gänseleberpastete getrüffelt, in der Kruste gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Geflügel",
@@ -24604,7 +24604,7 @@
       "kcal": 113,
       "kj": 475,
       "blsCode": "V990100+V990182+V990162",
-      "subtitle": "Frikadelle, roh, Frikadelle, gebraten ohne Fett (Pfanne), Frikadelle, gebraten ohne Fett (Ofen)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kalb",
@@ -24622,7 +24622,7 @@
       "kcal": 98,
       "kj": 415,
       "blsCode": "V532100+V532182+V532200+V532282",
-      "subtitle": "Leber, roh, Leber, gebraten ohne Fett (Pfanne), Leber, tiefgefroren, Leber, tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Leberknödel Konserve",
@@ -24657,7 +24657,7 @@
       "kcal": 145,
       "kj": 611,
       "blsCode": "V531100+V531182+V531200+V531282",
-      "subtitle": "Leber, roh, Leber, gebraten ohne Fett (Pfanne), Leber, tiefgefroren, Leber, tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Aubergine",
@@ -24675,7 +24675,7 @@
       "kcal": 38,
       "kj": 160,
       "blsCode": "G510172+G510182+G510702",
-      "subtitle": "gegrillt, gebraten ohne Fett (Pfanne), gegrillt, in Öl, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Blumenkohl",
@@ -24693,7 +24693,7 @@
       "kcal": 37,
       "kj": 154,
       "blsCode": "G311100+G311182+G311200+G311162+G311142+G311152+G311132+G311282+G311232+G311262+G311242+G311252+G311802",
-      "subtitle": "roh, gebraten ohne Fett (Pfanne), tiefgefroren, gebacken, gedämpft, gedünstet, gekocht, tiefgefroren, gebraten ohne Fett (Pfanne), tiefgefroren, gekocht, tiefgefroren, gebacken, tiefgefroren, gedämpft, tiefgefroren, gedünstet, gesäuert, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Bohne",
@@ -24711,7 +24711,7 @@
       "kcal": 33,
       "kj": 140,
       "blsCode": "G710162+G710132+G710282+G710042+G710262+G710252+G710802",
-      "subtitle": "grün, gebacken, grün, gekocht, grün, tiefgefroren, gebraten ohne Fett (Pfanne), grün, tiefgefroren, geschmort ohne Fett, grün, tiefgefroren, gebacken, grün, tiefgefroren, gedünstet, grün, gesäuert, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Broccoli",
@@ -24729,7 +24729,7 @@
       "kcal": 67,
       "kj": 279,
       "blsCode": "G312182+G312282",
-      "subtitle": "gebraten ohne Fett (Pfanne), tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Chayote",
@@ -24747,7 +24747,7 @@
       "kcal": 34,
       "kj": 143,
       "blsCode": "G583100+G583132+G583182",
-      "subtitle": "roh, gekocht, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Cornichons gesäuert, abgetropft",
@@ -24782,7 +24782,7 @@
       "kcal": 63,
       "kj": 266,
       "blsCode": "G730100+G730200+G730132+G730232+G730902",
-      "subtitle": "Bohne unreif, roh, Bohne unreif, tiefgefroren, Bohne unreif, gekocht, Bohne unreif, tiefgefroren, gekocht, Bohne unreif, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Erbse grün, gebacken",
@@ -25021,7 +25021,7 @@
       "kcal": 38,
       "kj": 160,
       "blsCode": "G486100+G486132+G486182+G486142+G486152+G486162",
-      "subtitle": "(ohne Laub) roh, (ohne Laub) gekocht, (ohne Laub) gebraten ohne Fett (Pfanne), (ohne Laub) geschmort ohne Fett, (ohne Laub) gedünstet, (ohne Laub) gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Frühlingszwiebel/Lauchzwiebel, gebraten ohne Fett (Pfanne)",
@@ -25125,7 +25125,7 @@
       "kcal": 59,
       "kj": 249,
       "blsCode": "G920200+G920252+G920232+G920902",
-      "subtitle": "Leipziger Allerlei, tiefgefroren, Leipziger Allerlei, tiefgefroren, gedünstet, Leipziger Allerlei, tiefgefroren, gekocht, Leipziger Allerlei, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gemüsemischung",
@@ -25143,7 +25143,7 @@
       "kcal": 62,
       "kj": 262,
       "blsCode": "G992100+G992132+G992182+G992152+G992162+G992200+G992252+G992232+G992282+G992262+G992902",
-      "subtitle": "Erbsen-Karotten, roh, Erbsen-Karotten, gekocht, Erbsen-Karotten, gebraten ohne Fett (Pfanne), Erbsen-Karotten, gedünstet, Erbsen-Karotten, gebacken, Erbsen-Karotten, tiefgefroren, Erbsen-Karotten, tiefgefroren, gedünstet, Erbsen-Karotten, tiefgefroren, gekocht, Erbsen-Karotten, tiefgefroren, gebraten ohne Fett (Pfanne), Erbsen-Karotten, tiefgefroren, gebacken, Erbsen-Karotten, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gemüsemischung",
@@ -25161,7 +25161,7 @@
       "kcal": 40,
       "kj": 169,
       "blsCode": "G090100+G090152+G090182+G090142+G090162+G090200+G090802+G090262+G090282+G090252+G090242",
-      "subtitle": "Kaisergemüse, roh, Kaisergemüse, gedünstet, Kaisergemüse, gebraten ohne Fett (Pfanne), Kaisergemüse, geschmort ohne Fett, Kaisergemüse, gebacken, Kaisergemüse, tiefgefroren, gesäuert (Puszta Salat) abgetropft, Kaisergemüse, tiefgefroren, gebacken, Kaisergemüse, tiefgefroren, gebraten ohne Fett (Pfanne), Kaisergemüse, tiefgefroren, gedünstet, Kaisergemüse, tiefgefroren, geschmort ohne Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gemüsemischung",
@@ -25179,7 +25179,7 @@
       "kcal": 62,
       "kj": 260,
       "blsCode": "G993100+G993152+G993200+G993132+G993142+G993182+G993242+G993232+G993252+G993282+G993902",
-      "subtitle": "mexikanische Art, roh, mexikanische Art, gedünstet, mexikanische Art, tiefgefroren, mexikanische Art, gekocht, mexikanische Art, geschmort ohne Fett, mexikanische Art, gebraten ohne Fett (Pfanne), mexikanische Art, tiefgefroren, geschmort ohne Fett, mexikanische Art, tiefgefroren, gekocht, mexikanische Art, tiefgefroren, gedünstet, mexikanische Art, tiefgefroren, gebraten ohne Fett (Pfanne), mexikanische Art, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gemüsemischung",
@@ -25197,7 +25197,7 @@
       "kcal": 35,
       "kj": 146,
       "blsCode": "G994162+G994182+G994142+G994262+G994282",
-      "subtitle": "asiatische Art, gebacken, asiatische Art, gebraten ohne Fett (Pfanne), asiatische Art, geschmort ohne Fett, asiatische Art, tiefgefroren, gebacken, asiatische Art, tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gemüsepaprika",
@@ -25215,7 +25215,7 @@
       "kcal": 42,
       "kj": 176,
       "blsCode": "G541100+G541042+G541082+G541072+G541152+G541162+G541032",
-      "subtitle": "grün, roh, grün, geschmort ohne Fett, grün, gebraten ohne Fett (Pfanne), grün, gegrillt, grün, gedünstet, grün, gebacken, grün, gekocht"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gemüsepaprika",
@@ -25233,7 +25233,7 @@
       "kcal": 40,
       "kj": 166,
       "blsCode": "G543100+G543042+G543072+G543082+G543162+G543152+G543802+G543702",
-      "subtitle": "rot, roh, rot, geschmort ohne Fett, rot, gegrillt, rot, gebraten ohne Fett (Pfanne), rot, gebacken, rot, gedünstet, rot, gesäuert, abgetropft, rot, gegrillt, in Öl, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gemüsepaprika",
@@ -25251,7 +25251,7 @@
       "kcal": 30,
       "kj": 128,
       "blsCode": "G542100+G542132+G542182+G542172+G542162+G542152+G542042",
-      "subtitle": "gelb, roh, gelb, gekocht, gelb, gebraten ohne Fett (Pfanne), gelb, gegrillt, gelb, gebacken, gelb, gedünstet, gelb, geschmort ohne Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gemüsesaft aus Karotte/Möhre, mit Honig",
@@ -25303,7 +25303,7 @@
       "kcal": 84,
       "kj": 348,
       "blsCode": "G322182+G322282",
-      "subtitle": "gebraten ohne Fett (Pfanne), tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gurke gesäuert (Gewürzgurke) abgetropft",
@@ -25338,7 +25338,7 @@
       "kcal": 57,
       "kj": 242,
       "blsCode": "G891102+G891202",
-      "subtitle": "Honiggurke gesäuert, abgetropft, Senfgurke gesäuert, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Karotte/Möhre",
@@ -25356,7 +25356,7 @@
       "kcal": 46,
       "kj": 194,
       "blsCode": "G620100+G620152+G620162+G620200+G620182+G620142+G620132+G620262+G620282+G620232+G620242+G620252+G620802",
-      "subtitle": "roh, gedünstet, gebacken, tiefgefroren, gebraten ohne Fett (Pfanne), geschmort ohne Fett, gekocht, tiefgefroren, gebacken, tiefgefroren, gebraten ohne Fett (Pfanne), tiefgefroren, gekocht, tiefgefroren, geschmort ohne Fett, tiefgefroren, gedünstet, gesäuert, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kichererbse reif",
@@ -25408,7 +25408,7 @@
       "kcal": 155,
       "kj": 637,
       "blsCode": "G490500+G490400+G490182+G490042+G490262+G490282+G490242",
-      "subtitle": "Pulver, getrocknet, gebraten ohne Fett (Pfanne), geschmort ohne Fett, tiefgefroren, gebacken, tiefgefroren, gebraten ohne Fett (Pfanne), tiefgefroren, geschmort ohne Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Knoblauch in Öl, Konserve, abgetropft",
@@ -25443,7 +25443,7 @@
       "kcal": 48,
       "kj": 199,
       "blsCode": "G660182+G660802",
-      "subtitle": "gebraten ohne Fett (Pfanne), gesäuert, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kohlrabi",
@@ -25461,7 +25461,7 @@
       "kcal": 34,
       "kj": 142,
       "blsCode": "G331182+G331162+G331152",
-      "subtitle": "gebraten ohne Fett (Pfanne), gebacken, gedünstet"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kohlrübe/Steckrübe, gekocht",
@@ -25786,7 +25786,7 @@
       "kcal": 71,
       "kj": 297,
       "blsCode": "G640100+G640182+G640162+G640152+G640142+G640132",
-      "subtitle": "roh, gebraten ohne Fett (Pfanne), gebacken, gedünstet, geschmort ohne Fett, gekocht"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Perlzwiebel",
@@ -25804,7 +25804,7 @@
       "kcal": 34,
       "kj": 142,
       "blsCode": "G484100+G484162+G484182+G484152+G484132",
-      "subtitle": "roh, gebacken, gebraten ohne Fett (Pfanne), gedünstet, gekocht"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Petersilienblatt getrocknet",
@@ -25839,7 +25839,7 @@
       "kcal": 43,
       "kj": 181,
       "blsCode": "G553100+G553182+G553152+G553132",
-      "subtitle": "grün, roh, grün, gebraten ohne Fett (Pfanne), grün, gedünstet, grün, gekocht"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Pfefferschote",
@@ -25857,7 +25857,7 @@
       "kcal": 43,
       "kj": 179,
       "blsCode": "G554100+G554182+G554152+G554132",
-      "subtitle": "rot, roh, rot, gebraten ohne Fett (Pfanne), rot, gedünstet, rot, gekocht"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Pfefferschote",
@@ -25875,7 +25875,7 @@
       "kcal": 148,
       "kj": 613,
       "blsCode": "G550802+G550702",
-      "subtitle": "gesäuert, abgetropft, in Öl, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Porree/Lauch",
@@ -25893,7 +25893,7 @@
       "kcal": 38,
       "kj": 159,
       "blsCode": "G470100+G470042+G470200+G470162+G470182+G470152+G470262+G470282+G470252+G470232+G470242",
-      "subtitle": "roh, geschmort ohne Fett, tiefgefroren, gebacken, gebraten ohne Fett (Pfanne), gedünstet, tiefgefroren, gebacken, tiefgefroren, gebraten ohne Fett (Pfanne), tiefgefroren, gedünstet, tiefgefroren, gekocht, tiefgefroren, geschmort ohne Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Romanesco",
@@ -25911,7 +25911,7 @@
       "kcal": 38,
       "kj": 161,
       "blsCode": "G350100+G350162+G350182+G350152+G350132",
-      "subtitle": "roh, gebacken, gebraten ohne Fett (Pfanne), gedünstet, gekocht"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rosenkohl",
@@ -25964,7 +25964,7 @@
       "kcal": 43,
       "kj": 183,
       "blsCode": "G613100+G613152+G613600+G613132+G613802",
-      "subtitle": "Rote Rübe/Rote Bete, roh, Rote Rübe/Rote Bete, gedünstet, Gemüsesaft aus Rote Rübe/Rote Bete, Rote Rübe/Rote Bete, gekocht, Rote Rübe/Rote Bete, gesäuert, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rotkohlgemüse (küchenfertig) Konserve",
@@ -25982,7 +25982,7 @@
       "kcal": 52,
       "kj": 218,
       "blsCode": "G341900+G341142+G341162+G341182",
-      "subtitle": "Rotkohlgemüse (küchenfertig) Konserve, Rotkohl geschmort ohne Fett, Rotkohl gebacken, Rotkohl gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Sahne-Meerrettich Konserve",
@@ -26000,7 +26000,7 @@
       "kcal": 147,
       "kj": 613,
       "blsCode": "G898200+G898300+G898100+G898400",
-      "subtitle": "Sahne-Meerrettich Konserve, Tafel-Meerrettich Konserve, Gemüse-Meerrettich (ohne Salz) Konserve, Ajvar Konserve"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Schalotte",
@@ -26018,7 +26018,7 @@
       "kcal": 47,
       "kj": 198,
       "blsCode": "G485082+G485142",
-      "subtitle": "gebraten ohne Fett (Pfanne), geschmort ohne Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Schwarzwurzel",
@@ -26036,7 +26036,7 @@
       "kcal": 61,
       "kj": 254,
       "blsCode": "G650100+G650152+G650132+G650200+G650142+G650252+G650242+G650232+G650902",
-      "subtitle": "roh, gedünstet, gekocht, tiefgefroren, geschmort ohne Fett, tiefgefroren, gedünstet, tiefgefroren, geschmort ohne Fett, tiefgefroren, gekocht, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Silberzwiebel",
@@ -26090,7 +26090,7 @@
       "kcal": 34,
       "kj": 144,
       "blsCode": "G450162+G450200+G450252+G450242+G450152+G450232+G450282+G450262",
-      "subtitle": "gebacken, tiefgefroren, tiefgefroren, gedünstet, tiefgefroren, gedämpft, gedünstet, tiefgefroren, gekocht, tiefgefroren, gebraten ohne Fett (Pfanne), tiefgefroren, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Spargel gebraten ohne Fett (Pfanne)",
@@ -26380,7 +26380,7 @@
       "kcal": 34,
       "kj": 142,
       "blsCode": "G344100+G344152+G344182+G344132+G344162",
-      "subtitle": "roh, gedünstet, gebraten ohne Fett (Pfanne), gekocht, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Suppengrün/Suppenkraut, getrocknet",
@@ -26585,7 +26585,7 @@
       "kcal": 36,
       "kj": 152,
       "blsCode": "G720252+G720802",
-      "subtitle": "tiefgefroren, gedünstet, gesäuert, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Wasabi roh",
@@ -26620,7 +26620,7 @@
       "kcal": 39,
       "kj": 166,
       "blsCode": "G614100+G614132+G614152",
-      "subtitle": "Rübe/Wasserrübe/Herbstrübe, roh, Rübe/Wasserrübe/Herbstrübe, gekocht, Rübe/Wasserrübe/Herbstrübe, gedünstet"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weißkohl",
@@ -26638,7 +26638,7 @@
       "kcal": 36,
       "kj": 151,
       "blsCode": "G342100+G342152+G342132+G342182+G342142+G342162",
-      "subtitle": "roh, gedünstet, gekocht, gebraten ohne Fett (Pfanne), geschmort ohne Fett, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Wirsing",
@@ -26656,7 +26656,7 @@
       "kcal": 43,
       "kj": 179,
       "blsCode": "G343100+G343162+G343142+G343152+G343182",
-      "subtitle": "roh, gebacken, geschmort ohne Fett, gedünstet, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Wurzelpetersilie gebacken",
@@ -26793,7 +26793,7 @@
       "kcal": 38,
       "kj": 159,
       "blsCode": "G582172+G582182+G582162+G582802",
-      "subtitle": "gegrillt, gebraten ohne Fett (Pfanne), gebacken, gesäuert, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Zuckererbse",
@@ -26811,7 +26811,7 @@
       "kcal": 40,
       "kj": 170,
       "blsCode": "G761100+G761032+G761152+G761200+G761252+G761232",
-      "subtitle": "roh, gekocht, gedünstet, tiefgefroren, tiefgefroren, gedünstet, tiefgefroren, gekocht"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Zuckermais",
@@ -26829,7 +26829,7 @@
       "kcal": 75,
       "kj": 315,
       "blsCode": "G570100+G570902+G570182+G570162+G570172+G570200+G570132+G570262+G570272+G570232+G570282+G570802",
-      "subtitle": "roh, Konserve, abgetropft, gebraten ohne Fett (Pfanne), gebacken, gegrillt, tiefgefroren, gekocht, tiefgefroren, gebacken, tiefgefroren, gegrillt, tiefgefroren, gekocht, tiefgefroren, gebraten ohne Fett (Pfanne), gesäuert, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "ACE-Frucht-Vitamingetränk angereichert",
@@ -27494,7 +27494,7 @@
       "kcal": 35,
       "kj": 146,
       "blsCode": "N261700+N261000",
-      "subtitle": "Pfirsich-Maracuja Fruchtnektar, Kirschnektarschorle",
+      "subtitle": "verschiedene Varianten",
       "unit": "ml"
     },
     {
@@ -27607,7 +27607,7 @@
       "kcal": 387,
       "kj": 1633,
       "blsCode": "C530100+C530200",
-      "subtitle": "Amaranth gepufft, ungesüßt, Quinoa gepufft, ungesüßt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Amaranth roh",
@@ -27829,7 +27829,7 @@
       "kcal": 424,
       "kj": 1789,
       "blsCode": "C534300+C534500+C534100+C534400+C534600+C534200",
-      "subtitle": "extrudiert, gesüßt, ungefüllt, mit Frucht-/Honig-/Karamell-/Schokogeschmack, extrudiert, gesüßt, divers gefüllt, extrudiert, gesüßt, ungefüllt, mit Zimtgeschmack, extrudiert, gesüßt, ungefüllt, mit Frucht-/Honig-/Karamell-/Schokogeschmack, angereichert mit Vitaminen und Mineralstoffen, extrudiert, gesüßt, divers gefüllt, angereichert mit Vitaminen und Mineralstoffen, extrudiert, gesüßt, ungefüllt, mit Zimtgeschmack, angereichert mit Vitaminen und Mineralstoffen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Cerealien",
@@ -27847,7 +27847,7 @@
       "kcal": 363,
       "kj": 1535,
       "blsCode": "C539100+C539200",
-      "subtitle": "aus Vollkornweizenschrot, gesüßt, ungefüllt, Natur/Frucht/Schokolade, aus Vollkornweizenschrot, gesüßt, ungefüllt, Natur/Frucht/Schokolade, angereichert mit Vitaminen und Mineralstoffen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Cornflakes",
@@ -27865,7 +27865,7 @@
       "kcal": 380,
       "kj": 1611,
       "blsCode": "C515000+C515400+C515100+C515200+C515300+C515600",
-      "subtitle": "gesüßt, ungesüßt, gesüßt, angereichert mit Vitaminen, gesüßt, mit Zuckerglasur und Erdnüssen, angereichert mit Vitaminen und Mineralstoffen, gesüßt, mit Zuckerglasur und Erdnüssen, gesüßt, mit Zuckerglasur"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Couscous (Hartweizen) gekocht",
@@ -28410,7 +28410,7 @@
       "kcal": 359,
       "kj": 1517,
       "blsCode": "C522700+C522100+C522600+C522400+C522000+C522500+C522200+C522300",
-      "subtitle": "gesüßt, mit Schokolade, angereichert mit Vitaminen und Mineralstoffen, gesüßt, angereichert mit Vitaminen und Mineralstoffen, gesüßt, mit Schokolade, gesüßt, mit Nüssen, gesüßt, gesüßt, mit Nüssen, angereichert mit Vitaminen und Mineralstoffen, gesüßt, mit Trockenfrüchten, gesüßt, mit Trockenfrüchten, angereichert mit Vitaminen und Mineralstoffen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Grünkern ganzes Korn, gekocht",
@@ -28734,7 +28734,7 @@
       "kcal": 35,
       "kj": 148,
       "blsCode": "C660000+C660200+C660500+C660300",
-      "subtitle": "ungesüßt, ungesüßt, angereichert mit Vitaminen, Calcium und Jod, gesüßt, aromatisiert, angereichert mit Vitaminen, Calcium und Jod, gesüßt, aromatisiert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Hafermehl",
@@ -28990,7 +28990,7 @@
       "kcal": 421,
       "kj": 1764,
       "blsCode": "C514300+C514200+C514400+C514500+C514600+C514700",
-      "subtitle": "Knuspermüslimischung, klassisch, gesüßt, angereichert mit Vitaminen und Mineralstoffen, Knuspermüslimischung, klassisch, gesüßt, Knuspermüslimischung mit Trockenfrüchten, gesüßt, Knuspermüslimischung mit Trockenfrüchten, gesüßt, angereichert mit Vitaminen und Mineralstoffen, Knuspermüslimischung mit Schokolade, gesüßt, Knuspermüslimischung mit Schokolade, gesüßt, angereichert mit Vitaminen und Mineralstoffen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mais gekocht",
@@ -29283,6 +29283,24 @@
       "blsCode": "C443000"
     },
     {
+      "name": "Mehl: Mehl: Weizen",
+      "kh": 69.5,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 350,
+      "kj": 1485,
+      "blsCode": "C213100+C213200+C213500+C214100+C214200",
+      "subtitle": "Type 405, 550, 1050"
+    },
+    {
       "name": "Mehl: Reismehl",
       "kh": 77.1,
       "gBE": 16,
@@ -29332,7 +29350,7 @@
       "kcal": 319,
       "kj": 1347,
       "blsCode": "C223100+C223200+C223300+C223600+C223400",
-      "subtitle": "Type 815, Type 997, Type 1150, Type 1740, Type 1370"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mehl: Weizen Vollkornmehl",
@@ -29352,24 +29370,6 @@
       "blsCode": "C211000"
     },
     {
-      "name": "Mehl: Weizenmehl",
-      "kh": 69.5,
-      "gBE": 17,
-      "gKHE": 14,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 350,
-      "kj": 1485,
-      "blsCode": "C213100+C213200+C213500+C214100+C214200",
-      "subtitle": "Type 405, 550, 1050"
-    },
-    {
       "name": "Mehlmischung",
       "kh": 82.2,
       "gBE": 15,
@@ -29385,7 +29385,7 @@
       "kcal": 342,
       "kj": 1452,
       "blsCode": "C414000+C414100",
-      "subtitle": "eiweißarm, glutenfrei, natriumarm, glutenfrei"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mehlmischung für Brot glutenfrei",
@@ -29522,7 +29522,7 @@
       "kcal": 366,
       "kj": 1538,
       "blsCode": "C512600+C512700+C512300+C512800+C512000",
-      "subtitle": "Müslimischung Bircher Art (mit Trockenfrüchten und Nüssen) ungesüßt, Müslimischung mit Trockenfrüchten, glutenfrei, gesüßt, Müslimischung mit Trockenfrüchten, ungesüßt, Müslimischung mit Schokolade, glutenfrei, gesüßt, Müsli Basismischung (ohne Trockenfrüchte) ungesüßt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Müslimischung mit Schokolade, gesüßt",
@@ -29574,7 +29574,7 @@
       "kcal": 126,
       "kj": 527,
       "blsCode": "C526000+C526082+C526062",
-      "subtitle": "(Maisgrieß mit Wasser, Fett und Salz) gekocht, (Maisgrieß mit Wasser, Fett und Salz) gekocht, gebraten ohne Fett (Pfanne), (Maisgrieß mit Wasser, Fett und Salz) gekocht, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Popcorn gesalzen",
@@ -29711,7 +29711,7 @@
       "kcal": 110,
       "kj": 465,
       "blsCode": "C350222+C350042",
-      "subtitle": "poliert, gedämpft, poliert, geschmort ohne Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Reis gepufft, ungesüßt",
@@ -29782,23 +29782,6 @@
       "blsCode": "C457000"
     },
     {
-      "name": "Reis parboiled, poliert, gekocht",
-      "kh": 23.8,
-      "gBE": 50,
-      "gKHE": 42,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 110,
-      "kj": 466,
-      "blsCode": "C359032"
-    },
-    {
       "name": "Reis parboiled, poliert, gekocht, gebraten ohne Fett (Pfanne)",
       "kh": 25.3,
       "gBE": 47,
@@ -29848,23 +29831,6 @@
       "kcal": 333,
       "kj": 1413,
       "blsCode": "C359000"
-    },
-    {
-      "name": "Reis poliert, gekocht",
-      "kh": 24.8,
-      "gBE": 48,
-      "gKHE": 40,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 117,
-      "kj": 496,
-      "blsCode": "C352032"
     },
     {
       "name": "Reis poliert, gekocht, gebraten ohne Fett (Pfanne)",
@@ -29918,23 +29884,6 @@
       "blsCode": "C456000"
     },
     {
-      "name": "Reis unpoliert, gekocht",
-      "kh": 26.3,
-      "gBE": 46,
-      "gKHE": 38,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 128,
-      "kj": 544,
-      "blsCode": "C351032"
-    },
-    {
       "name": "Reis unpoliert, gekocht, gebraten ohne Fett (Pfanne)",
       "kh": 28,
       "gBE": 43,
@@ -29969,6 +29918,91 @@
       "blsCode": "C351000"
     },
     {
+      "name": "Reis: Reis parboiled, poliert, gekocht",
+      "kh": 23.8,
+      "gBE": 50,
+      "gKHE": 42,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 110,
+      "kj": 466,
+      "blsCode": "C359032"
+    },
+    {
+      "name": "Reis: Reis poliert, gekocht",
+      "kh": 24.8,
+      "gBE": 48,
+      "gKHE": 40,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 117,
+      "kj": 496,
+      "blsCode": "C352032"
+    },
+    {
+      "name": "Reis: Reis unpoliert, gekocht",
+      "kh": 26.3,
+      "gBE": 46,
+      "gKHE": 38,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 128,
+      "kj": 544,
+      "blsCode": "C351032"
+    },
+    {
+      "name": "Reis: Reismischung mit Wildreis, gekocht",
+      "kh": 27.3,
+      "gBE": 44,
+      "gKHE": 37,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 133,
+      "kj": 565,
+      "blsCode": "C354132"
+    },
+    {
+      "name": "Reis: Wildreis gekocht",
+      "kh": 28.4,
+      "gBE": 42,
+      "gKHE": 35,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 140,
+      "kj": 593,
+      "blsCode": "C353132"
+    },
+    {
       "name": "Reisdrink",
       "kh": 12.3,
       "gBE": 97,
@@ -29984,24 +30018,7 @@
       "kcal": 59,
       "kj": 248,
       "blsCode": "C650000+C650200",
-      "subtitle": "ungesüßt, ungesüßt, angereichert mit Vitaminen und Calcium"
-    },
-    {
-      "name": "Reismischung mit Wildreis, gekocht",
-      "kh": 27.3,
-      "gBE": 44,
-      "gKHE": 37,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 133,
-      "kj": 565,
-      "blsCode": "C354132"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Reismischung mit Wildreis, roh",
@@ -30684,23 +30701,6 @@
       "blsCode": "C537000"
     },
     {
-      "name": "Wildreis gekocht",
-      "kh": 28.4,
-      "gBE": 42,
-      "gKHE": 35,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 140,
-      "kj": 593,
-      "blsCode": "C353132"
-    },
-    {
       "name": "Wildreis gekocht, gebraten ohne Fett (Pfanne)",
       "kh": 30.2,
       "gBE": 40,
@@ -30750,7 +30750,7 @@
       "kcal": 314,
       "kj": 1303,
       "blsCode": "R9A2000+R9A2200+R9A2100",
-      "subtitle": "Ananas-Joghurtsahne für Gebäck/Torten, Schokoladensahne für Gebäck/Torten, Nusssahne für Gebäck/Torten"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Apfelpektin getrocknet",
@@ -31093,7 +31093,7 @@
       "kcal": 208,
       "kj": 864,
       "blsCode": "R9A1300+R9A1400+R9A1100+R9A1000+R9A1200",
-      "subtitle": "Mandarinensahnecreme für Gebäck/Torten, Zitronensahnecreme für Gebäck/Torten, Himbeersahnecreme für Gebäck/Torten, Erdbeersahnecreme für Gebäck/Torten, Käsesahnecreme für Gebäck/Torten"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Marzipanfüllung für Gebäck/Torten",
@@ -31197,7 +31197,7 @@
       "kcal": 144,
       "kj": 606,
       "blsCode": "R9A6200+R9A6000+R9A6100",
-      "subtitle": "Orangenflammeri mit Likör, für Gebäck/Torten, Apfel-Weincreme eihaltig, für Gebäck/Torten, Mokkaflammeri mit Likör, für Gebäck/Torten"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Pfeffer schwarz, getrocknet",
@@ -31300,7 +31300,7 @@
       "kcal": 345,
       "kj": 1444,
       "blsCode": "R9A5100+R9A5200+R9A5000",
-      "subtitle": "Sacherguss/Schokoladenglasur, für Gebäck/Torten, Schokoladenfettglasur für Gebäck/Torten, Aprikosenglasur/Aprikotur, für Gebäck/Torten"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Sahnestandmittel",
@@ -31540,7 +31540,7 @@
       "kcal": 305,
       "kj": 1262,
       "blsCode": "R9A4200+R9A4100+R9A4000",
-      "subtitle": "Vanillebuttercreme gestreckt, für Gebäck/Torten, Schokobuttercreme gestreckt, für Gebäck/Torten, Mokkabuttercreme gestreckt, für Gebäck/Torten"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vanillecreme/Vanilleflammeri, eihaltig, für Gebäck/Torten",
@@ -31728,7 +31728,7 @@
       "kcal": 609,
       "kj": 2525,
       "blsCode": "H170100+H170600+H170610+H170700",
-      "subtitle": "geröstet mit Fett, geröstet ohne Fett, geröstet mit Fett, gesalzen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Dessert/Puddingalternative",
@@ -31746,7 +31746,7 @@
       "kcal": 89,
       "kj": 374,
       "blsCode": "H843200+H843300",
-      "subtitle": "pflanzlich, pflanzlich, angereichert mit Vitaminen und Calcium"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Dicke Bohne reif",
@@ -31900,7 +31900,7 @@
       "kcal": 620,
       "kj": 2567,
       "blsCode": "H110600+H110800+H110700",
-      "subtitle": "Erdnuss geröstet, Erdnussmus, Erdnuss geröstet, gesalzen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Erdnussbutter/Erdnusscreme",
@@ -31918,7 +31918,7 @@
       "kcal": 457,
       "kj": 1894,
       "blsCode": "H880200+H880100",
-      "subtitle": "Erdnussbutter/Erdnusscreme, Sonnenblumenkernaufstrich, Brotaufstrich pflanzlich"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gartenbohne",
@@ -31936,7 +31936,7 @@
       "kcal": 131,
       "kj": 550,
       "blsCode": "H740132+H740902",
-      "subtitle": "reif, gekocht, reif, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Gartenbohne reif",
@@ -32005,7 +32005,7 @@
       "kcal": 668,
       "kj": 2756,
       "blsCode": "H130100+H130800+H130400+H130610",
-      "subtitle": "Haselnuss, Haselnussmus, Haselnuss gemahlen, Haselnuss geröstet ohne Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Hummus/Kichererbsenmus",
@@ -32295,7 +32295,7 @@
       "kcal": 752,
       "kj": 3098,
       "blsCode": "H190600+H190100+H190700",
-      "subtitle": "geröstet ohne Fett, geröstet ohne Fett, gesalzen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mandelmus",
@@ -32416,7 +32416,7 @@
       "kcal": 599,
       "kj": 2477,
       "blsCode": "H250600+H250100+H250700",
-      "subtitle": "geröstet ohne Fett, geröstet ohne Fett, gesalzen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Soja-Bolognese Konserve",
@@ -32468,7 +32468,7 @@
       "kcal": 62,
       "kj": 261,
       "blsCode": "H844500+H844400",
-      "subtitle": "gesüßt, aromatisiert, angereichert mit Vitaminen und Calcium, gesüßt, aromatisiert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Sojabohne reif, geröstet ohne Fett (Sojakerne)",
@@ -32503,7 +32503,7 @@
       "kcal": 58,
       "kj": 243,
       "blsCode": "H842400+H842600",
-      "subtitle": "gesüßt, aromatisiert, gesüßt, aromatisiert, angereichert mit Vitaminen und Calcium"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Sojamehl vollfett",
@@ -32573,7 +32573,7 @@
       "kcal": 497,
       "kj": 2070,
       "blsCode": "H810000+H810100",
-      "subtitle": "Studentenfutter, Erdnuss geröstet, im Teigmantel"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Veganer Aufschnitt (Wurstalternative)",
@@ -32591,7 +32591,7 @@
       "kcal": 211,
       "kj": 874,
       "blsCode": "H930000+H930100",
-      "subtitle": "Veganer Aufschnitt (Wurstalternative), Soja-Streichwurstalternative, vegan"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vegetarische Bratwurst (aus Tofu und Weizenprotein)",
@@ -32609,7 +32609,7 @@
       "kcal": 222,
       "kj": 925,
       "blsCode": "H910300+H910400+H910500+H910200",
-      "subtitle": "Vegetarische Bratwurst (aus Tofu und Weizenprotein), Veganes Schnitzel, Vegetarische Wiener Würstchen, Tofu-Bratlinge gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Austernpilz",
@@ -33176,7 +33176,7 @@
       "kcal": 81,
       "kj": 345,
       "blsCode": "K110100+K110143+K110162+K110142+K110132+K110182+K110902",
-      "subtitle": "geschält, roh, geschält, druckgedämpft, geschält, gebacken, geschält, geschmort ohne Fett, geschält, gekocht, geschält, gebraten ohne Fett (Pfanne), geschält, gekocht, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kartoffel",
@@ -33194,7 +33194,7 @@
       "kcal": 95,
       "kj": 403,
       "blsCode": "K120100+K120164+K120200+K120184+K120134+K120264",
-      "subtitle": "ungeschält, roh, ungeschält, gebacken, ungeschält, tiefgefroren, ungeschält, gebraten ohne Fett (Pfanne), ungeschält, gekocht, ungeschält, tiefgefroren, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kartoffel-Speck-Rösti",
@@ -33212,7 +33212,7 @@
       "kcal": 300,
       "kj": 1255,
       "blsCode": "K392200+K392292+K392282+K392262",
-      "subtitle": "tiefgefroren, tiefgefroren, frittiert, tiefgefroren, gebraten ohne Fett (Pfanne), tiefgefroren, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kartoffelchips energiereduziert",
@@ -33247,7 +33247,7 @@
       "kcal": 514,
       "kj": 2141,
       "blsCode": "K280100+K280200",
-      "subtitle": "Kartoffelchips/Stapelchips, diverse Sorten, Kartoffelsticks"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kartoffelkloß",
@@ -33265,7 +33265,7 @@
       "kcal": 322,
       "kj": 1367,
       "blsCode": "K240400+K240500",
-      "subtitle": "(aus rohen Kartoffeln) Trockenprodukt, (aus gekochten Kartoffeln) Trockenprodukt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kartoffelkloß",
@@ -33283,7 +33283,7 @@
       "kcal": 107,
       "kj": 453,
       "blsCode": "K241200+K241232",
-      "subtitle": "halb und halb, tiefgefroren, halb und halb, tiefgefroren, gargezogen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kartoffelkroketten",
@@ -33301,7 +33301,7 @@
       "kcal": 257,
       "kj": 1075,
       "blsCode": "K282200+K282262+K282292",
-      "subtitle": "tiefgefroren, tiefgefroren, gebacken, tiefgefroren, frittiert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kartoffelpuffer",
@@ -33319,7 +33319,7 @@
       "kcal": 175,
       "kj": 741,
       "blsCode": "K260200+K260282+K260292+K260262",
-      "subtitle": "tiefgefroren, tiefgefroren, gebraten ohne Fett (Pfanne), tiefgefroren, frittiert, tiefgefroren, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kartoffelpüree Instantpulver",
@@ -33354,7 +33354,7 @@
       "kcal": 284,
       "kj": 1190,
       "blsCode": "K391200+K391292+K391282+K391262",
-      "subtitle": "tiefgefroren, tiefgefroren, frittiert, tiefgefroren, gebraten ohne Fett (Pfanne), tiefgefroren, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kartoffelstärke (Kartoffelmehl)",
@@ -33389,7 +33389,7 @@
       "kcal": 292,
       "kj": 1221,
       "blsCode": "K311200+K311282+K311262+K311292",
-      "subtitle": "mit Frischkäsefüllung, tiefgefroren, mit Frischkäsefüllung, tiefgefroren, gebraten ohne Fett (Pfanne), mit Frischkäsefüllung, tiefgefroren, gebacken, mit Frischkäsefüllung tiefgefroren, frittiert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Maniok/Cassava",
@@ -33407,7 +33407,7 @@
       "kcal": 156,
       "kj": 660,
       "blsCode": "K410100+K410182+K410432+K410162",
-      "subtitle": "roh, gebraten ohne Fett (Pfanne), gekocht, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mischpilze",
@@ -33425,7 +33425,7 @@
       "kcal": 134,
       "kj": 555,
       "blsCode": "K750400+K750432+K750282",
-      "subtitle": "getrocknet, getrocknet, gekocht, tiefgefroren, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Morchel getrocknet",
@@ -33528,7 +33528,7 @@
       "kcal": 167,
       "kj": 704,
       "blsCode": "K130492+K130262+K130200+K130362+K130592",
-      "subtitle": "frites tiefgefroren, frittiert, frites tiefgefroren, gebacken, frites tiefgefroren, frites tiefgefroren, gebacken, gesalzen, frites tiefgefroren, frittiert, gesalzen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rotkappe",
@@ -33582,7 +33582,7 @@
       "kcal": 76,
       "kj": 316,
       "blsCode": "K718400+K718152+K718182+K718162+K718432",
-      "subtitle": "getrocknet, gedünstet, gebraten ohne Fett (Pfanne), gebacken, getrocknet, gekocht"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Tapioka/Tapiokastärke",
@@ -33617,7 +33617,7 @@
       "kcal": 62,
       "kj": 258,
       "blsCode": "K430100+K430162+K430182",
-      "subtitle": "roh, gebacken, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vegetarische Pastete, Brotaufstrich hefebasiert",
@@ -33652,7 +33652,7 @@
       "kcal": 132,
       "kj": 556,
       "blsCode": "K440100+K440132+K440182+K440162",
-      "subtitle": "roh, gekocht, gebraten ohne Fett (Pfanne), gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Buttermilch",
@@ -33772,7 +33772,7 @@
       "kcal": 60,
       "kj": 249,
       "blsCode": "M121300+M121200+M121500+M121100",
-      "subtitle": "Dickmilch/Sauermilch, mind. 3,5 % Fett, Dickmilch/Sauermilch, fettarm, mind. 1,5 % bis max. 1,8 % Fett, Sahnedickmilch/Sahnesauermilch, mind. 10 % Fett, Dickmilch/Sauermilch, entrahmt, max. 0,5 % Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Frischkäsezubereitung",
@@ -33790,7 +33790,7 @@
       "kcal": 104,
       "kj": 437,
       "blsCode": "M8A1200+M8A1300",
-      "subtitle": "mind. 10 % Fett i. Tr., mit Fruchtzubereitung, gesüßt, angereichert mit Vitamin D und Calcium, mind. 20 % Fett i. Tr., mit Fruchtzubereitung, gesüßt, angereichert mit Calcium"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Grießpudding mit Sahne und Fruchtzubereitung, gesüßt",
@@ -33842,7 +33842,7 @@
       "kcal": 89,
       "kj": 375,
       "blsCode": "M2A3300+M2A3200",
-      "subtitle": "mild, max. 3,8 % Fett, mit Fruchtzubereitung, gesüßt, laktosefrei, fettarm, mind. 1,5 % bis max. 1,8 % Fett, mit Fruchtzubereitung, gesüßt, laktosefrei"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Joghurt aus entrahmter Milch, max. 0,5 % Fett, laktosefrei",
@@ -33996,7 +33996,7 @@
       "kcal": 92,
       "kj": 389,
       "blsCode": "M241100+M241300+M241500+M241200",
-      "subtitle": "Joghurt mild, aus entrahmter Milch, max. 1 % Fett, mit Fruchtzubereitung, gesüßt, Joghurt mild, max. 3,8 % Fett, mit Fruchtzubereitung, gesüßt, Sahnejoghurt mind. 10 % Fett, mit Fruchtzubereitung, gesüßt, Joghurt fettarm, mind. 1,5 % bis max. 1,8 % Fett, mit Fruchtzubereitung, gesüßt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Joghurt mild, mind. 3,5 % Fett",
@@ -34014,7 +34014,7 @@
       "kcal": 65,
       "kj": 272,
       "blsCode": "M141300+M141200+M141500+M141100",
-      "subtitle": "Joghurt mild, mind. 3,5 % Fett, Joghurt fettarm, mind. 1,5 % bis max. 1,8 % Fett, Sahnejoghurt mind. 10 % Fett, Joghurt aus entrahmter Milch, max. 0,5 % Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Joghurt mind. 3,5 % Fett, laktosefrei",
@@ -34117,7 +34117,7 @@
       "kcal": 67,
       "kj": 280,
       "blsCode": "M148300+M148200+M148500+M148100",
-      "subtitle": "Joghurt mind. 3,5 % Fett, mit Magermilchpulverzusatz, Joghurt fettarm, mind. 1,5 % bis max. 1,8 % Fett, mit Magermilchpulverzusatz, Sahnejoghurt mind. 10 % Fett, mit Magermilchpulverzusatz, Joghurt aus entrahmter Milch, max. 0,5 % Fett, mit Magermilchpulverzusatz"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Joghurt mind. 3,5 % Fett, mit Nusszubereitung, gesüßt",
@@ -34220,7 +34220,7 @@
       "kcal": 46,
       "kj": 194,
       "blsCode": "M130300+M130100+M130200",
-      "subtitle": "mind. 3,5 % Fett, aus entrahmter Milch, max. 0,5 % Fett, fettarm, mind. 1,5 % bis max. 1,8 % Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kefir fettarm, mind. 1,5 % bis max. 1,8 % Fett, mit Fruchtzubereitung, gesüßt",
@@ -34238,7 +34238,7 @@
       "kcal": 101,
       "kj": 422,
       "blsCode": "M231200+M231500",
-      "subtitle": "Kefir fettarm, mind. 1,5 % bis max. 1,8 % Fett, mit Fruchtzubereitung, gesüßt, Sahnekefir mind. 10 % Fett, mit Fruchtzubereitung, gesüßt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kochkäse < 10 % Fett i. Tr.",
@@ -34273,7 +34273,7 @@
       "kcal": 296,
       "kj": 1249,
       "blsCode": "M181100+M181400",
-      "subtitle": "Kondensmagermilch max. 1 % Fett, gezuckert, Kondensmilch mind. 8 % Fett, gezuckert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kondensmilch 10 % Fett",
@@ -34291,7 +34291,7 @@
       "kcal": 121,
       "kj": 506,
       "blsCode": "M182500+M182100+M182300+M182400",
-      "subtitle": "Kondensmilch 10 % Fett, Kondensmagermilch max. 1 % Fett, Kondensmilch teilentrahmt, mind. 1 % bis < 7,5 % Fett, Kondensmilch mind. 7,5 % Fett"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Magermilchpulver",
@@ -34311,24 +34311,6 @@
       "blsCode": "M884000"
     },
     {
-      "name": "Milch: H-Milch fettarm laktosefrei",
-      "kh": 4.6,
-      "gBE": 261,
-      "gKHE": 217,
-      "categories": [
-        [
-          "Milchprodukte"
-        ]
-      ],
-      "tags": [
-        "wenigeKH"
-      ],
-      "kcal": 45,
-      "kj": 190,
-      "blsCode": "M114200+M114300+M114100+M1A5200+M1A7300+M1A3100",
-      "subtitle": "verschiedene Fettstufen"
-    },
-    {
       "name": "Milch: H-Milch fettarm, 1,5 % Fett, ultrahocherhitzt",
       "kh": 4.2,
       "gBE": 285,
@@ -34344,7 +34326,25 @@
       "kcal": 44,
       "kj": 186,
       "blsCode": "M113200+M113300+M113100",
-      "subtitle": "H-Milch fettarm, 1,5 % Fett, ultrahocherhitzt, H-Vollmilch 3,5 % Fett, ultrahocherhitzt, H-Milch entrahmt, höchstens 0,5 % Fett, ultrahocherhitzt"
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Milch: Milch: H-Milch fettarm laktosefrei",
+      "kh": 4.6,
+      "gBE": 261,
+      "gKHE": 217,
+      "categories": [
+        [
+          "Milchprodukte"
+        ]
+      ],
+      "tags": [
+        "wenigeKH"
+      ],
+      "kcal": 45,
+      "kj": 190,
+      "blsCode": "M114200+M114300+M114100+M1A5200+M1A7300+M1A3100",
+      "subtitle": "verschiedene Fettstufen"
     },
     {
       "name": "Milch: Rohmilch/Vorzugsmilch, mind. 3,5 % Fett",
@@ -34379,7 +34379,7 @@
       "kcal": 48,
       "kj": 201,
       "blsCode": "M111300+M111100",
-      "subtitle": "Vollmilch frisch, 3,5 % Fett, pasteurisiert, Milch entrahmt, frisch, höchstens 0,1 % Fett, pasteurisiert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Milchmischgetränk",
@@ -34397,7 +34397,7 @@
       "kcal": 58,
       "kj": 244,
       "blsCode": "M200300+M200200+M200100",
-      "subtitle": "3,5 % Fett, aromatisiert, gesüßt, 1,5 % Fett, aromatisiert, gesüßt, < 1 % Fett, aromatisiert, gesüßt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Milchmischgetränk",
@@ -34415,7 +34415,7 @@
       "kcal": 58,
       "kj": 244,
       "blsCode": "M2A0300+M2A0100+M2A0200",
-      "subtitle": "3,5 % Fett, aromatisiert, gesüßt, angereichert mit Vitaminen, < 1 % Fett, aromatisiert, mit Zucker und Süßungsmitteln, 1,5 % Fett, aromatisiert, gesüßt, angereichert mit Vitaminen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Milchmischgetränk",
@@ -34433,7 +34433,7 @@
       "kcal": 63,
       "kj": 267,
       "blsCode": "M206300+M206100+M206200",
-      "subtitle": "3,5 % Fett, mit Kakao/Schokolade, gesüßt, < 1 % Fett, mit Kakao/Schokolade, gesüßt, 1,5 % Fett, mit Kakao/Schokolade, gesüßt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Milchmischgetränk < 1 % Fett, aromatisiert, mit Süßungsmitteln",
@@ -34808,7 +34808,7 @@
       "kcal": 299,
       "kj": 1240,
       "blsCode": "M771700+M771400+M771600",
-      "subtitle": "schnittfest, mind. 50 % Fett i. Tr., schnittfest, mind. 30 % Fett i. Tr., schnittfest, mind. 45 % Fett i. Tr."
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Schmelzkäse aus Frischkäse, streichfähig, mind. 60 % Fett i. Tr.",
@@ -34843,7 +34843,7 @@
       "kcal": 237,
       "kj": 985,
       "blsCode": "M810600+M810500+M810400+M810300",
-      "subtitle": "45 - 52 % Fett i. Tr., mind. 40 % Fett i. Tr., mind. 30 % Fett i. Tr., mind. 20 % Fett i. Tr."
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Schmelzkäsezubereitung 45 - 52 % Fett i. Tr., mit Nüssen",
@@ -34912,7 +34912,7 @@
       "kcal": 122,
       "kj": 516,
       "blsCode": "M831100+M831500+M831300",
-      "subtitle": "< 10 % Fett i. Tr., mit Fruchtzubereitung, gesüßt, mind. 40 % Fett i. Tr., mit Fruchtzubereitung, gesüßt, mind. 20 % Fett i. Tr., mit Fruchtzubereitung, gesüßt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Speisequarkzubereitung < 10 % Fett i. Tr., mit Fruchtzubereitung, Zucker und Süßungsmitteln",
@@ -35032,7 +35032,7 @@
       "kcal": 88,
       "kj": 373,
       "blsCode": "M2L2300+M2L2200",
-      "subtitle": "mind. 3,5 % Fett, mit Fruchtzubereitung, gesüßt, fettarm, mind. 1,5 % bis max. 1,8 % Fett, mit Fruchtzubereitung, gesüßt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Trinkjoghurt aus entrahmter Milch, max. 0,5 % Fett, mit Fruchtzubereitung, gesüßt",
@@ -35645,7 +35645,7 @@
       "kcal": 50,
       "kj": 209,
       "blsCode": "F092100+F092152+F092902",
-      "subtitle": "Beerenmischung mit Sauerkirschen, ungesüßt, roh, Beerenmischung mit Sauerkirschen, ungesüßt, gedünstet, Fruchtmischung/Fruchtcocktail, mit Süßungsmitteln, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Birne gedünstet",
@@ -36225,7 +36225,7 @@
       "kcal": 58,
       "kj": 242,
       "blsCode": "F091100+F091902",
-      "subtitle": "Fruchtmischung ungesüßt, roh, Fruchtmischung/Fruchtcocktail, in Fruchtsaft, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Fruchtmischung/Fruchtcocktail, gezuckert, Konserve, abgetropft",
@@ -36380,7 +36380,7 @@
       "kcal": 63,
       "kj": 263,
       "blsCode": "F304100+F304152+F304600+F304902",
-      "subtitle": "Heidelbeere roh, Heidelbeere gedünstet, Heidelbeersaft, Heidelbeere gezuckert, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Himbeere gedünstet",
@@ -36553,7 +36553,7 @@
       "kcal": 41,
       "kj": 172,
       "blsCode": "F321100+F321152+F321902",
-      "subtitle": "rot, roh, rot, gedünstet, rot, gezuckert, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Johannisbeere schwarz roh",
@@ -36571,7 +36571,7 @@
       "kcal": 57,
       "kj": 242,
       "blsCode": "F323100+F323600+F323152+F323700+F323902",
-      "subtitle": "Johannisbeere schwarz roh, Johannisbeersaft schwarz, Johannisbeere schwarz gedünstet, Johannisbeernektar schwarz, Johannisbeere schwarz, gezuckert, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Johannisbeere weiß, roh",
@@ -36641,7 +36641,7 @@
       "kcal": 75,
       "kj": 313,
       "blsCode": "F552100+F552600",
-      "subtitle": "Kapstachelbeere/Physalis, roh, Kapstachelbeersaft/Physalissaft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kiwi roh",
@@ -36830,7 +36830,7 @@
       "kcal": 72,
       "kj": 305,
       "blsCode": "F515100+F515600+F515902",
-      "subtitle": "Litschi roh, Litschisaft, Litschi gezuckert, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Lulo/Naranjilla, roh",
@@ -36865,7 +36865,7 @@
       "kcal": 53,
       "kj": 223,
       "blsCode": "F606902+F606600+F606100",
-      "subtitle": "Mandarine gezuckert, Konserve, abgetropft, Mandarinensaft, Mandarine roh"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mandarine in Fruchtsaft, Konserve, abgetropft",
@@ -37037,7 +37037,7 @@
       "kcal": 56,
       "kj": 236,
       "blsCode": "F508100+F508600+F508700",
-      "subtitle": "Maracuja/Passionsfrucht, roh, Maracujasaft/Passionsfruchtsaft, Maracujanektar/Passionsfruchtnektar"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Maulbeere roh",
@@ -37192,7 +37192,7 @@
       "kcal": 74,
       "kj": 312,
       "blsCode": "F224100+F224152+F224902",
-      "subtitle": "roh, gedünstet, gezuckert, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mirabelle mit Süßungsmitteln, Konserve, abgetropft",
@@ -37365,7 +37365,7 @@
       "kcal": 41,
       "kj": 171,
       "blsCode": "F605100+F605600",
-      "subtitle": "Pampelmuse/Pomelo, roh, Pampelmusensaft/Pomelosaft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Papaya getrocknet",
@@ -37757,7 +37757,7 @@
       "kcal": 49,
       "kj": 202,
       "blsCode": "F140100+F140152+F140132+F140600",
-      "subtitle": "Quitte roh, Quitte gedünstet, Quitte gekocht, Quittensaft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rambutan roh",
@@ -37844,7 +37844,7 @@
       "kcal": 299,
       "kj": 1266,
       "blsCode": "F840100+F840300",
-      "subtitle": "Rosine/Sultanine (Weinbeere getrocknet), Korinthe (Weinbeere getrocknet)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rote Grütze gezuckert, Konserve",
@@ -37931,7 +37931,7 @@
       "kcal": 62,
       "kj": 265,
       "blsCode": "F212902+F212100+F212152+F212600+F212700",
-      "subtitle": "Sauerkirsche gezuckert, Konserve, abgetropft, Sauerkirsche roh, Sauerkirsche gedünstet, Sauerkirschsaft, Sauerkirschnektar"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Sauerkirsche mit Süßungsmitteln, Konserve, abgetropft",
@@ -38069,7 +38069,7 @@
       "kcal": 56,
       "kj": 235,
       "blsCode": "F305100+F305152+F305902",
-      "subtitle": "roh, gedünstet, gezuckert, Konserve, abgetropft"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Süßkirsche gedünstet",
@@ -38535,7 +38535,7 @@
       "kcal": 179,
       "kj": 750,
       "blsCode": "D1A3000+D1A3100",
-      "subtitle": "Apfelkuchen (Quark-Öl-Teig), Zwetschgenkuchen (Quark-Öl-Teig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Apfelkuchen (Rührmasse)",
@@ -38672,7 +38672,7 @@
       "kcal": 360,
       "kj": 1503,
       "blsCode": "D483400+D483200",
-      "subtitle": "Apfelstrudel (Mürbeteig), Haselnusszopf (Mürbeteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Apfeltasche (Blätterteig)",
@@ -38724,7 +38724,7 @@
       "kcal": 220,
       "kj": 922,
       "blsCode": "D288200+D288100+D288300",
-      "subtitle": "Apfeltorte gedeckt (Mürbeteig), Pfirsichtorte (Mürbeteig) mit Klarguss, Apfel-Mohntorte (Mürbeteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Apfelwaffeln (Rührmasse)",
@@ -38776,7 +38776,7 @@
       "kcal": 202,
       "kj": 843,
       "blsCode": "D705200+D705400+D705300",
-      "subtitle": "Aprikosen im Ausbackteig frittiert, Bananen im Ausbackteig frittiert, Apfelküchlein/Apfelringe im Ausbackteig, frittiert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Aprikosen-Nuss-Torte (Rührmasse)",
@@ -39032,7 +39032,7 @@
       "kcal": 307,
       "kj": 1281,
       "blsCode": "D410300+D410100",
-      "subtitle": "Baumstamm/Bismarckeiche (Wasserbiskuit) mit Mokkabuttercreme, Biskuitschnitte mit Vanillebuttercreme"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Berliner/Pfannkuchen/Krapfen (Hefeteig) frittiert, gefüllt mit Eierlikörcreme",
@@ -39408,7 +39408,7 @@
       "kcal": 509,
       "kj": 2115,
       "blsCode": "D490300+D490100+D490500",
-      "subtitle": "Blätterteig (mit Ei) gebacken, Quarkblätterteig gebacken, Französische Apfeltarte (Blätterteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Brandmasse/Brandteig, roh",
@@ -39511,7 +39511,7 @@
       "kcal": 336,
       "kj": 1407,
       "blsCode": "D741400+D741600+D741000",
-      "subtitle": "Buchteln (Hefeteig), Donut (Hefeteig) frittiert, Donut (Hefeteig) frittiert, mit Schokoladenglasur"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Buchweizen-Wasserbiskuitboden",
@@ -39648,7 +39648,7 @@
       "kcal": 469,
       "kj": 1958,
       "blsCode": "D7B1100+D7B1000",
-      "subtitle": "kakaohaltig (Mürbeteig), (Mürbeteig) mit Cremefüllung"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Buttergebäck (Mürbeteig)",
@@ -39683,7 +39683,7 @@
       "kcal": 513,
       "kj": 2145,
       "blsCode": "D7B3000+D7B3100+D7B3200",
-      "subtitle": "kakaohaltig (Mürbeteig), kakaohaltig (Mürbeteig) mit Nougatfüllung, kakaohaltig (Mürbeteig) mit Nougatfüllung, schokoliert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Butterkekse/Butterplätzchen",
@@ -39701,7 +39701,7 @@
       "kcal": 470,
       "kj": 1974,
       "blsCode": "D7B2100+D7B2000",
-      "subtitle": "(Mürbeteig) mit Nougatfüllung, schokoliert, (Mürbeteig) mit Nougatfüllung"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Butterkekse/Butterplätzchen (Mürbeteig)",
@@ -39753,7 +39753,7 @@
       "kcal": 510,
       "kj": 2129,
       "blsCode": "D9B1000+D9B1400+D9B1300+D9B1100+D9B1500+D9B1200",
-      "subtitle": "Butterkekse/Butterplätzchen, kakaohaltig (Vollkornmürbeteig), Müslikekse/Müsliplätzchen (Vollkornmürbeteig) schokoliert, Kekse/Plätzchen (Vollkornmürbeteig) mit Nougatfüllung, schokoliert, Butterkekse/Butterplätzchen, kakaohaltig (Vollkornmürbeteig) mit Nougatfüllung, Schoko-Müslikekse/Schoko-Müsliplätzchen (Vollkornmürbeteig), Kekse/Plätzchen (Vollkornmürbeteig) mit Nougatfüllung"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Butterkuchen/Zuckerkuchen (Hefeteig)",
@@ -40060,7 +40060,7 @@
       "kcal": 362,
       "kj": 1516,
       "blsCode": "D621100+D621200+D621800+D621000+D621300",
-      "subtitle": "Eiswaffeln/Waffelhörnchen (Rührmasse), Waffelkekse, Sahnewaffeln (Rührmasse), Waffeln, einfache (Rührmasse), Waffelkekse schokoliert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Elisenlebkuchen",
@@ -40112,7 +40112,7 @@
       "kcal": 436,
       "kj": 1820,
       "blsCode": "D440700+D440500+D440800+D440300",
-      "subtitle": "Englischer Kuchen (Sandmasse) mit Alkohol, Nusskuchen (Sandmasse), Königskuchen (Rührmasse) mit Alkohol, Kuchen aus Sandmasse/Sandkuchen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Englischer Teekuchen glutenfrei",
@@ -40504,7 +40504,7 @@
       "kcal": 504,
       "kj": 2108,
       "blsCode": "D735300+D735200+D735100",
-      "subtitle": "Haselnuss-Dreispitz (Mürbeteig), Orangentäschchen (Mürbeteig), Spitzbuben (Mürbeteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Haselnusskugeln (Mürbeteig)",
@@ -40608,7 +40608,7 @@
       "kcal": 421,
       "kj": 1766,
       "blsCode": "D750600+D750200+D750300+D750700+D750100",
-      "subtitle": "Heidesand (Mürbeteig), Streuselschnecken (Hefeteig), Ausgezogene Nudeln/Knienudeln (Hefeteig) frittiert, Marzipanstangen (Rührmasse), Amerikaner (Rührmasse)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Herrentorte (Mürbeteig und Wiener Boden hell) mit Apfel-Weincreme",
@@ -40966,7 +40966,7 @@
       "kcal": 283,
       "kj": 1184,
       "blsCode": "D480200+D480300",
-      "subtitle": "Käsekuchen/Quarkkuchen (Mürbeteig), Käsekuchen mit Streuseln (Mürbeteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Käsekuchen/Quarkkuchen (Quark-Öl-Teig)",
@@ -41086,7 +41086,7 @@
       "kcal": 274,
       "kj": 1144,
       "blsCode": "D720800+D720400+D720500+D720600+D720200+D720700+D720300",
-      "subtitle": "Käsewindbeutel salzig (Brandmasse) ungefüllt, Brandmasse/Brandteig, gebacken, Sahne-Windbeutel (Brandmasse) mit Kirschen, Flockentorte (Brandmasse und Mürbeteig), Sahne-Windbeutel (Brandmasse), Preiselbeer-Stracciatella-Sahne-Kranz (Brandmasse), Sahne-Eclairs (Brandmasse)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kathrinchen (Honigteigplätzchen)",
@@ -41104,7 +41104,7 @@
       "kcal": 402,
       "kj": 1697,
       "blsCode": "D657100+D657400+D657200+D657300",
-      "subtitle": "Kathrinchen (Honigteigplätzchen), Honigkuchenhäufchen, Honigkuchenplätzchen, Pflastersteine"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kekse/Plätzchen",
@@ -41122,7 +41122,7 @@
       "kcal": 521,
       "kj": 2175,
       "blsCode": "D7B5000+D7B5100+D7B5300+D7B5200",
-      "subtitle": "kakaohaltig (Rührmasse), kakaohaltig (Rührmasse) schokoliert, kakaohaltig (Rührmasse) mit Nougatfüllung, schokoliert, kakaohaltig (Rührmasse) mit Nougatfüllung"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kekse/Plätzchen (Vollkornmürbeteig)",
@@ -41140,7 +41140,7 @@
       "kcal": 522,
       "kj": 2177,
       "blsCode": "D790700+D790100+D790300",
-      "subtitle": "Kekse/Plätzchen (Vollkornmürbeteig), Kekse/Plätzchen, salzig (Vollkornmürbeteig), Kekse/Plätzchen (Vollkornmürbeteig) schokoliert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kekse/Plätzchen, eiweißarm",
@@ -41175,7 +41175,7 @@
       "kcal": 326,
       "kj": 1357,
       "blsCode": "D4A1100+D4A1000",
-      "subtitle": "Kirschstrudel (Blätterteig), Apfelstrudel (Blätterteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kirschtasche (Blätterteig)",
@@ -41329,7 +41329,7 @@
       "kcal": 454,
       "kj": 1900,
       "blsCode": "D0A6100+D0A6000",
-      "subtitle": "Kuchenboden/Tortenboden, kakaohaltig (Mürbeteig, einfacher), Kuchenboden/Tortenboden (Mürbeteig, einfacher)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kürbis-Kuchen (Rührmasse)",
@@ -41602,7 +41602,7 @@
       "kcal": 375,
       "kj": 1572,
       "blsCode": "D0A2000+D0A2200+D0A2100",
-      "subtitle": "Mandelbiskuitboden, Mandelboden (mit Eiklar zubereitet), Schoko-Mandelbiskuitboden"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mandelbrot (mit Eiklar, ohne Fett zubereitet)",
@@ -41654,7 +41654,7 @@
       "kcal": 377,
       "kj": 1575,
       "blsCode": "D755300+D755200",
-      "subtitle": "Mandelhörnchen (Rührmasse), Mandelkränzchen (Rührmasse)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mandelkuchen (Hefeteig)",
@@ -41672,7 +41672,7 @@
       "kcal": 389,
       "kj": 1629,
       "blsCode": "D462700+D462800",
-      "subtitle": "Mandelkuchen (Hefeteig), Schneckennudeln/Rosenkuchen (Hefeteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mandelkuchen (Rührmasse)",
@@ -41979,7 +41979,7 @@
       "kcal": 499,
       "kj": 2089,
       "blsCode": "D7B6000+D7B6200+D7B6100",
-      "subtitle": "(Mürbeteig) schokoliert, (Mürbeteig) mit Nougatfüllung, schokoliert, (Mürbeteig) mit Nougatfüllung"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Müslikekse (Vollkornmürbeteig)",
@@ -42134,7 +42134,7 @@
       "kcal": 547,
       "kj": 2275,
       "blsCode": "D7B7000+D7B7200+D7B7100",
-      "subtitle": "(Rührmasse) schokoliert, (Rührmasse) mit Nougatfüllung, schokoliert, (Rührmasse) mit Nougatfüllung"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Nuss-Spritzgebäck (Rührmasse)",
@@ -42169,7 +42169,7 @@
       "kcal": 344,
       "kj": 1446,
       "blsCode": "D0A3000+D0A3100+D0A3200",
-      "subtitle": "Nussbiskuitboden, Nuss-Wasserbiskuitboden, Nussboden (mit Eiklar zubereitet)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Nussbiskuitrolle/Nussbiskuitroulade, mit Himbeeren und Sahne",
@@ -42221,7 +42221,7 @@
       "kcal": 385,
       "kj": 1614,
       "blsCode": "D740500+D740400+D740100+D740600",
-      "subtitle": "Nusshörnchen (Hefeteig), Kartoffelhörnchen (Mürbeteig), Mandel-Marzipan-Donuts (Hefeteig) frittiert, Wiener Hörnchen (Hefeteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Nusskranz (Hefeteig)",
@@ -42239,7 +42239,7 @@
       "kcal": 344,
       "kj": 1444,
       "blsCode": "D464200+D464300",
-      "subtitle": "Nusskranz (Hefeteig), Mandelkranz (Hefeteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Nusskranz (Quark-Öl-Teig)",
@@ -42717,7 +42717,7 @@
       "kcal": 389,
       "kj": 1631,
       "blsCode": "D433200+D433300+D433400+D433600",
-      "subtitle": "Quarknapfkuchen (Rührmasse), Schokoladenkuchen (Rührmasse), Gewürzkuchen (Rührmasse), Baumstamm (Rührmasse) mit Schokobuttercreme"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Quarkstollen (Rührmasse)",
@@ -42752,7 +42752,7 @@
       "kcal": 254,
       "kj": 1063,
       "blsCode": "D540400+D540300+D540100+D540200",
-      "subtitle": "Quarkstrudel (Strudelteig), Kirschstrudel (Strudelteig), Wiener Apfelstrudel (Strudelteig), Apfelstrudel (Strudelteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Quarktaschen (Quark-Öl-Teig)",
@@ -42770,7 +42770,7 @@
       "kcal": 359,
       "kj": 1505,
       "blsCode": "D471700+D471600",
-      "subtitle": "Quarktaschen (Quark-Öl-Teig), Gerollte Marzipan-Nuss-Schnitten (Quark-Öl-Teig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Quicheboden (Mürbeteig)",
@@ -42856,7 +42856,7 @@
       "kcal": 183,
       "kj": 770,
       "blsCode": "D1A1200+D1A1300+D1A1000+D1A1100",
-      "subtitle": "Rhabarber-Streuselkuchen (Hefeteig), Zwetschgen-Streuselkuchen (Hefeteig), Apfel-Streuselkuchen (Hefeteig), Apfelkuchen mit Puddingcreme (Hefeteig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rhabarber-Streuselkuchen (Mürbeteig)",
@@ -42874,7 +42874,7 @@
       "kcal": 248,
       "kj": 1037,
       "blsCode": "D1A2300+D1A2000+D1A2100+D1A2200",
-      "subtitle": "Rhabarber-Streuselkuchen (Mürbeteig), Aprikosenkuchen (Mürbeteig) mit Rahmguss, Kirsch-Streuselkuchen (Mürbeteig), Kuchenboden (Mürbeteig) belegt mit Früchten, Pudding und Klarguss"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rhabarberkuchen (Rührmasse) mit Baiser",
@@ -42994,7 +42994,7 @@
       "kcal": 376,
       "kj": 1573,
       "blsCode": "D422000+D422600",
-      "subtitle": "Rührmasse/Rührteig, roh, Kuchen aus Rührmasse/Rührkuchen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Russisch-Brot (Eiklarmasse)",
@@ -43318,7 +43318,7 @@
       "kcal": 499,
       "kj": 2083,
       "blsCode": "D660600+D660800+D660300+D660200+D660700+D660100+D660500",
-      "subtitle": "Schokoladen-Haselnussmakronen, Schokoladen-Makronen, Kokosmakronen, Marzipanmakronen, Haselnussmakronen, Makronen/Mandelmakronen, Kokosmakronen schokoliert"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Schokoladen-Mandel-Cookies vegan",
@@ -43455,7 +43455,7 @@
       "kcal": 282,
       "kj": 1176,
       "blsCode": "D313400+D313300+D313100+D313600+D313500",
-      "subtitle": "Schokosahnetorte (Schoko-Wasserbiskuit), Erdbeersahnetorte (Wasserbiskuit), Mokkacreme-Marzipan-Torte (Wasserbiskuit), Orangencremetorte (Wiener Boden dunkel) mit Schokosahne, Zitronensahnetorte (Wasserbiskuit)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Schokozwieback",
@@ -43592,7 +43592,7 @@
       "kcal": 374,
       "kj": 1567,
       "blsCode": "D7A3000+D7A3100",
-      "subtitle": "Scones (britisches Kleingebäck), Muffins vegan (Rührmasse)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Sirupkuchen",
@@ -43610,7 +43610,7 @@
       "kcal": 398,
       "kj": 1680,
       "blsCode": "D655600+D655100+D655200+D655400+D655500",
-      "subtitle": "Sirupkuchen, Feiner Honigkuchen, Ostpreußischer Honigkuchen, Dicker Honigkuchen, Pfefferkuchen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Spekulatius (Mürbeteig)",
@@ -43679,7 +43679,7 @@
       "kcal": 498,
       "kj": 2077,
       "blsCode": "D7B8000+D7B8100+D7B8300+D7B8200",
-      "subtitle": "(Rührmasse), (Rührmasse) schokoliert, (Rührmasse) mit Nougatfüllung, schokoliert, (Rührmasse) mit Nougatfüllung"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Spritzgebäck mit Mandeln (Rührmasse)",
@@ -43901,7 +43901,7 @@
       "kcal": 421,
       "kj": 1756,
       "blsCode": "D9A5100+D9A5300+D9A5000+D9A5200",
-      "subtitle": "Vollkorn-Marmorkuchen (Rührmasse), Vollkorn-Schoko-Mandelkuchen (Rührmasse), Vollkornhaselnusskuchen (Rührmasse), Vollkornsandkuchen (Rührmasse)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vollkornblätterteig",
@@ -44022,7 +44022,7 @@
       "kcal": 358,
       "kj": 1495,
       "blsCode": "D9A4000+D9A4900+D9A4100+D9A4600+D9A4400+D9A4300+D9A4200+D9A4700+D9A4800+D9A4500",
-      "subtitle": "Vollkornplunderteig roh, Vollkorncroissant (Plunderteig), Vollkornplunderteig gebacken, Pudding-Vollkornplunder belegt mit Früchten und Klarguss, Pudding-Vollkornplunder, Mohn-Vollkornplunder, Marzipan-Vollkornplunder, Quark-Vollkornplunder, Quark-Frucht-Vollkornplunder, Pudding-Frucht-Vollkornplunder"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vollkornzwieback",
@@ -44125,7 +44125,7 @@
       "kcal": 306,
       "kj": 1294,
       "blsCode": "D0A4000+D0A4100",
-      "subtitle": "Wasserbiskuitboden, Schoko-Wasserbiskuitboden"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weiße Lebkuchen",
@@ -44177,7 +44177,7 @@
       "kcal": 382,
       "kj": 1594,
       "blsCode": "D441400+D441300",
-      "subtitle": "Wiener Sandtorte, Frankfurter Kranz (Sandmasse)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Wiener Tortenboden (hell)",
@@ -44506,7 +44506,7 @@
       "kcal": 206,
       "kj": 868,
       "blsCode": "S142400+S142200+S142100+S142300",
-      "subtitle": "Birnenkraut, Apfelkraut, Apfelkraut (ohne Zuckerzusatz), Birnenkraut (ohne Zuckerzusatz)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Bitterschokolade",
@@ -44543,7 +44543,7 @@
       "kcal": 547,
       "kj": 2273,
       "blsCode": "S571000+S571400+S571300",
-      "subtitle": "gefüllt mit Karamell, mit Trüffelfüllung, gefüllt mit Fruchtcreme (alkoholhaltig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Bitterschokolade gefüllt mit Fruchtcreme",
@@ -44706,7 +44706,7 @@
       "kcal": 216,
       "kj": 905,
       "blsCode": "S210000+S210800+S210300+S210900+S210700+S210400+S210100+S210600",
-      "subtitle": "Cremeeis/Kremeis, Speiseeis Nuss, in Waffeltüte, Speiseeis (Karamell, Vanille) gemischt, in Waffeltüte, Speiseeis Schokolade, in Waffeltüte, Speiseeis (Schokolade, Vanille) gemischt, in Waffeltüte, Speiseeis (Nuss, Schokolade, Vanille) gemischt, in Waffeltüte, Speiseeis (Frucht, Vanille) gemischt, in Waffeltüte, Speiseeis (Frucht, Schokolade, Vanille) gemischt, in Waffeltüte"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Dragee-Streusel",
@@ -44761,7 +44761,7 @@
       "kcal": 449,
       "kj": 1875,
       "blsCode": "S820100+S820000",
-      "subtitle": "angereichert mit Vitaminen und Mineralstoffen, gefüllt mit Nusscreme"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Erdnuss-Krokant",
@@ -45248,7 +45248,7 @@
       "kcal": 147,
       "kj": 620,
       "blsCode": "S221700+S221200+S221800+S221000",
-      "subtitle": "Joghurteis, Speiseeis (Karamell, Schokolade) gemischt, Frucht-Joghurteis, Speiseeis (Frucht, Karamell, Vanille) gemischt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kaffeeeis",
@@ -45267,7 +45267,7 @@
       "kcal": 184,
       "kj": 775,
       "blsCode": "S220200+S220800+S220000+S220900+S220700+S220400+S220500",
-      "subtitle": "Kaffeeeis, Speiseeis (Nuss, Vanille) gemischt, Fruchteis, Speiseeis (Kaffee, Vanille) gemischt, Speiseeis (Karamell, Nuss) gemischt, Speiseeis (Kaffee, Schokolade, Vanille) gemischt, Speiseeis (Frucht, Nuss) gemischt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kakaomasse",
@@ -46348,7 +46348,7 @@
       "kcal": 520,
       "kj": 2164,
       "blsCode": "S623600+S623700+S623000+S623200+S623100+S623400",
-      "subtitle": "Pralinen gefüllt mit Vanillecreme, Trüffel-Pralinen (alkoholhaltig), Nuss-Pralinen, Nuss-Trüffel-Pralinen (alkoholhaltig), Pralinen mit Frucht-Nuss-Füllung (alkoholhaltig), Pralinen gefüllt mit Fruchtcreme (alkoholhaltig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Rahmeis/Sahneeis",
@@ -46674,7 +46674,7 @@
       "kcal": 206,
       "kj": 862,
       "blsCode": "S242000+S242300+S242600+S242200+S242500+S242700+S242800+S242400+S242900",
-      "subtitle": "Schokoladeneis, Walnusseis, Speiseeis (Nuss, Schoko) gemischt, Karamelleis, Speiseeis (Nuss, Schoko, Vanille) gemischt, Speiseeis (Karamell, Vanille) gemischt, Speiseeis Vanille, mit Eierlikör, Speiseeis (Frucht, Schoko, Vanille) gemischt, Speiseeis (Frucht, Kaffee, Schoko) gemischt"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Schokoladenfondant",
@@ -46765,7 +46765,7 @@
       "kcal": 204,
       "kj": 853,
       "blsCode": "S243000+S243300+S243200+S243800+S243400+S243600+S243900",
-      "subtitle": "(Schoko, Vanille) gemischt, (Kaffee, Karamell, Schoko, Vanille) gemischt, (Nuss, Schoko, Vanille) gemischt, mit Eierlikör, (Karamell, Nuss, Vanille) gemischt, (Karamell, Schoko, Vanille) gemischt, (Frucht, Nuss, Schoko) gemischt, (Frucht, Vanille) gemischt, mit Eierlikör"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Speiseeis",
@@ -46784,7 +46784,7 @@
       "kcal": 240,
       "kj": 1001,
       "blsCode": "S231200+S231000",
-      "subtitle": "durchzogen mit Schokolade, mit Fruchtzubereitung, überzogen mit Schokolade"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Speiseeis",
@@ -46803,7 +46803,7 @@
       "kcal": 187,
       "kj": 785,
       "blsCode": "S244800+S244500+S244600+S244000+S244400+S244200+S244300+S244100",
-      "subtitle": "(Kaffee, Schoko) gemischt, (Frucht, Nuss, Schoko, Vanille) gemischt, (Frucht, Karamell, Nuss, Vanille) gemischt, (Frucht, Vanille) gemischt, (Frucht, Nuss, Vanille) gemischt, (Frucht, Kaffee, Schoko, Vanille) gemischt, (Frucht, Schoko) gemischt, (Frucht, Schoko, Vanille) gemischt, mit Eierlikör"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Speiseeis (Frucht-Joghurt, Joghurt) gemischt",
@@ -46948,7 +46948,7 @@
       "kcal": 204,
       "kj": 855,
       "blsCode": "S201600+S201000+S201300+S201500+S201400",
-      "subtitle": "Speiseeis Karamell, in Waffeltüte, Frucht-Sorbet, Speiseeis (Nuss, Schokolade) gemischt, in Waffeltüte, Speiseeis Kaffee, in Waffeltüte, Speiseeis (Frucht, Schokolade) gemischt, in Waffeltüte"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Speiseeis Vanille, in Waffeltüte",
@@ -47111,7 +47111,7 @@
       "kcal": 279,
       "kj": 1163,
       "blsCode": "S241000+S241500+S241700+S241600+S241800+S241900+S241400+S241300",
-      "subtitle": "Vanilleeis, Speiseeis Vanille, überzogen mit Schokolade, Speiseeis Schokolade, überzogen mit Schokolade, Speiseeis Vanille, überzogen mit Schokolade und Mandeln, Speiseeis überzogen mit Schokolade, Karamell und Mandeln, Speiseeis Vanille, überzogen mit Schokolade und Karamell, Speiseeis (Frucht, Kaffee, Nuss) gemischt, mit Eierlikör, Speiseeis (Frucht, Nuss, Schokolade) gemischt, mit Eierlikör"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vanillefondant",
@@ -47166,7 +47166,7 @@
       "kcal": 544,
       "kj": 2268,
       "blsCode": "S539900+S539100+S539000+S539200+S539300+S539700",
-      "subtitle": "gefüllt mit Karamell, gefüllt mit Mokka-/Kaffeecreme, gefüllt mit Fruchtcreme, gefüllt mit Nuss-Gewürzcreme, mit Rosinen und Haselnüssen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vollmilchschokolade",
@@ -47185,7 +47185,7 @@
       "kcal": 558,
       "kj": 2324,
       "blsCode": "S541000+S541600",
-      "subtitle": "mit Haselnüssen und Cornflakes, gefüllt mit Nugat/Nougat/Noisette"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vollmilchschokolade gefüllt mit Frucht-Vanillecreme",
@@ -47204,7 +47204,7 @@
       "kcal": 527,
       "kj": 2200,
       "blsCode": "S538300+S538000+S538500+S538900+S538800+S538400+S538700+S538600",
-      "subtitle": "Vollmilchschokolade gefüllt mit Frucht-Vanillecreme, Milchschokolade mit Erdnüssen, Vollmilchschokolade mit Getreideflakes, Vollmilchschokolade mit alkoholhaltiger Füllung, Vollmilchschokolade gefüllt mit Kokoscreme, Vollmilchschokolade mit Rosinen und Haselnüssen (alkoholhaltig), Vollmilchschokolade mit Trüffelfüllung (alkoholhaltig), Milchschokolade mit Karamell-Füllung (alkoholhaltig)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vollmilchschokolade mit Haselnüssen",
@@ -47367,7 +47367,7 @@
       "kcal": 472,
       "kj": 1972,
       "blsCode": "S621200+S621100+S621000",
-      "subtitle": "Weinbrand-Bohnen, Weinbrand-Kirschen, Pralinen mit alkoholhaltiger Füllung"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Xylit Pulver (E 967)",
@@ -47532,7 +47532,7 @@
       "blsCode": "S112000"
     },
     {
-      "name": "Zucker weiß (Raffinadezucker/Weißzucker)",
+      "name": "Zucker: Haushaltszucker",
       "kh": 100,
       "gBE": 12,
       "gKHE": 10,
@@ -47548,7 +47548,7 @@
       "kcal": 400,
       "kj": 1700,
       "blsCode": "S111000+S111100",
-      "subtitle": "Zucker weiß (Raffinadezucker/Weißzucker), Puderzucker"
+      "subtitle": "weiß und Puderzucker"
     },
     {
       "name": "Zuckerperlen (Liebesperlen)",
@@ -47584,143 +47584,7 @@
       "kcal": 235,
       "kj": 985,
       "blsCode": "E608000+E608032+E608082",
-      "subtitle": "Knödel roh, Knödel gekocht, Knödel gekocht, gebraten ohne Fett (Pfanne)"
-    },
-    {
-      "name": "Dinkeleierteigwaren gekocht",
-      "kh": 25.6,
-      "gBE": 47,
-      "gKHE": 39,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 139,
-      "kj": 586,
-      "blsCode": "E632132"
-    },
-    {
-      "name": "Dinkeleierteigwaren roh",
-      "kh": 68.5,
-      "gBE": 18,
-      "gKHE": 15,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 366,
-      "kj": 1548,
-      "blsCode": "E632100"
-    },
-    {
-      "name": "Dinkelteigwaren eifrei, gekocht",
-      "kh": 28.7,
-      "gBE": 42,
-      "gKHE": 35,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 149,
-      "kj": 633,
-      "blsCode": "E632032"
-    },
-    {
-      "name": "Dinkelteigwaren eifrei, roh",
-      "kh": 69.5,
-      "gBE": 17,
-      "gKHE": 14,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 358,
-      "kj": 1515,
-      "blsCode": "E632000"
-    },
-    {
-      "name": "Dinkelvollkorneierteigwaren gekocht",
-      "kh": 21.6,
-      "gBE": 56,
-      "gKHE": 46,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 125,
-      "kj": 527,
-      "blsCode": "E632332"
-    },
-    {
-      "name": "Dinkelvollkorneierteigwaren roh",
-      "kh": 62,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 353,
-      "kj": 1491,
-      "blsCode": "E632300"
-    },
-    {
-      "name": "Dinkelvollkornteigwaren eifrei, gekocht",
-      "kh": 22.4,
-      "gBE": 54,
-      "gKHE": 45,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 127,
-      "kj": 535,
-      "blsCode": "E632232"
-    },
-    {
-      "name": "Dinkelvollkornteigwaren eifrei, roh",
-      "kh": 62.2,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 347,
-      "kj": 1465,
-      "blsCode": "E632200"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Eier-Frischteigwaren",
@@ -47738,7 +47602,7 @@
       "kcal": 139,
       "kj": 584,
       "blsCode": "E603000+E603022+E603032+E603082+E603062",
-      "subtitle": "Ravioli (Fleischfüllung) roh, Ravioli (Fleischfüllung) gedämpft, Ravioli (Fleischfüllung) gekocht, Ravioli (Fleischfüllung) gekocht, gebraten ohne Fett (Pfanne), Ravioli (Fleischfüllung) gekocht, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Eier-Frischteigwaren gekocht",
@@ -47877,23 +47741,6 @@
       "blsCode": "E470000"
     },
     {
-      "name": "Eier-Frischteigwaren roh",
-      "kh": 51.8,
-      "gBE": 23,
-      "gKHE": 19,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 297,
-      "kj": 1255,
-      "blsCode": "E438000"
-    },
-    {
       "name": "Eierteigwaren",
       "kh": 26.7,
       "gBE": 45,
@@ -47909,58 +47756,7 @@
       "kcal": 141,
       "kj": 596,
       "blsCode": "E430082+E430062",
-      "subtitle": "gekocht, gebraten ohne Fett (Pfanne), gekocht, gebacken"
-    },
-    {
-      "name": "Eierteigwaren gekocht",
-      "kh": 24.7,
-      "gBE": 49,
-      "gKHE": 40,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 130,
-      "kj": 553,
-      "blsCode": "E432032"
-    },
-    {
-      "name": "Eierteigwaren glutenfrei, gekocht",
-      "kh": 28,
-      "gBE": 43,
-      "gKHE": 36,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 140,
-      "kj": 592,
-      "blsCode": "E612132"
-    },
-    {
-      "name": "Eierteigwaren glutenfrei, roh",
-      "kh": 74.7,
-      "gBE": 16,
-      "gKHE": 13,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 369,
-      "kj": 1564,
-      "blsCode": "E612100"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Eierteigwaren mit Weizenkeimen, gekocht",
@@ -47978,40 +47774,6 @@
       "kcal": 139,
       "kj": 589,
       "blsCode": "E604332"
-    },
-    {
-      "name": "Eierteigwaren mit Weizenkeimen, roh",
-      "kh": 67.5,
-      "gBE": 18,
-      "gKHE": 15,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 367,
-      "kj": 1554,
-      "blsCode": "E604300"
-    },
-    {
-      "name": "Eierteigwaren roh",
-      "kh": 66.1,
-      "gBE": 18,
-      "gKHE": 15,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 342,
-      "kj": 1449,
-      "blsCode": "E432000"
     },
     {
       "name": "Eierteigwaren Tortellini (Fleischfüllung) getrocknet",
@@ -48080,24 +47842,6 @@
       "kcal": 106,
       "kj": 446,
       "blsCode": "E609132"
-    },
-    {
-      "name": "Frischteigwaren",
-      "kh": 18,
-      "gBE": 67,
-      "gKHE": 55,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 114,
-      "kj": 477,
-      "blsCode": "E811000+E811032",
-      "subtitle": "eifrei, roh, eifrei, gekocht"
     },
     {
       "name": "Grießklößchen gekocht",
@@ -48185,6 +47929,184 @@
       "blsCode": "E607000"
     },
     {
+      "name": "Nudeln eifrei roh: Frischteigwaren",
+      "kh": 18,
+      "gBE": 67,
+      "gKHE": 55,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 114,
+      "kj": 477,
+      "blsCode": "E811000+E811032",
+      "subtitle": "eifrei, roh, eifrei, gekocht"
+    },
+    {
+      "name": "Nudeln eifrei roh: Nudeln Dinkel Vollkorn",
+      "kh": 42.2,
+      "gBE": 28,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 237,
+      "kj": 1000,
+      "blsCode": "E632200+E632300+E632232+E632332",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Nudeln eifrei roh: Nudeln eifrei",
+      "kh": 48.8,
+      "gBE": 25,
+      "gKHE": 21,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 246,
+      "kj": 1042,
+      "blsCode": "E401000+E401032",
+      "subtitle": "roh und gekocht"
+    },
+    {
+      "name": "Nudeln eifrei roh: Nudeln Vollkorn eifrei",
+      "kh": 43,
+      "gBE": 28,
+      "gKHE": 23,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 244,
+      "kj": 1030,
+      "blsCode": "E510000+E500032+E500082+E500062",
+      "subtitle": "roh und gekocht"
+    },
+    {
+      "name": "Nudeln mit Ei roh: Eier-Frischteigwaren roh",
+      "kh": 51.8,
+      "gBE": 23,
+      "gKHE": 19,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 297,
+      "kj": 1255,
+      "blsCode": "E438000"
+    },
+    {
+      "name": "Nudeln mit Ei roh: Eierteigwaren mit Weizenkeimen, roh",
+      "kh": 67.5,
+      "gBE": 18,
+      "gKHE": 15,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 367,
+      "kj": 1554,
+      "blsCode": "E604300"
+    },
+    {
+      "name": "Nudeln mit Ei roh: Nudeln Dinkel",
+      "kh": 48.6,
+      "gBE": 25,
+      "gKHE": 21,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 254,
+      "kj": 1074,
+      "blsCode": "E632100+E632000+E632132+E632032",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Nudeln mit Ei roh: Nudeln glutenfrei",
+      "kh": 48.6,
+      "gBE": 25,
+      "gKHE": 21,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 243,
+      "kj": 1029,
+      "blsCode": "E612100+E612000+E612032+E612132",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Nudeln mit Ei roh: Nudeln mit Ei",
+      "kh": 45.4,
+      "gBE": 26,
+      "gKHE": 22,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 236,
+      "kj": 1001,
+      "blsCode": "E432000+E432032",
+      "subtitle": "roh und gekocht"
+    },
+    {
+      "name": "Nudeln mit Ei roh: Nudeln Vollkorn mit Ei",
+      "kh": 41.8,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 239,
+      "kj": 1009,
+      "blsCode": "E530000+E530032",
+      "subtitle": "roh und gekocht"
+    },
+    {
       "name": "Schupfnudeln schwäbisch, roh",
       "kh": 32.6,
       "gBE": 37,
@@ -48200,7 +48122,7 @@
       "kcal": 170,
       "kj": 719,
       "blsCode": "E605200+E605300+E605000+E605232+E605032+E605332+E605082+E605062",
-      "subtitle": "Schupfnudeln schwäbisch, roh, Schupfnudeln eifrei, roh, Kartoffel-Schupfnudeln roh, Schupfnudeln schwäbisch, gekocht, Kartoffel-Schupfnudeln gekocht, Schupfnudeln eifrei, gekocht, Kartoffel-Schupfnudeln gekocht, gebraten ohne Fett (Pfanne), Kartoffel-Schupfnudeln gekocht, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Semmelknödel gedämpft",
@@ -48339,23 +48261,6 @@
       "blsCode": "E606000"
     },
     {
-      "name": "Teigwaren eifrei, gekocht",
-      "kh": 28.7,
-      "gBE": 42,
-      "gKHE": 35,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 146,
-      "kj": 617,
-      "blsCode": "E401032"
-    },
-    {
       "name": "Teigwaren eifrei, gekocht, gebacken",
       "kh": 32.6,
       "gBE": 37,
@@ -48388,40 +48293,6 @@
       "kcal": 149,
       "kj": 630,
       "blsCode": "E401082"
-    },
-    {
-      "name": "Teigwaren eifrei, glutenfrei, gekocht",
-      "kh": 28.4,
-      "gBE": 42,
-      "gKHE": 35,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 143,
-      "kj": 606,
-      "blsCode": "E612032"
-    },
-    {
-      "name": "Teigwaren eifrei, glutenfrei, roh",
-      "kh": 68.7,
-      "gBE": 17,
-      "gKHE": 15,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 343,
-      "kj": 1452,
-      "blsCode": "E612000"
     },
     {
       "name": "Teigwaren eifrei, Ravioli (Fleischfüllung) in Tomatensoße, Konserve",
@@ -48458,40 +48329,6 @@
       "blsCode": "E911000"
     },
     {
-      "name": "Teigwaren eifrei, roh",
-      "kh": 68.8,
-      "gBE": 17,
-      "gKHE": 15,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 346,
-      "kj": 1467,
-      "blsCode": "E401000"
-    },
-    {
-      "name": "Vollkorneierteigwaren gekocht",
-      "kh": 21.6,
-      "gBE": 56,
-      "gKHE": 46,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 125,
-      "kj": 527,
-      "blsCode": "E530032"
-    },
-    {
       "name": "Vollkorneierteigwaren gekocht, gebacken",
       "kh": 24.5,
       "gBE": 49,
@@ -48526,58 +48363,6 @@
       "blsCode": "E530082"
     },
     {
-      "name": "Vollkorneierteigwaren roh",
-      "kh": 62,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 353,
-      "kj": 1491,
-      "blsCode": "E530000"
-    },
-    {
-      "name": "Vollkornteigwaren",
-      "kh": 23,
-      "gBE": 52,
-      "gKHE": 43,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 132,
-      "kj": 558,
-      "blsCode": "E500032+E500082+E500062",
-      "subtitle": "eifrei, gekocht, eifrei, gekocht, gebraten ohne Fett (Pfanne), eifrei, gekocht, gebacken"
-    },
-    {
-      "name": "Vollkornteigwaren eifrei, roh",
-      "kh": 62.9,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 356,
-      "kj": 1502,
-      "blsCode": "E510000"
-    },
-    {
       "name": "Delikatesspastete mit Mürbeteig, gebacken",
       "kh": 7.6,
       "gBE": 159,
@@ -48593,7 +48378,7 @@
       "kcal": 266,
       "kj": 1104,
       "blsCode": "W982200+W982900+W982300+W982100+W982600+W982700",
-      "subtitle": "Delikatesspastete mit Mürbeteig, gebacken, Pariser Pastete mit Mürbeteig, gebacken, Jagdwurstpastete mit Mürbeteig, gebacken, Bierschinkenpastete mit Mürbeteig, gebacken, Getrüffelte Zungenpastete mit Champignons und Mürbeteig, gebacken, Pastete im Brotteig gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Fleischkäse im Bierteigmantel frittiert",
@@ -48611,7 +48396,7 @@
       "kcal": 280,
       "kj": 1163,
       "blsCode": "W981300+W981200+W981500+W981600+W981700+W981100",
-      "subtitle": "Fleischkäse im Bierteigmantel frittiert, Schinkentorte mit Mürbeteig, gebacken, Schweinerückenpastete mit Mürbeteig, mit Alkohol, gebacken, Champignonpastete mit Mürbeteig, gebacken, Haselnusspastete mit Mürbeteig, gebacken, Wurstkuchen mit Mürbeteig, mit Alkohol, gebacken"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Fleischsalat mit Salatmayonnaise und Gurke",
@@ -48663,7 +48448,7 @@
       "kcal": 174,
       "kj": 729,
       "blsCode": "W384200+W384300+W384100",
-      "subtitle": "Graupenblutwurst, Weiße Graupenwurst, Schwarze Graupenwürstchen"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Grützblutwurst",
@@ -48681,7 +48466,7 @@
       "kcal": 155,
       "kj": 646,
       "blsCode": "W383100+W383700",
-      "subtitle": "Grützblutwurst, Bremer Pinkel (Grützwurst)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Kalbfleischpastete mit Schweinefleisch und Mürbeteig, gebacken",
@@ -48734,7 +48519,7 @@
       "kcal": 138,
       "kj": 582,
       "blsCode": "W531000+W531082",
-      "subtitle": "Rohpökelware, geräuchert, paniert, Rohpökelware, geräuchert, paniert, gebraten ohne Fett (Pfanne)"
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Mürbeteig für Fleisch-/Wurstpasteten, roh",

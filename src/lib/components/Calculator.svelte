@@ -63,7 +63,7 @@
       <!-- Header -->
       <div class="mb-4 flex items-start justify-between">
         <div>
-          <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">
+          <h2 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 wrap-anywhere">
             {food.name}
           </h2>
           <p class="text-sm text-gray-500 dark:text-gray-400">{food.kh}g KH / 100{food.unit || 'g'}</p>

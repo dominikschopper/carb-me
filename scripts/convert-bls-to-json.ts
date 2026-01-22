@@ -183,6 +183,18 @@ function calculateMedian(values: number[]): number {
 }
 
 /**
+ * Truncate subtitle if too long
+ */
+const MAX_SUBTITLE_LENGTH = 40;
+const DEFAULT_SUBTITLE = 'verschiedene Varianten';
+
+function truncateSubtitle(subtitle: string | undefined): string | undefined {
+  if (!subtitle) return undefined;
+  if (subtitle.length <= MAX_SUBTITLE_LENGTH) return subtitle;
+  return DEFAULT_SUBTITLE;
+}
+
+/**
  * Find first common word among food names
  * e.g., ["Weizenbrötchen mit Kürbiskernen", "Weizenbrötchen mit Sesam"] -> "Weizenbrötchen"
  */
@@ -252,10 +264,12 @@ function groupSimilarFoods(foods: ParsedFood[]): (ParsedFood & { subtitle?: stri
       const baseName = findCommonPrefix(names);
 
       // Create subtitle from all original names (without the common prefix)
-      const subtitle = names
-        .map((n) => n.replace(baseName, '').replace(/^[,\s]+/, '').trim())
-        .filter((s) => s !== '')
-        .join(', ');
+      const subtitle = truncateSubtitle(
+        names
+          .map((n) => n.replace(baseName, '').replace(/^[,\s]+/, '').trim())
+          .filter((s) => s !== '')
+          .join(', ')
+      );
 
       // Use median values
       const medianKh = calculateMedian(groupFoods.map((f) => f.kh));
@@ -329,7 +343,7 @@ function applyManualMergeGroups(
 
       result.push({
         name: group.name,
-        subtitle: group.subtitle,
+        subtitle: truncateSubtitle(group.subtitle),
         kh: medianKh,
         kcal: medianKcal,
         kj: medianKj,
@@ -343,7 +357,7 @@ function applyManualMergeGroups(
       result.push({
         ...matchingFoods[0],
         name: group.name,
-        subtitle: group.subtitle || matchingFoods[0].subtitle,
+        subtitle: truncateSubtitle(group.subtitle || matchingFoods[0].subtitle),
       });
     }
   }

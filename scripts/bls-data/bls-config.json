@@ -82,87 +82,248 @@
       "M114200",
       "M112300",
       "M111300"
+    ],
+    "Nudeln eifrei roh": [
+      "E811000",
+      "E401000",
+      "E510000",
+      "E612000",
+      "E632000",
+      "E632200"
+    ],
+    "Nudeln mit Ei roh": [
+      "E612100",
+      "E438000",
+      "E432000",
+      "E530000",
+      "E632100",
+      "E632300",
+      "E604300"
+    ],
+    "Reis": [
+      "C352032",
+      "C351032",
+      "C359032",
+      "C353132",
+      "C354132"
     ]
   },
   "mergeGroups": [
     {
       "name": "Roggenbrot",
-      "blsCodes": ["B221000", "B226800", "B227300"],
+      "blsCodes": [
+        "B221000",
+        "B226800",
+        "B227300"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Roggenmischbrot",
-      "blsCodes": ["B271000", "B275700", "B276700", "B277700"],
+      "blsCodes": [
+        "B271000",
+        "B275700",
+        "B276700",
+        "B277700"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weizenmischbrot",
-      "blsCodes": ["B251000", "B255700", "B256000", "B257700"],
+      "blsCodes": [
+        "B251000",
+        "B255700",
+        "B256000",
+        "B257700"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vollkornbrot",
-      "blsCodes": ["B101000", "B106000", "B107900"],
+      "blsCodes": [
+        "B101000",
+        "B106000",
+        "B107900"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Roggenbrötchen",
-      "blsCodes": ["B521100", "B526300"],
+      "blsCodes": [
+        "B521100",
+        "B526300"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Roggenvollkornbrötchen",
-      "blsCodes": ["B421000", "B426800"],
+      "blsCodes": [
+        "B421000",
+        "B426800"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Roggenvollkornbrot",
-      "blsCodes": ["B121000", "B122000"],
+      "blsCodes": [
+        "B121000",
+        "B122000"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vollkornbrötchen",
-      "blsCodes": ["B401000", "B406000"],
+      "blsCodes": [
+        "B401000",
+        "B406000"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weizenbrötchen",
-      "blsCodes": ["B511000", "B516300"],
+      "blsCodes": [
+        "B511000",
+        "B516300"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weizenvollkornbrötchen",
-      "blsCodes": ["B411000", "B416000"],
+      "blsCodes": [
+        "B411000",
+        "B416000"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Weizenmehl",
-      "blsCodes": ["C213100", "C214100"],
+      "name": "Mehl: Weizen",
+      "blsCodes": [
+        "C213100",
+        "C214100"
+      ],
       "subtitle": "Type 405, 550, 1050"
     },
     {
-      "name": "Weizenvollkornknäckebrot",
-      "blsCodes": ["B6A1100", "B6A1200", "B6A1300", "B6A1400", "B6A1500", "B6A1600"],
+      "name": "Knäckebrot: Weizen Vollkorn",
+      "blsCodes": [
+        "B6A1100",
+        "B6A1200",
+        "B6A1300",
+        "B6A1400",
+        "B6A1500",
+        "B6A1600"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Roggenvollkornknäckebrot",
-      "blsCodes": ["B6A2100", "B6A3200"],
+      "name": "Knäckebrot: Roggen Vollkorn",
+      "blsCodes": [
+        "B6A2100",
+        "B6A3200"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "H-Milch fettarm laktosefrei",
-      "blsCodes": ["M1A3100", "M1A5200", "M1A7300", "M114200"],
+      "name": "Milch: H-Milch fettarm laktosefrei",
+      "blsCodes": [
+        "M1A3100",
+        "M1A5200",
+        "M1A7300",
+        "M114200"
+      ],
       "subtitle": "verschiedene Fettstufen"
     },
     {
-      "name": "Weizenvollkornbrot",
-      "blsCodes": ["B111000", "B111700", "B111300", "B111400", "B111800", "B111600", "B111500"],
+      "name": "Brot: Weizen Vollkorn",
+      "blsCodes": [
+        "B111000",
+        "B111700",
+        "B111300",
+        "B111400",
+        "B111800",
+        "B111600",
+        "B111500"
+      ],
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Sauerteigbrot glutenfrei",
-      "blsCodes": ["B8A4000", "B8A5000", "B8A7000", "B8A6000"],
+      "name": "Brot: Sauerteig glutenfrei",
+      "blsCodes": [
+        "B8A4000",
+        "B8A5000",
+        "B8A7000",
+        "B8A6000"
+      ],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Zucker: Haushaltszucker",
+      "blsCodes": [
+        "S111000",
+        "S111100"
+      ],
+      "subtitle": "weiß und Puderzucker"
+    },
+    {
+      "name": "Nudeln eifrei",
+      "blsCodes": [
+        "E401000",
+        "E401032"
+      ],
+      "subtitle": "roh und gekocht"
+    },
+    {
+      "name": "Nudeln mit Ei",
+      "blsCodes": [
+        "E432000",
+        "E432032"
+      ],
+      "subtitle": "roh und gekocht"
+    },
+    {
+      "name": "Nudeln Vollkorn eifrei",
+      "blsCodes": [
+        "E510000",
+        "E500032"
+      ],
+      "subtitle": "roh und gekocht"
+    },
+    {
+      "name": "Nudeln Vollkorn mit Ei",
+      "blsCodes": [
+        "E530000",
+        "E530032"
+      ],
+      "subtitle": "roh und gekocht"
+    },
+    {
+      "name": "Nudeln Dinkel",
+      "blsCodes": [
+        "E632000",
+        "E632032",
+        "E632100",
+        "E632132"
+      ],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Nudeln Dinkel Vollkorn",
+      "blsCodes": [
+        "E632200",
+        "E632232",
+        "E632300",
+        "E632332"
+      ],
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Nudeln glutenfrei",
+      "blsCodes": [
+        "E612000",
+        "E612032",
+        "E612100",
+        "E612132"
+      ],
       "subtitle": "verschiedene Varianten"
     }
   ]
