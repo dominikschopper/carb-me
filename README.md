@@ -1,6 +1,6 @@
-# carb-me 🍞🍎🧮
+# carb-me
 
-A free web app for calculating bread units (BE) and carbohydrate units (KHE) for people with diabetes.
+A free web app for calculating bread units (BE) and carbohydrate units (KHE) for people who need to track their carbohydrate input.
 
 **Live:** [carb-me.de](https://carb-me.de)
 
