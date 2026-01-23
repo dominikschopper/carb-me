@@ -6,11 +6,11 @@ A free web app for calculating bread units (BE) and carbohydrate units (KHE) for
 
 ## Features
 
-- Food database with BE/KHE values
+- Food database with BE/KHE values and kcal/kjoule display
+- Choice between BE (12g carbs) and KHE (10g carbs) as display unit
 - Fast search with fuzzy matching
 - Compose meals and calculate total values
 - Save favorites for frequently used foods
-- Choice between BE (12g carbs) and KHE (10g carbs) as display unit
 - Offline-capable as Progressive Web App (PWA)
 - Printable food list
 - No registration, no data transfer - everything stays local on your device
@@ -24,14 +24,14 @@ A free web app for calculating bread units (BE) and carbohydrate units (KHE) for
 
 ## Disclaimer
 
-**This app is for informational purposes only and does not constitute medical advice, diagnosis, or treatment.**
+**This app is for informational purposes only and does not give any kind of medical advice, diagnosis, or treatment.**
 
 The information provided about carbohydrates, bread units (BE), and carbohydrate units (KHE) does not replace professional advice from qualified medical personnel.
 
-- Use of this app is at your own risk
-- Despite careful research, nutritional values may contain errors
-- Changes to diabetes therapy should only be made after consulting your physician
-- In case of emergency: Call 112 (EU) or your local emergency number
+- Use of this app is at your own risk!
+- Despite careful research, nutritional values may contain errors!
+- Changes to diabetes therapy should only be made after consulting your physician!
+- In case of emergency call your local emergency number
 
 ## Privacy
 
@@ -71,8 +71,14 @@ pnpm install
 # Start development server
 pnpm dev
 
+# check typescript
+pnpm check
+
 # Create production build
 pnpm build
+
+# Convert BLS data into JSON for this app
+pnpm convert-bls
 ```
 
 ## License
