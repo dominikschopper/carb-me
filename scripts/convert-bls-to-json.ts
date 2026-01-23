@@ -99,6 +99,7 @@ interface ParsedFood {
   kcal: number;
   kj: number;
   blsCode: string;
+  isManualMerge?: boolean; // Flag to skip automatic prefix (name already complete)
 }
 
 /**
@@ -348,6 +349,7 @@ function applyManualMergeGroups(
         kcal: medianKcal,
         kj: medianKj,
         blsCode: allBlsCodes,
+        isManualMerge: true, // Skip automatic prefix
       });
 
       manualMergeCount += matchingFoods.length - 1;
@@ -358,6 +360,7 @@ function applyManualMergeGroups(
         ...matchingFoods[0],
         name: group.name,
         subtitle: truncateSubtitle(group.subtitle || matchingFoods[0].subtitle),
+        isManualMerge: true, // Skip automatic prefix
       });
     }
   }
@@ -485,8 +488,8 @@ function convertBLStoJSON(): void {
     const category = getCategory(parsed.blsCode);
     const tags = generateTags(parsed.kh, parsed.blsCode);
 
-    // Apply prefix from config
-    const prefix = getPrefix(parsed.blsCode, prefixMap);
+    // Apply prefix from config (skip for manual merge groups - name is already complete)
+    const prefix = parsed.isManualMerge ? '' : getPrefix(parsed.blsCode, prefixMap);
 
     const food: FoodItem = {
       name: prefix + parsed.name,

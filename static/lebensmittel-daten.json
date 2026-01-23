@@ -936,42 +936,6 @@
       "blsCode": "B8A1000"
     },
     {
-      "name": "Brot: Sauerteig glutenfrei",
-      "kh": 30.8,
-      "gBE": 39,
-      "gKHE": 33,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 230,
-      "kj": 966,
-      "blsCode": "B8A7000+B8A6000+B8A4000+B8A5000",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
-      "name": "Brot: Weizen Vollkorn",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 235,
-      "kj": 991,
-      "blsCode": "B111400+B111600+B111700+B111500+B111300+B111800+B111000",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
       "name": "Brot: Dinkelbrot",
       "kh": 41,
       "gBE": 29,
@@ -1041,10 +1005,10 @@
       "blsCode": "B291000"
     },
     {
-      "name": "Brot: Roggenbrot",
-      "kh": 40,
-      "gBE": 30,
-      "gKHE": 25,
+      "name": "Brot: Sauerteig glutenfrei",
+      "kh": 30.8,
+      "gBE": 39,
+      "gKHE": 33,
       "categories": [
         [
           "Brot & Backwaren"
@@ -1053,45 +1017,9 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 220,
-      "kj": 931,
-      "blsCode": "B226800+B226500+B226700+B226000+B227300+B227700+B221000",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
-      "name": "Brot: Roggenmischbrot",
-      "kh": 42,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 220,
-      "kj": 931,
-      "blsCode": "B271000+B277700+B277300+B275700+B275500+B276700+B276500+B276000+B276800",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
-      "name": "Brot: Roggenvollkornbrot",
-      "kh": 32.7,
-      "gBE": 37,
-      "gKHE": 31,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 200,
-      "kj": 842,
-      "blsCode": "B121000+B121200+B121300+B121600+B121500+B121100+B121400+B122000",
+      "kcal": 230,
+      "kj": 966,
+      "blsCode": "B8A7000+B8A6000+B8A4000+B8A5000",
       "subtitle": "verschiedene Varianten"
     },
     {
@@ -1110,25 +1038,7 @@
       "kcal": 246,
       "kj": 1040,
       "blsCode": "B8A8000+B8A8072",
-      "subtitle": "glutenfrei, getoastet"
-    },
-    {
-      "name": "Brot: Vollkornbrot",
-      "kh": 38,
-      "gBE": 32,
-      "gKHE": 26,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 213,
-      "kj": 896,
-      "blsCode": "B107900+B107300+B106000+B106500+B106700+B106800+B101000",
-      "subtitle": "verschiedene Varianten"
+      "subtitle": "glutenfrei, glutenfrei, getoastet"
     },
     {
       "name": "Brot: Vollkornbrot glutenfrei",
@@ -1182,6 +1092,24 @@
       "blsCode": "B309000"
     },
     {
+      "name": "Brot: Weizen Vollkorn",
+      "kh": 38,
+      "gBE": 32,
+      "gKHE": 26,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 235,
+      "kj": 991,
+      "blsCode": "B111400+B111600+B111700+B111500+B111300+B111800+B111000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
       "name": "Brot: Weizenbrot/Weißbrot",
       "kh": 50.5,
       "gBE": 24,
@@ -1214,24 +1142,6 @@
       "kcal": 248,
       "kj": 1050,
       "blsCode": "B782100"
-    },
-    {
-      "name": "Brot: Weizenmischbrot",
-      "kh": 41.3,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 220,
-      "kj": 930,
-      "blsCode": "B257700+B257300+B256000+B256500+B256700+B255700+B255500+B251000",
-      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Brot: Weizenmischbrot mit Kürbiskernen",
@@ -1512,42 +1422,6 @@
       "blsCode": "B6A6000"
     },
     {
-      "name": "Knäckebrot: Knäckebrot: Roggen Vollkorn",
-      "kh": 56.5,
-      "gBE": 21,
-      "gKHE": 18,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 341,
-      "kj": 1433,
-      "blsCode": "B6A2100+B6A2300+B6A2800+B6A2500+B6A2600+B6A2900+B6A2400+B6A2700+B6A2000+B6A2200+B6A3200+B6A3000+B6A3100",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
-      "name": "Knäckebrot: Knäckebrot: Weizen Vollkorn",
-      "kh": 47,
-      "gBE": 26,
-      "gKHE": 21,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 431,
-      "kj": 1803,
-      "blsCode": "B6A1500+B6A1200+B6A1300+B6A1400+B6A1600+B6A1100",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
       "name": "Knäckebrot: Mehrkornvollkornknäckebrot",
       "kh": 60,
       "gBE": 20,
@@ -1580,6 +1454,42 @@
       "kcal": 415,
       "kj": 1736,
       "blsCode": "B6A4100"
+    },
+    {
+      "name": "Knäckebrot: Roggen Vollkorn",
+      "kh": 56.5,
+      "gBE": 21,
+      "gKHE": 18,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 341,
+      "kj": 1433,
+      "blsCode": "B6A2100+B6A2300+B6A2800+B6A2500+B6A2600+B6A2900+B6A2400+B6A2700+B6A2000+B6A2200+B6A3200+B6A3000+B6A3100",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Knäckebrot: Weizen Vollkorn",
+      "kh": 47,
+      "gBE": 26,
+      "gKHE": 21,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 431,
+      "kj": 1803,
+      "blsCode": "B6A1500+B6A1200+B6A1300+B6A1400+B6A1600+B6A1100",
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Knäckebrot: Weizenknäckebrot mit Sesam",
@@ -1719,6 +1629,24 @@
       "blsCode": "B780500"
     },
     {
+      "name": "Roggenbrot",
+      "kh": 40,
+      "gBE": 30,
+      "gKHE": 25,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 220,
+      "kj": 931,
+      "blsCode": "B226800+B226500+B226700+B226000+B227300+B227700+B221000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
       "name": "Roggenbrötchen",
       "kh": 46.5,
       "gBE": 26,
@@ -1754,6 +1682,42 @@
       "blsCode": "B8B2000"
     },
     {
+      "name": "Roggenmischbrot",
+      "kh": 42,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 220,
+      "kj": 931,
+      "blsCode": "B271000+B277700+B277300+B275700+B275500+B276700+B276500+B276000+B276800",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Roggenvollkornbrot",
+      "kh": 32.7,
+      "gBE": 37,
+      "gKHE": 31,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 200,
+      "kj": 842,
+      "blsCode": "B121000+B121200+B121300+B121600+B121500+B121100+B121400+B122000",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
       "name": "Roggenvollkornbrötchen",
       "kh": 41.5,
       "gBE": 29,
@@ -1787,6 +1751,24 @@
       "kcal": 278,
       "kj": 1175,
       "blsCode": "B719000"
+    },
+    {
+      "name": "Vollkornbrot",
+      "kh": 38,
+      "gBE": 32,
+      "gKHE": 26,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 213,
+      "kj": 896,
+      "blsCode": "B107900+B107300+B106000+B106500+B106700+B106800+B101000",
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Vollkornbrötchen",
@@ -1942,6 +1924,24 @@
       "kcal": 398,
       "kj": 1681,
       "blsCode": "B8B5000"
+    },
+    {
+      "name": "Weizenmischbrot",
+      "kh": 41.3,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 220,
+      "kj": 930,
+      "blsCode": "B257700+B257300+B256000+B256500+B256700+B255700+B255500+B251000",
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weizenmischbrötchen",
@@ -29283,24 +29283,6 @@
       "blsCode": "C443000"
     },
     {
-      "name": "Mehl: Weizen",
-      "kh": 69.5,
-      "gBE": 17,
-      "gKHE": 14,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 350,
-      "kj": 1485,
-      "blsCode": "C213100+C213200+C213500+C214100+C214200",
-      "subtitle": "Type 405, 550, 1050"
-    },
-    {
       "name": "Mehl: Reismehl",
       "kh": 77.1,
       "gBE": 16,
@@ -29351,6 +29333,24 @@
       "kj": 1347,
       "blsCode": "C223100+C223200+C223300+C223600+C223400",
       "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Mehl: Weizen",
+      "kh": 69.5,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 350,
+      "kj": 1485,
+      "blsCode": "C213100+C213200+C213500+C214100+C214200",
+      "subtitle": "Type 405, 550, 1050"
     },
     {
       "name": "Mehl: Weizen Vollkornmehl",
@@ -29918,7 +29918,7 @@
       "blsCode": "C351000"
     },
     {
-      "name": "Reis: parboiled, poliert, gekocht",
+      "name": "Reis: Reis parboiled, poliert, gekocht",
       "kh": 23.8,
       "gBE": 50,
       "gKHE": 42,
@@ -29935,7 +29935,7 @@
       "blsCode": "C359032"
     },
     {
-      "name": "Reis: poliert, gekocht",
+      "name": "Reis: Reis poliert, gekocht",
       "kh": 24.8,
       "gBE": 48,
       "gKHE": 40,
@@ -29952,7 +29952,7 @@
       "blsCode": "C352032"
     },
     {
-      "name": "Reis: unpoliert, gekocht",
+      "name": "Reis: Reis unpoliert, gekocht",
       "kh": 26.3,
       "gBE": 46,
       "gKHE": 38,
@@ -32627,7 +32627,7 @@
       "kcal": 191,
       "kj": 793,
       "blsCode": "K740400+K740432",
-      "subtitle": "getrocknet, gekocht"
+      "subtitle": "getrocknet, getrocknet, gekocht"
     },
     {
       "name": "Batate/Süßkartoffel, frittiert, gesalzen",
@@ -33038,7 +33038,7 @@
       "kcal": 154,
       "kj": 653,
       "blsCode": "K271000+K271032",
-      "subtitle": "tiefgefroren, gekocht"
+      "subtitle": "tiefgefroren, tiefgefroren, gekocht"
     },
     {
       "name": "Gnocchi gedämpft",
@@ -33564,7 +33564,7 @@
       "kcal": 205,
       "kj": 857,
       "blsCode": "K724400+K724432",
-      "subtitle": "getrocknet, gekocht"
+      "subtitle": "getrocknet, getrocknet, gekocht"
     },
     {
       "name": "Steinpilz",
@@ -34311,24 +34311,6 @@
       "blsCode": "M884000"
     },
     {
-      "name": "Milch: H-Milch fettarm, 1,5 % Fett, ultrahocherhitzt",
-      "kh": 4.2,
-      "gBE": 285,
-      "gKHE": 238,
-      "categories": [
-        [
-          "Milchprodukte"
-        ]
-      ],
-      "tags": [
-        "wenigeKH"
-      ],
-      "kcal": 44,
-      "kj": 186,
-      "blsCode": "M113200+M113300+M113100",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
       "name": "Milch: H-Milch fettarm laktosefrei",
       "kh": 4.6,
       "gBE": 261,
@@ -34345,6 +34327,24 @@
       "kj": 190,
       "blsCode": "M114200+M114300+M114100+M1A5200+M1A7300+M1A3100",
       "subtitle": "verschiedene Fettstufen"
+    },
+    {
+      "name": "Milch: H-Milch fettarm, 1,5 % Fett, ultrahocherhitzt",
+      "kh": 4.2,
+      "gBE": 285,
+      "gKHE": 238,
+      "categories": [
+        [
+          "Milchprodukte"
+        ]
+      ],
+      "tags": [
+        "wenigeKH"
+      ],
+      "kcal": 44,
+      "kj": 186,
+      "blsCode": "M113200+M113300+M113100",
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Milch: Rohmilch/Vorzugsmilch, mind. 3,5 % Fett",
@@ -47929,6 +47929,60 @@
       "blsCode": "E607000"
     },
     {
+      "name": "Nudeln Dinkel",
+      "kh": 48.6,
+      "gBE": 25,
+      "gKHE": 21,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 254,
+      "kj": 1074,
+      "blsCode": "E632100+E632000+E632132+E632032",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Nudeln Dinkel Vollkorn",
+      "kh": 42.2,
+      "gBE": 28,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 237,
+      "kj": 1000,
+      "blsCode": "E632200+E632300+E632232+E632332",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Nudeln eifrei",
+      "kh": 48.8,
+      "gBE": 25,
+      "gKHE": 21,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 246,
+      "kj": 1042,
+      "blsCode": "E401000+E401032",
+      "subtitle": "roh und gekocht"
+    },
+    {
       "name": "Nudeln eifrei roh: Frischteigwaren",
       "kh": 18,
       "gBE": 67,
@@ -47947,26 +48001,8 @@
       "subtitle": "eifrei, roh, eifrei, gekocht"
     },
     {
-      "name": "Nudeln eifrei roh: Nudeln Dinkel Vollkorn",
-      "kh": 42.2,
-      "gBE": 28,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 237,
-      "kj": 1000,
-      "blsCode": "E632200+E632300+E632232+E632332",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
-      "name": "Nudeln eifrei roh: Nudeln eifrei",
-      "kh": 48.8,
+      "name": "Nudeln glutenfrei",
+      "kh": 48.6,
       "gBE": 25,
       "gKHE": 21,
       "categories": [
@@ -47977,16 +48013,16 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 246,
-      "kj": 1042,
-      "blsCode": "E401000+E401032",
-      "subtitle": "roh und gekocht"
+      "kcal": 243,
+      "kj": 1029,
+      "blsCode": "E612100+E612000+E612032+E612132",
+      "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Nudeln eifrei roh: Nudeln Vollkorn eifrei",
-      "kh": 43,
-      "gBE": 28,
-      "gKHE": 23,
+      "name": "Nudeln mit Ei",
+      "kh": 45.4,
+      "gBE": 26,
+      "gKHE": 22,
       "categories": [
         [
           "Teigwaren"
@@ -47995,9 +48031,9 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 244,
-      "kj": 1030,
-      "blsCode": "E510000+E500032+E500082+E500062",
+      "kcal": 236,
+      "kj": 1001,
+      "blsCode": "E432000+E432032",
       "subtitle": "roh und gekocht"
     },
     {
@@ -48035,10 +48071,10 @@
       "blsCode": "E604300"
     },
     {
-      "name": "Nudeln mit Ei roh: Nudeln Dinkel",
-      "kh": 48.6,
-      "gBE": 25,
-      "gKHE": 21,
+      "name": "Nudeln Vollkorn eifrei",
+      "kh": 43,
+      "gBE": 28,
+      "gKHE": 23,
       "categories": [
         [
           "Teigwaren"
@@ -48047,49 +48083,13 @@
       "tags": [
         "vieleKH"
       ],
-      "kcal": 254,
-      "kj": 1074,
-      "blsCode": "E632100+E632000+E632132+E632032",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
-      "name": "Nudeln mit Ei roh: Nudeln glutenfrei",
-      "kh": 48.6,
-      "gBE": 25,
-      "gKHE": 21,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 243,
-      "kj": 1029,
-      "blsCode": "E612100+E612000+E612032+E612132",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
-      "name": "Nudeln mit Ei roh: Nudeln mit Ei",
-      "kh": 45.4,
-      "gBE": 26,
-      "gKHE": 22,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 236,
-      "kj": 1001,
-      "blsCode": "E432000+E432032",
+      "kcal": 244,
+      "kj": 1030,
+      "blsCode": "E510000+E500032+E500082+E500062",
       "subtitle": "roh und gekocht"
     },
     {
-      "name": "Nudeln mit Ei roh: Nudeln Vollkorn mit Ei",
+      "name": "Nudeln Vollkorn mit Ei",
       "kh": 41.8,
       "gBE": 29,
       "gKHE": 24,
