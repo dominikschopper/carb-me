@@ -1110,7 +1110,7 @@
       "kcal": 246,
       "kj": 1040,
       "blsCode": "B8A8000+B8A8072",
-      "subtitle": "glutenfrei, glutenfrei, getoastet"
+      "subtitle": "glutenfrei, getoastet"
     },
     {
       "name": "Brot: Vollkornbrot",
@@ -29283,7 +29283,7 @@
       "blsCode": "C443000"
     },
     {
-      "name": "Mehl: Mehl: Weizen",
+      "name": "Mehl: Weizen",
       "kh": 69.5,
       "gBE": 17,
       "gKHE": 14,
@@ -29918,7 +29918,7 @@
       "blsCode": "C351000"
     },
     {
-      "name": "Reis: Reis parboiled, poliert, gekocht",
+      "name": "Reis: parboiled, poliert, gekocht",
       "kh": 23.8,
       "gBE": 50,
       "gKHE": 42,
@@ -29935,7 +29935,7 @@
       "blsCode": "C359032"
     },
     {
-      "name": "Reis: Reis poliert, gekocht",
+      "name": "Reis: poliert, gekocht",
       "kh": 24.8,
       "gBE": 48,
       "gKHE": 40,
@@ -29952,7 +29952,7 @@
       "blsCode": "C352032"
     },
     {
-      "name": "Reis: Reis unpoliert, gekocht",
+      "name": "Reis: unpoliert, gekocht",
       "kh": 26.3,
       "gBE": 46,
       "gKHE": 38,
@@ -32627,7 +32627,7 @@
       "kcal": 191,
       "kj": 793,
       "blsCode": "K740400+K740432",
-      "subtitle": "getrocknet, getrocknet, gekocht"
+      "subtitle": "getrocknet, gekocht"
     },
     {
       "name": "Batate/Süßkartoffel, frittiert, gesalzen",
@@ -33038,7 +33038,7 @@
       "kcal": 154,
       "kj": 653,
       "blsCode": "K271000+K271032",
-      "subtitle": "tiefgefroren, tiefgefroren, gekocht"
+      "subtitle": "tiefgefroren, gekocht"
     },
     {
       "name": "Gnocchi gedämpft",
@@ -33564,7 +33564,7 @@
       "kcal": 205,
       "kj": 857,
       "blsCode": "K724400+K724432",
-      "subtitle": "getrocknet, getrocknet, gekocht"
+      "subtitle": "getrocknet, gekocht"
     },
     {
       "name": "Steinpilz",
@@ -34329,7 +34329,7 @@
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Milch: Milch: H-Milch fettarm laktosefrei",
+      "name": "Milch: H-Milch fettarm laktosefrei",
       "kh": 4.6,
       "gBE": 261,
       "gKHE": 217,
