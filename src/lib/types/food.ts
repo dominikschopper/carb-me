@@ -6,6 +6,14 @@ export const UNIT_TYPES = {
 
 export type UnitType = (typeof UNIT_TYPES)[keyof typeof UNIT_TYPES];
 
+// Energy unit types
+export const ENERGY_UNIT_TYPES = {
+  KCAL: 'kcal',
+  KJ: 'kJ',
+} as const;
+
+export type EnergyUnitType = (typeof ENERGY_UNIT_TYPES)[keyof typeof ENERGY_UNIT_TYPES];
+
 export interface FoodItem {
   name: string;
   subtitle?: string; // Variant details (e.g., "Type 405, 550, Vollkorn")
@@ -47,4 +55,6 @@ export interface AppSettings {
   showCategories: boolean;
   showTags: boolean;
   itemsPerPage: number;
+  showEnergy: boolean;
+  energyUnit: EnergyUnitType;
 }

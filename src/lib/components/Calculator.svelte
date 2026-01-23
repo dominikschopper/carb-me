@@ -3,6 +3,7 @@
   import { calculateNutrition } from '$lib/utils/calculator';
   import { formatNumber } from '$lib/utils/formatting';
   import { mealStore } from '$lib/stores/meal.svelte';
+  import { settingsStore } from '$lib/stores/settings.svelte';
   import UnitDisplay from './UnitDisplay.svelte';
 
   let { food, onClose }: { food: FoodItem | null; onClose: () => void } = $props();
@@ -11,9 +12,22 @@
   let inputElement: HTMLInputElement;
   let grams = $state(100);
 
+  const settings = $derived(settingsStore.settings);
+
   const result = $derived.by(() => {
     if (!food) return null;
     return calculateNutrition(food, grams);
+  });
+
+  const energyForGrams = $derived.by(() => {
+    if (!food) return null;
+    if (settings.energyUnit === 'kcal' && food.kcal) {
+      return Math.round((food.kcal * grams) / 100);
+    }
+    if (settings.energyUnit === 'kJ' && food.kj) {
+      return Math.round((food.kj * grams) / 100);
+    }
+    return null;
   });
 
   function setQuickAmount(amount: number) {
@@ -66,7 +80,7 @@
           <h2 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 wrap-anywhere">
             {food.name}
           </h2>
-          <p class="text-sm text-gray-500 dark:text-gray-400">{food.kh}g KH / 100{food.unit || 'g'}</p>
+          <p class="text-sm"><span class="text-green-600 dark:text-green-400">{food.kh}g KH</span> <span class="text-gray-500 dark:text-gray-400">/ 100{food.unit || 'g'}</span></p>
         </div>
         <button
           onclick={handleClose}
@@ -130,8 +144,14 @@
           </UnitDisplay>
           <div class="flex items-center justify-between border-t border-blue-200 pt-3 dark:border-blue-800">
             <span class="text-sm text-gray-600 dark:text-gray-400">Kohlenhydrate gesamt</span>
-            <span class="text-lg font-semibold text-gray-700 dark:text-gray-300">{formatNumber(result.carbs)}g</span>
+            <span class="text-lg font-semibold text-green-600 dark:text-green-400">{formatNumber(result.carbs)}g</span>
           </div>
+          {#if settings.showEnergy && energyForGrams !== null}
+            <div class="flex items-center justify-between border-t border-blue-200 pt-3 dark:border-blue-800">
+              <span class="text-sm text-gray-600 dark:text-gray-400">Brennwert</span>
+              <span class="text-lg font-semibold text-amber-600 dark:text-amber-400">{energyForGrams} {settings.energyUnit}</span>
+            </div>
+          {/if}
         </div>
       {/if}
 

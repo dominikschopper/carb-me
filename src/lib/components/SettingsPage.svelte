@@ -1,10 +1,19 @@
 <script lang="ts">
   import { settingsStore } from '$lib/stores/settings.svelte';
+  import type { EnergyUnitType } from '$lib/types/food';
 
   const settings = $derived(settingsStore.settings);
 
   function handleUnitChange(unit: 'BE' | 'KHE') {
     settingsStore.setPreferredUnit(unit);
+  }
+
+  function handleShowEnergyChange(show: boolean) {
+    settingsStore.setShowEnergy(show);
+  }
+
+  function handleEnergyUnitChange(unit: EnergyUnitType) {
+    settingsStore.setEnergyUnit(unit);
   }
 
   function handleClearData() {
@@ -66,6 +75,63 @@
     </div>
   </div>
 
+  <!-- Energy Display -->
+  <div class="card">
+    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Brennwert-Anzeige</h3>
+    <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+      Zeige zusätzlich den Brennwert (Kalorien) bei Lebensmitteln an.
+    </p>
+
+    <label class="flex cursor-pointer items-center gap-3 rounded-lg border-2 p-3 transition-colors {settings.showEnergy
+      ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
+      : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+      <input
+        type="checkbox"
+        checked={settings.showEnergy}
+        onchange={(e) => handleShowEnergyChange(e.currentTarget.checked)}
+        class="h-5 w-5 flex-shrink-0 rounded text-blue-600 focus:ring-2 focus:ring-blue-500"
+      />
+      <div class="flex-1 min-w-0">
+        <div class="font-medium text-gray-900 dark:text-gray-100">Brennwerte anzeigen</div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">kcal oder kJ pro 100g</div>
+      </div>
+    </label>
+
+    {#if settings.showEnergy}
+      <div class="mt-3 space-y-2">
+        <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Einheit</p>
+        <div class="flex gap-3">
+          <label class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg border-2 p-3 transition-colors {settings.energyUnit === 'kcal'
+            ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
+            : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+            <input
+              type="radio"
+              name="energyUnit"
+              value="kcal"
+              checked={settings.energyUnit === 'kcal'}
+              onchange={() => handleEnergyUnitChange('kcal')}
+              class="h-4 w-4 text-blue-600 focus:ring-2 focus:ring-blue-500"
+            />
+            <span class="font-medium text-gray-900 dark:text-gray-100">kcal</span>
+          </label>
+          <label class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg border-2 p-3 transition-colors {settings.energyUnit === 'kJ'
+            ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
+            : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+            <input
+              type="radio"
+              name="energyUnit"
+              value="kJ"
+              checked={settings.energyUnit === 'kJ'}
+              onchange={() => handleEnergyUnitChange('kJ')}
+              class="h-4 w-4 text-blue-600 focus:ring-2 focus:ring-blue-500"
+            />
+            <span class="font-medium text-gray-900 dark:text-gray-100">kJ</span>
+          </label>
+        </div>
+      </div>
+    {/if}
+  </div>
+
   <!-- Data Management -->
   <div class="card">
     <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Datenverwaltung</h3>
@@ -99,7 +165,7 @@
 
   <!-- App Info -->
   <div class="card text-center">
-    <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v1.3.2</p>
+    <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v1.4.0</p>
     <p class="mt-1 text-xs text-gray-500 dark:text-gray-500">
       Open Source auf <a href="https://github.com/dominikschopper/carb-me" class="text-blue-600 hover:underline dark:text-blue-400">GitHub</a>
     </p>

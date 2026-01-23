@@ -1,11 +1,20 @@
 <script lang="ts">
   import type { FoodItem } from '$lib/types/food';
   import { foodStore } from '$lib/stores/foods.svelte';
+  import { settingsStore } from '$lib/stores/settings.svelte';
   import UnitDisplay from './UnitDisplay.svelte';
 
   let { food, onclick }: { food: FoodItem; onclick?: () => void } = $props();
 
   const isFavorite = $derived(foodStore.favorites.has(food.blsCode));
+  const settings = $derived(settingsStore.settings);
+
+  const energyValue = $derived(() => {
+    if (settings.energyUnit === 'kcal') {
+      return food.kcal ? `${Math.round(food.kcal)} kcal` : null;
+    }
+    return food.kj ? `${Math.round(food.kj)} kJ` : null;
+  });
 
   function toggleFavorite(event: MouseEvent) {
     event.stopPropagation();
@@ -40,8 +49,12 @@
         </hgroup>
       </div>
 
-      <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-        {food.kh}g KH / 100{food.unit || 'g'}
+      <div class="mt-1 text-sm">
+        <span class="text-green-600 dark:text-green-400">{food.kh}g KH</span> <span class="text-gray-600 dark:text-gray-400">/ 100{food.unit || 'g'}</span>
+        {#if settings.showEnergy && energyValue()}
+          <span class="mx-1">·</span>
+          <span class="text-amber-600 dark:text-amber-400">{energyValue()}</span>
+        {/if}
       </div>
 
       <div class="mt-2 text-xs">

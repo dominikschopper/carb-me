@@ -1,5 +1,5 @@
 import type { FoodItem, MealItem, HistoryEntry, AppSettings } from '$lib/types/food';
-import { UNIT_TYPES } from '$lib/types/food';
+import { UNIT_TYPES, ENERGY_UNIT_TYPES } from '$lib/types/food';
 
 export const STORAGE_KEYS = {
   CUSTOM_FOODS: 'carbme_custom_foods',
@@ -16,6 +16,8 @@ export const DEFAULT_SETTINGS: AppSettings = {
   showCategories: true,
   showTags: true,
   itemsPerPage: 20,
+  showEnergy: false,
+  energyUnit: ENERGY_UNIT_TYPES.KCAL,
 };
 
 /**
@@ -30,7 +32,17 @@ export class Storage<T> {
   get(): T {
     try {
       const item = localStorage.getItem(this.key);
-      return item ? JSON.parse(item) : this.defaultValue;
+      if (!item) return this.defaultValue;
+      const parsed = JSON.parse(item);
+      // Merge with defaults to handle new properties (only for plain objects, not arrays)
+      if (
+        typeof this.defaultValue === 'object' &&
+        this.defaultValue !== null &&
+        !Array.isArray(this.defaultValue)
+      ) {
+        return { ...this.defaultValue, ...parsed };
+      }
+      return parsed;
     } catch (error) {
       console.error(`Error reading ${this.key}:`, error);
       return this.defaultValue;

@@ -1,11 +1,32 @@
 <script lang="ts">
   import { mealStore } from '$lib/stores/meal.svelte';
+  import { settingsStore } from '$lib/stores/settings.svelte';
   import { formatNumber } from '$lib/utils/formatting';
   import UnitDisplay from './UnitDisplay.svelte';
 
   const items = $derived(mealStore.items);
   const totalBE = $derived(mealStore.totalBE);
   const totalKHE = $derived(mealStore.totalKHE);
+  const settings = $derived(settingsStore.settings);
+
+  // Calculate energy for a single item
+  function getItemEnergy(item: typeof items[0]): number | null {
+    if (settings.energyUnit === 'kcal' && item.food.kcal) {
+      return Math.round((item.food.kcal * item.grams) / 100);
+    }
+    if (settings.energyUnit === 'kJ' && item.food.kj) {
+      return Math.round((item.food.kj * item.grams) / 100);
+    }
+    return null;
+  }
+
+  // Calculate total energy for the meal
+  const totalEnergy = $derived.by(() => {
+    return items.reduce((sum, item) => {
+      const energy = getItemEnergy(item);
+      return sum + (energy ?? 0);
+    }, 0);
+  });
 
   function removeItem(index: number) {
     mealStore.removeItem(index);
@@ -58,6 +79,10 @@
                   <span class="text-purple-600 dark:text-purple-400">{formatNumber(item.khe)} KHE</span>
                 {/snippet}
               </UnitDisplay>
+              {#if settings.showEnergy && getItemEnergy(item) !== null}
+                <span class="mx-1">·</span>
+                <span class="text-amber-600 dark:text-amber-400">{getItemEnergy(item)} {settings.energyUnit}</span>
+              {/if}
             </div>
           </div>
           <button
@@ -84,6 +109,9 @@
             <p class="text-3xl font-bold">{formatNumber(totalKHE)} KHE</p>
           {/snippet}
         </UnitDisplay>
+        {#if settings.showEnergy && totalEnergy > 0}
+          <p class="mt-1 text-lg font-semibold text-amber-200">{totalEnergy} {settings.energyUnit}</p>
+        {/if}
         <p class="mt-2 text-sm opacity-75">{items.length} Lebensmittel</p>
       </div>
     </div>

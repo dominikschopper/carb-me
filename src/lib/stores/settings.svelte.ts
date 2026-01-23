@@ -1,6 +1,6 @@
 import { settingsStorage, STORAGE_KEYS } from '$lib/utils/storage';
-import type { AppSettings } from '$lib/types/food';
-import { UNIT_TYPES } from '$lib/types/food';
+import type { AppSettings, EnergyUnitType } from '$lib/types/food';
+import { UNIT_TYPES, ENERGY_UNIT_TYPES } from '$lib/types/food';
 
 class SettingsStore {
   settings = $state<AppSettings>({
@@ -8,6 +8,8 @@ class SettingsStore {
     showCategories: true,
     showTags: true,
     itemsPerPage: 20,
+    showEnergy: false,
+    energyUnit: ENERGY_UNIT_TYPES.KCAL,
   });
 
   constructor() {
@@ -25,6 +27,16 @@ class SettingsStore {
     this.saveToStorage();
   }
 
+  setShowEnergy(show: boolean) {
+    this.settings = { ...this.settings, showEnergy: show };
+    this.saveToStorage();
+  }
+
+  setEnergyUnit(unit: EnergyUnitType) {
+    this.settings = { ...this.settings, energyUnit: unit };
+    this.saveToStorage();
+  }
+
   clearAllData() {
     // Clear all localStorage data
     Object.values(STORAGE_KEYS).forEach((key) => {
@@ -37,6 +49,8 @@ class SettingsStore {
       showCategories: true,
       showTags: true,
       itemsPerPage: 20,
+      showEnergy: false,
+      energyUnit: ENERGY_UNIT_TYPES.KCAL,
     };
 
     // Reload page to reset all stores
