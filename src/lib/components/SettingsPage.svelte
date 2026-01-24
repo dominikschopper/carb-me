@@ -16,6 +16,10 @@
     settingsStore.setEnergyUnit(unit);
   }
 
+  function handleHidePreparedMealsChange(hide: boolean) {
+    settingsStore.setHidePreparedMeals(hide);
+  }
+
   function handleClearData() {
     if (
       confirm(
@@ -132,6 +136,29 @@
     {/if}
   </div>
 
+  <!-- Search Results Filter -->
+  <div class="card">
+    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Suchergebnisse</h3>
+    <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+      Passe an, welche Lebensmittel in den Suchergebnissen angezeigt werden.
+    </p>
+
+    <label class="flex cursor-pointer items-center gap-3 rounded-lg border-2 p-3 transition-colors {settings.hidePreparedMeals
+      ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
+      : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+      <input
+        type="checkbox"
+        checked={settings.hidePreparedMeals}
+        onchange={(e) => handleHidePreparedMealsChange(e.currentTarget.checked)}
+        class="h-5 w-5 flex-shrink-0 rounded text-blue-600 focus:ring-2 focus:ring-blue-500"
+      />
+      <div class="flex-1 min-w-0">
+        <div class="font-medium text-gray-900 dark:text-gray-100">Fertiggerichte ausblenden</div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">Blendet industriell hergestellte Fertiggerichte aus</div>
+      </div>
+    </label>
+  </div>
+
   <!-- Data Management -->
   <div class="card">
     <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Datenverwaltung</h3>
@@ -165,7 +192,7 @@
 
   <!-- App Info -->
   <div class="card text-center">
-    <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v1.5.0</p>
+    <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v1.6.0</p>
     <p class="mt-1 text-xs text-gray-500 dark:text-gray-500">
       Open Source auf <a rel="noopener noreferrer" href="https://github.com/dominikschopper/carb-me" class="text-blue-600 hover:underline dark:text-blue-400">github.com/dominikschopper</a>
     </p>

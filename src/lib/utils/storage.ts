@@ -18,6 +18,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   itemsPerPage: 20,
   showEnergy: false,
   energyUnit: ENERGY_UNIT_TYPES.KCAL,
+  hidePreparedMeals: false,
 };
 
 /**

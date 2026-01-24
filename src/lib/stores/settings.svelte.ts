@@ -10,6 +10,7 @@ class SettingsStore {
     itemsPerPage: 20,
     showEnergy: false,
     energyUnit: ENERGY_UNIT_TYPES.KCAL,
+    hidePreparedMeals: false,
   });
 
   constructor() {
@@ -37,6 +38,11 @@ class SettingsStore {
     this.saveToStorage();
   }
 
+  setHidePreparedMeals(hide: boolean) {
+    this.settings = { ...this.settings, hidePreparedMeals: hide };
+    this.saveToStorage();
+  }
+
   clearAllData() {
     // Clear all localStorage data
     Object.values(STORAGE_KEYS).forEach((key) => {
@@ -51,6 +57,7 @@ class SettingsStore {
       itemsPerPage: 20,
       showEnergy: false,
       energyUnit: ENERGY_UNIT_TYPES.KCAL,
+      hidePreparedMeals: false,
     };
 
     // Reload page to reset all stores

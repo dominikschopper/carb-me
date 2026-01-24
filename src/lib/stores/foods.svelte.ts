@@ -2,6 +2,10 @@ import { fuzzySearch, initializeSearch } from '$lib/utils/search';
 import { customFoodsStorage, favoritesStorage } from '$lib/utils/storage';
 import type { FoodItem } from '$lib/types/food';
 import { SvelteSet } from 'svelte/reactivity';
+import { settingsStore } from '$lib/stores/settings.svelte';
+
+const isPreparedMeal = (food: FoodItem) =>
+  food.blsCode.startsWith('X') || food.blsCode.startsWith('Y');
 
 class FoodStore {
   allFoods = $state<FoodItem[]>([]);
@@ -14,13 +18,17 @@ class FoodStore {
   isSearching = $derived(this.searchQuery.trim().length > 0);
 
   filteredFoods = $derived.by(() => {
-    const allAvailableFoods = [...this.allFoods, ...this.customFoods];
+    let foods = [...this.allFoods, ...this.customFoods];
 
-    if (!this.searchQuery.trim()) {
-      return allAvailableFoods;
+    if (settingsStore.settings.hidePreparedMeals) {
+      foods = foods.filter((food) => !isPreparedMeal(food));
     }
 
-    return fuzzySearch(allAvailableFoods, this.searchQuery);
+    if (!this.searchQuery.trim()) {
+      return foods;
+    }
+
+    return fuzzySearch(foods, this.searchQuery);
   });
 
   favoriteFoods = $derived.by(() => {

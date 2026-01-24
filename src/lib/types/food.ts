@@ -57,4 +57,5 @@ export interface AppSettings {
   itemsPerPage: number;
   showEnergy: boolean;
   energyUnit: EnergyUnitType;
+  hidePreparedMeals: boolean;
 }
