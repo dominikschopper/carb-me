@@ -88,11 +88,11 @@
           </div>
           <button
             onclick={() => removeItem(index)}
-            class="rounded-full p-2 hover:bg-red-50 active:scale-95 dark:hover:bg-red-900/30"
+            class="flex items-center justify-center rounded-full p-2 hover:bg-red-50 active:scale-95 dark:hover:bg-red-900/30"
             aria-label="Entfernen"
             type="button"
           >
-            <span class="material-symbols-outlined text-red-600 dark:text-red-400">delete</span>
+            <span class="material-symbols-outlined leading-none text-red-600 dark:text-red-400">delete</span>
           </button>
         </div>
       {/each}

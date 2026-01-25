@@ -55,10 +55,10 @@
     {#if inputValue}
       <button
         onclick={clearSearch}
-        class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full leading-none p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
+        class="absolute right-2 top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
         aria-label="Suche löschen"
       >
-        <span class="material-symbols-outlined text-gray-500">close</span>
+        <span class="material-symbols-outlined leading-none text-gray-500">close</span>
       </button>
     {/if}
   </div>

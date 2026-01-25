@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.6.2] - 2026-01-25
 
+### Fixed
+- Round icon buttons no longer become oval on hover
+
 ### Changed
 - switched to yet another b/w icon design
 

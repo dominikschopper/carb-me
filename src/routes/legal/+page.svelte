@@ -17,7 +17,7 @@
       {#if !isOnboarding}
         <button
           onclick={() => goto('/')}
-          class="rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="flex items-center justify-center rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
           aria-label="Zurück"
           type="button"
         >

@@ -91,11 +91,11 @@
         </div>
         <button
           onclick={handleClose}
-          class="rounded-full p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
+          class="flex items-center justify-center rounded-full p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
           aria-label="Schließen"
           type="button"
         >
-          <span class="material-symbols-outlined text-gray-500">close</span>
+          <span class="material-symbols-outlined leading-none text-gray-500">close</span>
         </button>
       </div>
 
