@@ -1,11 +1,9 @@
 import { fuzzySearch, initializeSearch } from '$lib/utils/search';
 import { customFoodsStorage, favoritesStorage } from '$lib/utils/storage';
+import { isPreparedMeal } from '$lib/utils/food-filters';
 import type { FoodItem } from '$lib/types/food';
 import { SvelteSet } from 'svelte/reactivity';
 import { settingsStore } from '$lib/stores/settings.svelte';
-
-const isPreparedMeal = (food: FoodItem) =>
-  food.blsCode.startsWith('X') || food.blsCode.startsWith('Y');
 
 class FoodStore {
   allFoods = $state<FoodItem[]>([]);

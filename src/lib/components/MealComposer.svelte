@@ -7,6 +7,7 @@
   const items = $derived(mealStore.items);
   const totalBE = $derived(mealStore.totalBE);
   const totalKHE = $derived(mealStore.totalKHE);
+  const totalCarbs = $derived(mealStore.totalCarbs);
   const settings = $derived(settingsStore.settings);
 
   // Calculate energy for a single item
@@ -103,10 +104,18 @@
         <p class="text-sm opacity-90">Gesamt</p>
         <UnitDisplay>
           {#snippet beContent()}
-            <p class="text-3xl font-bold">{formatNumber(totalBE)} BE</p>
+            <p class="text-lg">
+              <span class="text-green-200">{formatNumber(totalCarbs)}g KH</span>
+              <span class="opacity-75">=</span>
+              <span class="font-bold">{formatNumber(totalBE)} BE</span>
+            </p>
           {/snippet}
           {#snippet kheContent()}
-            <p class="text-3xl font-bold">{formatNumber(totalKHE)} KHE</p>
+            <p class="text-lg">
+              <span class="text-green-200">{formatNumber(totalCarbs)}g KH</span>
+              <span class="opacity-75">=</span>
+              <span class="font-bold">{formatNumber(totalKHE)} KHE</span>
+            </p>
           {/snippet}
         </UnitDisplay>
         {#if settings.showEnergy && totalEnergy > 0}

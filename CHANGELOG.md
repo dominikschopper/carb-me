@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.1] - 2026-01-25
+
+### Fixed
+- Calculator shows "Milliliter" instead of "Gramm" for beverages
+- Calculator resets to 100g/ml when opening a new food item
+- Quick amount buttons now show correct unit (g/ml)
+
+### Changed
+- Calculator and Meal result now display carbs with units: "XXg KH = YY BE"
+- Consistent font sizes in Calculator and Meal summary
+
+### Added
+- Unit tests for calculator, search, formatting, storage, and food filters
+
 ## [1.6.0] - 2026-01-24
 
 ### Added

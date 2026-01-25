@@ -55,6 +55,13 @@
     }
   }
 
+  // Reset grams to 100 whenever food changes
+  $effect(() => {
+    if (food) {
+      grams = 100;
+    }
+  });
+
   $effect(() => {
     if (food && dialog) {
       dialog.showModal();
@@ -92,10 +99,10 @@
         </button>
       </div>
 
-      <!-- Gram input -->
+      <!-- Gram/ml input -->
       <div class="mb-4">
         <label for="grams-input" class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Menge in Gramm
+          Menge in {food.unit === 'ml' ? 'Milliliter' : 'Gramm'}
         </label>
         <input
           id="grams-input"
@@ -120,7 +127,7 @@
             class="btn-touch flex-1 bg-gray-100 px-2 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
             type="button"
           >
-            {amount}g
+            {amount}{food.unit || 'gr'}
           </button>
         {/each}
       </div>
@@ -131,21 +138,21 @@
           <UnitDisplay>
             {#snippet beContent()}
               <div class="flex items-center justify-between">
-                <span class="font-medium text-gray-700 dark:text-gray-300">Broteinheiten (BE)</span>
-                <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">{formatNumber(result.be)}</span>
+                <span class="font-medium text-gray-700 dark:text-gray-300">
+                  <span class="text-green-600 dark:text-green-400">{formatNumber(result.carbs)}g KH</span> =
+                </span>
+                <span class="font-bold text-blue-600 dark:text-blue-400">{formatNumber(result.be)} BE</span>
               </div>
             {/snippet}
             {#snippet kheContent()}
               <div class="flex items-center justify-between">
-                <span class="font-medium text-gray-700 dark:text-gray-300">Kohlenhydrateinheiten (KHE)</span>
-                <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">{formatNumber(result.khe)}</span>
+                <span class="font-medium text-gray-700 dark:text-gray-300">
+                  <span class="text-green-600 dark:text-green-400">{formatNumber(result.carbs)}g KH</span> =
+                </span>
+                <span class="font-bold text-purple-600 dark:text-purple-400">{formatNumber(result.khe)} KHE</span>
               </div>
             {/snippet}
           </UnitDisplay>
-          <div class="flex items-center justify-between border-t border-blue-200 pt-3 dark:border-blue-800">
-            <span class="text-sm text-gray-600 dark:text-gray-400">Kohlenhydrate gesamt</span>
-            <span class="text-lg font-semibold text-green-600 dark:text-green-400">{formatNumber(result.carbs)}g</span>
-          </div>
           {#if settings.showEnergy && energyForGrams !== null}
             <div class="flex items-center justify-between border-t border-blue-200 pt-3 dark:border-blue-800">
               <span class="text-sm text-gray-600 dark:text-gray-400">Brennwert</span>
