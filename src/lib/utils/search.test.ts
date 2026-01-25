@@ -70,6 +70,9 @@ describe('fuzzySearch', () => {
     expect(results).toEqual(testFoods);
   });
 
+  // Note: fuzzySearch returns all foods for whitespace queries, but in the UI
+  // this case is never reached because isSearching (in foods.svelte.ts) is false
+  // for whitespace-only queries, so FoodList shows the search prompt instead.
   it('returns all foods for whitespace query', () => {
     const results = fuzzySearch(testFoods, '   ');
     expect(results).toEqual(testFoods);
