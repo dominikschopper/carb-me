@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { isPreparedMeal } from './food-filters';
+import { createCategoryFilter, isInCategories } from './food-filters';
 import type { FoodItem } from '$lib/types/food';
+import { BLS_CATEGORIES } from '$lib/types/food';
 
 // Helper to create a minimal FoodItem for testing
 function createFood(blsCode: string, name: string = 'Test Food'): FoodItem {
@@ -15,62 +16,108 @@ function createFood(blsCode: string, name: string = 'Test Food'): FoodItem {
   };
 }
 
-describe('isPreparedMeal', () => {
-  describe('returns true for prepared meals', () => {
-    it('identifies foods with X prefix as prepared meals', () => {
-      expect(isPreparedMeal(createFood('X123456'))).toBe(true);
-      expect(isPreparedMeal(createFood('X000001'))).toBe(true);
-      expect(isPreparedMeal(createFood('XABCDEF'))).toBe(true);
-    });
-
-    it('identifies foods with Y prefix as prepared meals (sweet)', () => {
-      expect(isPreparedMeal(createFood('Y123456'))).toBe(true);
-      expect(isPreparedMeal(createFood('Y000001'))).toBe(true);
-      expect(isPreparedMeal(createFood('YABCDEF'))).toBe(true);
-    });
+describe('createCategoryFilter', () => {
+  it('creates filter that identifies foods with matching prefix', () => {
+    const filterX = createCategoryFilter(BLS_CATEGORIES.FERTIGGERICHTE);
+    expect(filterX(createFood('X123456'))).toBe(true);
+    expect(filterX(createFood('X000001'))).toBe(true);
+    expect(filterX(createFood('XABCDEF'))).toBe(true);
   });
 
-  describe('returns false for non-prepared meals', () => {
-    it('returns false for fruits (O prefix)', () => {
-      expect(isPreparedMeal(createFood('O123456', 'Apfel'))).toBe(false);
-    });
+  it('creates filter that rejects foods with different prefix', () => {
+    const filterX = createCategoryFilter(BLS_CATEGORIES.FERTIGGERICHTE);
+    expect(filterX(createFood('Y123456'))).toBe(false);
+    expect(filterX(createFood('P123456'))).toBe(false);
+    expect(filterX(createFood('N123456'))).toBe(false);
+  });
 
-    it('returns false for vegetables (G prefix)', () => {
-      expect(isPreparedMeal(createFood('G123456', 'Karotte'))).toBe(false);
-    });
+  it('works for all BLS categories', () => {
+    const filterP = createCategoryFilter(BLS_CATEGORIES.ALKOHOLISCHE_GETRAENKE);
+    expect(filterP(createFood('P123456', 'Bier'))).toBe(true);
+    expect(filterP(createFood('N123456'))).toBe(false);
 
-    it('returns false for bread (B prefix)', () => {
-      expect(isPreparedMeal(createFood('B123456', 'Weißbrot'))).toBe(false);
-    });
+    const filterN = createCategoryFilter(BLS_CATEGORIES.GETRAENKE);
+    expect(filterN(createFood('N123456', 'Saft'))).toBe(true);
+    expect(filterN(createFood('P123456'))).toBe(false);
 
-    it('returns false for dairy (M prefix)', () => {
-      expect(isPreparedMeal(createFood('M123456', 'Milch'))).toBe(false);
-    });
-
-    it('returns false for beverages (N prefix)', () => {
-      expect(isPreparedMeal(createFood('N123456', 'Orangensaft'))).toBe(false);
-    });
+    const filterR = createCategoryFilter(BLS_CATEGORIES.GEWUERZE_SAUCEN);
+    expect(filterR(createFood('R123456', 'Ketchup'))).toBe(true);
+    expect(filterR(createFood('X123456'))).toBe(false);
   });
 
   describe('edge cases', () => {
-    it('handles lowercase x/y (should not match)', () => {
-      expect(isPreparedMeal(createFood('x123456'))).toBe(false);
-      expect(isPreparedMeal(createFood('y123456'))).toBe(false);
+    it('handles lowercase prefix (should not match)', () => {
+      const filter = createCategoryFilter('P' as any);
+      expect(filter(createFood('p123456'))).toBe(false);
     });
 
-    it('handles X or Y not at start (should not match)', () => {
-      expect(isPreparedMeal(createFood('AX12345'))).toBe(false);
-      expect(isPreparedMeal(createFood('1X23456'))).toBe(false);
+    it('handles prefix not at start (should not match)', () => {
+      const filter = createCategoryFilter('P' as any);
+      expect(filter(createFood('AP12345'))).toBe(false);
     });
 
     it('handles empty blsCode', () => {
-      expect(isPreparedMeal(createFood(''))).toBe(false);
+      const filter = createCategoryFilter('X' as any);
+      expect(filter(createFood(''))).toBe(false);
     });
 
     it('handles single character codes', () => {
-      expect(isPreparedMeal(createFood('X'))).toBe(true);
-      expect(isPreparedMeal(createFood('Y'))).toBe(true);
-      expect(isPreparedMeal(createFood('A'))).toBe(false);
+      const filter = createCategoryFilter('X' as any);
+      expect(filter(createFood('X'))).toBe(true);
+      expect(filter(createFood('Y'))).toBe(false);
+    });
+  });
+});
+
+describe('isInCategories', () => {
+  it('returns true if food belongs to any of the given categories', () => {
+    expect(isInCategories(createFood('X123456'), ['X', 'Y'])).toBe(true);
+    expect(isInCategories(createFood('Y123456'), ['X', 'Y'])).toBe(true);
+    expect(isInCategories(createFood('P123456'), ['P', 'N'])).toBe(true);
+  });
+
+  it('returns false if food does not belong to any category', () => {
+    expect(isInCategories(createFood('X123456'), ['P', 'N'])).toBe(false);
+    expect(isInCategories(createFood('B123456'), ['X', 'Y', 'P'])).toBe(false);
+  });
+
+  it('handles empty category array', () => {
+    expect(isInCategories(createFood('X123456'), [])).toBe(false);
+  });
+
+  it('handles single category', () => {
+    expect(isInCategories(createFood('X123456'), ['X'])).toBe(true);
+    expect(isInCategories(createFood('X123456'), ['Y'])).toBe(false);
+  });
+
+  it('works with all BLS category constants', () => {
+    expect(
+      isInCategories(
+        createFood('X123456'),
+        [BLS_CATEGORIES.FERTIGGERICHTE, BLS_CATEGORIES.FERTIGGERICHTE_SUESS]
+      )
+    ).toBe(true);
+
+    expect(
+      isInCategories(
+        createFood('P123456'),
+        [BLS_CATEGORIES.ALKOHOLISCHE_GETRAENKE, BLS_CATEGORIES.GETRAENKE]
+      )
+    ).toBe(true);
+  });
+
+  describe('edge cases', () => {
+    it('handles composite BLS codes (e.g., R9A2000+R9A2200+R9A2100)', () => {
+      expect(isInCategories(createFood('R9A2000+R9A2200+R9A2100'), ['R'])).toBe(true);
+      expect(isInCategories(createFood('X123+Y456'), ['X', 'Y'])).toBe(true);
+    });
+
+    it('handles lowercase codes (should not match)', () => {
+      expect(isInCategories(createFood('x123456'), ['X'])).toBe(false);
+    });
+
+    it('handles empty blsCode', () => {
+      expect(isInCategories(createFood(''), ['X', 'Y', 'P'])).toBe(false);
     });
   });
 });

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { settingsStore } from '$lib/stores/settings.svelte';
-  import type { EnergyUnitType } from '$lib/types/food';
+  import type { EnergyUnitType, BlsCategory } from '$lib/types/food';
+  import { BLS_CATEGORIES } from '$lib/types/food';
 
   const settings = $derived(settingsStore.settings);
 
@@ -16,9 +17,37 @@
     settingsStore.setEnergyUnit(unit);
   }
 
-  function handleHidePreparedMealsChange(hide: boolean) {
-    settingsStore.setHidePreparedMeals(hide);
+  function handleCategoryToggle(category: BlsCategory, hide: boolean) {
+    settingsStore.toggleHiddenCategory(category, hide);
   }
+
+  const CATEGORY_CONFIG = [
+    {
+      key: BLS_CATEGORIES.FERTIGGERICHTE,
+      label: 'Fertiggerichte (vorw. pflanzlich)',
+      description: 'Industriell hergestellte Fertiggerichte.',
+    },
+    {
+      key: BLS_CATEGORIES.FERTIGGERICHTE_SUESS,
+      label: 'Fertiggerichte (vorw. tierisch)',
+      description: 'Süße Fertiggerichte aus (Pudding, Desserts, etc.).',
+    },
+    {
+      key: BLS_CATEGORIES.ALKOHOLISCHE_GETRAENKE,
+      label: 'Getränke (mit Alkohol)',
+      description: 'Bier, Wein, Cocktails und Spirituosen.',
+    },
+    {
+      key: BLS_CATEGORIES.GETRAENKE,
+      label: 'Getränke (alkoholfrei)',
+      description: 'Säfte, Softdrinks, Wasser und Tee.',
+    },
+    {
+      key: BLS_CATEGORIES.GEWUERZE_SAUCEN,
+      label: 'Gewürze + Saucen',
+      description: 'Gewürze, Ketchup, Mayonnaise und Dressings.',
+    },
+  ] as const;
 
   function handleClearData() {
     if (
@@ -143,20 +172,27 @@
       Passe an, welche Lebensmittel in den Suchergebnissen angezeigt werden.
     </p>
 
-    <label class="flex cursor-pointer items-center gap-3 rounded-lg border-2 p-3 transition-colors {settings.hidePreparedMeals
-      ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
-      : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
-      <input
-        type="checkbox"
-        checked={settings.hidePreparedMeals}
-        onchange={(e) => handleHidePreparedMealsChange(e.currentTarget.checked)}
-        class="h-5 w-5 flex-shrink-0 rounded text-blue-600 focus:ring-2 focus:ring-blue-500"
-      />
-      <div class="flex-1 min-w-0">
-        <div class="font-medium text-gray-900 dark:text-gray-100">Fertiggerichte ausblenden</div>
-        <div class="text-sm text-gray-600 dark:text-gray-400">Blendet industriell hergestellte Fertiggerichte aus</div>
-      </div>
-    </label>
+    <div class="space-y-3">
+      {#each CATEGORY_CONFIG as category}
+        <label class="flex cursor-pointer items-center gap-3 rounded-lg border-2 p-3 transition-colors {settingsStore.isCategoryHidden(category.key)
+          ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
+          : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+          <input
+            type="checkbox"
+            checked={settingsStore.isCategoryHidden(category.key)}
+            onchange={(e) => handleCategoryToggle(category.key, e.currentTarget.checked)}
+            class="h-5 w-5 flex-shrink-0 rounded text-blue-600 focus:ring-2 focus:ring-blue-500"
+          />
+          <div class="flex-1 min-w-0">
+            <div class="font-medium text-blue-600 dark:text-gray-100">{category.label} ausblenden</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+              <span class="text-gray-200">BLS Code {category.key}:</span>
+              {category.description}
+            </div>
+          </div>
+        </label>
+      {/each}
+    </div>
   </div>
 
   <!-- Data Management -->

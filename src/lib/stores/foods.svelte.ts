@@ -1,6 +1,6 @@
 import { fuzzySearch, initializeSearch } from '$lib/utils/search';
 import { customFoodsStorage, favoritesStorage } from '$lib/utils/storage';
-import { isPreparedMeal } from '$lib/utils/food-filters';
+import { isInCategories } from '$lib/utils/food-filters';
 import type { FoodItem } from '$lib/types/food';
 import { SvelteSet } from 'svelte/reactivity';
 import { settingsStore } from '$lib/stores/settings.svelte';
@@ -18,8 +18,10 @@ class FoodStore {
   filteredFoods = $derived.by(() => {
     let foods = [...this.allFoods, ...this.customFoods];
 
-    if (settingsStore.settings.hidePreparedMeals) {
-      foods = foods.filter((food) => !isPreparedMeal(food));
+    // BLS-Kategorie-Filter anwenden (Single Pass!)
+    const hiddenCats = settingsStore.settings.hiddenCategories;
+    if (hiddenCats.length > 0) {
+      foods = foods.filter((food) => !isInCategories(food, hiddenCats));
     }
 
     if (!this.searchQuery.trim()) {

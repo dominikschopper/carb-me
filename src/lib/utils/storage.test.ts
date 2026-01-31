@@ -144,6 +144,6 @@ describe('DEFAULT_SETTINGS', () => {
     expect(DEFAULT_SETTINGS.itemsPerPage).toBe(20);
     expect(DEFAULT_SETTINGS.showEnergy).toBe(false);
     expect(DEFAULT_SETTINGS.energyUnit).toBe('kcal');
-    expect(DEFAULT_SETTINGS.hidePreparedMeals).toBe(false);
+    expect(DEFAULT_SETTINGS.hiddenCategories).toEqual([]);
   });
 });

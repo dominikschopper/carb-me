@@ -14,6 +14,32 @@ export const ENERGY_UNIT_TYPES = {
 
 export type EnergyUnitType = (typeof ENERGY_UNIT_TYPES)[keyof typeof ENERGY_UNIT_TYPES];
 
+// BLS Categories - Complete enum for all food categories in the BLS database
+export const BLS_CATEGORIES = {
+  BROT_BACKWAREN: 'B',
+  GETREIDE: 'C',
+  SUESSGEBAECK: 'D',
+  TEIGWAREN: 'E',
+  OBST: 'F',
+  GEMUESE: 'G',
+  HUELSENFRUECHTE_NUESSE: 'H',
+  KARTOFFELN: 'K',
+  MILCHPRODUKTE: 'M',
+  GETRAENKE: 'N',
+  ALKOHOLISCHE_GETRAENKE: 'P',
+  FETTE_OELE: 'Q',
+  GEWUERZE_SAUCEN: 'R',
+  SUESSWAREN: 'S',
+  FISCH_MEERESFRUECHTE: 'T',
+  FLEISCH: 'U',
+  GEFLUEGEL_WILD: 'V',
+  WURSTWAREN: 'W',
+  FERTIGGERICHTE: 'X',
+  FERTIGGERICHTE_SUESS: 'Y',
+} as const;
+
+export type BlsCategory = (typeof BLS_CATEGORIES)[keyof typeof BLS_CATEGORIES];
+
 export interface FoodItem {
   name: string;
   subtitle?: string; // Variant details (e.g., "Type 405, 550, Vollkorn")
@@ -57,5 +83,5 @@ export interface AppSettings {
   itemsPerPage: number;
   showEnergy: boolean;
   energyUnit: EnergyUnitType;
-  hidePreparedMeals: boolean;
+  hiddenCategories: BlsCategory[];
 }

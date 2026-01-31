@@ -1,5 +1,5 @@
 import { settingsStorage, STORAGE_KEYS } from '$lib/utils/storage';
-import type { AppSettings, EnergyUnitType } from '$lib/types/food';
+import type { AppSettings, EnergyUnitType, BlsCategory } from '$lib/types/food';
 import { UNIT_TYPES, ENERGY_UNIT_TYPES } from '$lib/types/food';
 
 class SettingsStore {
@@ -10,7 +10,7 @@ class SettingsStore {
     itemsPerPage: 20,
     showEnergy: false,
     energyUnit: ENERGY_UNIT_TYPES.KCAL,
-    hidePreparedMeals: false,
+    hiddenCategories: [],
   });
 
   constructor() {
@@ -38,9 +38,28 @@ class SettingsStore {
     this.saveToStorage();
   }
 
-  setHidePreparedMeals(hide: boolean) {
-    this.settings = { ...this.settings, hidePreparedMeals: hide };
+  toggleHiddenCategory(category: BlsCategory, hide: boolean) {
+    const current = this.settings.hiddenCategories;
+
+    if (hide && !current.includes(category)) {
+      // Kategorie hinzufügen
+      this.settings = {
+        ...this.settings,
+        hiddenCategories: [...current, category],
+      };
+    } else if (!hide && current.includes(category)) {
+      // Kategorie entfernen
+      this.settings = {
+        ...this.settings,
+        hiddenCategories: current.filter(c => c !== category),
+      };
+    }
+
     this.saveToStorage();
+  }
+
+  isCategoryHidden(category: BlsCategory): boolean {
+    return this.settings.hiddenCategories.includes(category);
   }
 
   clearAllData() {
@@ -57,7 +76,7 @@ class SettingsStore {
       itemsPerPage: 20,
       showEnergy: false,
       energyUnit: ENERGY_UNIT_TYPES.KCAL,
-      hidePreparedMeals: false,
+      hiddenCategories: [],
     };
 
     // Reload page to reset all stores
