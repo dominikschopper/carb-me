@@ -27,10 +27,10 @@ interface BlsConfig {
 function loadBlsConfig(): BlsConfig {
   const configPath = resolve(PROJECT_ROOT, 'scripts/bls-data/bls-config.json');
   if (!existsSync(configPath)) {
-    console.log('  No bls-config.json found, using defaults');
+    console.warn('!!No bls-config.json found, using defaults');
     return { prefixes: {}, mergeGroups: [] };
   }
-  console.log('  Loading BLS config from:', configPath);
+  console.log('  >>Loading BLS config from:', configPath);
   return JSON.parse(readFileSync(configPath, 'utf-8'));
 }
 
@@ -41,7 +41,7 @@ const MIN_KH = 4;
 const GROUPING_CONFIG = {
   enabled: true,
   blsPrefixLength: 4, // Group by first 4 characters (e.g., C213 = Weizenmehl)
-  maxKhDifference: 15, // Max KH difference within a group
+  maxKhDifference: 15, // Max KH/100gr difference within a group
   excludeCategories: ['X', 'Y'], // Don't group prepared meals
 };
 
@@ -412,6 +412,15 @@ function getPrefix(combinedBlsCode: string, prefixMap: Map<string, string>): str
   return '';
 }
 
+function isJuiceInFruits(food: ParsedFood) {
+  const FRUIT_CATEGORY = 'F';
+  const saftRegex = new RegExp('^\\w+saft\\b')
+  if (food.name === 'Apfelsaft') {
+    console.log('Apfelsaft saftRegex.test(food.name)', saftRegex.test(food.name))
+  }
+  return food.blsCode.startsWith(FRUIT_CATEGORY) && saftRegex.test(food.name);
+}
+
 /**
  * Main conversion function
  */
@@ -509,7 +518,7 @@ function convertBLStoJSON(): void {
     }
 
     // Add unit for beverages
-    if (BEVERAGE_CATEGORIES.has(parsed.blsCode.charAt(0))) {
+    if (BEVERAGE_CATEGORIES.has(parsed.blsCode.charAt(0)) || isJuiceInFruits(parsed)) {
       food.unit = 'ml';
     }
 
