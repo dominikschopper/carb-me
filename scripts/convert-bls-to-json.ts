@@ -248,6 +248,7 @@ function groupSimilarFoods(foods: ParsedFood[]): (ParsedFood & { subtitle?: stri
   const result: (ParsedFood & { subtitle?: string })[] = [];
   let groupedCount = 0;
 
+  /* eslint-disable  @typescript-eslint/no-unused-vars */
   for (const [_prefix, groupFoods] of groups) {
     if (groupFoods.length === 1) {
       result.push(groupFoods[0]);
