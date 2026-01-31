@@ -228,7 +228,7 @@
 
   <!-- App Info -->
   <div class="card text-center">
-    <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v1.7.0</p>
+    <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v1.8.0</p>
     <p class="mt-1 text-xs text-gray-500 dark:text-gray-500">
       Open Source auf <a rel="noopener noreferrer" href="https://github.com/dominikschopper/carb-me" class="text-blue-600 hover:underline dark:text-blue-400">github.com/dominikschopper</a>
     </p>

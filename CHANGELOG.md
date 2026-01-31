@@ -6,6 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.8.0] - 2026-01-31
+
+### Added
+- Individual category filters for BLS food categories
+- Filter toggle for prepared meals (X - Pizza, Lasagne, etc.)
+- Filter toggle for sweet prepared meals (Y - Pudding, Desserts, etc.)
+- Filter toggle for alcoholic beverages (P - Beer, Wine, Cocktails, Spirits)
+- Filter toggle for non-alcoholic beverages (N - Juices, Soft drinks, Water, Tea)
+- Filter toggle for condiments & sauces (R - Ketchup, Mustard, Mayonnaise, Dressings)
+- Complete BLS_CATEGORIES enum with all 19 BLS food categories
+
+### Changed
+- **BREAKING:** Replaced `hidePreparedMeals` boolean setting with `hiddenCategories` array
+- Refactored category filtering to use factory functions (`createCategoryFilter`, `isInCategories`)
+- Settings UI now uses loop-based generation from configuration array
+- Filter logic optimized to single-pass array check
+- Category filters are now independently configurable
+
+### Technical
+- Added comprehensive unit tests for factory functions
+- Improved type safety with `BlsCategory` type
+- More maintainable and extensible architecture for future categories
+
 ## [1.7.0] - 2026-01-25
 
 ### Added
