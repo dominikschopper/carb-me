@@ -936,24 +936,6 @@
       "blsCode": "B8A1000"
     },
     {
-      "name": "Brot: Dinkelbrot",
-      "kh": 41,
-      "gBE": 29,
-      "gKHE": 24,
-      "categories": [
-        [
-          "Brot & Backwaren"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 247,
-      "kj": 1041,
-      "blsCode": "B710700+B710500+B710800+B710600+B710900",
-      "subtitle": "verschiedene Varianten"
-    },
-    {
       "name": "Brot: Haferbrot",
       "kh": 39,
       "gBE": 31,
@@ -1248,6 +1230,24 @@
       "blsCode": "B8A3000"
     },
     {
+      "name": "Dinkelbrot",
+      "kh": 41,
+      "gBE": 29,
+      "gKHE": 24,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 247,
+      "kj": 1041,
+      "blsCode": "B710700+B710500+B710800+B710600+B710900",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
       "name": "Dinkelbrötchen",
       "kh": 50,
       "gBE": 24,
@@ -1526,7 +1526,7 @@
       "blsCode": "B629000"
     },
     {
-      "name": "Laugengebäck",
+      "name": "Laugenbrötchen (Brezel ...)",
       "kh": 50,
       "gBE": 24,
       "gKHE": 20,
@@ -1733,6 +1733,24 @@
       "kcal": 262,
       "kj": 1101,
       "blsCode": "B421000+B426800+B426000+B426700+B426500",
+      "subtitle": "verschiedene Varianten"
+    },
+    {
+      "name": "Roggenvollkornknäckebrot",
+      "kh": 56.5,
+      "gBE": 21,
+      "gKHE": 18,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 341,
+      "kj": 1433,
+      "blsCode": "B6A2100+B6A2300+B6A2800+B6A2500+B6A2600+B6A2900+B6A2400+B6A2700+B6A2000+B6A2200+B6A3200+B6A3000+B6A3100",
       "subtitle": "verschiedene Varianten"
     },
     {
@@ -1994,6 +2012,24 @@
       "kcal": 229,
       "kj": 968,
       "blsCode": "B781500"
+    },
+    {
+      "name": "Weizenvollkornbrot",
+      "kh": 38,
+      "gBE": 32,
+      "gKHE": 26,
+      "categories": [
+        [
+          "Brot & Backwaren"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 236,
+      "kj": 992,
+      "blsCode": "B111400+B111600+B111700+B111500+B111300+B111800",
+      "subtitle": "verschiedene Varianten"
     },
     {
       "name": "Weizenvollkornbrötchen",
@@ -27627,23 +27663,6 @@
       "blsCode": "C335000"
     },
     {
-      "name": "Braunhirsemehl",
-      "kh": 55.8,
-      "gBE": 22,
-      "gKHE": 18,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 337,
-      "kj": 1418,
-      "blsCode": "C433100"
-    },
-    {
       "name": "Buchweizen gekocht",
       "kh": 21,
       "gBE": 57,
@@ -28361,23 +28380,6 @@
       "blsCode": "C242032"
     },
     {
-      "name": "Gerstemehl",
-      "kh": 62.6,
-      "gBE": 19,
-      "gKHE": 16,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 340,
-      "kj": 1434,
-      "blsCode": "C243000"
-    },
-    {
       "name": "Gerstenmalzextrakt",
       "kh": 73.8,
       "gBE": 16,
@@ -28479,23 +28481,6 @@
       "kcal": 92,
       "kj": 386,
       "blsCode": "C317032"
-    },
-    {
-      "name": "Grünkern Vollkornmehl",
-      "kh": 59.2,
-      "gBE": 20,
-      "gKHE": 17,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 321,
-      "kj": 1354,
-      "blsCode": "C413000"
     },
     {
       "name": "Grünkern Vollkornschrot",
@@ -28737,23 +28722,6 @@
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Hafermehl",
-      "kh": 53.2,
-      "gBE": 23,
-      "gKHE": 19,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 360,
-      "kj": 1513,
-      "blsCode": "C233000"
-    },
-    {
       "name": "Hartweizen ganzes Korn, gekocht",
       "kh": 32.5,
       "gBE": 37,
@@ -28958,23 +28926,6 @@
       "blsCode": "C432032"
     },
     {
-      "name": "Hirsemehl",
-      "kh": 71.6,
-      "gBE": 17,
-      "gKHE": 14,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 378,
-      "kj": 1600,
-      "blsCode": "C433000"
-    },
-    {
       "name": "Knuspermüslimischung, klassisch, gesüßt, angereichert mit Vitaminen und Mineralstoffen",
       "kh": 56.8,
       "gBE": 21,
@@ -29112,23 +29063,6 @@
       "blsCode": "C341000"
     },
     {
-      "name": "Mais Stärke",
-      "kh": 85.9,
-      "gBE": 14,
-      "gKHE": 12,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 348,
-      "kj": 1479,
-      "blsCode": "C446000"
-    },
-    {
       "name": "Maiswaffeln gesalzen",
       "kh": 79.4,
       "gBE": 15,
@@ -29144,6 +29078,23 @@
       "kcal": 389,
       "kj": 1649,
       "blsCode": "C533100"
+    },
+    {
+      "name": "Mehl: Braunhirsemehl",
+      "kh": 55.8,
+      "gBE": 22,
+      "gKHE": 18,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 337,
+      "kj": 1418,
+      "blsCode": "C433100"
     },
     {
       "name": "Mehl: Buchweizen Vollkornmehl",
@@ -29249,6 +29200,57 @@
       "blsCode": "C240000"
     },
     {
+      "name": "Mehl: Gerstemehl",
+      "kh": 62.6,
+      "gBE": 19,
+      "gKHE": 16,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 340,
+      "kj": 1434,
+      "blsCode": "C243000"
+    },
+    {
+      "name": "Mehl: Grünkern Vollkornmehl",
+      "kh": 59.2,
+      "gBE": 20,
+      "gKHE": 17,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 321,
+      "kj": 1354,
+      "blsCode": "C413000"
+    },
+    {
+      "name": "Mehl: Hafermehl",
+      "kh": 53.2,
+      "gBE": 23,
+      "gKHE": 19,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 360,
+      "kj": 1513,
+      "blsCode": "C233000"
+    },
+    {
       "name": "Mehl: Hartweizen Vollkornmehl",
       "kh": 60.9,
       "gBE": 20,
@@ -29264,6 +29266,23 @@
       "kcal": 346,
       "kj": 1461,
       "blsCode": "C219000"
+    },
+    {
+      "name": "Mehl: Hirsemehl",
+      "kh": 71.6,
+      "gBE": 17,
+      "gKHE": 14,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 378,
+      "kj": 1600,
+      "blsCode": "C433000"
     },
     {
       "name": "Mehl: Maismehl",
@@ -29867,23 +29886,6 @@
       "blsCode": "C352000"
     },
     {
-      "name": "Reis Stärke",
-      "kh": 85,
-      "gBE": 14,
-      "gKHE": 12,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 344,
-      "kj": 1463,
-      "blsCode": "C456000"
-    },
-    {
       "name": "Reis unpoliert, gekocht, gebraten ohne Fett (Pfanne)",
       "kh": 28,
       "gBE": 43,
@@ -30276,6 +30278,57 @@
       "blsCode": "C221132"
     },
     {
+      "name": "Stärke: Mais Stärke",
+      "kh": 85.9,
+      "gBE": 14,
+      "gKHE": 12,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 348,
+      "kj": 1479,
+      "blsCode": "C446000"
+    },
+    {
+      "name": "Stärke: Reis Stärke",
+      "kh": 85,
+      "gBE": 14,
+      "gKHE": 12,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 344,
+      "kj": 1463,
+      "blsCode": "C456000"
+    },
+    {
+      "name": "Stärke: Weizen Stärke",
+      "kh": 82.5,
+      "gBE": 15,
+      "gKHE": 12,
+      "categories": [
+        [
+          "Getreide"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 335,
+      "kj": 1425,
+      "blsCode": "C216000"
+    },
+    {
       "name": "Tortillachips (Nachos)",
       "kh": 61.9,
       "gBE": 19,
@@ -30597,23 +30650,6 @@
       "kcal": 266,
       "kj": 1105,
       "blsCode": "C217000"
-    },
-    {
-      "name": "Weizen Stärke",
-      "kh": 82.5,
-      "gBE": 15,
-      "gKHE": 12,
-      "categories": [
-        [
-          "Getreide"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 335,
-      "kj": 1425,
-      "blsCode": "C216000"
     },
     {
       "name": "Weizen Vollkornschrot",
@@ -33357,23 +33393,6 @@
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Kartoffelstärke (Kartoffelmehl)",
-      "kh": 83.1,
-      "gBE": 14,
-      "gKHE": 12,
-      "categories": [
-        [
-          "Kartoffeln"
-        ]
-      ],
-      "tags": [
-        "vieleKH"
-      ],
-      "kcal": 338,
-      "kj": 1435,
-      "blsCode": "K230000"
-    },
-    {
       "name": "Kartoffeltaschen",
       "kh": 31.5,
       "gBE": 38,
@@ -33565,6 +33584,23 @@
       "kj": 857,
       "blsCode": "K724400+K724432",
       "subtitle": "getrocknet, getrocknet, gekocht"
+    },
+    {
+      "name": "Stärke: Kartoffelstärke (Kartoffelmehl)",
+      "kh": 83.1,
+      "gBE": 14,
+      "gKHE": 12,
+      "categories": [
+        [
+          "Kartoffeln"
+        ]
+      ],
+      "tags": [
+        "vieleKH"
+      ],
+      "kcal": 338,
+      "kj": 1435,
+      "blsCode": "K230000"
     },
     {
       "name": "Steinpilz",
@@ -35219,7 +35255,8 @@
       ],
       "kcal": 47,
       "kj": 197,
-      "blsCode": "F501600"
+      "blsCode": "F501600",
+      "unit": "ml"
     },
     {
       "name": "Apfel gedünstet",
@@ -35440,7 +35477,8 @@
       ],
       "kcal": 44,
       "kj": 188,
-      "blsCode": "F110600"
+      "blsCode": "F110600",
+      "unit": "ml"
     },
     {
       "name": "Apfelsaft angereichert mit Vitamin C",
@@ -35457,7 +35495,8 @@
       ],
       "kcal": 44,
       "kj": 188,
-      "blsCode": "F112600"
+      "blsCode": "F112600",
+      "unit": "ml"
     },
     {
       "name": "Aprikose gedünstet",
@@ -35559,7 +35598,8 @@
       ],
       "kcal": 49,
       "kj": 209,
-      "blsCode": "F201600"
+      "blsCode": "F201600",
+      "unit": "ml"
     },
     {
       "name": "Banane getrocknet",
@@ -35781,7 +35821,8 @@
       ],
       "kcal": 64,
       "kj": 270,
-      "blsCode": "F130600"
+      "blsCode": "F130600",
+      "unit": "ml"
     },
     {
       "name": "Boysenbeere roh",
@@ -35883,7 +35924,8 @@
       ],
       "kcal": 40,
       "kj": 168,
-      "blsCode": "F303600"
+      "blsCode": "F303600",
+      "unit": "ml"
     },
     {
       "name": "Brotfrucht roh",
@@ -36105,7 +36147,8 @@
       ],
       "kcal": 30,
       "kj": 129,
-      "blsCode": "F301600"
+      "blsCode": "F301600",
+      "unit": "ml"
     },
     {
       "name": "Feige getrocknet",
@@ -36328,7 +36371,8 @@
       "kcal": 36,
       "kj": 153,
       "blsCode": "F604600+F604100",
-      "subtitle": "Grapefruitsaft, Grapefruit roh"
+      "subtitle": "Grapefruitsaft, Grapefruit roh",
+      "unit": "ml"
     },
     {
       "name": "Guave roh",
@@ -36465,7 +36509,8 @@
       ],
       "kcal": 35,
       "kj": 150,
-      "blsCode": "F302600"
+      "blsCode": "F302600",
+      "unit": "ml"
     },
     {
       "name": "Holunderbeere roh",
@@ -36812,7 +36857,8 @@
       ],
       "kcal": 148,
       "kj": 637,
-      "blsCode": "F602300"
+      "blsCode": "F602300",
+      "unit": "ml"
     },
     {
       "name": "Litschi roh",
@@ -37001,7 +37047,8 @@
       ],
       "kcal": 51,
       "kj": 218,
-      "blsCode": "F516600"
+      "blsCode": "F516600",
+      "unit": "ml"
     },
     {
       "name": "Mangostane roh",
@@ -37140,7 +37187,8 @@
       ],
       "kcal": 48,
       "kj": 205,
-      "blsCode": "F010600"
+      "blsCode": "F010600",
+      "unit": "ml"
     },
     {
       "name": "Mehrfruchtsaft angereichert mit Vitaminen (Multivitaminsaft)",
@@ -37157,7 +37205,8 @@
       ],
       "kcal": 48,
       "kj": 203,
-      "blsCode": "F014600"
+      "blsCode": "F014600",
+      "unit": "ml"
     },
     {
       "name": "Mehrfruchtsaft angereichert mit Vitaminen und Mineralstoffen",
@@ -37174,7 +37223,8 @@
       ],
       "kcal": 54,
       "kj": 227,
-      "blsCode": "F016600"
+      "blsCode": "F016600",
+      "unit": "ml"
     },
     {
       "name": "Mirabelle",
@@ -37347,7 +37397,8 @@
       "kcal": 41,
       "kj": 173,
       "blsCode": "F603600+F603100+F603700",
-      "subtitle": "Orangensaft, Orange roh, Orangennektar"
+      "subtitle": "Orangensaft, Orange roh, Orangennektar",
+      "unit": "ml"
     },
     {
       "name": "Pampelmuse/Pomelo, roh",
@@ -37654,7 +37705,8 @@
       ],
       "kcal": 41,
       "kj": 175,
-      "blsCode": "F220600"
+      "blsCode": "F220600",
+      "unit": "ml"
     },
     {
       "name": "Preiselbeere gezuckert (mit Pektin) Konserve",
@@ -37739,7 +37791,8 @@
       ],
       "kcal": 34,
       "kj": 145,
-      "blsCode": "F401600"
+      "blsCode": "F401600",
+      "unit": "ml"
     },
     {
       "name": "Quitte roh",
@@ -38241,7 +38294,8 @@
       "kcal": 65,
       "kj": 275,
       "blsCode": "F310600+F310100",
-      "subtitle": "Traubensaft, Weintraube roh"
+      "subtitle": "Traubensaft, Weintraube roh",
+      "unit": "ml"
     },
     {
       "name": "Traubensaft angereichert mit Eisen",
@@ -38258,7 +38312,8 @@
       ],
       "kcal": 68,
       "kj": 290,
-      "blsCode": "F317600"
+      "blsCode": "F317600",
+      "unit": "ml"
     },
     {
       "name": "Wald-Brombeere roh",
@@ -38396,7 +38451,8 @@
       ],
       "kcal": 150,
       "kj": 644,
-      "blsCode": "F601300"
+      "blsCode": "F601300",
+      "unit": "ml"
     },
     {
       "name": "Zwetschge",
@@ -48125,6 +48181,91 @@
       "subtitle": "verschiedene Varianten"
     },
     {
+      "name": "Semmelknödel (gekocht): Semmelknödel gekocht",
+      "kh": 22,
+      "gBE": 54,
+      "gKHE": 45,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 156,
+      "kj": 656,
+      "blsCode": "E606032"
+    },
+    {
+      "name": "Semmelknödel (gekocht): Semmelknödel gekocht, gebacken",
+      "kh": 22.9,
+      "gBE": 52,
+      "gKHE": 44,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 162,
+      "kj": 684,
+      "blsCode": "E606062"
+    },
+    {
+      "name": "Semmelknödel (gekocht): Semmelknödel gekocht, gebraten ohne Fett (Pfanne)",
+      "kh": 26.5,
+      "gBE": 45,
+      "gKHE": 38,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 188,
+      "kj": 791,
+      "blsCode": "E606082"
+    },
+    {
+      "name": "Semmelknödel (gekocht): Semmelknödel getrocknet, gekocht",
+      "kh": 20.6,
+      "gBE": 58,
+      "gKHE": 48,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 150,
+      "kj": 632,
+      "blsCode": "E606232"
+    },
+    {
+      "name": "Semmelknödel (gekocht): Semmelknödel getrocknet, gekocht, gebraten ohne Fett (Pfanne)",
+      "kh": 24.9,
+      "gBE": 48,
+      "gKHE": 40,
+      "categories": [
+        [
+          "Teigwaren"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+      "kcal": 181,
+      "kj": 762,
+      "blsCode": "E606282"
+    },
+    {
       "name": "Semmelknödel gedämpft",
       "kh": 22.5,
       "gBE": 53,
@@ -48142,57 +48283,6 @@
       "blsCode": "E606022"
     },
     {
-      "name": "Semmelknödel gekocht",
-      "kh": 22,
-      "gBE": 54,
-      "gKHE": 45,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 156,
-      "kj": 656,
-      "blsCode": "E606032"
-    },
-    {
-      "name": "Semmelknödel gekocht, gebacken",
-      "kh": 22.9,
-      "gBE": 52,
-      "gKHE": 44,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 162,
-      "kj": 684,
-      "blsCode": "E606062"
-    },
-    {
-      "name": "Semmelknödel gekocht, gebraten ohne Fett (Pfanne)",
-      "kh": 26.5,
-      "gBE": 45,
-      "gKHE": 38,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 188,
-      "kj": 791,
-      "blsCode": "E606082"
-    },
-    {
       "name": "Semmelknödel getrocknet",
       "kh": 54.3,
       "gBE": 22,
@@ -48208,40 +48298,6 @@
       "kcal": 390,
       "kj": 1642,
       "blsCode": "E606200"
-    },
-    {
-      "name": "Semmelknödel getrocknet, gekocht",
-      "kh": 20.6,
-      "gBE": 58,
-      "gKHE": 48,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 150,
-      "kj": 632,
-      "blsCode": "E606232"
-    },
-    {
-      "name": "Semmelknödel getrocknet, gekocht, gebraten ohne Fett (Pfanne)",
-      "kh": 24.9,
-      "gBE": 48,
-      "gKHE": 40,
-      "categories": [
-        [
-          "Teigwaren"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-      "kcal": 181,
-      "kj": 762,
-      "blsCode": "E606282"
     },
     {
       "name": "Semmelknödel roh",
