@@ -3,6 +3,7 @@
   import { foodStore } from '$lib/stores/foods.svelte';
   import { settingsStore } from '$lib/stores/settings.svelte';
   import UnitDisplay from './UnitDisplay.svelte';
+  import GrOrMl from './GrOrMl.svelte';
 
   let { food, onclick }: { food: FoodItem; onclick?: () => void } = $props();
 
@@ -50,7 +51,7 @@
       </div>
 
       <div class="mt-1 text-sm">
-        <span class="text-green-600 dark:text-green-400">{food.kh}g KH</span> <span class="text-gray-600 dark:text-gray-400">/ 100{food.unit || 'g'}</span>
+        <span class="text-green-600 dark:text-green-400">{food.kh}grKH</span> <span class="text-gray-600 dark:text-gray-400">/ <GrOrMl value="100" unit={food.unit}></GrOrMl></span>
         {#if settings.showEnergy && energyValue()}
           <span class="mx-1">·</span>
           <span class="text-amber-600 dark:text-amber-400">{energyValue()}</span>
@@ -60,10 +61,10 @@
       <div class="mt-2 text-xs">
         <UnitDisplay>
           {#snippet beContent()}
-            <span class="rounded-md bg-green-50 px-2 py-1 dark:bg-green-900/30">1 BE = {food.gBE}g</span>
+            <span class="rounded-md bg-green-50 px-2 py-1 dark:bg-green-900/30">1 BE = <GrOrMl value={food.gBE} unit={food.unit}></GrOrMl> </span>
           {/snippet}
           {#snippet kheContent()}
-            <span class="rounded-md bg-purple-50 px-2 py-1 dark:bg-purple-900/30">1 KHE = {food.gKHE}g</span>
+            <span class="rounded-md bg-purple-50 px-2 py-1 dark:bg-purple-900/30">1 KHE = <GrOrMl value={food.gKHE} unit={food.unit}></GrOrMl></span>
           {/snippet}
         </UnitDisplay>
       </div>

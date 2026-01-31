@@ -23,14 +23,14 @@
 
   const CATEGORY_CONFIG = [
     {
-      key: BLS_CATEGORIES.FERTIGGERICHTE,
+      key: BLS_CATEGORIES.FERTIGGERICHTE_PFLANZLICH,
       label: 'Fertiggerichte (vorw. pflanzlich)',
-      description: 'Industriell hergestellte Fertiggerichte.',
+      description: 'Fertiggerichte (Salate, Suppen, ...)',
     },
     {
-      key: BLS_CATEGORIES.FERTIGGERICHTE_SUESS,
+      key: BLS_CATEGORIES.FERTIGGERICHTE_TIERISCH,
       label: 'Fertiggerichte (vorw. tierisch)',
-      description: 'Süße Fertiggerichte aus (Pudding, Desserts, etc.).',
+      description: 'Fertiggerichte (Frikadelle, Ragout ...)',
     },
     {
       key: BLS_CATEGORIES.ALKOHOLISCHE_GETRAENKE,
@@ -40,7 +40,7 @@
     {
       key: BLS_CATEGORIES.GETRAENKE,
       label: 'Getränke (alkoholfrei)',
-      description: 'Säfte, Softdrinks, Wasser und Tee.',
+      description: 'Softdrinks, ... (Säfte sind unter Obst).',
     },
     {
       key: BLS_CATEGORIES.GEWUERZE_SAUCEN,
@@ -185,9 +185,9 @@
           />
           <div class="flex-1 min-w-0">
             <div class="font-medium text-blue-600 dark:text-gray-100">{category.label} ausblenden</div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">
-              <span class="text-gray-200">BLS Code {category.key}:</span>
+            <div class="text-sm text-gray-500 dark:text-gray-300">
               {category.description}
+              <span class="dark:text-gray-600 text-gray-400 text-xs">&middot; BLS Code {category.key}</span>
             </div>
           </div>
         </label>
@@ -230,7 +230,7 @@
   <div class="card text-center">
     <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v1.8.0</p>
     <p class="mt-1 text-xs text-gray-500 dark:text-gray-500">
-      Open Source auf <a rel="noopener noreferrer" href="https://github.com/dominikschopper/carb-me" class="text-blue-600 hover:underline dark:text-blue-400">github.com/dominikschopper</a>
+      Open Source auf <a rel="noopener noreferrer" href="https://github.com/dominikschopper/carb-me" class="text-blue-600 hover:underline dark:text-blue-400">github.com/dominikschopper/carb-me</a>
     </p>
   </div>
 </div>

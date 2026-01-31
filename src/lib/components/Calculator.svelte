@@ -102,7 +102,7 @@
       <!-- Gram/ml input -->
       <div class="mb-4">
         <label for="grams-input" class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Menge in {food.unit === 'ml' ? 'Milliliter' : 'Gramm'}
+          Menge in {food.unit === 'ml' ? 'ml' : 'gr'}
         </label>
         <input
           id="grams-input"

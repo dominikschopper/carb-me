@@ -34,8 +34,8 @@ export const BLS_CATEGORIES = {
   FLEISCH: 'U',
   GEFLUEGEL_WILD: 'V',
   WURSTWAREN: 'W',
-  FERTIGGERICHTE: 'X',
-  FERTIGGERICHTE_SUESS: 'Y',
+  FERTIGGERICHTE_PFLANZLICH: 'X',
+  FERTIGGERICHTE_TIERISCH: 'Y',
 } as const;
 
 export type BlsCategory = (typeof BLS_CATEGORIES)[keyof typeof BLS_CATEGORIES];

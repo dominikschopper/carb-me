@@ -18,14 +18,14 @@ function createFood(blsCode: string, name: string = 'Test Food'): FoodItem {
 
 describe('createCategoryFilter', () => {
   it('creates filter that identifies foods with matching prefix', () => {
-    const filterX = createCategoryFilter(BLS_CATEGORIES.FERTIGGERICHTE);
+    const filterX = createCategoryFilter(BLS_CATEGORIES.FERTIGGERICHTE_PFLANZLICH);
     expect(filterX(createFood('X123456'))).toBe(true);
     expect(filterX(createFood('X000001'))).toBe(true);
     expect(filterX(createFood('XABCDEF'))).toBe(true);
   });
 
   it('creates filter that rejects foods with different prefix', () => {
-    const filterX = createCategoryFilter(BLS_CATEGORIES.FERTIGGERICHTE);
+    const filterX = createCategoryFilter(BLS_CATEGORIES.FERTIGGERICHTE_PFLANZLICH);
     expect(filterX(createFood('Y123456'))).toBe(false);
     expect(filterX(createFood('P123456'))).toBe(false);
     expect(filterX(createFood('N123456'))).toBe(false);
@@ -94,7 +94,7 @@ describe('isInCategories', () => {
     expect(
       isInCategories(
         createFood('X123456'),
-        [BLS_CATEGORIES.FERTIGGERICHTE, BLS_CATEGORIES.FERTIGGERICHTE_SUESS]
+        [BLS_CATEGORIES.FERTIGGERICHTE_PFLANZLICH, BLS_CATEGORIES.FERTIGGERICHTE_PFLANZLICH_TIERISCH]
       )
     ).toBe(true);
 
