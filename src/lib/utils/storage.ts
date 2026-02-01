@@ -9,6 +9,7 @@ export const STORAGE_KEYS = {
   THEME: 'carbme_theme',
   SETTINGS: 'carbme_settings',
   DISCLAIMER_ACCEPTED: 'carbme_disclaimer_accepted',
+  ONBOARDING: 'carbme_onboarding',
 } as const;
 
 export const DEFAULT_SETTINGS: AppSettings = {
@@ -88,3 +89,14 @@ export const historyStorage = new Storage<HistoryEntry[]>(STORAGE_KEYS.HISTORY, 
 export const settingsStorage = new Storage<AppSettings>(STORAGE_KEYS.SETTINGS, DEFAULT_SETTINGS);
 
 export const disclaimerStorage = new Storage<boolean>(STORAGE_KEYS.DISCLAIMER_ACCEPTED, false);
+
+export interface OnboardingState {
+  completed: boolean;
+  skipped: boolean;
+  lastShown?: number;
+}
+
+export const onboardingStorage = new Storage<OnboardingState>(
+  STORAGE_KEYS.ONBOARDING,
+  { completed: false, skipped: false }
+);

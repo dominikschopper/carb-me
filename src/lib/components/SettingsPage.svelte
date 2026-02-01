@@ -2,6 +2,7 @@
   import { settingsStore } from '$lib/stores/settings.svelte';
   import type { EnergyUnitType, BlsCategory } from '$lib/types/food';
   import { BLS_CATEGORIES } from '$lib/types/food';
+  import { onboardingService } from '$lib/utils/onboarding';
 
   const settings = $derived(settingsStore.settings);
 
@@ -58,13 +59,20 @@
       settingsStore.clearAllData();
     }
   }
+
+  function handleRestartOnboarding() {
+    onboardingService.reset();
+    if (confirm('Die Tour wird beim nächsten Laden der App automatisch gestartet. Möchtest du die Seite jetzt neu laden?')) {
+      window.location.reload();
+    }
+  }
 </script>
 
 <div class="space-y-6">
   <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Einstellungen</h2>
 
   <!-- Preferred Unit -->
-  <div class="card">
+  <div class="card" data-onboarding="settings-unit">
     <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Bevorzugte Einheit</h3>
     <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       Wähle, ob du BE (Broteinheiten) oder KHE (Kohlenhydrateinheiten) bevorzugst. Die App zeigt dann nur deine bevorzugte
@@ -109,7 +117,7 @@
   </div>
 
   <!-- Energy Display -->
-  <div class="card">
+  <div class="card" data-onboarding="settings-energy">
     <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Brennwert-Anzeige</h3>
     <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       Zeige zusätzlich den Brennwert (Kalorien) bei Lebensmitteln an.
@@ -166,7 +174,7 @@
   </div>
 
   <!-- Search Results Filter -->
-  <div class="card">
+  <div class="card" data-onboarding="settings-categories">
     <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Suchergebnisse</h3>
     <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       Passe an, welche Lebensmittel in den Suchergebnissen angezeigt werden.
@@ -193,6 +201,23 @@
         </label>
       {/each}
     </div>
+  </div>
+
+  <!-- App-Tour -->
+  <div class="card">
+    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">App-Tour</h3>
+    <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+      Zeige die Einführung nochmal an, um die wichtigsten Funktionen kennenzulernen.
+    </p>
+
+    <button
+      onclick={handleRestartOnboarding}
+      class="btn-touch w-full border-2 border-blue-500 bg-white text-blue-600 hover:bg-blue-50 dark:bg-gray-800 dark:hover:bg-blue-900/30"
+      type="button"
+    >
+      <span class="material-symbols-outlined mr-2 inline-block align-middle leading-none">school</span>
+      App-Tour erneut starten
+    </button>
   </div>
 
   <!-- Data Management -->

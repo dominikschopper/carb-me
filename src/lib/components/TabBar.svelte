@@ -12,6 +12,7 @@
   <div class="container mx-auto flex max-w-[720px]">
     <button
       onclick={() => setTab('search')}
+      data-onboarding="tab-search"
       class="flex flex-1 flex-col items-center gap-0.5 py-2 text-[10px] transition-colors sm:gap-1 sm:text-xs {activeTab === 'search'
         ? 'text-blue-600 dark:text-blue-400'
         : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'}"
@@ -24,6 +25,7 @@
 
     <button
       onclick={() => setTab('custom')}
+      data-onboarding="tab-custom"
       class="flex flex-1 flex-col items-center gap-0.5 py-2 text-[10px] transition-colors sm:gap-1 sm:text-xs {activeTab === 'custom'
         ? 'text-blue-600 dark:text-blue-400'
         : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'}"
@@ -36,6 +38,7 @@
 
     <button
       onclick={() => setTab('meal')}
+      data-onboarding="tab-meal"
       class="flex flex-1 flex-col items-center gap-0.5 py-2 text-[10px] transition-colors sm:gap-1 sm:text-xs {activeTab === 'meal'
         ? 'text-blue-600 dark:text-blue-400'
         : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'}"
@@ -48,6 +51,7 @@
 
     <button
       onclick={() => setTab('settings')}
+      data-onboarding="tab-settings"
       class="flex flex-1 flex-col items-center gap-0.5 py-2 text-[10px] transition-colors sm:gap-1 sm:text-xs {activeTab === 'settings'
         ? 'text-blue-600 dark:text-blue-400'
         : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'}"

@@ -40,7 +40,7 @@
 
 <div class="space-y-4">
   <div class="flex items-center justify-between">
-    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Meine Mahlzeit</h2>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100" data-onboarding="meal-list">Meine Mahlzeit</h2>
     {#if items.length > 0}
       <button
         onclick={clearAll}

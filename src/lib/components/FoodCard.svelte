@@ -82,6 +82,7 @@
 
     <button
       onclick={toggleFavorite}
+      data-onboarding="favorite-star"
       class="flex flex-shrink-0 items-center justify-center rounded-full p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
       aria-label={isFavorite ? 'Von Favoriten entfernen' : 'Zu Favoriten hinzufügen'}
       type="button"

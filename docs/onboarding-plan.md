@@ -1,352 +1,163 @@
-# Onboarding Feature Plan
+# Implementierungsplan: Onboarding Feature mit Driver.js
 
-## Overview
+## Überblick
 
-A spotlight-style onboarding tutorial using **Driver.js** - an open-source library (MIT license) with no tracking, zero dependencies, and ~5kb gzipped.
+Implementierung einer 10-stufigen geführten Tour mit Driver.js (MIT-Lizenz, ~5kb, keine Abhängigkeiten) für die carb-me-Anwendung unter Verwendung von Svelte 5 Runes und bestehenden Codebase-Konventionen.
 
-## Why Driver.js?
-
-- **MIT License** - Free for commercial use, no restrictions
-- **No Tracking** - Privacy-first, no analytics or user tracking
-- **Tiny** - ~5kb gzipped, zero dependencies
-- **Framework-agnostic** - Works with Svelte
-- **Active** - 20.4k GitHub stars, actively maintained
-
-## User Flow
-
-1. User visits app for first time
-2. Redirected to `/legal?onboarding=true`
-3. User accepts disclaimer ("Dies ist keine medizinische Beratungs-App")
-4. Redirected to home (`/`) with onboarding triggered
-5. Driver.js spotlight overlay appears
-6. User navigates with "Weiter" (Next) or "Überspringen" (Skip)
-7. Onboarding state saved to localStorage
-8. Settings: shows status + button to restart
-
-## Onboarding Steps
-
-### Step 1: Search (Suche)
-- **Element**: `[data-onboarding="search"]`
-- **Text**: "Suche nach Lebensmitteln - Tippe einen Namen ein und finde BE/KHE Werte für über 240 Lebensmittel."
-
-### Step 2: Favorites - Adding
-- **Element**: `[data-onboarding="favorite-star"]`
-- **Text**: "Tippe auf den Stern, um ein Lebensmittel zu deinen Favoriten hinzuzufügen."
-
-### Step 3: Favorites Tab
-- **Element**: `[data-onboarding="tab-favorites"]`
-- **Text**: "Deine Favoriten findest du hier - schneller Zugriff auf häufig verwendete Lebensmittel."
-
-### Step 4: Meals Tab (Mahlzeiten)
-- **Element**: `[data-onboarding="tab-meal"]`
-- **Text**: "Stelle Mahlzeiten zusammen und berechne die Summe der Kohlenhydrate."
-
-### Step 5: Settings - Units
-- **Element**: `[data-onboarding="unit-selection"]`
-- **Text**: "Wähle deine bevorzugte Einheit: BE (Broteinheiten) oder KHE (Kohlenhydrateinheiten)."
-
-### Step 6: Settings - Energy
-- **Element**: `[data-onboarding="energy-toggle"]`
-- **Text**: "Zeige Brennwerte an und wähle zwischen kcal und kJ."
-
-### Step 7: Settings - Onboarding
-- **Element**: `[data-onboarding="onboarding-restart"]`
-- **Text**: "Hier kannst du die Einführung jederzeit erneut starten."
-
-## Technical Implementation
-
-### 1. Install Driver.js
+## Installation
 
 ```bash
 pnpm add driver.js
 ```
 
-### 2. Storage
+## Dateien
 
-Add to `src/lib/utils/storage.ts`:
+### Neu zu erstellen (2 Dateien)
+1. **`src/lib/utils/onboarding.ts`** - Haupt-Onboarding-Service mit Driver.js Wrapper
+2. **`src/lib/styles/driver-theme.css`** - Optionales Custom Theme für Dark Mode
+
+### Zu modifizieren (8 Dateien)
+1. **`src/lib/utils/storage.ts`** - STORAGE_KEYS.ONBOARDING und onboardingStorage hinzufügen
+2. **`src/lib/components/SearchBar.svelte`** - data-onboarding Attribut hinzufügen
+3. **`src/lib/components/FoodCard.svelte`** - data-onboarding zum Stern-Button
+4. **`src/lib/components/TabBar.svelte`** - data-onboarding zu allen Tabs
+5. **`src/lib/components/CustomFoodsList.svelte`** - data-onboarding zum Hinzufügen-Button
+6. **`src/lib/components/SettingsPage.svelte`** - data-onboarding + Neustart-Sektion
+7. **`src/routes/+page.svelte`** - Onboarding nach Disclaimer-Akzeptanz triggern + Demo-Suche
+8. **`src/lib/styles/app.css`** - Driver.js CSS importieren
+
+## Onboarding-Schritte
+
+Die Tour umfasst 10 Schritte:
+
+1. **Lebensmittel suchen** - Zeigt die Suchleiste und triggert automatisch eine Demo-Suche nach "Apfel"
+2. **Favoriten markieren** - Zeigt den Stern-Button auf einem Lebensmittel
+3. **Favoriten-Ansicht** - Zeigt wo Favoriten im Suche-Tab zu finden sind
+4. **Eigene Lebensmittel** - Navigiert zum "Eigene" Tab
+5. **Lebensmittel hinzufügen** - Zeigt den Button zum Hinzufügen eigener Lebensmittel
+6. **Mahlzeiten zusammenstellen** - Zeigt den Mahlzeiten-Tab
+7. **Einstellungen** - Navigiert zu den Einstellungen
+8. **Bevorzugte Einheit** - Zeigt die BE/KHE Auswahl
+9. **Brennwert-Anzeige** - Zeigt die Energieanzeige-Option (kcal/kJ)
+10. **Suchergebnisse filtern** - Zeigt die Kategoriefilter
+
+## Implementierungsschritte
+
+### 1. Storage Layer (`src/lib/utils/storage.ts`)
 
 ```typescript
-ONBOARDING_COMPLETED: 'carbme_onboarding_completed',
+// STORAGE_KEYS erweitern
+export const STORAGE_KEYS = {
+  // ... existing keys ...
+  ONBOARDING: 'carbme_onboarding',
+} as const;
 
-interface OnboardingState {
+// Interface hinzufügen
+export interface OnboardingState {
   completed: boolean;
   skipped: boolean;
-  completedAt: string | null;
+  lastShown?: number;
 }
 
+// Storage-Instanz erstellen
 export const onboardingStorage = new Storage<OnboardingState>(
-  STORAGE_KEYS.ONBOARDING_COMPLETED,
-  { completed: false, skipped: false, completedAt: null }
+  STORAGE_KEYS.ONBOARDING,
+  { completed: false, skipped: false }
 );
 ```
 
-### 3. Onboarding Module
+### 2. Onboarding Service (`src/lib/utils/onboarding.ts` - NEU)
 
-Create `src/lib/utils/onboarding.ts`:
+Der Service ist vollständig implementiert mit:
+- 10 Driver.js Steps mit deutschen Texten
+- Auto-Search Demo für "Apfel" im ersten Schritt
+- Tab-Navigation zu "Eigene" und "Einstellungen"
+- Cleanup der Suchquery nach Abschluss/Abbruch
+- State Management via localStorage
 
-```typescript
-import { driver, type DriveStep } from 'driver.js';
-import 'driver.js/dist/driver.css';
-import { onboardingStorage } from './storage';
+### 3. CSS Import
 
-const steps: DriveStep[] = [
-  {
-    element: '[data-onboarding="search"]',
-    popover: {
-      title: 'Suche',
-      description: 'Suche nach Lebensmitteln - Tippe einen Namen ein und finde BE/KHE Werte für über 240 Lebensmittel.',
-      side: 'bottom',
-      align: 'center',
-    },
-  },
-  {
-    element: '[data-onboarding="favorite-star"]',
-    popover: {
-      title: 'Favoriten hinzufügen',
-      description: 'Tippe auf den Stern, um ein Lebensmittel zu deinen Favoriten hinzuzufügen.',
-      side: 'left',
-      align: 'center',
-    },
-  },
-  {
-    element: '[data-onboarding="tab-favorites"]',
-    popover: {
-      title: 'Favoriten',
-      description: 'Deine Favoriten findest du hier - schneller Zugriff auf häufig verwendete Lebensmittel.',
-      side: 'top',
-      align: 'center',
-    },
-  },
-  {
-    element: '[data-onboarding="tab-meal"]',
-    popover: {
-      title: 'Mahlzeiten',
-      description: 'Stelle Mahlzeiten zusammen und berechne die Summe der Kohlenhydrate.',
-      side: 'top',
-      align: 'center',
-    },
-  },
-  {
-    element: '[data-onboarding="unit-selection"]',
-    popover: {
-      title: 'Einheiten',
-      description: 'Wähle deine bevorzugte Einheit: BE (Broteinheiten) oder KHE (Kohlenhydrateinheiten).',
-      side: 'bottom',
-      align: 'center',
-    },
-    onHighlightStarted: () => {
-      // Switch to settings tab
-      document.querySelector<HTMLButtonElement>('[data-onboarding="tab-settings"]')?.click();
-    },
-  },
-  {
-    element: '[data-onboarding="energy-toggle"]',
-    popover: {
-      title: 'Brennwerte',
-      description: 'Zeige Brennwerte an und wähle zwischen kcal und kJ.',
-      side: 'bottom',
-      align: 'center',
-    },
-  },
-  {
-    element: '[data-onboarding="onboarding-restart"]',
-    popover: {
-      title: 'Einführung',
-      description: 'Hier kannst du die Einführung jederzeit erneut starten.',
-      side: 'top',
-      align: 'center',
-    },
-  },
-];
-
-export function startOnboarding(onComplete?: () => void) {
-  const driverObj = driver({
-    showProgress: true,
-    progressText: '{{current}} von {{total}}',
-    nextBtnText: 'Weiter',
-    prevBtnText: 'Zurück',
-    doneBtnText: 'Fertig',
-    popoverClass: 'carb-me-popover',
-    steps,
-    onDestroyStarted: () => {
-      // User clicked outside or pressed escape
-      if (!driverObj.hasNextStep()) {
-        // Completed all steps
-        onboardingStorage.set({
-          completed: true,
-          skipped: false,
-          completedAt: new Date().toISOString(),
-        });
-      } else {
-        // Skipped
-        onboardingStorage.set({
-          completed: false,
-          skipped: true,
-          completedAt: null,
-        });
-      }
-      driverObj.destroy();
-      onComplete?.();
-    },
-  });
-
-  driverObj.drive();
-}
-
-export function getOnboardingState() {
-  return onboardingStorage.get();
-}
-
-export function shouldShowOnboarding(): boolean {
-  const state = onboardingStorage.get();
-  return !state.completed && !state.skipped;
-}
-```
-
-### 4. Custom CSS (optional)
-
-Add to `src/lib/styles/onboarding.css`:
-
+In `src/lib/styles/app.css`:
 ```css
-/* Override Driver.js styles to match app theme */
-.carb-me-popover {
-  --driver-bg: theme('colors.white');
-  --driver-text: theme('colors.gray.900');
-}
-
-.dark .carb-me-popover {
-  --driver-bg: theme('colors.gray.800');
-  --driver-text: theme('colors.gray.100');
-}
+@import 'driver.js/dist/driver.css';
 ```
 
-### 5. Add data attributes
+### 4. Component Modifications
 
-**SearchBar.svelte**:
-```svelte
-<input data-onboarding="search" ... />
-```
+Alle relevanten Komponenten haben `data-onboarding` Attribute:
+- SearchBar: `search-bar`
+- FoodCard: `favorite-star` (auf dem Stern-Button)
+- TabBar: `tab-search`, `tab-custom`, `tab-meal`, `tab-settings`
+- CustomFoodsList: `add-custom-food`
+- SettingsPage: `settings-unit`, `settings-energy`, `settings-categories`
 
-**FoodCard.svelte** (first card or template):
-```svelte
-<button data-onboarding="favorite-star" ... >
-```
+### 5. Main Page Integration
 
-**+page.svelte** (tabs):
-```svelte
-<button data-onboarding="tab-search" ...>Suche</button>
-<button data-onboarding="tab-favorites" ...>Favoriten</button>
-<button data-onboarding="tab-meal" ...>Mahlzeit</button>
-<button data-onboarding="tab-settings" ...>Einstellungen</button>
-```
+In `+page.svelte`:
+- Onboarding wird nach Disclaimer-Akzeptanz automatisch gestartet
+- Demo-Suche nach "Apfel" beim ersten Schritt
+- Tab-Navigation zu Custom und Settings
+- Cleanup der Suchquery nach Tour-Ende
 
-**SettingsPage.svelte**:
-```svelte
-<div data-onboarding="unit-selection">...</div>
-<div data-onboarding="energy-toggle">...</div>
-<div data-onboarding="onboarding-restart">...</div>
-```
+### 6. Settings Restart Button
 
-### 6. Trigger onboarding
+In SettingsPage wurde ein "App-Tour erneut starten" Button hinzugefügt, der:
+- Den Onboarding-State zurücksetzt
+- Optionaler Page-Reload triggert
 
-**+page.svelte**:
+## Edge Cases
 
-```typescript
-import { startOnboarding, shouldShowOnboarding } from '$lib/utils/onboarding';
+1. **Tab-Navigation während Tour**:
+   - Step 4 navigiert zu `activeTab = 'custom'`
+   - Step 7 navigiert zu `activeTab = 'settings'`
 
-onMount(() => {
-  // After disclaimer accepted, check if onboarding needed
-  if (shouldShowOnboarding()) {
-    // Small delay to let page render
-    setTimeout(() => startOnboarding(), 500);
-  }
-});
-```
+2. **Auto-Search Demo**:
+   - Step 1 triggert automatisch `foodStore.setSearchQuery('Apfel')`
+   - Zeigt Food Cards für Favoriten-Stern Demo in Step 2
+   - Suchquery wird bei onComplete/onSkip geleert
 
-### 7. Settings section
+3. **Keine Custom Foods vorhanden**: Tour funktioniert auch im Empty State
 
-**SettingsPage.svelte**:
+4. **SSR Safety**: Alle Onboarding-Funktionen sind mit `typeof window !== 'undefined'` geschützt
 
-```svelte
-<script>
-  import { getOnboardingState, startOnboarding } from '$lib/utils/onboarding';
+5. **User schließt Browser während Tour**: `onDestroyed` setzt `skipped: true`
 
-  let onboardingState = getOnboardingState();
+## Verifikation
 
-  function restartOnboarding() {
-    startOnboarding(() => {
-      onboardingState = getOnboardingState();
-    });
-  }
-</script>
+### Funktionstests
+- ✅ Onboarding startet automatisch nach erster Disclaimer-Akzeptanz
+- ✅ Alle 10 Schritte mit Element-Highlighting
+- ✅ Auto-Search Demo triggert Suche nach "Apfel"
+- ✅ Tab-Navigation funktioniert korrekt
+- ✅ Neustart-Button in Settings
+- ✅ Suchquery wird nach Tour geleert
 
-<!-- Onboarding Section -->
-<div class="card" data-onboarding="onboarding-restart">
-  <h3 class="font-semibold mb-3">Einführung</h3>
+### Storage Tests
+- ✅ `carbme_onboarding` Key in localStorage
+- ✅ State bleibt über Page-Reloads bestehen
+- ✅ State wird mit "Alle Daten löschen" entfernt
 
-  {#if onboardingState.completed}
-    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
-      Einführung abgeschlossen
-    </p>
-  {:else if onboardingState.skipped}
-    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
-      Einführung übersprungen
-    </p>
-  {:else}
-    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
-      Einführung noch nicht durchgeführt
-    </p>
-  {/if}
+### UI/UX Tests
+- ✅ Fortschrittsanzeige zeigt "X von 10"
+- ✅ Deutscher Text korrekt
+- ✅ Alle data-Attribute vorhanden
 
-  <button
-    class="btn-touch bg-blue-600 text-white w-full"
-    onclick={restartOnboarding}
-  >
-    Einführung starten
-  </button>
-</div>
-```
+## Technische Details
 
-## Files to Create/Modify
+- **Driver.js**: ~5kb gzipped, MIT-Lizenz, keine Dependencies
+- **Svelte 5**: Nutzung von $effect() (client-side only, kein onMount nötig)
+- **Accessibility**: Driver.js beinhaltet ARIA labels
+- **Keyboard**: Tastatur-Navigation (Tab, Escape) unterstützt
+- **Mobile**: Automatische responsive Positionierung
+- **Dark Mode**: CSS custom properties mit `.dark` Selector
 
-### New Files
-- `src/lib/utils/onboarding.ts` - Driver.js wrapper
-- `src/lib/styles/onboarding.css` - Custom styling (optional)
+## Implementierungsstatus
 
-### Modified Files
-- `src/lib/utils/storage.ts` - Add onboarding storage
-- `src/lib/components/SearchBar.svelte` - Add data attribute
-- `src/lib/components/FoodCard.svelte` - Add data attribute to star
-- `src/routes/+page.svelte` - Add data attributes to tabs, trigger onboarding
-- `src/lib/components/SettingsPage.svelte` - Add data attributes, onboarding section
-
-## Implementation Order
-
-1. `pnpm add driver.js`
-2. Add `onboardingStorage` to storage.ts
-3. Create `onboarding.ts` with Driver.js setup
-4. Add `data-onboarding` attributes to components
-5. Add onboarding section to SettingsPage
-6. Wire up trigger in +page.svelte after disclaimer
-7. Test flow end-to-end
-8. (Optional) Add custom CSS for dark mode
-
-## Testing Checklist
-
-- [ ] First-time user sees onboarding after disclaimer
-- [ ] Spotlight highlights correct elements
-- [ ] Tab switching works (search → settings)
-- [ ] "Weiter" advances steps
-- [ ] "Überspringen" (close/escape) marks as skipped
-- [ ] Completing all steps marks as completed
-- [ ] State persists in localStorage
-- [ ] Settings shows correct status
-- [ ] Restart button works
-- [ ] Works in dark mode
-- [ ] Works on mobile
-
-## Sources
-
-- [Driver.js Documentation](https://driverjs.com/)
-- [Best Open-Source Product Tour Libraries](https://userorbit.com/blog/best-open-source-product-tour-libraries)
-- [10 Best JavaScript Onboarding Libraries](https://www.chameleon.io/blog/javascript-product-tours)
+✅ Alle Schritte abgeschlossen:
+1. ✅ Driver.js installiert
+2. ✅ Storage erweitert
+3. ✅ Onboarding Service erstellt
+4. ✅ Data-Attribute hinzugefügt
+5. ✅ CSS import hinzugefügt
+6. ✅ Main-Page Integration
+7. ✅ Neustart-Button in Settings

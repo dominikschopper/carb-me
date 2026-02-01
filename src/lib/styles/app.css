@@ -8,6 +8,10 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+/* Driver.js for onboarding */
+@import 'driver.js/dist/driver.css';
+@import './driver-theme.css';
+
 /* Import custom styles into their respective layers */
 @import './reset.css' layer(reset);
 @import './material-symbols.css' layer(base);

@@ -49,6 +49,7 @@
     "vitest-browser-svelte": "^2.0.2"
   },
   "dependencies": {
+    "driver.js": "^1.4.0",
     "fuse.js": "^7.1.0"
   }
 }

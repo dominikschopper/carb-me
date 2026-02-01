@@ -40,7 +40,7 @@
   }
 </script>
 
-<div class="relative w-full">
+<div class="relative w-full" data-onboarding="search-bar">
   <div class="relative">
     <span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-xl text-gray-400">search</span>
     <input

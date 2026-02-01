@@ -1,0 +1,34 @@
+/* Driver.js z-index overrides for dialogs */
+:root {
+	/* Increase z-index to appear above dialogs (top layer) */
+	--driver-z-index: 2147483647;
+
+	/* Dark mode colors */
+	--driver-popover-bg: white;
+	--driver-popover-text: #1f2937;
+	--driver-popover-title: #111827;
+}
+
+.dark {
+	--driver-popover-bg: #1f2937;
+	--driver-popover-text: #f3f4f6;
+	--driver-popover-title: #ffffff;
+}
+
+/* Ensure Driver.js elements appear above fixed navigation */
+.driver-overlay {
+	z-index: 1000;
+}
+
+.driver-popover-wrapper {
+	z-index: 1001;
+}
+
+/* Style adjustments for better appearance */
+.driver-popover-next-btn,
+.driver-popover-prev-btn,
+.driver-popover-close-btn {
+	font-weight: 500;
+	border-radius: 0.5rem;
+	transition: all 150ms;
+}

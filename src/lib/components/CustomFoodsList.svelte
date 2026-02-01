@@ -38,6 +38,7 @@
 		<h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Eigene Lebensmittel</h2>
 		<button
 			onclick={onAddClick}
+			data-onboarding="add-custom-food"
 			class="btn-touch bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 flex items-center gap-2"
 			type="button"
 		>

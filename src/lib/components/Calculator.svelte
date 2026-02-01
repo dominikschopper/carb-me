@@ -77,6 +77,7 @@
 <dialog
   bind:this={dialog}
   onclose={handleClose}
+  data-onboarding="calculator"
   class="w-full max-w-lg rounded-2xl bg-white p-0 backdrop:bg-black/50 dark:bg-gray-800 sm:rounded-2xl"
 >
   {#if food}

@@ -12,6 +12,7 @@
   import AddCustomFoodDialog from '$lib/components/AddCustomFoodDialog.svelte';
   import { foodStore } from '$lib/stores/foods.svelte';
   import { disclaimerStorage } from '$lib/utils/storage';
+  import { onboardingService } from '$lib/utils/onboarding';
   import type { FoodItem } from '$lib/types/food';
 
   let activeTab = $state<'search' | 'custom' | 'meal' | 'settings'>('search');
@@ -19,6 +20,7 @@
   let showCustomFoodDialog = $state(false);
   let editFood = $state<FoodItem | null>(null);
   let loading = $state(true);
+  let onboardingInitialized = $state(false);
 
   const filteredFoods = $derived(foodStore.filteredFoods);
   const favoriteFoods = $derived(foodStore.favoriteFoods);
@@ -31,6 +33,9 @@
       const hasAccepted = disclaimerStorage.get();
       if (!hasAccepted) {
         goto('/legal?onboarding=true');
+      } else if (!onboardingInitialized && !loading) {
+        startOnboardingIfNeeded();
+        onboardingInitialized = true;
       }
     }
   });
@@ -71,6 +76,38 @@
   function closeCustomFoodDialog() {
     showCustomFoodDialog = false;
     editFood = null;
+  }
+
+  function startOnboardingIfNeeded() {
+    if (!onboardingService.shouldShow()) return;
+
+    setTimeout(() => {
+      onboardingService.startTour({
+        onComplete: () => {
+          console.log('Onboarding completed');
+          // Clear demo search
+          foodStore.setSearchQuery('');
+        },
+        onSkip: () => {
+          console.log('Onboarding skipped');
+          // Clear demo search
+          foodStore.setSearchQuery('');
+        },
+        onSearchDemo: (query) => {
+          // Trigger search for demo (shows food cards for favorite star step)
+          foodStore.setSearchQuery(query);
+        },
+        onNavigateToCustom: () => {
+          activeTab = 'custom';
+        },
+        onNavigateToSettings: () => {
+          activeTab = 'settings';
+        },
+        onNavigateToMeal: () => {
+          activeTab = 'meal';
+        },
+      });
+    }, 500);
   }
 </script>
 
