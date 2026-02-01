@@ -6,6 +6,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.9.0] - 2026-02-01
+
+### Added
+- Custom food feature - users can now add their own foods with individual nutritional values
+- Edit and delete functionality for custom foods
+- Sequential ID generation for custom foods (A0001, A0002, etc.)
+- Bidirectional energy conversion (kcal ↔ kJ) in custom food dialog
+- Unit selection for custom foods (grams vs. milliliters)
+- Optional energy values (kcal/kJ) for custom foods
+- Delete confirmation dialog with warning message
+- Custom foods automatically removed from favorites when deleted
+- Search reinitialized after custom food operations for accurate results
+
+### Changed
+- "Favoriten" tab replaced with "Eigene" (Custom Foods) tab
+- Favorites now displayed on search page instead of separate tab
+- All favorites shown without limit (previously limited to 5)
+
+### Fixed
+- Duplicate key error in Svelte each blocks (added index to keys)
+
+### Technical
+- New components: AddCustomFoodDialog, CustomFoodsList
+- New utilities: id-generator.ts with sequential ID generation
+- Energy conversion functions in calculator.ts (kcalToKj, kjToKcal)
+- foodStore extended with updateCustomFood and deleteCustomFood methods
+- Comprehensive unit tests for all new functionality
+
+
 ## [1.8.1] - 2026-01-31
 
 ### Fixed
