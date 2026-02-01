@@ -2,7 +2,6 @@
   import type { FoodItem } from '$lib/types/food';
   import FoodCard from './FoodCard.svelte';
   import PrintFoodCard from './PrintFoodCard.svelte';
-  import { groupFoodsByCategories } from '$lib/utils/grouping';
 
   let {
     foods,
@@ -17,8 +16,6 @@
     isSearching?: boolean;
     searchQuery?: string;
   } = $props();
-
-  const groupedFoods = $derived(groupFoodsByCategories(foods));
 </script>
 
 <!-- Print header (hidden on screen, shown in print) -->
@@ -43,18 +40,7 @@
         </div>
       </div>
     {/each}
-  {:else if !isSearching}
-    <!-- Initial state: prompt to search -->
-    <div class="card text-center">
-      <div class="py-8">
-        <span class="material-symbols-outlined mx-auto block text-5xl text-gray-400">search</span>
-        <p class="mt-4 text-gray-600 dark:text-gray-400">Suche nach einem Lebensmittel</p>
-        <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">
-          Gib einen Suchbegriff ein, um Lebensmittel zu finden
-        </p>
-      </div>
-    </div>
-  {:else if foods.length === 0}
+  {:else if foods.length === 0 && isSearching}
     <!-- Empty search results -->
     <div class="card text-center">
       <div class="py-8">
@@ -65,7 +51,7 @@
     </div>
   {:else}
     <!-- Search results (flat list sorted by fuzzy score) -->
-    {#each foods as food (food.blsCode || food.name)}
+    {#each foods as food, index (`${food.blsCode || food.name}-${index}`)}
       <FoodCard {food} onclick={() => onFoodSelect(food)} />
     {/each}
   {/if}

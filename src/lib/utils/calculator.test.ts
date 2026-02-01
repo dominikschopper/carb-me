@@ -4,6 +4,8 @@ import {
   gramsForBE,
   gramsForKHE,
   calculateUnitsFromCarbs,
+  kcalToKj,
+  kjToKcal,
 } from './calculator';
 import type { FoodItem } from '$lib/types/food';
 
@@ -133,5 +135,70 @@ describe('calculateUnitsFromCarbs', () => {
 
     expect(result.gBE).toBe(15); // (12/80)*100 = 15g
     expect(result.gKHE).toBe(13); // (10/80)*100 = 12.5g, rounded to 13
+  });
+});
+
+describe('Energy Conversion', () => {
+  describe('kcalToKj', () => {
+    it('converts kcal to kJ correctly', () => {
+      expect(kcalToKj(100)).toBe(418); // 100 * 4.184 = 418.4, rounded to 418
+    });
+
+    it('converts typical food energy values', () => {
+      expect(kcalToKj(250)).toBe(1046); // 250 * 4.184 = 1046
+    });
+
+    it('handles zero', () => {
+      expect(kcalToKj(0)).toBe(0);
+    });
+
+    it('rounds to whole numbers', () => {
+      expect(kcalToKj(123)).toBe(515); // 123 * 4.184 = 514.632, rounded to 515
+    });
+
+    it('handles decimal input', () => {
+      expect(kcalToKj(100.5)).toBe(420); // 100.5 * 4.184 = 420.492, rounded to 420
+    });
+  });
+
+  describe('kjToKcal', () => {
+    it('converts kJ to kcal correctly', () => {
+      expect(kjToKcal(418)).toBe(100); // 418 / 4.184 = 99.9, rounded to 100
+    });
+
+    it('converts typical food energy values', () => {
+      expect(kjToKcal(1046)).toBe(250); // 1046 / 4.184 = 250
+    });
+
+    it('handles zero', () => {
+      expect(kjToKcal(0)).toBe(0);
+    });
+
+    it('rounds to whole numbers', () => {
+      expect(kjToKcal(515)).toBe(123); // 515 / 4.184 = 123.08, rounded to 123
+    });
+
+    it('handles decimal input', () => {
+      expect(kjToKcal(420.5)).toBe(101); // 420.5 / 4.184 = 100.5, rounded to 101
+    });
+  });
+
+  describe('Bidirectional conversion', () => {
+    it('converts back and forth maintains approximate values', () => {
+      const original = 250;
+      const kj = kcalToKj(original);
+      const backToKcal = kjToKcal(kj);
+
+      // Should be approximately equal (rounding may cause small differences)
+      expect(backToKcal).toBe(original);
+    });
+
+    it('handles edge cases', () => {
+      // Very small values
+      expect(kjToKcal(kcalToKj(1))).toBe(1);
+
+      // Large values
+      expect(kjToKcal(kcalToKj(1000))).toBe(1000);
+    });
   });
 });

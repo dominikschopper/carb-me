@@ -85,7 +85,36 @@ class FoodStore {
     initializeSearch([...this.allFoods, ...this.customFoods]);
   }
 
+  updateCustomFood(blsCode: string, updatedFood: FoodItem) {
+    const index = this.customFoods.findIndex((f) => f.blsCode === blsCode);
+    if (index !== -1) {
+      this.customFoods[index] = { ...updatedFood, isCustom: true };
+      this.saveCustomFoods();
+
+      // Reinitialize search with updated foods
+      initializeSearch([...this.allFoods, ...this.customFoods]);
+    }
+  }
+
+  deleteCustomFood(blsCode: string) {
+    this.customFoods = this.customFoods.filter((f) => f.blsCode !== blsCode);
+
+    // Also remove from favorites if it was favorited
+    if (this.favorites.has(blsCode)) {
+      const newFavorites = new SvelteSet(this.favorites);
+      newFavorites.delete(blsCode);
+      this.favorites = newFavorites;
+      this.saveFavorites();
+    }
+
+    this.saveCustomFoods();
+
+    // Reinitialize search
+    initializeSearch([...this.allFoods, ...this.customFoods]);
+  }
+
   removeCustomFood(name: string) {
+    // Deprecated: use deleteCustomFood instead
     this.customFoods = this.customFoods.filter((f) => f.name !== name);
     this.saveCustomFoods();
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  type Tab = 'search' | 'favorites' | 'meal' | 'settings';
+  type Tab = 'search' | 'custom' | 'meal' | 'settings';
 
   let { activeTab = $bindable('search') }: { activeTab?: Tab } = $props();
 
@@ -23,15 +23,15 @@
     </button>
 
     <button
-      onclick={() => setTab('favorites')}
-      class="flex flex-1 flex-col items-center gap-0.5 py-2 text-[10px] transition-colors sm:gap-1 sm:text-xs {activeTab === 'favorites'
+      onclick={() => setTab('custom')}
+      class="flex flex-1 flex-col items-center gap-0.5 py-2 text-[10px] transition-colors sm:gap-1 sm:text-xs {activeTab === 'custom'
         ? 'text-blue-600 dark:text-blue-400'
         : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'}"
-      aria-label="Favoriten"
+      aria-label="Eigene Lebensmittel hinzufügen"
       type="button"
     >
-      <span class="material-symbols-outlined text-xl">{activeTab === 'favorites' ? 'star' : 'star_outline'}</span>
-      <span class="font-medium">Favoriten</span>
+      <span class="material-symbols-outlined text-xl">add_circle</span>
+      <span class="font-medium">Eigene</span>
     </button>
 
     <button
