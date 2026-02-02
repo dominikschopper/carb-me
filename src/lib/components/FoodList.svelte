@@ -46,7 +46,7 @@
       <div class="py-8">
         <span class="material-symbols-outlined mx-auto block text-5xl text-gray-400">sentiment_dissatisfied</span>
         <p class="mt-4 text-gray-600 dark:text-gray-400">Keine Lebensmittel gefunden</p>
-        <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">Versuche einen anderen Suchbegriff</p>
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">Probier etwas anderes</p>
       </div>
     </div>
   {:else}

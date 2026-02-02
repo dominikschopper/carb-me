@@ -63,12 +63,23 @@
 <div class="space-y-6">
   <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Einstellungen</h2>
 
+  <!-- feedback -->
+   <div class="card">
+    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Feedback zur App</h3>
+    <p>
+      Wenn Du mir Feedback geben willst oder ein Problem melden möchtest, kannst Du das derzeit über
+      <a href="https://github.com/dominikschopper/carb-me/discussions/1" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">Github Discussions</a> oder
+      <a href="https://github.com/dominikschopper/carb-me/issues" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">Github Issues</a>
+      machen. Du musst Dir vorher allerdings einen (kostenfreien) Github Account anlegen.
+    </p>
+   </div>
+
   <!-- Preferred Unit -->
   <div class="card">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Bevorzugte Einheit</h3>
+    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Einheit</h3>
     <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-      Wähle, ob du BE (Broteinheiten) oder KHE (Kohlenhydrateinheiten) bevorzugst. Die App zeigt dann nur deine bevorzugte
-      Einheit an.
+      Willst Du BE (Broteinheiten) oder KHE (Kohlenhydrateinheiten) angezeigt bekommen?
+      Die App rechhnet die gKH dann in Deine bevorzugte Einheit um.
     </p>
 
     <div class="space-y-3">
