@@ -60,7 +60,7 @@
 <!-- Print view (hidden on screen, shown in print) - only shows search results -->
 {#if isSearching && foods.length > 0}
   <div class="hidden print:block print-grid">
-    {#each foods as food ((food.blsCode || food.name) + '-print')}
+    {#each foods as food, index (`${food.blsCode || food.name}-${index}-print`)}
       <PrintFoodCard {food} />
     {/each}
   </div>
