@@ -1,5 +1,5 @@
 // Service Worker for carb-me PWA
-const CACHE_NAME = 'carb-me-1.9.0';
+const CACHE_NAME = 'carb-me-1.9.2';
 
 // Get the base path from the service worker's location
 const BASE_PATH = new URL('.', self.location).pathname.replace(/\/$/, '');

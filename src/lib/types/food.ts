@@ -42,6 +42,7 @@ export type BlsCategory = (typeof BLS_CATEGORIES)[keyof typeof BLS_CATEGORIES];
 
 export interface FoodItem {
   name: string;
+  blsCode: string; // BLS reference code
   subtitle?: string; // Variant details (e.g., "Type 405, 550, Vollkorn")
   kh: number; // Carbohydrates per 100g
   gBE: number; // Grams per Bread Unit
@@ -52,7 +53,6 @@ export interface FoodItem {
   isCustom?: boolean; // For user-created foods
   kcal?: number; // Kilocalories per 100g
   kj?: number; // Kilojoules per 100g
-  blsCode: string; // BLS reference code
 }
 
 export interface MealItem {

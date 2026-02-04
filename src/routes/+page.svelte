@@ -122,12 +122,9 @@
         {#if !isSearching}
           <!-- Call-to-Action Bereich -->
           <div class="card text-center py-3">
-            <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-1 flex items-center justify-center gap-2">
+            <p class="text-sm font-medium text-gray-900 dark:text-gray-100 flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-base">search</span>
-              Suche nach einem Lebensmittel
-            </p>
-            <p class="text-xs text-gray-600 dark:text-gray-400">
-              Gib einen Suchbegriff ein, um Lebensmittel zu finden
+              Einfach lostippen und Lebensmittel finden
             </p>
           </div>
 
