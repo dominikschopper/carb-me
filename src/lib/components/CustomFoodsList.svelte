@@ -58,11 +58,11 @@
 				</p>
 				<button
 					onclick={onAddClick}
-					class="btn-touch mt-4 bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+					class="btn-touch mt-4 bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 flex align-middle mx-auto"
 					type="button"
 				>
 					<span class="material-symbols-outlined leading-none mr-2">add_circle</span>
-					Erstes Lebensmittel hinzufügen
+					<span>Erstes Lebensmittel hinzufügen</span>
 				</button>
 			</div>
 		</div>
