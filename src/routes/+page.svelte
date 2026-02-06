@@ -14,6 +14,7 @@
   import { disclaimerStorage } from '$lib/utils/storage';
   import { onboardingService } from '$lib/utils/onboarding';
   import type { FoodItem } from '$lib/types/food';
+  import { mealStore } from '$lib/stores/meal.svelte';
 
   let activeTab = $state<'search' | 'custom' | 'meal' | 'settings'>('search');
   let selectedFood = $state<FoodItem | null>(null);
@@ -78,6 +79,29 @@
     editFood = null;
   }
 
+  function addToMeal() {
+    const foodApple: FoodItem = {
+      blsCode: 'F110100',
+      name: 'Apfel roh',
+      "kh": 11.7,
+      "gBE": 103,
+      "gKHE": 85,
+      "categories": [
+        [
+          "Früchte + Obst"
+        ]
+      ],
+      "tags": [
+        "mittlereKH"
+      ],
+    };
+    mealStore.addItem(foodApple, 100, .97, 1.17);
+  }
+
+  function deleteFromMeal() {
+    mealStore.clear();
+  }
+
   function startOnboardingIfNeeded() {
     if (!onboardingService.shouldShow()) return;
 
@@ -94,10 +118,18 @@
           foodStore.setSearchQuery('');
         },
         onSearchDemo: (query) => {
-          // Trigger search for demo (shows food cards for favorite star step)
-          foodStore.setSearchQuery(query);
+          setTimeout(async () => {
+            // Trigger search for demo (shows food cards for favorite star step)
+            const searchField: HTMLInputElement|null = document.querySelector('input[aria-label="Lebensmittel suchen"]');
+            console.log('the search', searchField);
+            if (searchField) {
+              searchField.value = query;
+            }
+            foodStore.setSearchQuery(query);
+          }, 700)
         },
         onNavigateToCustom: () => {
+          deleteFromMeal();
           activeTab = 'custom';
         },
         onNavigateToSettings: () => {
@@ -105,6 +137,7 @@
         },
         onNavigateToMeal: () => {
           activeTab = 'meal';
+          addToMeal();
         },
       });
     }, 500);
@@ -147,8 +180,9 @@
             {:else}
               <!-- Empty State -->
               <div class="card text-center py-6">
-                <p class="text-sm text-gray-500 dark:text-gray-400">
-                  Sie können Lebensmittel mit einem Stern markieren
+                <p class="text-md text-gray-500 dark:text-gray-400">
+                  Du kannst häufig verwendete Lebensmittel mit einem Stern markieren,<br/>
+                  dann werden sie hier angezeigt.
                 </p>
               </div>
             {/if}

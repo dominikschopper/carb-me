@@ -34,7 +34,7 @@
   tabindex="0"
   onkeydown={(e) => e.key === 'Enter' && handleCardClick()}
 >
-  <div class="flex items-start justify-between gap-3">
+  <div class="flex items-start justify-between gap-3" data-onboarding="calculator-open">
     <div class="flex-1">
       <div class="flex items-center gap-2">
         <hgroup>

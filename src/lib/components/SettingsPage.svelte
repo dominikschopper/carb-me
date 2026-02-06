@@ -83,8 +83,8 @@
    </div>
 
   <!-- Preferred Unit -->
-  <div class="card" data-onboarding="settings-unit">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Einheit</h3>
+  <div class="card">
+    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100" data-onboarding="settings-unit">Einheit</h3>
     <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       Willst Du BE (Broteinheiten) oder KHE (Kohlenhydrateinheiten) angezeigt bekommen?
       Die App rechhnet die gKH dann in Deine bevorzugte Einheit um.
@@ -128,8 +128,8 @@
   </div>
 
   <!-- Energy Display -->
-  <div class="card" data-onboarding="settings-energy">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Brennwert-Anzeige</h3>
+  <div class="card" >
+    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100" data-onboarding="settings-energy">Brennwert-Anzeige</h3>
     <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       Zeige zusätzlich den Brennwert (Kalorien) bei Lebensmitteln an.
     </p>
@@ -185,8 +185,8 @@
   </div>
 
   <!-- Search Results Filter -->
-  <div class="card" data-onboarding="settings-categories">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Suchergebnisse</h3>
+  <div class="card">
+    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100" data-onboarding="settings-categories">Suchergebnisse</h3>
     <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       Passe an, welche Lebensmittel in den Suchergebnissen angezeigt werden.
     </p>
