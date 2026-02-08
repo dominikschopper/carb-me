@@ -3,6 +3,7 @@
   import type { EnergyUnitType, BlsCategory } from '$lib/types/food';
   import { BLS_CATEGORIES } from '$lib/types/food';
   import { onboardingService } from '$lib/utils/onboarding';
+  import { APP_VERSION, CHANGELOG_URL } from '$lib/version';
 
   const settings = $derived(settingsStore.settings);
 
@@ -264,10 +265,18 @@
 
   <!-- App Info -->
   <div class="card text-center">
-    <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v1.10.0</p>
+    <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v{APP_VERSION}</p>
     <p class="mt-1 text-xs text-gray-500 dark:text-gray-500">
       Open Source auf
       <a rel="noopener noreferrer" href="https://github.com/dominikschopper/carb-me" class="text-blue-600 hover:underline dark:text-blue-400">github.com/dominikschopper/carb-me</a>
     </p>
+    <a
+      href={CHANGELOG_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-2 inline-block text-xs text-blue-600 hover:underline dark:text-blue-400"
+    >
+      Changelog ansehen
+    </a>
   </div>
 </div>

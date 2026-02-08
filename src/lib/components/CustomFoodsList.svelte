@@ -62,7 +62,7 @@
 					type="button"
 				>
 					<span class="material-symbols-outlined leading-none mr-2">add_circle</span>
-					<span>Erstes Lebensmittel hinzufügen</span>
+					<span>Etwas hinzufügen</span>
 				</button>
 			</div>
 		</div>

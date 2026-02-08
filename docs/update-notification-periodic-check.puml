@@ -1,0 +1,50 @@
+@startuml Update Notification - Periodic Check
+!theme plain
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+title PWA Update Notification - Periodic Check\nBackground Update Detection (60 min interval)
+
+participant "+layout.svelte" as Layout
+participant "swStore\n(serviceWorker.svelte.ts)" as Store
+participant "Service Worker" as SW
+
+== Periodic Update Check ==
+
+...60 minutes after page load...
+
+Layout -> SW: registration.update()
+activate SW
+note right: Checks for new SW version\non server
+
+alt New Version Available on Server
+    SW -> SW: Downloads & installs new SW
+
+    SW --> Layout: 'updatefound' event
+    activate Layout
+
+    Layout -> SW: newWorker.addEventListener('statechange')
+
+    SW -> SW: state = 'installed'
+    SW --> Layout: statechange event
+
+    Layout -> Store: notifyUpdate(APP_VERSION)
+    note right: Triggers update notification\n(see happy-path diagram)
+
+    deactivate Layout
+
+else No New Version
+    SW --> Layout: No update found
+    note right: Silent - no action needed
+end
+
+deactivate SW
+
+...Another 60 minutes later...
+
+note over Layout, SW
+  Cycle repeats every 60 minutes
+  as long as page remains open
+end note
+
+@enduml

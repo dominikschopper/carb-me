@@ -1,0 +1,48 @@
+@startuml Update Notification - First Installation
+!theme plain
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+title PWA Update Notification - First Installation\nNo Notification Shown
+
+actor User
+participant "Browser" as Browser
+participant "+layout.svelte" as Layout
+participant "swStore\n(serviceWorker.svelte.ts)" as Store
+participant "localStorage" as Storage
+
+== First Time User Opens App ==
+
+User -> Browser: Opens App for first time
+activate Browser
+
+Browser -> Layout: onMount()
+activate Layout
+
+Layout -> Store: checkForUpdate(APP_VERSION)
+activate Store
+
+Store -> Store: notifyUpdate(version)
+Store -> Storage: get('carbme_last_seen_version')
+activate Storage
+Storage --> Store: null (not set)
+note right: No version stored yet\ndefaults to DEFAULT_VERSION "1.0.0"
+deactivate Storage
+
+Store -> Store: compareVersions("1.0.0", current)
+note right: lastSeen === DEFAULT_VERSION
+
+Store -> Storage: set(APP_VERSION)
+note right: Silently saves current version\nNo notification for new users
+
+deactivate Store
+deactivate Layout
+deactivate Browser
+
+note over User, Storage
+  Result: Version saved silently.
+  User sees app normally without
+  update notification interruption.
+end note
+
+@enduml

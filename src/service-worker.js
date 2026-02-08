@@ -1,11 +1,16 @@
 // Service Worker for carb-me PWA
-const CACHE_NAME = 'carb-me-1.10.0';
+// Version wird zur Build-Zeit von VitePWA injiziert
+const CACHE_VERSION = '1.11.0'; // Wird durch Build-Prozess ersetzt
+const CACHE_NAME = `carb-me-${CACHE_VERSION}`;
+
+// VitePWA injiziert Precache-Manifest hier
+const PRECACHE_MANIFEST = self.__WB_MANIFEST || [];
 
 // Get the base path from the service worker's location
 const BASE_PATH = new URL('.', self.location).pathname.replace(/\/$/, '');
 
-// Assets to cache immediately on install (relative to base path)
-const PRECACHE_ASSETS = [
+// Additional assets to cache (beyond VitePWA's manifest)
+const ADDITIONAL_ASSETS = [
   '',
   '/lebensmittel-daten.json',
   '/manifest.json'
@@ -16,29 +21,52 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[SW] Precaching app shell, base:', BASE_PATH);
-      return cache.addAll(PRECACHE_ASSETS);
+      console.log('[SW] VitePWA manifest entries:', PRECACHE_MANIFEST.length);
+
+      // Cache VitePWA manifest entries (with revision hashes)
+      const manifestPromises = PRECACHE_MANIFEST.map(entry => {
+        const url = typeof entry === 'string' ? entry : entry.url;
+        return cache.add(url).catch(err => console.log('[SW] Failed to cache:', url, err));
+      });
+
+      // Cache additional assets
+      const additionalPromises = cache.addAll(ADDITIONAL_ASSETS);
+
+      return Promise.all([...manifestPromises, additionalPromises]);
     })
   );
-  // Activate immediately
-  self.skipWaiting();
+  // Don't skip waiting automatically - let the user decide via update notification
+  console.log('[SW] New version installed, waiting for activation');
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
+      console.log('[SW] Current cache:', CACHE_NAME);
+      console.log('[SW] Found caches:', cacheNames);
+
       return Promise.all(
         cacheNames
-          .filter((name) => name !== CACHE_NAME)
+          .filter((name) => name.startsWith('carb-me-') && name !== CACHE_NAME)
           .map((name) => {
             console.log('[SW] Deleting old cache:', name);
             return caches.delete(name);
           })
       );
+    }).then(() => {
+      // Only claim clients after user explicitly updates via SKIP_WAITING message
+      console.log('[SW] Activated, waiting for user action to take control');
     })
   );
-  // Take control of all pages immediately
-  self.clients.claim();
+});
+
+// Message Handler
+self.addEventListener('message', (event) => {
+  if (event.data?.type === 'SKIP_WAITING') {
+    console.log('[SW] User requested immediate activation');
+    self.skipWaiting();
+  }
 });
 
 // Fetch event - serve from cache, fallback to network

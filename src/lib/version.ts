@@ -1,0 +1,25 @@
+// Version injected at build time by Vite
+declare const __APP_VERSION__: string;
+
+export const APP_VERSION = __APP_VERSION__;
+export const CHANGELOG_URL = 'https://github.com/dominikschopper/carb-me/blob/master/CHANGELOG.md';
+export const DEFAULT_VERSION = '1.0.0';
+
+export interface VersionNotes {
+  summary: string;
+  highlights: string[];
+}
+
+export const VERSION_NOTES: Record<string, VersionNotes> = {
+  '1.11.0': {
+    summary: 'PWA Update-Benachrichtigungen',
+    highlights: [
+      'Automatische Benachrichtigung bei App-Updates',
+      'Verbesserte Offline-Funktionalität'
+    ]
+  }
+};
+
+export function getVersionNotes(version: string): VersionNotes | null {
+  return VERSION_NOTES[version] || null;
+}

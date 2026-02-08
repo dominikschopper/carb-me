@@ -15,6 +15,7 @@
   import { onboardingService } from '$lib/utils/onboarding';
   import type { FoodItem } from '$lib/types/food';
   import { mealStore } from '$lib/stores/meal.svelte';
+  import { swStore } from '$lib/stores/serviceWorker.svelte';
 
   let activeTab = $state<'search' | 'custom' | 'meal' | 'settings'>('search');
   let selectedFood = $state<FoodItem | null>(null);
@@ -105,7 +106,16 @@
   function startOnboardingIfNeeded() {
     if (!onboardingService.shouldShow()) return;
 
-    setTimeout(() => {
+    // Wait for update notification to be dismissed before starting onboarding
+    // Check if update dialog is showing, and if so, delay onboarding
+    const checkAndStart = () => {
+      if (swStore.updateAvailable) {
+        console.log('[Onboarding] Update notification active, waiting...');
+        // Check again in 1 second
+        setTimeout(checkAndStart, 2500);
+        return;
+      }
+
       onboardingService.startTour({
         onComplete: () => {
           console.log('Onboarding completed');
@@ -140,7 +150,10 @@
           addToMeal();
         },
       });
-    }, 500);
+    };
+
+    // Initial delay before checking (allows update notification to appear first)
+    setTimeout(checkAndStart, 500);
   }
 </script>
 

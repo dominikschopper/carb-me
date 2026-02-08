@@ -1,0 +1,52 @@
+@startuml Update Notification - Service Worker Registration
+!theme plain
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+title PWA Update Notification - Service Worker Registration\nDetecting Updates via SW Events
+
+participant "Browser" as Browser
+participant "+layout.svelte" as Layout
+participant "swStore\n(serviceWorker.svelte.ts)" as Store
+participant "Service Worker" as SW
+
+== Service Worker Registration ==
+
+Layout -> Browser: navigator.serviceWorker.register('/sw.js')
+activate Browser
+
+Browser -> SW: Registers Service Worker
+activate SW
+
+alt Service Worker already waiting
+    SW --> Layout: registration.waiting exists
+    Layout -> Store: notifyUpdate(APP_VERSION)
+    note right: Triggers update notification flow\n(see happy-path diagram)
+end
+
+SW -> Layout: registration.addEventListener('updatefound')
+note right: Listens for new SW versions
+
+deactivate SW
+deactivate Browser
+
+== New Service Worker Found ==
+
+SW -> SW: New version installed
+activate SW
+
+SW --> Layout: 'updatefound' event
+activate Layout
+
+Layout -> SW: newWorker.addEventListener('statechange')
+
+SW -> SW: state = 'installed'
+SW --> Layout: statechange event
+
+Layout -> Store: notifyUpdate(APP_VERSION)
+note right: Triggers update notification flow\n(see happy-path diagram)
+
+deactivate Layout
+deactivate SW
+
+@enduml

@@ -1,0 +1,74 @@
+@startuml Update Notification - Happy Path
+!theme plain
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+title PWA Update Notification - Happy Path\nUser Updates to New Version
+
+actor User
+participant "Browser" as Browser
+participant "+layout.svelte" as Layout
+participant "swStore\n(serviceWorker.svelte.ts)" as Store
+participant "localStorage" as Storage
+participant "UpdateNotification.svelte" as Dialog
+participant "Service Worker" as SW
+
+== Page Load / Refresh ==
+
+User -> Browser: Opens/Refreshes App
+activate Browser
+
+Browser -> Layout: onMount()
+activate Layout
+
+Layout -> Store: checkForUpdate(APP_VERSION)
+activate Store
+
+Store -> Store: notifyUpdate(version)
+Store -> Storage: get('carbme_last_seen_version')
+activate Storage
+Storage --> Store: lastSeenVersion (e.g. "1.1.1")
+deactivate Storage
+
+Store -> Store: compareVersions(lastSeen, current)
+note right: Compares "1.1.1" with "1.10.0"
+
+Store -> Store: updateAvailable = true
+Store -> Store: updateInfo = {\n  version,\n  notes,\n  available: true\n}
+note right: State is reactively updated
+
+Store --> Dialog: updateAvailable changed
+activate Dialog
+
+Dialog -> Dialog: $effect triggered
+note right: Svelte reactive $effect\ndetects state change
+
+Dialog -> Dialog: dialog.showModal()
+Dialog -> User: Shows Update Dialog
+
+deactivate Store
+deactivate Layout
+
+== User Clicks "Update Now" ==
+
+User -> Dialog: Clicks "Update Now"
+
+Dialog -> Store: markVersionSeen()
+activate Store
+Store -> Storage: set(APP_VERSION)
+note right: Saves current version\nto prevent re-notification
+deactivate Store
+
+Dialog -> SW: postMessage({type: 'SKIP_WAITING'})
+activate SW
+SW -> SW: self.skipWaiting()
+note right: Activates new Service Worker immediately
+deactivate SW
+
+Dialog -> Browser: window.location.reload()
+deactivate Dialog
+
+Browser -> User: App reloads with new version
+deactivate Browser
+
+@enduml

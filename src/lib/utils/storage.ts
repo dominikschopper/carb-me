@@ -1,5 +1,6 @@
 import type { FoodItem, MealItem, HistoryEntry, AppSettings } from '$lib/types/food';
 import { UNIT_TYPES, ENERGY_UNIT_TYPES } from '$lib/types/food';
+import { DEFAULT_VERSION } from '../version';
 
 export const STORAGE_KEYS = {
   CUSTOM_FOODS: 'carbme_custom_foods',
@@ -10,6 +11,7 @@ export const STORAGE_KEYS = {
   SETTINGS: 'carbme_settings',
   DISCLAIMER_ACCEPTED: 'carbme_disclaimer_accepted',
   ONBOARDING: 'carbme_onboarding',
+  LAST_SEEN_VERSION: 'carbme_last_seen_version',
 } as const;
 
 export const DEFAULT_SETTINGS: AppSettings = {
@@ -99,4 +101,9 @@ export interface OnboardingState {
 export const onboardingStorage = new Storage<OnboardingState>(
   STORAGE_KEYS.ONBOARDING,
   { completed: false, skipped: false }
+);
+
+export const lastSeenVersionStorage = new Storage<string>(
+  STORAGE_KEYS.LAST_SEEN_VERSION,
+  DEFAULT_VERSION
 );

@@ -1,0 +1,88 @@
+@startuml Update Notification - Onboarding Coordination
+!theme plain
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+title PWA Update Notification - Onboarding Coordination\nPreventing Modal Conflicts
+
+actor User
+participant "+page.svelte" as Page
+participant "swStore\n(serviceWorker.svelte.ts)" as Store
+participant "onboardingService" as Onboarding
+participant "localStorage" as Storage
+participant "driver.js" as Driver
+
+note over User, Driver
+  Priority: Update Dialog first, then Onboarding
+  Prevents overlapping modal experiences
+end note
+
+== Page Load (500ms delay) ==
+
+...500ms after Page Load...
+
+Page -> Page: startOnboardingIfNeeded()
+activate Page
+
+Page -> Onboarding: shouldShow()
+activate Onboarding
+Onboarding -> Storage: get('carbme_onboarding')
+Storage --> Onboarding: {completed: false, skipped: false}
+Onboarding --> Page: true (should be shown)
+deactivate Onboarding
+
+Page -> Page: checkAndStart()
+note right: Internal function to\ncheck & start tour
+
+Page -> Store: swStore.updateAvailable?
+activate Store
+
+alt Update Dialog is Active
+    Store --> Page: updateAvailable = true
+    deactivate Store
+
+    Page -> Page: console.log('Update notification active, waiting...')
+    note right: Onboarding waits
+
+    ...1 second later...
+
+    Page -> Page: setTimeout(checkAndStart, 1000)
+    note right: Re-checks in 1s\n(polling until dialog closed)
+
+    loop Until Update Dialog Closed
+        Page -> Store: swStore.updateAvailable?
+        Store --> Page: true
+        Page -> Page: Wait another 1s
+    end
+
+    Page -> Store: swStore.updateAvailable?
+    Store --> Page: false (dialog closed)
+
+else No Update Dialog Active
+    Store --> Page: updateAvailable = false
+    deactivate Store
+end
+
+== Onboarding Can Start ==
+
+Page -> Onboarding: startTour(options)
+activate Onboarding
+
+Onboarding -> Driver: driver({ steps: [...] })
+activate Driver
+
+Driver -> Driver: drive()
+Driver -> User: Shows Onboarding Tour
+note right: 15+ steps through\nall app features
+
+deactivate Driver
+
+User -> Onboarding: Tour completed/skipped
+
+Onboarding -> Storage: set({completed: true, skipped: false})
+note right: Saves status
+
+deactivate Onboarding
+deactivate Page
+
+@enduml

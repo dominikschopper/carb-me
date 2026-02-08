@@ -1,0 +1,40 @@
+@startuml Update Notification - Dismiss Flow
+!theme plain
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+title PWA Update Notification - Dismiss Flow\nUser Clicks "Later"
+
+actor User
+participant "UpdateNotification.svelte" as Dialog
+participant "swStore\n(serviceWorker.svelte.ts)" as Store
+
+note over User, Store
+  Precondition: Update dialog is visible
+  (updateAvailable = true)
+end note
+
+== User Dismisses Update ==
+
+User -> Dialog: Clicks "Later"
+activate Dialog
+
+Dialog -> Store: dismissUpdate()
+activate Store
+
+Store -> Store: updateAvailable = false
+Store -> Store: updateInfo = null
+note right: Version NOT saved\n→ periodic check will\nre-trigger notification
+
+deactivate Store
+
+Dialog -> Dialog: dialog.close()
+deactivate Dialog
+
+note over User, Store
+  Result: Dialog closed temporarily.
+  The periodic update check (every 60 min)
+  will show the notification again.
+end note
+
+@enduml

@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.0] - 2026-02-07
+
+### Added
+- Automatic notification when app updates are available
+- Update dialog with version highlights and changelog link
+- Improved PWA caching strategy with VitePWA
+- Periodic update checks (hourly)
+- Update detection when returning to app (visibility change)
+
+### Changed
+- Service Worker with build-time version injection
+- Version number automatically imported from package.json
+- "Clear all data" preserves last seen version (prevents confusing update dialogs after reset)
+
+### Technical
+- @vite-pwa/sveltekit integration with injectManifest strategy
+- ServiceWorkerStore for update state management
+- UpdateNotification component with modal dialog
+- Multi-layer update detection: controllerchange, periodic checks, visibility change
+- Semantic version comparison for update detection
+
 ## [1.10.0] - 2026-02-02
 
 ### Added

@@ -63,10 +63,12 @@ class SettingsStore {
   }
 
   clearAllData() {
-    // Clear all localStorage data
-    Object.values(STORAGE_KEYS).forEach((key) => {
-      localStorage.removeItem(key);
-    });
+    // Clear all localStorage data EXCEPT lastSeenVersion
+    Object.values(STORAGE_KEYS)
+      .filter((key) => key !== STORAGE_KEYS.LAST_SEEN_VERSION)
+      .forEach((key) => {
+        localStorage.removeItem(key);
+      });
 
     // Reset to defaults
     this.settings = {
