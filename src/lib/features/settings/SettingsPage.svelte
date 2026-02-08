@@ -69,116 +69,106 @@
   }
 </script>
 
-<div class="space-y-6">
-  <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Einstellungen</h2>
+<div class="settings">
+  <h2 class="settings__page-title">Einstellungen</h2>
 
   <!-- feedback -->
-   <div class="card">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Feedback zur App</h3>
-    <p>
+  <div class="card settings__section">
+    <h3 class="settings__title">Feedback zur App</h3>
+    <p class="settings__text">
       Wenn Du mir Feedback geben willst oder ein Problem melden möchtest, kannst Du das derzeit über
-      <a href="https://github.com/dominikschopper/carb-me/discussions/1" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">Github Discussions</a> oder
-      <a href="https://github.com/dominikschopper/carb-me/issues" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">Github Issues</a>
+      <a href="https://github.com/dominikschopper/carb-me/discussions/1" target="_blank" rel="noreferrer" class="settings__link">Github Discussions</a> oder
+      <a href="https://github.com/dominikschopper/carb-me/issues" target="_blank" rel="noreferrer" class="settings__link">Github Issues</a>
       machen. Du musst Dir vorher allerdings einen (kostenfreien) Github Account anlegen.
     </p>
-   </div>
+  </div>
 
   <!-- Preferred Unit -->
-  <div class="card">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100" data-onboarding="settings-unit">Einheit</h3>
-    <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+  <div class="card settings__section">
+    <h3 class="settings__title" data-onboarding="settings-unit">Einheit</h3>
+    <p class="settings__description">
       Willst Du BE (Broteinheiten) oder KHE (Kohlenhydrateinheiten) angezeigt bekommen?
       Die App rechhnet die gKH dann in Deine bevorzugte Einheit um.
     </p>
 
-    <div class="space-y-3">
-      <label class="flex cursor-pointer items-start gap-3 rounded-lg border-2 p-3 transition-colors {settings.preferredUnit === 'BE'
-        ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
-        : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+    <div class="settings__options">
+      <label class="selection-card {settings.preferredUnit === 'BE' ? 'selection-card--selected' : ''}">
         <input
           type="radio"
           name="unit"
           value="BE"
           checked={settings.preferredUnit === 'BE'}
           onchange={() => handleUnitChange('BE')}
-          class="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-600 focus:ring-2 focus:ring-blue-500"
+          class="settings__radio"
         />
-        <div class="flex-1 min-w-0">
-          <div class="font-medium text-gray-900 dark:text-gray-100 hyphens-auto break-words" lang="de">BE (Broteinheiten)</div>
-          <div class="text-sm text-gray-600 dark:text-gray-400 hyphens-auto break-words" lang="de">1 BE = 12g Kohlenhydrate</div>
+        <div class="settings__option-content">
+          <div class="settings__option-label">BE (Broteinheiten)</div>
+          <div class="settings__option-hint">1 BE = 12g Kohlenhydrate</div>
         </div>
       </label>
 
-      <label class="flex cursor-pointer items-start gap-3 rounded-lg border-2 p-3 transition-colors {settings.preferredUnit === 'KHE'
-        ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
-        : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+      <label class="selection-card {settings.preferredUnit === 'KHE' ? 'selection-card--selected' : ''}">
         <input
           type="radio"
           name="unit"
           value="KHE"
           checked={settings.preferredUnit === 'KHE'}
           onchange={() => handleUnitChange('KHE')}
-          class="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-600 focus:ring-2 focus:ring-blue-500"
+          class="settings__radio"
         />
-        <div class="flex-1 min-w-0">
-          <div class="font-medium text-gray-900 dark:text-gray-100 hyphens-auto break-words" lang="de">KHE (Kohlenhydrateinheiten)</div>
-          <div class="text-sm text-gray-600 dark:text-gray-400 hyphens-auto break-words" lang="de">1 KHE = 10g Kohlenhydrate</div>
+        <div class="settings__option-content">
+          <div class="settings__option-label">KHE (Kohlenhydrateinheiten)</div>
+          <div class="settings__option-hint">1 KHE = 10g Kohlenhydrate</div>
         </div>
       </label>
     </div>
   </div>
 
   <!-- Energy Display -->
-  <div class="card" >
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100" data-onboarding="settings-energy">Brennwert-Anzeige</h3>
-    <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+  <div class="card settings__section">
+    <h3 class="settings__title" data-onboarding="settings-energy">Brennwert-Anzeige</h3>
+    <p class="settings__description">
       Zeige zusätzlich den Brennwert (Kalorien) bei Lebensmitteln an.
     </p>
 
-    <label class="flex cursor-pointer items-center gap-3 rounded-lg border-2 p-3 transition-colors {settings.showEnergy
-      ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
-      : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+    <label class="selection-card {settings.showEnergy ? 'selection-card--selected' : ''}">
       <input
         type="checkbox"
         checked={settings.showEnergy}
         onchange={(e) => handleShowEnergyChange(e.currentTarget.checked)}
-        class="h-5 w-5 flex-shrink-0 rounded text-blue-600 focus:ring-2 focus:ring-blue-500"
+        class="settings__checkbox"
       />
-      <div class="flex-1 min-w-0">
-        <div class="font-medium text-gray-900 dark:text-gray-100">Brennwerte anzeigen</div>
-        <div class="text-sm text-gray-600 dark:text-gray-400">kcal oder kJ pro 100g</div>
+      <div class="settings__option-content">
+        <div class="settings__option-label">Brennwerte anzeigen</div>
+        <div class="settings__option-hint">kcal oder kJ pro 100g</div>
       </div>
     </label>
 
     {#if settings.showEnergy}
-      <div class="mt-3 space-y-2">
-        <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Einheit</p>
-        <div class="flex gap-3">
-          <label class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg border-2 p-3 transition-colors {settings.energyUnit === 'kcal'
-            ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
-            : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+      <div class="settings__sub-options">
+        <p class="settings__sub-label">Einheit</p>
+        <div class="settings__energy-units">
+          <label class="selection-card settings__energy-unit {settings.energyUnit === 'kcal' ? 'selection-card--selected' : ''}">
             <input
               type="radio"
               name="energyUnit"
               value="kcal"
               checked={settings.energyUnit === 'kcal'}
               onchange={() => handleEnergyUnitChange('kcal')}
-              class="h-4 w-4 text-blue-600 focus:ring-2 focus:ring-blue-500"
+              class="settings__radio settings__radio--sm"
             />
-            <span class="font-medium text-gray-900 dark:text-gray-100">kcal</span>
+            <span class="settings__option-label">kcal</span>
           </label>
-          <label class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg border-2 p-3 transition-colors {settings.energyUnit === 'kJ'
-            ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
-            : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+          <label class="selection-card settings__energy-unit {settings.energyUnit === 'kJ' ? 'selection-card--selected' : ''}">
             <input
               type="radio"
               name="energyUnit"
               value="kJ"
               checked={settings.energyUnit === 'kJ'}
               onchange={() => handleEnergyUnitChange('kJ')}
-              class="h-4 w-4 text-blue-600 focus:ring-2 focus:ring-blue-500"
+              class="settings__radio settings__radio--sm"
             />
-            <span class="font-medium text-gray-900 dark:text-gray-100">kJ</span>
+            <span class="settings__option-label">kJ</span>
           </label>
         </div>
       </div>
@@ -186,28 +176,26 @@
   </div>
 
   <!-- Search Results Filter -->
-  <div class="card">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100" data-onboarding="settings-categories">Suchergebnisse</h3>
-    <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+  <div class="card settings__section">
+    <h3 class="settings__title" data-onboarding="settings-categories">Suchergebnisse</h3>
+    <p class="settings__description">
       Passe an, welche Lebensmittel in den Suchergebnissen angezeigt werden.
     </p>
 
-    <div class="space-y-3">
+    <div class="settings__options">
       {#each CATEGORY_CONFIG as category}
-        <label class="flex cursor-pointer items-center gap-3 rounded-lg border-2 p-3 transition-colors {settingsStore.isCategoryHidden(category.key)
-          ? 'border-blue-600 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/30'
-          : 'border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500'}">
+        <label class="selection-card {settingsStore.isCategoryHidden(category.key) ? 'selection-card--selected' : ''}">
           <input
             type="checkbox"
             checked={settingsStore.isCategoryHidden(category.key)}
             onchange={(e) => handleCategoryToggle(category.key, e.currentTarget.checked)}
-            class="h-5 w-5 flex-shrink-0 rounded text-blue-600 focus:ring-2 focus:ring-blue-500"
+            class="settings__checkbox"
           />
-          <div class="flex-1 min-w-0">
-            <div class="font-medium text-blue-600 dark:text-gray-100">{category.label} ausblenden</div>
-            <div class="text-sm text-gray-500 dark:text-gray-300">
+          <div class="settings__option-content">
+            <div class="settings__option-label text-primary">{category.label} ausblenden</div>
+            <div class="settings__option-hint">
               {category.description}
-              <span class="dark:text-gray-600 text-gray-400 text-xs">&middot; BLS Code {category.key}</span>
+              <span class="settings__category-code">&middot; BLS Code {category.key}</span>
             </div>
           </div>
         </label>
@@ -216,67 +204,230 @@
   </div>
 
   <!-- App-Tour -->
-  <div class="card">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">App-Tour</h3>
-    <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+  <div class="card settings__section">
+    <h3 class="settings__title">App-Tour</h3>
+    <p class="settings__description">
       Zeige die Einführung nochmal an, um die wichtigsten Funktionen kennenzulernen.
     </p>
 
     <button
       onclick={handleRestartOnboarding}
-      class="btn-touch w-full border-2 border-blue-500 bg-white text-blue-600 hover:bg-blue-50 dark:bg-gray-800 dark:hover:bg-blue-900/30"
+      class="btn btn--outline-primary settings__action-btn"
       type="button"
     >
-      <span class="material-symbols-outlined mr-2 inline-block align-middle leading-none">school</span>
+      <span class="material-symbols-outlined">school</span>
       App-Tour erneut starten
     </button>
   </div>
 
   <!-- Data Management -->
-  <div class="card">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Datenverwaltung</h3>
-    <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+  <div class="card settings__section">
+    <h3 class="settings__title">Datenverwaltung</h3>
+    <p class="settings__description">
       Lösche alle lokal gespeicherten Daten, um die App zurückzusetzen.
     </p>
 
     <button
       onclick={handleClearData}
-      class="btn-touch w-full border-2 border-red-500 bg-white text-red-600 hover:bg-red-50 dark:bg-gray-800 dark:hover:bg-red-900/30"
+      class="btn btn--outline-danger settings__action-btn"
       type="button"
     >
-      <span class="material-symbols-outlined mr-2 inline-block align-middle leading-none">delete_forever</span>
+      <span class="material-symbols-outlined">delete_forever</span>
       Alle Daten löschen
     </button>
   </div>
 
   <!-- Legal Links -->
-  <div class="card">
-    <h3 class="mb-3 font-semibold text-gray-900 dark:text-gray-100">Rechtliches</h3>
+  <div class="card settings__section">
+    <h3 class="settings__title">Rechtliches</h3>
 
-    <a
-      href="/legal"
-      class="flex items-center gap-2 rounded-lg p-3 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-    >
-      <span class="material-symbols-outlined leading-none">gavel</span>
+    <a href="/legal" class="settings__nav-link">
+      <span class="material-symbols-outlined">gavel</span>
       <span>Haftungsausschluss & Datenschutz</span>
-      <span class="material-symbols-outlined ml-auto leading-none">chevron_right</span>
+      <span class="material-symbols-outlined settings__nav-chevron">chevron_right</span>
     </a>
   </div>
 
   <!-- App Info -->
-  <div class="card text-center">
-    <p class="text-sm text-gray-600 dark:text-gray-400">carb-me v{APP_VERSION}</p>
-    <p class="mt-1 text-xs text-gray-500 dark:text-gray-500">
+  <div class="card text-center settings__info">
+    <p class="settings__version">carb-me v{APP_VERSION}</p>
+    <p class="settings__source">
       Open Source auf
-      <a rel="noopener noreferrer" href="https://github.com/dominikschopper/carb-me" class="text-blue-600 hover:underline dark:text-blue-400">github.com/dominikschopper/carb-me</a>
+      <a rel="noopener noreferrer" href="https://github.com/dominikschopper/carb-me" class="settings__link">github.com/dominikschopper/carb-me</a>
     </p>
     <a
       href={CHANGELOG_URL}
       target="_blank"
       rel="noopener noreferrer"
-      class="mt-2 inline-block text-xs text-blue-600 hover:underline dark:text-blue-400"
+      class="settings__changelog-link"
     >
       Changelog ansehen
     </a>
   </div>
 </div>
+
+<style>
+  .settings {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .settings__page-title {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-text);
+  }
+
+  .settings__section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .settings__title {
+    margin-block-end: var(--space-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text);
+  }
+
+  .settings__text {
+    color: var(--color-text);
+  }
+
+  .settings__description {
+    margin-block-end: var(--space-md);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .settings__options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .settings__option-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .settings__option-label {
+    font-weight: var(--weight-medium);
+    color: var(--color-text);
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+
+  .settings__option-hint {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+
+  .settings__radio,
+  .settings__checkbox {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-block-start: 2px;
+    accent-color: var(--color-primary);
+  }
+
+  .settings__radio--sm {
+    width: 1rem;
+    height: 1rem;
+    margin-block-start: 0;
+  }
+
+  .settings__sub-options {
+    margin-block-start: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .settings__sub-label {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+  }
+
+  .settings__energy-units {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .settings__energy-unit {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .settings__category-code {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+  }
+
+  .settings__action-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+  }
+
+  .settings__nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+  }
+
+  .settings__nav-link:hover {
+    background-color: var(--color-bg-inset);
+  }
+
+  .settings__nav-chevron {
+    margin-inline-start: auto;
+  }
+
+  .settings__info {
+    padding: var(--space-md);
+  }
+
+  .settings__version {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .settings__source {
+    margin-block-start: var(--size-3xs);
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+  }
+
+  .settings__link {
+    color: var(--color-primary-text);
+    text-decoration: none;
+  }
+
+  .settings__link:hover {
+    text-decoration: underline;
+  }
+
+  .settings__changelog-link {
+    display: inline-block;
+    margin-block-start: var(--space-xs);
+    font-size: var(--text-xs);
+    color: var(--color-primary-text);
+    text-decoration: none;
+  }
+
+  .settings__changelog-link:hover {
+    text-decoration: underline;
+  }
+</style>

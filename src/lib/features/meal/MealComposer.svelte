@@ -38,13 +38,13 @@
   }
 </script>
 
-<div class="space-y-4">
-  <div class="flex items-center justify-between">
-    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100" data-onboarding="meal-list">Meine Mahlzeit</h2>
+<div class="meal">
+  <div class="meal__header">
+    <h2 class="meal__title" data-onboarding="meal-list">Meine Mahlzeit</h2>
     {#if items.length > 0}
       <button
         onclick={clearAll}
-        class="text-sm text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
+        class="meal__clear-btn"
         type="button"
       >
         Alles löschen
@@ -55,74 +55,208 @@
   {#if items.length === 0}
     <!-- Empty state -->
     <div class="card text-center">
-      <div class="py-8">
-        <span class="material-symbols-outlined mx-auto block text-5xl text-gray-400">restaurant</span>
-        <p class="mt-4 text-gray-600 dark:text-gray-400">Noch keine Lebensmittel hinzugefügt</p>
-        <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">
+      <div class="meal__empty">
+        <span class="material-symbols-outlined icon-5xl text-muted">restaurant</span>
+        <p class="meal__empty-title">Noch keine Lebensmittel hinzugefügt</p>
+        <p class="meal__empty-hint">
           Suche nach Lebensmitteln und füge sie zur Mahlzeit hinzu
         </p>
       </div>
     </div>
   {:else}
     <!-- Meal items -->
-    <div class="space-y-3">
+    <div class="meal__list">
       {#each items as item, index (index)}
-        <div class="card flex items-start justify-between gap-3">
-          <div class="flex-1">
-            <h3 class="font-semibold text-gray-900 dark:text-gray-100">{item.food.name}</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">{item.grams}g</p>
-            <div class="mt-2 text-sm">
+        <div class="card meal__item">
+          <div class="meal__item-body">
+            <h3 class="meal__item-name">{item.food.name}</h3>
+            <p class="meal__item-amount">{item.grams}g</p>
+            <div class="meal__item-values">
               <UnitDisplay>
                 {#snippet beContent()}
-                  <span class="text-blue-600 dark:text-blue-400">{formatNumber(item.be)} BE</span>
+                  <span class="text-primary">{formatNumber(item.be)} BE</span>
                 {/snippet}
                 {#snippet kheContent()}
-                  <span class="text-purple-600 dark:text-purple-400">{formatNumber(item.khe)} KHE</span>
+                  <span class="text-accent">{formatNumber(item.khe)} KHE</span>
                 {/snippet}
               </UnitDisplay>
               {#if settings.showEnergy && getItemEnergy(item) !== null}
-                <span class="mx-1">·</span>
-                <span class="text-amber-600 dark:text-amber-400">{getItemEnergy(item)} {settings.energyUnit}</span>
+                <span class="meal__item-dot">·</span>
+                <span class="text-warning">{getItemEnergy(item)} {settings.energyUnit}</span>
               {/if}
             </div>
           </div>
           <button
             onclick={() => removeItem(index)}
-            class="flex items-center justify-center rounded-full p-2 hover:bg-red-50 active:scale-95 dark:hover:bg-red-900/30"
+            class="btn btn--ghost meal__item-delete"
             aria-label="Entfernen"
             type="button"
           >
-            <span class="material-symbols-outlined leading-none text-red-600 dark:text-red-400">delete</span>
+            <span class="material-symbols-outlined text-danger">delete</span>
           </button>
         </div>
       {/each}
     </div>
 
     <!-- Total summary (sticky footer) -->
-    <div class="sticky bottom-16 rounded-xl bg-blue-600 p-4 text-white shadow-lg dark:bg-blue-500">
-      <div class="text-center">
-        <p class="text-sm opacity-90">Gesamt</p>
+    <div class="meal__total">
+      <div class="meal__total-inner">
+        <p class="meal__total-label">Gesamt</p>
         <UnitDisplay>
           {#snippet beContent()}
-            <p class="text-lg">
-              <span class="text-green-200">{formatNumber(totalCarbs)}g KH</span>
-              <span class="opacity-75">=</span>
+            <p class="meal__total-value">
+              <span class="meal__total-carbs">{formatNumber(totalCarbs)}g KH</span>
+              <span class="meal__total-eq">=</span>
               <span class="font-bold">{formatNumber(totalBE)} BE</span>
             </p>
           {/snippet}
           {#snippet kheContent()}
-            <p class="text-lg">
-              <span class="text-green-200">{formatNumber(totalCarbs)}g KH</span>
-              <span class="opacity-75">=</span>
+            <p class="meal__total-value">
+              <span class="meal__total-carbs">{formatNumber(totalCarbs)}g KH</span>
+              <span class="meal__total-eq">=</span>
               <span class="font-bold">{formatNumber(totalKHE)} KHE</span>
             </p>
           {/snippet}
         </UnitDisplay>
         {#if settings.showEnergy && totalEnergy > 0}
-          <p class="mt-1 text-lg font-semibold text-amber-200">{totalEnergy} {settings.energyUnit}</p>
+          <p class="meal__total-energy">{totalEnergy} {settings.energyUnit}</p>
         {/if}
-        <p class="mt-2 text-sm opacity-75">{items.length} Lebensmittel</p>
+        <p class="meal__total-count">{items.length} Lebensmittel</p>
       </div>
     </div>
   {/if}
 </div>
+
+<style>
+  .meal {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .meal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .meal__title {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+  }
+
+  .meal__clear-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-size: var(--text-sm);
+    color: var(--color-danger-text);
+  }
+
+  .meal__clear-btn:hover {
+    color: var(--color-danger-hover);
+  }
+
+  .meal__empty {
+    padding-block: var(--space-xl);
+  }
+
+  .meal__empty-title {
+    margin-block-start: var(--space-md);
+    color: var(--color-text-secondary);
+  }
+
+  .meal__empty-hint {
+    margin-block-start: var(--size-3xs);
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+
+  .meal__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .meal__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+
+  .meal__item-body {
+    flex: 1;
+  }
+
+  .meal__item-name {
+    font-weight: var(--weight-semibold);
+  }
+
+  .meal__item-amount {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .meal__item-values {
+    margin-block-start: var(--space-xs);
+    font-size: var(--text-sm);
+  }
+
+  .meal__item-dot {
+    margin-inline: var(--size-3xs);
+  }
+
+  .meal__item-delete {
+    flex-shrink: 0;
+  }
+
+  .meal__item-delete:hover {
+    background-color: var(--color-danger-soft);
+  }
+
+  .meal__total {
+    position: sticky;
+    bottom: 4rem;
+    border-radius: var(--radius-xl);
+    background-color: var(--color-primary);
+    padding: var(--space-md);
+    color: var(--color-text-inverse);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .meal__total-inner {
+    text-align: center;
+  }
+
+  .meal__total-label {
+    font-size: var(--text-sm);
+    opacity: 0.9;
+  }
+
+  .meal__total-value {
+    font-size: var(--text-lg);
+  }
+
+  .meal__total-carbs {
+    color: var(--color-success-light);
+  }
+
+  .meal__total-eq {
+    opacity: 0.75;
+  }
+
+  .meal__total-energy {
+    margin-block-start: var(--size-3xs);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    color: var(--color-warning-light);
+  }
+
+  .meal__total-count {
+    margin-block-start: var(--space-xs);
+    font-size: var(--text-sm);
+    opacity: 0.75;
+  }
+</style>

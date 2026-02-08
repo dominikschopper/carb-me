@@ -182,34 +182,34 @@
 <dialog
   bind:this={dialog}
   onclose={handleClose}
-  class="w-full max-w-lg rounded-2xl bg-white p-0 backdrop:bg-black/50 dark:bg-gray-800 sm:rounded-2xl"
+  class="dialog custom-food-form"
 >
-  <div class="p-6">
+  <div class="custom-food-form__body">
     <!-- Header -->
-    <div class="mb-6 flex items-start justify-between">
-      <div class="flex flex-wrap items-baseline gap-3">
-        <h2 class="text-lg font-bold text-gray-900 dark:text-gray-100 sm:text-lg justify-self-start whitespace-pre-line">
+    <div class="custom-food-form__header">
+      <div class="custom-food-form__header-text">
+        <h2 class="custom-food-form__title">
           {editFood ? 'Lebensmittel bearbeiten' : 'Lebensmittel hinzufügen'}
         </h2>
-        <code class="text-xs font-mono text-gray-400 dark:text-gray-500 justify-self-end">
+        <code class="custom-food-form__id">
           ID: {generatedId}
         </code>
       </div>
       <button
         onclick={handleClose}
-        class="flex items-center justify-center rounded-full p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
+        class="btn btn--ghost"
         aria-label="Schließen"
         type="button"
       >
-        <span class="material-symbols-outlined leading-none text-gray-500">close</span>
+        <span class="material-symbols-outlined text-tertiary">close</span>
       </button>
     </div>
 
     <form onsubmit={(e) => { e.preventDefault(); handleSubmit(); }} onkeydown={handleKeyDown}>
       <!-- Name (Required) -->
-      <div class="mb-4">
-        <label for="name-input" class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Name <span class="text-red-500">*</span>
+      <div class="custom-food-form__field">
+        <label for="name-input" class="custom-food-form__label">
+          Name <span class="text-danger">*</span>
         </label>
         <input
           id="name-input"
@@ -218,125 +218,119 @@
           bind:value={name}
           onblur={handleNameBlur}
           placeholder="z.B. Hausgemachte Marmelade"
-          class="input-touch w-full {showNameError ? 'border-red-500 dark:border-red-400' : ''}"
+          class="input w-full {showNameError ? 'input--error' : ''}"
           required
         />
         {#if showNameError}
-          <p class="mt-1 text-sm text-red-600 dark:text-red-400" role="alert">
+          <p class="custom-food-form__error" role="alert">
             Bitte gib einen Namen ein
           </p>
         {/if}
       </div>
 
-<div class="flex gap-3">
-      <!-- KH (Required) -->
-      <div class="mb-4 width:50">
-        <label for="kh-input" class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Kohlenhydrate (KH) pro 100{unit} <span class="text-red-500">*</span>
-        </label>
-        <div class="relative">
-          <input
-            id="kh-input"
-            type="number"
-            bind:value={kh}
-            onblur={handleKhBlur}
-            min="0"
-            step="0.1"
-            inputmode="decimal"
-            placeholder="z.B. 25.5"
-            class="input-touch w-full number-to-text {showKhError ? 'border-red-500 dark:border-red-400' : ''}"
-            required
-
-          />
-          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 dark:text-gray-400">
-            grKH
-          </span>
+      <div class="custom-food-form__row">
+        <!-- KH (Required) -->
+        <div class="custom-food-form__field custom-food-form__field--half">
+          <label for="kh-input" class="custom-food-form__label">
+            Kohlenhydrate (KH) pro 100{unit} <span class="text-danger">*</span>
+          </label>
+          <div class="custom-food-form__input-wrap">
+            <input
+              id="kh-input"
+              type="number"
+              bind:value={kh}
+              onblur={handleKhBlur}
+              min="0"
+              step="0.1"
+              inputmode="decimal"
+              placeholder="z.B. 25.5"
+              class="input w-full number-to-text {showKhError ? 'input--error' : ''}"
+              required
+            />
+            <span class="custom-food-form__suffix">grKH</span>
+          </div>
+          {#if showKhError}
+            <p class="custom-food-form__error" role="alert">
+              Kohlenhydrate müssen größer als 0 sein
+            </p>
+          {:else}
+            <p class="custom-food-form__hint">
+              Kohlenhydrate pro 100{unit} des Lebensmittels
+            </p>
+          {/if}
         </div>
-        {#if showKhError}
-          <p class="mt-1 text-sm text-red-600 dark:text-red-400" role="alert">
-            Kohlenhydrate müssen größer als 0 sein
-          </p>
-        {:else}
-          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            Kohlenhydrate pro 100{unit} des Lebensmittels
-          </p>
-        {/if}
-      </div>
 
-      <!-- Unit Selection -->
-      <div class="mb-4 width:50">
-        <p class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">Einheit</p>
-        <div class="flex gap-2 pt-1">
-          <label
-            class="flex items-center gap-2 cursor-pointer rounded-lg border-2 px-3 py-1.5 transition-colors {unit === 'gr'
-              ? 'border-blue-500 bg-blue-50 dark:border-blue-400 dark:bg-blue-900/30'
-              : 'border-gray-300 bg-white hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700'}"
-          >
-            <input
-              type="radio"
-              name="unit"
-              value="gr"
-              checked={unit === 'gr'}
-              onchange={() => (unit = 'gr')}
-              class="sr-only"
-            />
-            <span class="text-sm font-medium text-gray-900 dark:text-gray-100">Gramm</span>
-          </label>
-          <label
-            class="flex items-center gap-2 cursor-pointer rounded-lg border-2 px-3 py-1.5 transition-colors {unit === 'ml'
-              ? 'border-blue-500 bg-blue-50 dark:border-blue-400 dark:bg-blue-900/30'
-              : 'border-gray-300 bg-white hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700'}"
-          >
-            <input
-              type="radio"
-              name="unit"
-              value="ml"
-              checked={unit === 'ml'}
-              onchange={() => (unit = 'ml')}
-              class="sr-only"
-            />
-            <span class="text-sm font-medium text-gray-900 dark:text-gray-100">Milliliter</span>
-          </label>
+        <!-- Unit Selection -->
+        <div class="custom-food-form__field custom-food-form__field--half">
+          <p class="custom-food-form__label">Einheit</p>
+          <div class="custom-food-form__unit-options">
+            <label
+              class="selection-card {unit === 'gr' ? 'selection-card--selected' : ''}"
+            >
+              <input
+                type="radio"
+                name="unit"
+                value="gr"
+                checked={unit === 'gr'}
+                onchange={() => (unit = 'gr')}
+                class="sr-only"
+              />
+              <span class="custom-food-form__unit-label">Gramm</span>
+            </label>
+            <label
+              class="selection-card {unit === 'ml' ? 'selection-card--selected' : ''}"
+            >
+              <input
+                type="radio"
+                name="unit"
+                value="ml"
+                checked={unit === 'ml'}
+                onchange={() => (unit = 'ml')}
+                class="sr-only"
+              />
+              <span class="custom-food-form__unit-label">Milliliter</span>
+            </label>
+          </div>
         </div>
       </div>
-</div>
+
       <!-- Calculated Units -->
       {#if calculatedUnits}
-        <div class="mb-6 rounded-lg bg-blue-50 p-4 dark:bg-blue-900/30">
-          <p class="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+        <div class="info-box custom-food-form__preview">
+          <p class="custom-food-form__preview-title">
             Berechnete Werte
           </p>
-          <div class="flex items-center justify-center gap-4 text-center">
-            <div>
-              <div class="text-xs text-gray-600 dark:text-gray-400">1 BE</div>
-              <div class="text-lg font-bold text-blue-600 dark:text-blue-400">
+          <div class="custom-food-form__preview-values">
+            <div class="custom-food-form__preview-item">
+              <div class="custom-food-form__preview-label">1 BE</div>
+              <div class="custom-food-form__preview-number text-primary">
                 {calculatedUnits.gBE}{unit}
               </div>
             </div>
-            <div class="text-gray-400">•</div>
-            <div>
-              <div class="text-xs text-gray-600 dark:text-gray-400">1 KHE</div>
-              <div class="text-lg font-bold text-purple-600 dark:text-purple-400">
+            <div class="text-muted">•</div>
+            <div class="custom-food-form__preview-item">
+              <div class="custom-food-form__preview-label">1 KHE</div>
+              <div class="custom-food-form__preview-number text-accent">
                 {calculatedUnits.gKHE}{unit}
               </div>
             </div>
           </div>
         </div>
       {:else if typeof kh === 'number' && kh === 0}
-        <div class="mb-6 rounded-lg bg-amber-50 p-4 dark:bg-amber-900/30">
-          <p class="text-sm text-amber-800 dark:text-amber-200">
+        <div class="info-box info-box--warning custom-food-form__preview">
+          <p class="custom-food-form__caution-text">
             ⚠ Achtung: Bei 0 KH können keine BE/KHE berechnet werden.
           </p>
         </div>
       {/if}
 
       <!-- Energy (Optional) -->
-      <div class="mb-6">
-        <p class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Brennwert <span class="text-gray-500">(optional)</span>
+      <div class="custom-food-form__field custom-food-form__field--large">
+        <p class="custom-food-form__label">
+          Brennwert <span class="text-tertiary">(optional)</span>
         </p>
-        <div class="flex items-center gap-2">
-          <div class="flex-1 relative">
+        <div class="custom-food-form__energy-row">
+          <div class="custom-food-form__energy-input">
             <input
               id="kcal-input"
               type="number"
@@ -346,14 +340,12 @@
               step="1"
               inputmode="numeric"
               placeholder="z.B. 250"
-              class="input-touch w-full number-to-text"
+              class="input w-full number-to-text"
             />
-            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 dark:text-gray-400">
-              kcal
-            </span>
+            <span class="custom-food-form__suffix">kcal</span>
           </div>
-          <span class="text-gray-400 dark:text-gray-500">↔</span>
-          <div class="flex-1 relative">
+          <span class="text-muted">↔</span>
+          <div class="custom-food-form__energy-input">
             <input
               id="kj-input"
               type="number"
@@ -363,34 +355,32 @@
               step="1"
               inputmode="numeric"
               placeholder="z.B. 1046"
-              class="input-touch w-full number-to-text"
+              class="input w-full number-to-text"
             />
-            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 dark:text-gray-400">
-              kJ
-            </span>
+            <span class="custom-food-form__suffix">kJ</span>
           </div>
         </div>
       </div>
 
       <!-- Subtitle (Optional) -->
-      <div class="mb-6">
-        <label for="subtitle-input" class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Zusatzinfo <span class="text-gray-500">(optional)</span>
+      <div class="custom-food-form__field custom-food-form__field--large">
+        <label for="subtitle-input" class="custom-food-form__label">
+          Zusatzinfo <span class="text-tertiary">(optional)</span>
         </label>
         <input
           id="subtitle-input"
           type="text"
           bind:value={subtitle}
           placeholder="z.B. Erdbeer, Omas Rezept"
-          class="input-touch w-full"
+          class="input w-full"
         />
       </div>
 
       <!-- Actions -->
-      <div class="flex gap-3">
+      <div class="custom-food-form__actions">
         <button
           onclick={handleClose}
-          class="btn-touch flex-1 border-2 border-gray-300 bg-white text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+          class="btn btn--outline custom-food-form__action-btn"
           type="button"
         >
           Abbrechen
@@ -398,7 +388,7 @@
         <button
           type="submit"
           disabled={!canSubmit}
-          class="btn-touch flex-1 bg-blue-600 text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-blue-500 dark:hover:bg-blue-600"
+          class="btn btn--primary custom-food-form__action-btn"
         >
           {editFood ? 'Speichern' : 'Hinzufügen'}
         </button>
@@ -409,19 +399,171 @@
 
 <!-- Success Toast -->
 {#if successMessage}
-  <div
-    class="fixed bottom-20 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-green-600 px-4 py-2 text-white shadow-lg"
-  >
+  <div class="custom-food-form__toast">
     ✓ {successMessage}
   </div>
 {/if}
 
 <style>
-  dialog {
-    margin: auto;
+  .custom-food-form {
+    max-width: 32rem;
   }
 
-  dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+  .custom-food-form__body {
+    padding: var(--space-lg);
+  }
+
+  .custom-food-form__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-block-end: var(--space-lg);
+  }
+
+  .custom-food-form__header-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+
+  .custom-food-form__title {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+    white-space: pre-line;
+  }
+
+  .custom-food-form__id {
+    font-size: var(--text-xs);
+    font-family: monospace;
+    color: var(--color-text-muted);
+  }
+
+  .custom-food-form__field {
+    margin-block-end: var(--space-md);
+  }
+
+  .custom-food-form__field--large {
+    margin-block-end: var(--space-lg);
+  }
+
+  .custom-food-form__label {
+    display: block;
+    margin-block-end: var(--space-xs);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+  }
+
+  .custom-food-form__input-wrap {
+    position: relative;
+  }
+
+  .custom-food-form__suffix {
+    position: absolute;
+    right: var(--space-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+
+  .custom-food-form__error {
+    margin-block-start: var(--size-3xs);
+    font-size: var(--text-sm);
+    color: var(--color-danger-text);
+  }
+
+  .custom-food-form__hint {
+    margin-block-start: var(--size-3xs);
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+  }
+
+  .custom-food-form__row {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .custom-food-form__field--half {
+    flex: 1;
+  }
+
+  .custom-food-form__unit-options {
+    display: flex;
+    gap: var(--space-xs);
+    padding-block-start: var(--size-3xs);
+  }
+
+  .custom-food-form__unit-label {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+  }
+
+  .custom-food-form__preview {
+    margin-block-end: var(--space-lg);
+  }
+
+  .custom-food-form__preview-title {
+    margin-block-end: var(--space-xs);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+  }
+
+  .custom-food-form__preview-values {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .custom-food-form__preview-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+  }
+
+  .custom-food-form__preview-number {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+  }
+
+  .custom-food-form__caution-text {
+    font-size: var(--text-sm);
+    color: var(--color-caution-text);
+  }
+
+  .custom-food-form__energy-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .custom-food-form__energy-input {
+    flex: 1;
+    position: relative;
+  }
+
+  .custom-food-form__actions {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .custom-food-form__action-btn {
+    flex: 1;
+  }
+
+  .custom-food-form__toast {
+    position: fixed;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    border-radius: var(--radius-lg);
+    background-color: var(--color-success);
+    padding: var(--space-xs) var(--space-md);
+    color: var(--color-text-inverse);
+    box-shadow: var(--shadow-lg);
   }
 </style>

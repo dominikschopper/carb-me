@@ -40,9 +40,9 @@
   }
 </script>
 
-<div class="relative w-full" data-onboarding="search-bar">
-  <div class="relative">
-    <span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-xl text-gray-400">search</span>
+<div class="search-bar" data-onboarding="search-bar">
+  <div class="search-bar__wrapper">
+    <span class="material-symbols-outlined icon-xl search-bar__icon">search</span>
     <input
       type="text"
       value={inputValue}
@@ -50,17 +50,49 @@
       onkeydown={handleKeyDown}
       {autofocus}
       placeholder="Lebensmittel suchen..."
-      class="w-full border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 pl-11 pr-10 py-2 text-base focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/50"
+      class="input search-bar__input"
       aria-label="Lebensmittel suchen"
     />
     {#if inputValue}
       <button
         onclick={clearSearch}
-        class="absolute right-2 top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full p-1.5 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
+        class="btn btn--ghost search-bar__clear"
         aria-label="Suche löschen"
       >
-        <span class="material-symbols-outlined leading-none text-base text-gray-500">close</span>
+        <span class="material-symbols-outlined text-tertiary">close</span>
       </button>
     {/if}
   </div>
 </div>
+
+<style>
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar__wrapper {
+    position: relative;
+  }
+
+  .search-bar__icon {
+    position: absolute;
+    left: var(--space-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+  }
+
+  .search-bar__input {
+    padding-inline-start: 2.75rem;
+    padding-inline-end: 2.5rem;
+  }
+
+  .search-bar__clear {
+    position: absolute;
+    right: var(--space-xs);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: var(--size-2xs);
+    min-height: auto;
+  }
+</style>

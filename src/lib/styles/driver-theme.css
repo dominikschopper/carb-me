@@ -3,16 +3,9 @@
 	/* Increase z-index to appear above dialogs (top layer) */
 	--driver-z-index: 2147483647;
 
-	/* Dark mode colors */
-	--driver-popover-bg: white;
-	--driver-popover-text: #1f2937;
-	--driver-popover-title: #111827;
-}
-
-.dark {
-	--driver-popover-bg: #1f2937;
-	--driver-popover-text: #f3f4f6;
-	--driver-popover-title: #ffffff;
+	--driver-popover-bg: var(--color-bg-elevated);
+	--driver-popover-text: var(--color-text-secondary);
+	--driver-popover-title: var(--color-text);
 }
 
 /* Ensure Driver.js elements appear above fixed navigation */
@@ -28,7 +21,7 @@
 .driver-popover-next-btn,
 .driver-popover-prev-btn,
 .driver-popover-close-btn {
-	font-weight: 500;
-	border-radius: 0.5rem;
-	transition: all 150ms;
+	font-weight: var(--weight-medium);
+	border-radius: var(--radius-md);
+	transition: all var(--transition-fast);
 }

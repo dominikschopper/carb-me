@@ -1,21 +1,19 @@
 /* Main CSS entry point */
 
 /* Define layer order (lowest to highest priority) */
-@layer reset, base, components, utilities, print;
+@layer reset, base, components, utilities;
 
-/* Tailwind */
-@import 'tailwindcss';
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
-
-/* Driver.js for onboarding */
+/* Vendor */
 @import 'driver.js/dist/driver.css';
-@import './driver-theme.css';
 
-/* Import custom styles into their respective layers */
+/* Custom styles */
 @import './reset.css' layer(reset);
+@import './tokens-primitive.css' layer(base);
+@import './tokens-semantic.css' layer(base);
 @import './material-symbols.css' layer(base);
-@import './design-tokens.css' layer(base);
 @import './components.css' layer(components);
 @import './utilities.css' layer(utilities);
-@import './print.css' layer(print);
+
+/* Unlayered (highest priority) */
+@import './driver-theme.css';
+@import './print.css';

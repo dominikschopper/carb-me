@@ -1,39 +1,104 @@
-/* Material Symbols size utilities */
+/* Level 3: Utility Classes
+ * A small, deliberate set of one-off helpers.
+ * If you need 3+ utilities on one element, make a BEM class instead.
+ */
 
-.material-symbols-outlined {
-  font-size: 24px;
+/* --- Text color --- */
+.text-primary   { color: var(--color-primary-text); }
+.text-success   { color: var(--color-success-text); }
+.text-warning   { color: var(--color-warning-text); }
+.text-danger    { color: var(--color-danger-text); }
+.text-accent    { color: var(--color-accent-text); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-tertiary  { color: var(--color-text-tertiary); }
+.text-muted     { color: var(--color-text-muted); }
+.text-inverse   { color: var(--color-text-inverse); }
+.text-favorite  { color: var(--color-favorite); }
+
+/* --- Background --- */
+.bg-primary-soft  { background-color: var(--color-primary-soft); }
+.bg-success-soft  { background-color: var(--color-success-soft); }
+.bg-warning-soft  { background-color: var(--color-warning-soft); }
+.bg-danger-soft   { background-color: var(--color-danger-soft); }
+.bg-accent-soft   { background-color: var(--color-accent-soft); }
+.bg-info          { background-color: var(--color-info-soft); }
+
+/* --- Gap --- */
+.gap-2xs { gap: var(--space-2xs); }
+.gap-xs  { gap: var(--space-xs); }
+.gap-sm  { gap: var(--space-sm); }
+.gap-md  { gap: var(--space-md); }
+.gap-lg  { gap: var(--space-lg); }
+
+/* --- Padding --- */
+.pad-xs  { padding: var(--space-xs); }
+.pad-sm  { padding: var(--space-sm); }
+.pad-md  { padding: var(--space-md); }
+.pad-lg  { padding: var(--space-lg); }
+
+/* --- Layout --- */
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.material-symbols-outlined.text-sm {
-  font-size: 20px;
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.material-symbols-outlined.text-lg {
-  font-size: 28px;
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
-.material-symbols-outlined.text-xl {
-  font-size: 32px;
+/* --- Text size --- */
+.text-2xs { font-size: var(--text-2xs); }
+.text-xs  { font-size: var(--text-xs); }
+.text-sm  { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg  { font-size: var(--text-lg); }
+.text-xl  { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+
+/* --- Font weight --- */
+.font-medium   { font-weight: var(--weight-medium); }
+.font-semibold { font-weight: var(--weight-semibold); }
+.font-bold     { font-weight: var(--weight-bold); }
+
+/* --- Misc --- */
+.text-center { text-align: center; }
+.w-full      { width: 100%; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.material-symbols-outlined.text-2xl {
-  font-size: 36px;
+.divider {
+  border-block-start: 1px solid var(--color-border);
 }
 
-.material-symbols-outlined.text-3xl {
-  font-size: 48px;
-}
+/* --- Material Symbols icon sizes --- */
+.material-symbols-outlined          { font-size: 24px; }
+.material-symbols-outlined.icon-sm  { font-size: 20px; }
+.material-symbols-outlined.icon-md  { font-size: 24px; }
+.material-symbols-outlined.icon-lg  { font-size: 28px; }
+.material-symbols-outlined.icon-xl  { font-size: 32px; }
+.material-symbols-outlined.icon-2xl { font-size: 36px; }
+.material-symbols-outlined.icon-3xl { font-size: 48px; }
+.material-symbols-outlined.icon-5xl { font-size: 64px; }
 
-.material-symbols-outlined.text-4xl {
-  font-size: 56px;
-}
-
-.material-symbols-outlined.text-5xl {
-  font-size: 64px;
-}
-/* --- removing number inputs scroll wheels --- */
-
-/* --- */
+/* --- Number input: hide spinners --- */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;

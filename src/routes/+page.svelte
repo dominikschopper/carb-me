@@ -157,50 +157,50 @@
   }
 </script>
 
-<div class="min-h-screen pb-20">
+<div class="app-shell">
   <Header onMealClick={goToMeal} onHomeClick={goToHome} />
 
-  <main class="container mx-auto max-w-[720px] px-4 py-6">
+  <main class="app-shell__main">
     {#if activeTab === 'search'}
-      <div class="space-y-4">
+      <div class="app-shell__search">
         <SearchBar />
 
         {#if !isSearching}
           <!-- Call-to-Action Bereich -->
-          <div class="card text-center py-3">
-            <p class="text-sm font-medium text-gray-900 dark:text-gray-100 flex items-center justify-center gap-2">
-              <span class="material-symbols-outlined text-base">search</span>
+          <div class="card text-center app-shell__cta">
+            <p class="app-shell__cta-text">
+              <span class="material-symbols-outlined">search</span>
               Einfach lostippen und Lebensmittel finden
             </p>
           </div>
 
-          <div class="border-t border-gray-200 dark:border-gray-700"></div>
+          <div class="divider"></div>
 
           <!-- Favoriten Section -->
-          <div class="space-y-2">
-            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2">
-              <span class="material-symbols-outlined text-base text-yellow-500">star</span>
+          <div class="app-shell__favorites">
+            <h3 class="app-shell__favorites-title">
+              <span class="material-symbols-outlined text-favorite">star</span>
               Favoriten
             </h3>
 
             {#if favoriteFoods.length > 0}
               <!-- Alle Favoriten anzeigen -->
-              <div class="space-y-2">
+              <div class="app-shell__favorites-list">
                 {#each favoriteFoods as food, index (`fav-${food.blsCode}-${index}`)}
                   <FoodCard {food} onclick={() => handleFoodSelect(food)} />
                 {/each}
               </div>
             {:else}
               <!-- Empty State -->
-              <div class="card text-center py-6">
-                <p class="text-md text-gray-500 dark:text-gray-400">
+              <div class="card text-center app-shell__favorites-empty">
+                <p class="app-shell__favorites-hint">
                   Du kannst häufig verwendete Lebensmittel mit einem Stern markieren,<br/>
                   dann werden sie hier angezeigt.
                 </p>
               </div>
             {/if}
 
-            <div class="border-t border-gray-200 dark:border-gray-700 my-4"></div>
+            <div class="divider"></div>
           </div>
         {/if}
 
@@ -227,3 +227,64 @@
     editFood={editFood}
   />
 </div>
+
+<style>
+  .app-shell {
+    min-height: 100vh;
+    padding-block-end: 5rem;
+  }
+
+  .app-shell__main {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .app-shell__search {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .app-shell__cta {
+    padding-block: var(--space-sm);
+  }
+
+  .app-shell__cta-text {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+  }
+
+  .app-shell__favorites {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .app-shell__favorites-title {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .app-shell__favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .app-shell__favorites-empty {
+    padding-block: var(--space-lg);
+  }
+
+  .app-shell__favorites-hint {
+    color: var(--color-text-tertiary);
+  }
+</style>

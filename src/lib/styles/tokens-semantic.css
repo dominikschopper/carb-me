@@ -1,0 +1,188 @@
+/* Level 2: Semantic Tokens
+ * References Level 1 primitives. Assigns meaning.
+ * Dark mode overrides live here — components never need to know about themes.
+ */
+
+:root {
+  /* --- Surfaces --- */
+  --color-bg:          var(--gray-50);
+  --color-bg-elevated: var(--white);
+  --color-bg-inset:    var(--gray-100);
+  --color-bg-overlay:  rgb(0 0 0 / 0.5);
+
+  /* --- Text --- */
+  --color-text:           var(--gray-900);
+  --color-text-secondary: var(--gray-600);
+  --color-text-tertiary:  var(--gray-500);
+  --color-text-muted:     var(--gray-400);
+  --color-text-inverse:   var(--white);
+
+  /* --- Borders --- */
+  --color-border:        var(--gray-200);
+  --color-border-strong: var(--gray-300);
+
+  /* --- Primary (actions, links, brand) --- */
+  --color-primary:       var(--blue-600);
+  --color-primary-hover: var(--blue-700);
+  --color-primary-soft:  var(--blue-50);
+  --color-primary-text:  var(--blue-600);
+  --color-primary-muted: var(--blue-500);
+
+  /* --- Success (carbohydrates, BE values) --- */
+  --color-success:       var(--green-600);
+  --color-success-hover: var(--green-700);
+  --color-success-soft:  var(--green-50);
+  --color-success-text:  var(--green-600);
+  --color-success-light: var(--green-200);
+
+  /* --- Warning (energy/calories) --- */
+  --color-warning:       var(--amber-600);
+  --color-warning-soft:  var(--amber-50);
+  --color-warning-text:  var(--amber-600);
+  --color-warning-light: var(--amber-200);
+
+  /* --- Danger (delete, errors) --- */
+  --color-danger:        var(--red-600);
+  --color-danger-hover:  var(--red-700);
+  --color-danger-soft:   var(--red-50);
+  --color-danger-text:   var(--red-600);
+  --color-danger-border: var(--red-500);
+  --color-danger-marker: var(--red-500);
+
+  /* --- Accent: Purple (KHE unit) --- */
+  --color-accent:       var(--purple-600);
+  --color-accent-soft:  var(--purple-50);
+  --color-accent-text:  var(--purple-600);
+
+  /* --- Favorite star --- */
+  --color-favorite: var(--yellow-500);
+
+  /* --- Caution (legal warnings) --- */
+  --color-caution-soft:    var(--yellow-50);
+  --color-caution-heading: var(--yellow-800);
+  --color-caution-text:    var(--yellow-700);
+
+  /* --- Info box --- */
+  --color-info-soft:    var(--blue-50);
+  --color-info-heading: var(--blue-800);
+  --color-info-text:    var(--blue-700);
+  --color-info-border:  var(--blue-500);
+
+  /* --- Confirm / privacy --- */
+  --color-confirm-soft:    var(--green-50);
+  --color-confirm-heading: var(--green-800);
+  --color-confirm-text:    var(--green-700);
+
+  /* --- Focus --- */
+  --color-focus-ring:   var(--blue-100);
+  --color-focus-border: var(--blue-500);
+
+  /* --- Selected state (settings radio cards) --- */
+  --color-selected-border: var(--blue-600);
+  --color-selected-bg:     var(--blue-50);
+
+  /* --- Spacing (semantic aliases for Level 1 sizes) --- */
+  --space-2xs: var(--size-3xs);  /* 4px */
+  --space-xs:  var(--size-xs);   /* 8px */
+  --space-sm:  var(--size-sm);   /* 12px */
+  --space-md:  var(--size-md);   /* 16px */
+  --space-lg:  var(--size-lg);   /* 24px */
+  --space-xl:  var(--size-xl);   /* 32px */
+
+  /* --- Transition --- */
+  --transition-fast: 150ms ease;
+
+  /* --- Font family --- */
+  --font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* === DARK MODE === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Surfaces */
+    --color-bg:          var(--gray-900);
+    --color-bg-elevated: var(--gray-800);
+    --color-bg-inset:    var(--gray-700);
+
+    /* Text */
+    --color-text:           var(--gray-100);
+    --color-text-secondary: var(--gray-400);
+    --color-text-tertiary:  var(--gray-500);
+    --color-text-muted:     var(--gray-600);
+
+    /* Borders */
+    --color-border:        var(--gray-700);
+    --color-border-strong: var(--gray-600);
+
+    /* Primary */
+    --color-primary:       var(--blue-500);
+    --color-primary-hover: var(--blue-600);
+    --color-primary-soft:  rgb(30 58 90 / 0.3);
+    --color-primary-text:  var(--blue-400);
+    --color-primary-muted: var(--blue-500);
+
+    /* Success */
+    --color-success-soft:  rgb(6 78 59 / 0.3);
+    --color-success-text:  var(--green-400);
+    --color-success-light: var(--green-200);
+
+    /* Warning */
+    --color-warning-soft:  rgb(120 53 15 / 0.3);
+    --color-warning-text:  var(--amber-400);
+    --color-warning-light: var(--amber-200);
+
+    /* Danger */
+    --color-danger:        var(--red-500);
+    --color-danger-hover:  var(--red-600);
+    --color-danger-soft:   rgb(127 29 29 / 0.3);
+    --color-danger-text:   var(--red-400);
+    --color-danger-border: var(--red-400);
+    --color-danger-marker: var(--red-400);
+
+    /* Accent (KHE) */
+    --color-accent-soft:  rgb(88 28 135 / 0.3);
+    --color-accent-text:  var(--purple-400);
+
+    /* Caution */
+    --color-caution-soft:    rgb(113 63 18 / 0.3);
+    --color-caution-heading: var(--yellow-200);
+    --color-caution-text:    var(--yellow-300);
+
+    /* Info box */
+    --color-info-soft:    rgb(30 58 90 / 0.3);
+    --color-info-heading: var(--blue-200);
+    --color-info-text:    var(--blue-300);
+    --color-info-border:  var(--blue-400);
+
+    /* Confirm / privacy */
+    --color-confirm-soft:    rgb(6 78 59 / 0.3);
+    --color-confirm-heading: var(--green-200);
+    --color-confirm-text:    var(--green-300);
+
+    /* Focus */
+    --color-focus-ring: rgb(30 58 90 / 0.5);
+
+    /* Selected state */
+    --color-selected-border: var(--blue-500);
+    --color-selected-bg:     rgb(30 58 90 / 0.3);
+  }
+}
+
+/* --- Base body styles --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+}
+
+/* --- Safe areas for iOS notch --- */
+.safe-area-inset {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}

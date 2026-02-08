@@ -33,93 +33,93 @@
 	}
 </script>
 
-<div class="space-y-4">
-	<div class="flex items-center justify-between">
-		<h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Eigene Lebensmittel</h2>
+<div class="custom-foods">
+	<div class="custom-foods__header">
+		<h2 class="custom-foods__title">Eigene Lebensmittel</h2>
 		<button
 			onclick={onAddClick}
 			data-onboarding="add-custom-food"
-			class="btn-touch bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 flex items-center gap-2"
+			class="btn btn--primary custom-foods__add-btn"
 			type="button"
 		>
-			<span class="material-symbols-outlined leading-none text-base">add_circle</span>
-			<span class="hidden sm:inline">Hinzufügen</span>
+			<span class="material-symbols-outlined">add_circle</span>
+			<span class="custom-foods__add-label">Hinzufügen</span>
 		</button>
 	</div>
 
 	{#if customFoods.length === 0}
 		<!-- Empty state -->
 		<div class="card text-center">
-			<div class="py-8">
-				<span class="material-symbols-outlined mx-auto block text-5xl text-gray-400">restaurant</span>
-				<p class="mt-4 text-gray-600 dark:text-gray-400">Noch keine eigenen Lebensmittel</p>
-				<p class="mt-1 text-sm text-gray-500 dark:text-gray-500">
+			<div class="custom-foods__empty">
+				<span class="material-symbols-outlined icon-5xl text-muted">restaurant</span>
+				<p class="custom-foods__empty-title">Noch keine eigenen Lebensmittel</p>
+				<p class="custom-foods__empty-hint">
 					Füge eigene Lebensmittel mit individuellen Nährwerten hinzu
 				</p>
 				<button
 					onclick={onAddClick}
-					class="btn-touch mt-4 bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 flex align-middle mx-auto"
+					class="btn btn--primary custom-foods__empty-btn"
 					type="button"
 				>
-					<span class="material-symbols-outlined leading-none mr-2">add_circle</span>
+					<span class="material-symbols-outlined">add_circle</span>
 					<span>Etwas hinzufügen</span>
 				</button>
 			</div>
 		</div>
 	{:else}
 		<!-- Custom foods list -->
-		<div class="space-y-2">
+		<div class="custom-foods__list">
 			{#each customFoods as food (food.blsCode)}
 				<div class="card">
-					<div class="flex items-start justify-between gap-3">
+					<div class="custom-foods__item">
 						<!-- Food info - clickable -->
 						<button
 							onclick={() => onFoodSelect(food)}
-							class="flex-1 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 -m-4 p-4 rounded-lg transition-colors"
+							class="custom-foods__item-btn"
 							type="button"
 						>
-							<div class="flex items-start justify-between gap-2">
-								<div class="flex-1">
-									<h3 class="font-medium text-gray-900 dark:text-gray-100">
+							<div class="custom-foods__item-info">
+								<div class="custom-foods__item-name-wrap">
+									<h3 class="custom-foods__item-name">
 										{food.name}
 									</h3>
 									{#if food.subtitle}
-										<p class="text-sm text-gray-600 dark:text-gray-400">
+										<p class="custom-foods__item-subtitle">
 											{food.subtitle}
 										</p>
 									{/if}
 								</div>
 							</div>
-							<div class="mt-2 flex flex-wrap gap-2 text-sm">
-								<span class="badge badge-primary">
+							<div class="custom-foods__item-badges">
+								<span class="badge badge--primary">
 									{food.kh}g KH / 100{food.unit || 'gr'}
 								</span>
-								<span class="badge badge-secondary">
+								<span class="badge badge--secondary">
 									{food.gBE}{food.unit || 'gr'} = 1 BE
 								</span>
-								<span class="badge badge-secondary">
+								<span class="badge badge--secondary">
 									{food.gKHE}{food.unit || 'gr'} = 1 KHE
 								</span>
 							</div>
 						</button>
 
 						<!-- Action buttons -->
-						<div class="flex gap-1 shrink-0">
+						<div class="custom-foods__item-actions">
 							<button
 								onclick={() => onEditClick(food)}
-								class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-lg transition-colors"
+								class="btn btn--ghost custom-foods__action-btn custom-foods__action-btn--edit"
 								aria-label="Bearbeiten"
 								type="button"
 							>
-								<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-xl">edit</span>
+								<span class="material-symbols-outlined icon-xl text-primary">edit</span>
 							</button>
 							<button
 								onclick={() => handleDelete(food.blsCode)}
-								class="p-2 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg transition-colors"
+								class="btn btn--ghost custom-foods__action-btn custom-foods__action-btn--delete"
 								aria-label="Löschen"
 								type="button"
 							>
-								<span class="material-symbols-outlined text-red-600 dark:text-red-400 text-xl">delete</span>
+								<span class="material-symbols-outlined icon-xl text-danger">delete</span>
 							</button>
 						</div>
 					</div>
@@ -128,8 +128,8 @@
 		</div>
 
 		<!-- Info text -->
-		<div class="rounded-lg bg-blue-50 p-4 dark:bg-blue-900/30">
-			<p class="text-sm text-gray-700 dark:text-gray-300">
+		<div class="info-box">
+			<p class="custom-foods__count">
 				<span class="font-medium">{customFoods.length}</span>
 				{customFoods.length === 1 ? 'eigenes Lebensmittel' : 'eigene Lebensmittel'}
 			</p>
@@ -139,25 +139,25 @@
 
 <!-- Delete Confirmation Dialog -->
 {#if showDeleteConfirm}
-	<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-		<div class="w-full max-w-sm rounded-2xl bg-white p-6 dark:bg-gray-800">
-			<h3 class="mb-4 text-lg font-bold text-gray-900 dark:text-gray-100">
+	<div class="custom-foods__overlay">
+		<div class="custom-foods__confirm-dialog">
+			<h3 class="custom-foods__confirm-title">
 				Lebensmittel löschen?
 			</h3>
-			<p class="mb-6 text-sm text-gray-600 dark:text-gray-400">
+			<p class="custom-foods__confirm-text">
 				Möchtest du dieses Lebensmittel wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.
 			</p>
-			<div class="flex gap-3">
+			<div class="custom-foods__confirm-actions">
 				<button
 					onclick={cancelDelete}
-					class="btn-touch flex-1 border-2 border-gray-300 bg-white text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+					class="btn btn--outline custom-foods__confirm-btn"
 					type="button"
 				>
 					Abbrechen
 				</button>
 				<button
 					onclick={confirmDelete}
-					class="btn-touch flex-1 bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600"
+					class="btn btn--danger custom-foods__confirm-btn"
 					type="button"
 				>
 					Löschen
@@ -166,3 +166,169 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	.custom-foods {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+	}
+
+	.custom-foods__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.custom-foods__title {
+		font-size: var(--text-xl);
+		font-weight: var(--weight-bold);
+	}
+
+	.custom-foods__add-label {
+		display: none;
+	}
+
+	@media (min-width: 640px) {
+		.custom-foods__add-label {
+			display: inline;
+		}
+	}
+
+	.custom-foods__empty {
+		padding-block: var(--space-xl);
+	}
+
+	.custom-foods__empty-title {
+		margin-block-start: var(--space-md);
+		color: var(--color-text-secondary);
+	}
+
+	.custom-foods__empty-hint {
+		margin-block-start: var(--size-3xs);
+		font-size: var(--text-sm);
+		color: var(--color-text-tertiary);
+	}
+
+	.custom-foods__empty-btn {
+		margin-block-start: var(--space-md);
+	}
+
+	.custom-foods__list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xs);
+	}
+
+	.custom-foods__item {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: var(--space-sm);
+	}
+
+	.custom-foods__item-btn {
+		flex: 1;
+		text-align: left;
+		background: none;
+		border: none;
+		cursor: pointer;
+		font: inherit;
+		margin: calc(-1 * var(--space-md));
+		padding: var(--space-md);
+		border-radius: var(--radius-lg);
+		transition: background-color var(--transition-fast);
+	}
+
+	.custom-foods__item-btn:hover {
+		background-color: var(--color-bg-inset);
+	}
+
+	.custom-foods__item-info {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: var(--space-xs);
+	}
+
+	.custom-foods__item-name-wrap {
+		flex: 1;
+	}
+
+	.custom-foods__item-name {
+		font-weight: var(--weight-medium);
+	}
+
+	.custom-foods__item-subtitle {
+		font-size: var(--text-sm);
+		color: var(--color-text-secondary);
+	}
+
+	.custom-foods__item-badges {
+		margin-block-start: var(--space-xs);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-xs);
+		font-size: var(--text-sm);
+	}
+
+	.custom-foods__item-actions {
+		display: flex;
+		gap: var(--size-3xs);
+		flex-shrink: 0;
+	}
+
+	.custom-foods__action-btn--edit:hover {
+		background-color: var(--color-primary-soft);
+	}
+
+	.custom-foods__action-btn--delete:hover {
+		background-color: var(--color-danger-soft);
+	}
+
+	.custom-foods__count {
+		font-size: var(--text-sm);
+		color: var(--color-text-secondary);
+	}
+
+	/* Delete confirmation overlay */
+	.custom-foods__overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 50;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--color-bg-overlay);
+		padding: var(--space-md);
+	}
+
+	.custom-foods__confirm-dialog {
+		width: 100%;
+		max-width: 24rem;
+		border-radius: var(--radius-xl);
+		background-color: var(--color-bg-elevated);
+		padding: var(--space-lg);
+	}
+
+	.custom-foods__confirm-title {
+		margin-block-end: var(--space-md);
+		font-size: var(--text-lg);
+		font-weight: var(--weight-bold);
+	}
+
+	.custom-foods__confirm-text {
+		margin-block-end: var(--space-lg);
+		font-size: var(--text-sm);
+		color: var(--color-text-secondary);
+	}
+
+	.custom-foods__confirm-actions {
+		display: flex;
+		gap: var(--space-sm);
+	}
+
+	.custom-foods__confirm-btn {
+		flex: 1;
+	}
+</style>

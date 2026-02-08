@@ -19,7 +19,7 @@
 </script>
 
 <!-- Print header (hidden on screen, shown in print) -->
-<div class="print-header hidden print:block">
+<div class="print-header food-list__print-header">
   {#if searchQuery}
     carb-me - Suchergebnis: {searchQuery}
   {:else}
@@ -28,25 +28,25 @@
 </div>
 
 <!-- Screen view (hidden in print) -->
-<div class="space-y-3 print:hidden">
+<div class="food-list food-list--screen">
   {#if loading}
     <!-- Loading skeleton -->
     {#each Array(3) as _}
       <div class="card">
-        <div class="skeleton h-6 w-1/2 rounded"></div>
-        <div class="mt-2 flex gap-2">
-          <div class="skeleton h-6 w-24 rounded"></div>
-          <div class="skeleton h-6 w-24 rounded"></div>
+        <div class="skeleton food-list__skeleton-title"></div>
+        <div class="food-list__skeleton-row">
+          <div class="skeleton food-list__skeleton-badge"></div>
+          <div class="skeleton food-list__skeleton-badge"></div>
         </div>
       </div>
     {/each}
   {:else if foods.length === 0 && isSearching}
     <!-- Empty search results -->
     <div class="card text-center">
-      <div class="py-8">
-        <span class="material-symbols-outlined mx-auto block text-5xl text-gray-400">sentiment_dissatisfied</span>
-        <p class="mt-4 text-gray-600 dark:text-gray-400">Keine Lebensmittel gefunden</p>
-        <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">Probier etwas anderes</p>
+      <div class="food-list__empty">
+        <span class="material-symbols-outlined icon-5xl text-muted">sentiment_dissatisfied</span>
+        <p class="food-list__empty-title">Keine Lebensmittel gefunden</p>
+        <p class="food-list__empty-hint">Probier etwas anderes</p>
       </div>
     </div>
   {:else}
@@ -59,9 +59,66 @@
 
 <!-- Print view (hidden on screen, shown in print) - only shows search results -->
 {#if isSearching && foods.length > 0}
-  <div class="hidden print:block print-grid">
+  <div class="food-list--print print-grid">
     {#each foods as food, index (`${food.blsCode || food.name}-${index}-print`)}
       <PrintFoodCard {food} />
     {/each}
   </div>
 {/if}
+
+<style>
+  .food-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .food-list--screen {
+    display: flex;
+  }
+
+  .food-list--print {
+    display: none;
+  }
+
+  .food-list__print-header {
+    display: none;
+  }
+
+  .food-list__skeleton-title {
+    height: 1.5rem;
+    width: 50%;
+  }
+
+  .food-list__skeleton-row {
+    display: flex;
+    gap: var(--space-xs);
+    margin-block-start: var(--space-xs);
+  }
+
+  .food-list__skeleton-badge {
+    height: 1.5rem;
+    width: 6rem;
+  }
+
+  .food-list__empty {
+    padding-block: var(--space-xl);
+  }
+
+  .food-list__empty-title {
+    margin-block-start: var(--space-md);
+    color: var(--color-text-secondary);
+  }
+
+  .food-list__empty-hint {
+    margin-block-start: var(--size-3xs);
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+
+  @media print {
+    .food-list--screen { display: none !important; }
+    .food-list--print { display: block !important; }
+    .food-list__print-header { display: block !important; }
+  }
+</style>

@@ -11,17 +11,6 @@
   margin: 0;
 }
 
-/* Allow Tailwind margin utilities to work */
-.mx-auto,
-[class*='mx-'],
-[class*='ml-'],
-[class*='mr-'],
-[class*='my-'],
-[class*='mt-'],
-[class*='mb-'],
-[class*='m-'] {
-  margin: revert-layer;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   html {

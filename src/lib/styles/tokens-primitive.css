@@ -1,0 +1,117 @@
+/* Level 1: Primitive Tokens
+ * Raw color values and size scales with no semantic meaning.
+ * Change values here to shift the app's entire color personality.
+ */
+
+:root {
+  /* --- Colors: Blue --- */
+  --blue-50:  #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a5a;
+
+  /* --- Colors: Gray --- */
+  --gray-50:  #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* --- Colors: Green --- */
+  --green-50:  #ecfdf5;
+  --green-200: #a7f3d0;
+  --green-400: #34d399;
+  --green-600: #059669;
+  --green-700: #047857;
+  --green-800: #065f46;
+  --green-900: #064e3b;
+
+  /* --- Colors: Red --- */
+  --red-50:  #fef2f2;
+  --red-300: #fca5a5;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+  --red-900: #7f1d1d;
+
+  /* --- Colors: Amber --- */
+  --amber-50:  #fffbeb;
+  --amber-200: #fde68a;
+  --amber-400: #fbbf24;
+  --amber-600: #d97706;
+  --amber-800: #92400e;
+  --amber-900: #78350f;
+
+  /* --- Colors: Purple --- */
+  --purple-50:  #faf5ff;
+  --purple-400: #c084fc;
+  --purple-600: #9333ea;
+  --purple-900: #581c87;
+
+  /* --- Colors: Yellow --- */
+  --yellow-50:  #fefce8;
+  --yellow-200: #fef08a;
+  --yellow-300: #fde047;
+  --yellow-500: #eab308;
+  --yellow-700: #a16207;
+  --yellow-800: #854d0e;
+  --yellow-900: #713f12;
+
+  /* --- Colors: Neutral --- */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* --- Size scale --- */
+  --size-4xs: 0.125rem;  /* 2px */
+  --size-3xs: 0.25rem;   /* 4px */
+  --size-2xs: 0.375rem;  /* 6px */
+  --size-xs:  0.5rem;    /* 8px */
+  --size-sm:  0.75rem;   /* 12px */
+  --size-md:  1rem;      /* 16px */
+  --size-lg:  1.5rem;    /* 24px */
+  --size-xl:  2rem;      /* 32px */
+  --size-2xl: 3rem;      /* 48px */
+  --size-3xl: 4rem;      /* 64px */
+
+  /* --- Border radius --- */
+  --radius-sm:   0.375rem; /* 6px */
+  --radius-md:   0.5rem;   /* 8px */
+  --radius-lg:   0.75rem;  /* 12px */
+  --radius-xl:   1rem;     /* 16px */
+  --radius-full: 9999px;
+
+  /* --- Text sizes --- */
+  --text-2xs:  0.625rem;  /* 10px */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+
+  /* --- Font weights --- */
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* --- Layout --- */
+  --touch-min: 44px;
+  --content-max-width: 720px;
+}

@@ -78,31 +78,31 @@
   bind:this={dialog}
   onclose={handleClose}
   data-onboarding="calculator"
-  class="w-full max-w-lg rounded-2xl bg-white p-0 backdrop:bg-black/50 dark:bg-gray-800 sm:rounded-2xl"
+  class="dialog calculator"
 >
   {#if food}
-    <div class="p-6">
+    <div class="calculator__body">
       <!-- Header -->
-      <div class="mb-4 flex items-start justify-between">
+      <div class="calculator__header">
         <div>
-          <h2 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 wrap-anywhere">
+          <h2 class="calculator__title">
             {food.name}
           </h2>
-          <p class="text-sm"><span class="text-green-600 dark:text-green-400">{food.kh}g KH</span> <span class="text-gray-500 dark:text-gray-400">/ 100{food.unit || 'g'}</span></p>
+          <p class="calculator__subtitle"><span class="text-success">{food.kh}g KH</span> <span class="text-tertiary">/ 100{food.unit || 'g'}</span></p>
         </div>
         <button
           onclick={handleClose}
-          class="flex items-center justify-center rounded-full p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
+          class="btn btn--ghost"
           aria-label="Schließen"
           type="button"
         >
-          <span class="material-symbols-outlined leading-none text-gray-500">close</span>
+          <span class="material-symbols-outlined text-tertiary">close</span>
         </button>
       </div>
 
       <!-- Gram/ml input -->
-      <div class="mb-4">
-        <label for="grams-input" class="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
+      <div class="calculator__input-group">
+        <label for="grams-input" class="calculator__label">
           Menge in {food.unit === 'ml' ? 'ml' : 'gr'}
         </label>
         <input
@@ -115,17 +115,17 @@
           min="1"
           step="1"
           inputmode="numeric"
-          class="input-touch w-full"
+          class="input w-full"
           autofocus
         />
       </div>
 
       <!-- Quick presets -->
-      <div class="mb-6 flex gap-2">
+      <div class="calculator__presets">
         {#each [50, 150, 200, 250] as amount}
           <button
             onclick={() => setQuickAmount(amount)}
-            class="btn-touch flex-1 bg-gray-100 px-2 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+            class="btn btn--secondary calculator__preset-btn"
             type="button"
           >
             {amount}{food.unit || 'gr'}
@@ -135,46 +135,46 @@
 
       <!-- Results -->
       {#if result}
-        <div class="mb-6 space-y-3 rounded-lg bg-blue-50 p-4 dark:bg-blue-900/30">
+        <div class="calculator__results info-box">
           <UnitDisplay>
             {#snippet beContent()}
-              <div class="flex items-center justify-between">
-                <span class="font-medium text-gray-700 dark:text-gray-300">
-                  <span class="text-green-600 dark:text-green-400">{formatNumber(result.carbs)}g KH</span> =
+              <div class="calculator__result-row">
+                <span class="calculator__result-label">
+                  <span class="text-success">{formatNumber(result.carbs)}g KH</span> =
                 </span>
-                <span class="font-bold text-blue-600 dark:text-blue-400">{formatNumber(result.be)} BE</span>
+                <span class="calculator__result-value text-primary font-bold">{formatNumber(result.be)} BE</span>
               </div>
             {/snippet}
             {#snippet kheContent()}
-              <div class="flex items-center justify-between">
-                <span class="font-medium text-gray-700 dark:text-gray-300">
-                  <span class="text-green-600 dark:text-green-400">{formatNumber(result.carbs)}g KH</span> =
+              <div class="calculator__result-row">
+                <span class="calculator__result-label">
+                  <span class="text-success">{formatNumber(result.carbs)}g KH</span> =
                 </span>
-                <span class="font-bold text-purple-600 dark:text-purple-400">{formatNumber(result.khe)} KHE</span>
+                <span class="calculator__result-value text-accent font-bold">{formatNumber(result.khe)} KHE</span>
               </div>
             {/snippet}
           </UnitDisplay>
           {#if settings.showEnergy && energyForGrams !== null}
-            <div class="flex items-center justify-between border-t border-blue-200 pt-3 dark:border-blue-800">
-              <span class="text-sm text-gray-600 dark:text-gray-400">Brennwert</span>
-              <span class="text-lg font-semibold text-amber-600 dark:text-amber-400">{energyForGrams} {settings.energyUnit}</span>
+            <div class="calculator__energy-row">
+              <span class="calculator__energy-label">Brennwert</span>
+              <span class="calculator__energy-value">{energyForGrams} {settings.energyUnit}</span>
             </div>
           {/if}
         </div>
       {/if}
 
       <!-- Actions -->
-      <div class="flex gap-3">
+      <div class="calculator__actions">
         <button
           onclick={handleClose}
-          class="btn-touch flex-1 border-2 border-gray-300 bg-white text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+          class="btn btn--outline calculator__action-btn"
           type="button"
         >
           Abbrechen
         </button>
         <button
           onclick={addToMeal}
-          class="btn-touch flex-1 bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+          class="btn btn--primary calculator__action-btn"
           type="button"
         >
           Zu Mahlzeit hinzufügen
@@ -185,11 +185,107 @@
 </dialog>
 
 <style>
-  dialog {
-    margin: auto;
+  .calculator {
+    max-width: 32rem;
   }
 
-  dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+  .calculator__body {
+    padding: var(--space-lg);
+  }
+
+  .calculator__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-block-end: var(--space-md);
+  }
+
+  .calculator__title {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 640px) {
+    .calculator__title {
+      font-size: var(--text-xl);
+    }
+  }
+
+  .calculator__subtitle {
+    font-size: var(--text-sm);
+  }
+
+  .calculator__input-group {
+    margin-block-end: var(--space-md);
+  }
+
+  .calculator__label {
+    display: block;
+    margin-block-end: var(--space-xs);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+  }
+
+  .calculator__presets {
+    display: flex;
+    gap: var(--space-xs);
+    margin-block-end: var(--space-lg);
+  }
+
+  .calculator__preset-btn {
+    flex: 1;
+    padding-inline: var(--space-xs);
+  }
+
+  .calculator__results {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-block-end: var(--space-lg);
+  }
+
+  .calculator__result-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .calculator__result-label {
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+  }
+
+  .calculator__result-value {
+    font-size: var(--text-base);
+  }
+
+  .calculator__energy-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-block-start: 1px solid var(--color-border);
+    padding-block-start: var(--space-sm);
+  }
+
+  .calculator__energy-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .calculator__energy-value {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    color: var(--color-warning-text);
+  }
+
+  .calculator__actions {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .calculator__action-btn {
+    flex: 1;
   }
 </style>

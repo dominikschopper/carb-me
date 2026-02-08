@@ -28,51 +28,51 @@
 </script>
 
 <div
-  class="card w-full cursor-pointer text-left transition-all mb-1 hover:shadow-md active:scale-[0.98]"
+  class="card food-card"
   onclick={handleCardClick}
   role="button"
   tabindex="0"
   onkeydown={(e) => e.key === 'Enter' && handleCardClick()}
 >
-  <div class="flex items-start justify-between gap-3" data-onboarding="calculator-open">
-    <div class="flex-1">
-      <div class="flex items-center gap-2">
+  <div class="food-card__header" data-onboarding="calculator-open">
+    <div class="food-card__body">
+      <div class="food-card__title-row">
         <hgroup>
-        <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 wrap-anywhere">
+        <h3 class="food-card__title">
           {food.name}
           {#if food.isCustom}
-            <span class="ml-1 text-xs text-blue-600 dark:text-blue-400">(Eigenes)</span>
+            <span class="food-card__custom-badge">(Eigenes)</span>
           {/if}
         </h3>
         {#if food.subtitle}
-          <p class="text-sm text-gray-500 dark:text-gray-400">{food.subtitle}</p>
+          <p class="food-card__subtitle">{food.subtitle}</p>
         {/if}
         </hgroup>
       </div>
 
-      <div class="mt-1 text-sm">
-        <span class="text-green-600 dark:text-green-400">{food.kh}grKH</span> <span class="text-gray-600 dark:text-gray-400">/ <GrOrMl value="100" unit={food.unit}></GrOrMl></span>
+      <div class="food-card__nutrients">
+        <span class="text-success">{food.kh}grKH</span> <span class="text-secondary">/ <GrOrMl value="100" unit={food.unit}></GrOrMl></span>
         {#if settings.showEnergy && energyValue()}
-          <span class="mx-1">·</span>
-          <span class="text-amber-600 dark:text-amber-400">{energyValue()}</span>
+          <span class="food-card__dot">·</span>
+          <span class="text-warning">{energyValue()}</span>
         {/if}
       </div>
 
-      <div class="mt-2 text-xs">
+      <div class="food-card__units">
         <UnitDisplay>
           {#snippet beContent()}
-            <span class="rounded-md bg-green-50 px-2 py-1 dark:bg-green-900/30">1 BE = <GrOrMl value={food.gBE} unit={food.unit}></GrOrMl> </span>
+            <span class="food-card__unit-badge bg-success-soft">1 BE = <GrOrMl value={food.gBE} unit={food.unit}></GrOrMl> </span>
           {/snippet}
           {#snippet kheContent()}
-            <span class="rounded-md bg-purple-50 px-2 py-1 dark:bg-purple-900/30">1 KHE = <GrOrMl value={food.gKHE} unit={food.unit}></GrOrMl></span>
+            <span class="food-card__unit-badge bg-accent-soft">1 KHE = <GrOrMl value={food.gKHE} unit={food.unit}></GrOrMl></span>
           {/snippet}
         </UnitDisplay>
       </div>
 
       {#if food.categories && food.categories.length > 0}
-        <div class="mt-2 flex flex-wrap gap-1">
+        <div class="food-card__categories">
           {#each food.categories as category}
-            <span class="text-xs text-gray-500 dark:text-gray-400">
+            <span class="food-card__category">
               {category.join(' › ')}
             </span>
           {/each}
@@ -83,13 +83,107 @@
     <button
       onclick={toggleFavorite}
       data-onboarding="favorite-star"
-      class="flex flex-shrink-0 items-center justify-center rounded-full p-2 hover:bg-gray-100 active:scale-95 dark:hover:bg-gray-700"
+      class="btn btn--ghost food-card__fav-btn"
       aria-label={isFavorite ? 'Von Favoriten entfernen' : 'Zu Favoriten hinzufügen'}
       type="button"
     >
-      <span class="material-symbols-outlined leading-none {isFavorite ? 'text-yellow-500' : 'text-gray-400'}">
+      <span class="material-symbols-outlined {isFavorite ? 'text-favorite' : 'text-muted'}">
         {isFavorite ? 'star' : 'star_outline'}
       </span>
     </button>
   </div>
 </div>
+
+<style>
+  .food-card {
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    margin-block-end: var(--size-3xs);
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .food-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .food-card:active {
+    transform: scale(0.98);
+  }
+
+  .food-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+
+  .food-card__body {
+    flex: 1;
+  }
+
+  .food-card__title-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .food-card__title {
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 640px) {
+    .food-card__title {
+      font-size: var(--text-lg);
+    }
+  }
+
+  .food-card__custom-badge {
+    margin-inline-start: var(--size-3xs);
+    font-size: var(--text-xs);
+    color: var(--color-primary-text);
+  }
+
+  .food-card__subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+
+  .food-card__nutrients {
+    margin-block-start: var(--size-3xs);
+    font-size: var(--text-sm);
+  }
+
+  .food-card__dot {
+    margin-inline: var(--size-3xs);
+  }
+
+  .food-card__units {
+    margin-block-start: var(--space-xs);
+    font-size: var(--text-xs);
+  }
+
+  .food-card__unit-badge {
+    display: inline-block;
+    padding: var(--size-3xs) var(--space-xs);
+    border-radius: var(--radius-md);
+  }
+
+  .food-card__categories {
+    margin-block-start: var(--space-xs);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-3xs);
+  }
+
+  .food-card__category {
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+  }
+
+  .food-card__fav-btn {
+    flex-shrink: 0;
+  }
+</style>

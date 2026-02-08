@@ -17,32 +17,32 @@
   }
 </script>
 
-<header class="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur dark:border-gray-700 dark:bg-gray-900/95">
-  <div class="container mx-auto max-w-[720px] px-4 py-4">
-    <div class="flex items-center justify-between">
-      <button onclick={handleHomeClick} class="text-2xl font-bold text-blue-600 transition-opacity hover:opacity-75 active:scale-95 dark:text-blue-400" aria-label="Zur Startseite" type="button" role="link" data-onboarding="start">
+<header class="header">
+  <div class="header__inner">
+    <div class="header__content">
+      <button onclick={handleHomeClick} class="header__brand" aria-label="Zur Startseite" type="button" role="link" data-onboarding="start">
         carb-me
       </button>
 
       {#if hasMealItems}
         <button
           onclick={handleMealClick}
-          class="flex items-center gap-3 text-sm transition-opacity hover:opacity-75 active:scale-95"
+          class="header__meal-btn"
           aria-label="Zur Mahlzeit wechseln"
           type="button"
         >
-          <div class="text-right" data-onboarding="meal-list-header">
+          <div class="header__meal-info" data-onboarding="meal-list-header">
             <UnitDisplay>
               {#snippet beContent()}
-                <div class="font-semibold text-blue-600 dark:text-blue-400">{formatNumber(mealStore.totalBE)} BE</div>
+                <div class="header__meal-unit text-primary">{formatNumber(mealStore.totalBE)} BE</div>
               {/snippet}
               {#snippet kheContent()}
-                <div class="font-semibold text-purple-600 dark:text-purple-400">{formatNumber(mealStore.totalKHE)} KHE</div>
+                <div class="header__meal-unit text-accent">{formatNumber(mealStore.totalKHE)} KHE</div>
               {/snippet}
             </UnitDisplay>
-            <div class="text-xs text-gray-500 dark:text-gray-400">{formatNumber(totalCarbs)}g KH</div>
+            <div class="header__meal-carbs">{formatNumber(totalCarbs)}g KH</div>
           </div>
-          <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+          <div class="header__meal-badge">
             {mealStore.items.length}
           </div>
         </button>
@@ -50,3 +50,81 @@
     </div>
   </div>
 </header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    border-block-end: 1px solid var(--color-border);
+    background-color: color-mix(in srgb, var(--color-bg-elevated) 95%, transparent);
+    backdrop-filter: blur(8px);
+  }
+
+  .header__inner {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding: var(--space-md);
+  }
+
+  .header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__brand {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary-text);
+    transition: opacity var(--transition-fast);
+  }
+
+  .header__brand:hover { opacity: 0.75; }
+  .header__brand:active { transform: scale(0.95); }
+
+  .header__meal-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-size: var(--text-sm);
+    transition: opacity var(--transition-fast);
+  }
+
+  .header__meal-btn:hover { opacity: 0.75; }
+  .header__meal-btn:active { transform: scale(0.95); }
+
+  .header__meal-info {
+    text-align: right;
+  }
+
+  .header__meal-unit {
+    font-weight: var(--weight-semibold);
+  }
+
+  .header__meal-carbs {
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+  }
+
+  .header__meal-badge {
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary-soft);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary-text);
+  }
+</style>

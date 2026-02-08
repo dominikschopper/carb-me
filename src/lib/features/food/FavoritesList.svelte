@@ -8,26 +8,60 @@
   const favoriteFoods = $derived(foodStore.favoriteFoods);
 </script>
 
-<div class="space-y-4">
-  <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Favoriten</h2>
+<div class="favorites">
+  <h2 class="favorites__title">Favoriten</h2>
 
   {#if favoriteFoods.length === 0}
     <!-- Empty state -->
     <div class="card text-center">
-      <div class="py-8">
-        <span class="material-symbols-outlined mx-auto block text-5xl text-gray-400">star_outline</span>
-        <p class="mt-4 text-gray-600 dark:text-gray-400">Noch keine Favoriten</p>
-        <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">
+      <div class="favorites__empty">
+        <span class="material-symbols-outlined icon-5xl text-muted">star_outline</span>
+        <p class="favorites__empty-title">Noch keine Favoriten</p>
+        <p class="favorites__empty-hint">
           Markiere Lebensmittel mit einem Stern, um sie hier schnell wiederzufinden
         </p>
       </div>
     </div>
   {:else}
     <!-- Favorites list -->
-    <div class="space-y-2">
+    <div class="favorites__list">
       {#each favoriteFoods as food (food.blsCode)}
         <FoodCard {food} onclick={() => onFoodSelect(food)} />
       {/each}
     </div>
   {/if}
 </div>
+
+<style>
+  .favorites {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .favorites__title {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+  }
+
+  .favorites__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .favorites__empty {
+    padding-block: var(--space-xl);
+  }
+
+  .favorites__empty-title {
+    margin-block-start: var(--space-md);
+    color: var(--color-text-secondary);
+  }
+
+  .favorites__empty-hint {
+    margin-block-start: var(--size-3xs);
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+</style>
