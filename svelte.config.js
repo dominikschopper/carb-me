@@ -14,6 +14,9 @@ const config = {
       assets: 'build',
       fallback: 'index.html',
     }),
+    serviceWorker: {
+      register: false, // Let PWA plugin handle registration
+    },
   },
 };
 

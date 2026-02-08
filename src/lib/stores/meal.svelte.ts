@@ -1,4 +1,4 @@
-import { mealStorage } from '$lib/utils/storage';
+import { mealStorage } from '$lib/shared/storage';
 import type { MealItem, FoodItem } from '$lib/types/food';
 
 class MealStore {

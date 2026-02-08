@@ -1,5 +1,5 @@
 import { APP_VERSION, DEFAULT_VERSION, getVersionNotes, type VersionNotes } from '$lib/version';
-import { lastSeenVersionStorage } from '$lib/utils/storage';
+import { lastSeenVersionStorage } from '$lib/shared/storage';
 
 const UPDATE_CHECK_INTERVAL_MS = 60 * 60 * 1000; // 60 minutes
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { FoodItem } from '$lib/types/food';
-	import FoodCard from './FoodCard.svelte';
+	import FoodCard from '$lib/features/food/FoodCard.svelte';
 	import { foodStore } from '$lib/stores/foods.svelte';
 
 	let {

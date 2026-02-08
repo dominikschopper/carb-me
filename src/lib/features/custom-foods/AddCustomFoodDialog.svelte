@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { FoodItem } from '$lib/types/food';
-  import { calculateUnitsFromCarbs, kcalToKj, kjToKcal } from '$lib/utils/calculator';
-  import { generateCustomFoodId } from '$lib/utils/id-generator';
+  import { calculateUnitsFromCarbs, kcalToKj, kjToKcal } from '$lib/features/food/calculator';
+  import { generateCustomFoodId } from './id-generator';
   import { foodStore } from '$lib/stores/foods.svelte';
 
   let { isOpen, onClose, editFood }: { isOpen: boolean; onClose: () => void; editFood?: FoodItem | null } = $props();

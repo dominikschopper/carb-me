@@ -20,7 +20,7 @@ const localStorageMock = {
 vi.stubGlobal('localStorage', localStorageMock);
 
 import { swStore } from './serviceWorker.svelte';
-import { lastSeenVersionStorage } from '$lib/utils/storage';
+import { lastSeenVersionStorage } from '$lib/shared/storage';
 import { APP_VERSION } from '$lib/version';
 
 describe('ServiceWorkerStore', () => {
@@ -75,12 +75,16 @@ describe('ServiceWorkerStore', () => {
       expect(swStore.updateInfo).toBe(null);
     });
 
-    it('should handle first-time users (default version 1.0.0)', () => {
+    it('should handle first-time users (default version 1.0.0) - no notification', () => {
       // Don't set any version, should use default '1.0.0'
+      // First-time users should NOT see an update notification,
+      // the version is silently saved instead
       swStore.notifyUpdate('1.11.0');
 
-      expect(swStore.updateAvailable).toBe(true);
-      expect(swStore.updateInfo?.version).toBe('1.11.0');
+      expect(swStore.updateAvailable).toBe(false);
+      expect(swStore.updateInfo).toBe(null);
+      // Version should be saved silently
+      expect(lastSeenVersionStorage.get()).toBe('1.11.0');
     });
   });
 
@@ -105,7 +109,7 @@ describe('ServiceWorkerStore', () => {
   });
 
   describe('Dismiss Update', () => {
-    it('should clear update state and save version', () => {
+    it('should clear update state but NOT save version (snooze behavior)', () => {
       lastSeenVersionStorage.set('1.9.0');
       const nextVersion = '1.10.0';
       swStore.notifyUpdate(nextVersion);
@@ -116,9 +120,24 @@ describe('ServiceWorkerStore', () => {
 
       expect(swStore.updateAvailable).toBe(false);
       expect(swStore.updateInfo).toBe(null);
-      // Version should be saved to prevent showing again
+      // Version should NOT be saved - periodic check will re-trigger notification
       const savedVersion = lastSeenVersionStorage.get();
-      expect(savedVersion).toBe(APP_VERSION);
+      expect(savedVersion).toBe('1.9.0'); // Still the old version
+    });
+
+    it('should allow re-notification after dismiss (snooze)', () => {
+      lastSeenVersionStorage.set('1.9.0');
+      const nextVersion = '1.10.0';
+
+      swStore.notifyUpdate(nextVersion);
+      expect(swStore.updateAvailable).toBe(true);
+
+      swStore.dismissUpdate();
+      expect(swStore.updateAvailable).toBe(false);
+
+      // Simulate periodic check - should show again since version wasn't saved
+      swStore.notifyUpdate(nextVersion);
+      expect(swStore.updateAvailable).toBe(true);
     });
   });
 
@@ -132,12 +151,9 @@ describe('ServiceWorkerStore', () => {
   });
 
   describe('Service Worker Registration', () => {
-    it('should store registration', () => {
-      const mockRegistration = {} as ServiceWorkerRegistration;
-
-      swStore.setRegistration(mockRegistration);
-
-      expect(swStore.registration).toBe(mockRegistration);
+    it('should have registration property', () => {
+      // Registration is set internally by init(), just verify the property exists
+      expect(swStore.registration).toBe(null); // Default state
     });
   });
 
@@ -158,15 +174,17 @@ describe('ServiceWorkerStore', () => {
       expect(swStore.updateAvailable).toBe(true);
     });
 
-    it('should not show update multiple times for same version', () => {
+    it('should not show update after markVersionSeen', () => {
       lastSeenVersionStorage.set('1.9.0');
       const nextVersion = '1.10.0';
 
       swStore.notifyUpdate(nextVersion);
       expect(swStore.updateAvailable).toBe(true);
 
-      swStore.dismissUpdate();
-      expect(swStore.updateAvailable).toBe(false);
+      // User clicks "Update Now" which calls markVersionSeen
+      swStore.markVersionSeen();
+      swStore.updateAvailable = false;
+      swStore.updateInfo = null;
 
       // Try to notify again - should not show because version was saved
       swStore.notifyUpdate(nextVersion);

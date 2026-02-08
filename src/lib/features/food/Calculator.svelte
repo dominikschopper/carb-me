@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { FoodItem } from '$lib/types/food';
-  import { calculateNutrition } from '$lib/utils/calculator';
-  import { formatNumber } from '$lib/utils/formatting';
+  import { calculateNutrition } from './calculator';
+  import { formatNumber } from '$lib/shared/formatting';
   import { mealStore } from '$lib/stores/meal.svelte';
   import { settingsStore } from '$lib/stores/settings.svelte';
-  import UnitDisplay from './UnitDisplay.svelte';
+  import UnitDisplay from '$lib/shared/UnitDisplay.svelte';
 
   let { food, onClose }: { food: FoodItem | null; onClose: () => void } = $props();
 

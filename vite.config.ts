@@ -19,10 +19,20 @@ export default defineConfig({
     tailwindcss(),
     sveltekit(),
     SvelteKitPWA({
-      strategies: 'injectManifest',
-      injectManifest: {
+      strategies: 'generateSW',
+      registerType: 'prompt',
+      workbox: {
         globPatterns: ['**/*.{js,css,html,png,svg,json,woff,woff2}'],
-        injectionPoint: 'self.__WB_MANIFEST'
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/.*\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images',
+              expiration: { maxEntries: 50, maxAgeSeconds: 30 * 24 * 60 * 60 }
+            }
+          }
+        ]
       },
       manifest: {
         name: 'carb-me - BE & KHE Rechner',

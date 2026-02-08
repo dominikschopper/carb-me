@@ -1,7 +1,7 @@
 <script lang="ts">
   import { mealStore } from '$lib/stores/meal.svelte';
-  import { formatNumber } from '$lib/utils/formatting';
-  import UnitDisplay from './UnitDisplay.svelte';
+  import { formatNumber } from '$lib/shared/formatting';
+  import UnitDisplay from '$lib/shared/UnitDisplay.svelte';
 
   let { onMealClick, onHomeClick }: { onMealClick?: () => void; onHomeClick?: () => void } = $props();
 

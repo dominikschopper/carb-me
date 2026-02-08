@@ -1,6 +1,6 @@
 import { driver, type Driver } from 'driver.js';
 import 'driver.js/dist/driver.css';
-import { onboardingStorage } from './storage';
+import { onboardingStorage } from '$lib/shared/storage';
 
 export interface OnboardingOptions {
   onComplete?: () => void;

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { mealStore } from '$lib/stores/meal.svelte';
   import { settingsStore } from '$lib/stores/settings.svelte';
-  import { formatNumber } from '$lib/utils/formatting';
-  import UnitDisplay from './UnitDisplay.svelte';
+  import { formatNumber } from '$lib/shared/formatting';
+  import UnitDisplay from '$lib/shared/UnitDisplay.svelte';
 
   const items = $derived(mealStore.items);
   const totalBE = $derived(mealStore.totalBE);

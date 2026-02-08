@@ -2,7 +2,7 @@
   import { settingsStore } from '$lib/stores/settings.svelte';
   import type { EnergyUnitType, BlsCategory } from '$lib/types/food';
   import { BLS_CATEGORIES } from '$lib/types/food';
-  import { onboardingService } from '$lib/utils/onboarding';
+  import { onboardingService } from '$lib/features/onboarding/service';
   import { APP_VERSION, CHANGELOG_URL } from '$lib/version';
 
   const settings = $derived(settingsStore.settings);

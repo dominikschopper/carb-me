@@ -3,8 +3,8 @@
   import favicon from '$lib/assets/favicon.png';
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
-  import { swStore } from '$lib/stores/serviceWorker.svelte';
-  import UpdateNotification from '$lib/components/UpdateNotification.svelte';
+  import { swStore } from '$lib/features/update/serviceWorker.svelte';
+  import UpdateNotification from '$lib/features/update/UpdateNotification.svelte';
 
   let { children } = $props();
 

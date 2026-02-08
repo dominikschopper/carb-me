@@ -2,8 +2,8 @@
   import type { FoodItem } from '$lib/types/food';
   import { foodStore } from '$lib/stores/foods.svelte';
   import { settingsStore } from '$lib/stores/settings.svelte';
-  import UnitDisplay from './UnitDisplay.svelte';
-  import GrOrMl from './GrOrMl.svelte';
+  import UnitDisplay from '$lib/shared/UnitDisplay.svelte';
+  import GrOrMl from '$lib/shared/GrOrMl.svelte';
 
   let { food, onclick }: { food: FoodItem; onclick?: () => void } = $props();
 

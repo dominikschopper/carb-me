@@ -1,21 +1,21 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import Header from '$lib/components/Header.svelte';
-  import TabBar from '$lib/components/TabBar.svelte';
-  import SearchBar from '$lib/components/SearchBar.svelte';
-  import FoodList from '$lib/components/FoodList.svelte';
-  import FoodCard from '$lib/components/FoodCard.svelte';
-  import CustomFoodsList from '$lib/components/CustomFoodsList.svelte';
-  import MealComposer from '$lib/components/MealComposer.svelte';
-  import SettingsPage from '$lib/components/SettingsPage.svelte';
-  import Calculator from '$lib/components/Calculator.svelte';
-  import AddCustomFoodDialog from '$lib/components/AddCustomFoodDialog.svelte';
+  import Header from '$lib/shared/Header.svelte';
+  import TabBar from '$lib/shared/TabBar.svelte';
+  import SearchBar from '$lib/features/food/SearchBar.svelte';
+  import FoodList from '$lib/features/food/FoodList.svelte';
+  import FoodCard from '$lib/features/food/FoodCard.svelte';
+  import CustomFoodsList from '$lib/features/custom-foods/CustomFoodsList.svelte';
+  import MealComposer from '$lib/features/meal/MealComposer.svelte';
+  import SettingsPage from '$lib/features/settings/SettingsPage.svelte';
+  import Calculator from '$lib/features/food/Calculator.svelte';
+  import AddCustomFoodDialog from '$lib/features/custom-foods/AddCustomFoodDialog.svelte';
   import { foodStore } from '$lib/stores/foods.svelte';
-  import { disclaimerStorage } from '$lib/utils/storage';
-  import { onboardingService } from '$lib/utils/onboarding';
+  import { disclaimerStorage } from '$lib/shared/storage';
+  import { onboardingService } from '$lib/features/onboarding/service';
   import type { FoodItem } from '$lib/types/food';
   import { mealStore } from '$lib/stores/meal.svelte';
-  import { swStore } from '$lib/stores/serviceWorker.svelte';
+  import { swStore } from '$lib/features/update/serviceWorker.svelte';
 
   let activeTab = $state<'search' | 'custom' | 'meal' | 'settings'>('search');
   let selectedFood = $state<FoodItem | null>(null);

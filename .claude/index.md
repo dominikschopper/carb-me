@@ -8,50 +8,99 @@ It is built as a PWA, with offline capacity.
 
 It is built with a privacy first approach (no tracking, no ads).
 
-## Architecture: Feature-Based Modules (Planned)
+We are using `pnpm` as main dep/build tool.
 
-We want to restructure from `utils/` to **feature-based modules** where each feature's components AND logic live together:
+## Architecture: Feature-Based Modules
+
+The codebase follows a **feature-based module structure** where each feature's components AND logic live together:
 
 ```
 src/lib/
 ├── features/
 │   ├── food/              # Food search, display, calculation
-│   │   ├── *.svelte       # Components
-│   │   ├── calculator.ts  # Nutrition logic
-│   │   ├── search.ts      # Fuzzy search
-│   │   └── ...
+│   │   ├── Calculator.svelte
+│   │   ├── FoodCard.svelte
+│   │   ├── SearchBar.svelte
+│   │   ├── filters.ts     # BLS category filters
+│   │   ├── filters.test.ts
+│   │   ├── search.ts      # Fuzzy search logic
+│   │   └── search.test.ts
+│   │
 │   ├── custom-foods/      # Custom food management
+│   │   ├── AddCustomFoodDialog.svelte
+│   │   └── CustomFoodsList.svelte
+│   │
 │   ├── meal/              # Meal composition
-│   ├── settings/          # App settings
-│   ├── update/            # Update notification & SW
-│   └── onboarding/        # Onboarding tour
+│   │   ├── MealList.svelte
+│   │   └── MealSummary.svelte
+│   │
+│   ├── settings/          # App settings UI
+│   │   └── SettingsPage.svelte
+│   │
+│   ├── update/            # PWA update notification & SW registration
+│   │   ├── UpdateNotification.svelte
+│   │   ├── serviceWorker.svelte.ts  # SW registration & update detection
+│   │   └── serviceWorker.test.ts
+│   │
+│   └── onboarding/        # Onboarding tour (driver.js)
+│       └── service.ts
 │
-├── shared/                # Cross-feature utilities
-│   ├── *.svelte           # Shared components (Header, TabBar)
-│   ├── formatting.ts
-│   ├── storage.ts
-│   └── debounce.ts
+├── shared/                # Cross-feature utilities & components
+│   ├── GrOrMl.svelte      # Unit display helper
+│   ├── UnitDisplay.svelte # BE/KHE display component
+│   ├── storage.ts         # localStorage wrapper with typed keys
+│   └── storage.test.ts
 │
-├── stores/                # Global reactive stores
-└── types/
+├── stores/                # Global reactive Svelte 5 stores
+│   ├── foods.svelte.ts    # Food data & custom foods
+│   ├── foods.test.ts
+│   ├── meal.svelte.ts     # Current meal composition
+│   └── settings.svelte.ts # User preferences
+│
+├── styles/
+│   └── app.css            # Tailwind + custom styles
+│
+├── types/
+│   └── food.ts            # TypeScript types (FoodItem, MealItem, etc.)
+│
+└── version.ts             # App version & changelog notes
 ```
 
-### Import Rules (not enforced via ESLint, but follow manually):
-- **Features can import from**: `shared/`, `stores/`, `types/`
-- **Features must NOT import from**: other features directly
-- **Shared can import from**: only `shared/` itself
-- If two features need the same thing → move it to `shared/`
+### Import Rules (follow manually, not enforced via ESLint):
+- **Features can import from**: `$lib/shared/`, `$lib/stores/`, `$lib/types/`
+- **Features must NOT import from**: other features directly (exception: FoodCard is reused)
+- **Shared can import from**: only `$lib/shared/` itself, `$lib/types/`
+- If two features need the same thing -> move it to `shared/`
 
-## Important Directories and files
+## Important Directories and Files
 
-- /docs/*.md files for features and plans (maybe also *.puml)
-- /scripts/*.ts scripts to convert the BLS data to json (and filter/improve)
-- /scripts/bls-data/*.csv the CSV data to be imported
-- /src/lib/components/*.svelte all svelte components (will move to features/)
-- /src/lib/stores/*.ts all parts that store data in localStorage
-- /src/lib/styles/*.css a hierarchical css structure that imports everything into app.css
-- /src/lib/utils/*.ts helper functions (will move to features/ or shared/)
-- /src/lib/routes/*.svelte the routing pages
-- /static/lebensmittel-daten.json the converted BLS data to load in the app
-- /static/fonts/* /static/icons/*.png the static assets
-- /CHANGELOG.md the changelog that needs to be updated after a feature before the release
+### Documentation
+- `/docs/*.md` - Feature documentation and plans
+- `/docs/*.puml` - PlantUML diagrams (update notification flows, etc.)
+- `/CHANGELOG.md` - Changelog (update before releases)
+
+### Data & Scripts
+- `/scripts/*.ts` - Scripts to convert BLS data to JSON
+- `/scripts/bls-data/*.csv` - Source CSV data from BLS database
+- `/static/lebensmittel-daten.json` - Converted food data loaded by the app
+
+### Source Code
+- `/src/lib/features/` - Feature modules (see structure above)
+- `/src/lib/shared/` - Cross-cutting utilities and components
+- `/src/lib/stores/` - Global Svelte 5 reactive stores ($state, $derived)
+- `/src/lib/types/` - TypeScript type definitions
+- `/src/lib/styles/` - CSS (imports into app.css)
+- `/src/lib/version.ts` - Version number and release notes
+
+### Routes
+- `/src/routes/+layout.svelte` - Main layout, SW initialization
+- `/src/routes/+page.svelte` - Main app page with tabs
+- `/src/routes/legal/+page.svelte` - Legal/privacy page
+
+### Static Assets
+- `/static/fonts/` - Web fonts
+- `/static/icons/*.png` - PWA icons
+
+### PWA Configuration
+- `/vite.config.ts` - VitePWA plugin config (generateSW strategy)
+- Service worker is auto-generated by VitePWA, registration handled in `features/update/serviceWorker.svelte.ts`

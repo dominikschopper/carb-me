@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { swStore } from '$lib/stores/serviceWorker.svelte';
+  import { swStore } from './serviceWorker.svelte';
   import { CHANGELOG_URL } from '$lib/version';
 
   let dialog: HTMLDialogElement;

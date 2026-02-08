@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { disclaimerStorage } from '$lib/utils/storage';
+  import { disclaimerStorage } from '$lib/shared/storage';
 
   const isOnboarding = $derived(page.url.searchParams.get('onboarding') === 'true');
 

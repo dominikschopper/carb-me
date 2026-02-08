@@ -1,4 +1,4 @@
-import { settingsStorage, STORAGE_KEYS } from '$lib/utils/storage';
+import { settingsStorage, STORAGE_KEYS } from '$lib/shared/storage';
 import type { AppSettings, EnergyUnitType, BlsCategory } from '$lib/types/food';
 import { UNIT_TYPES, ENERGY_UNIT_TYPES } from '$lib/types/food';
 

@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - "Clear all data" preserves last seen version (prevents confusing update dialogs after reset)
 
 ### Technical
+- refactor the projects code design to be feature based
 - @vite-pwa/sveltekit integration with injectManifest strategy
 - ServiceWorkerStore for update state management
 - UpdateNotification component with modal dialog

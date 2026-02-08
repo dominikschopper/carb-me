@@ -1,6 +1,6 @@
-import { fuzzySearch, initializeSearch } from '$lib/utils/search';
-import { customFoodsStorage, favoritesStorage } from '$lib/utils/storage';
-import { isInCategories } from '$lib/utils/food-filters';
+import { fuzzySearch, initializeSearch } from '$lib/features/food/search';
+import { customFoodsStorage, favoritesStorage } from '$lib/shared/storage';
+import { isInCategories } from '$lib/features/food/filters';
 import type { FoodItem } from '$lib/types/food';
 import { SvelteSet } from 'svelte/reactivity';
 import { settingsStore } from '$lib/stores/settings.svelte';

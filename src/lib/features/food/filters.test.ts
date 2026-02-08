@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { createCategoryFilter, isInCategories } from './food-filters';
+import { createCategoryFilter, isInCategories } from './filters';
 import type { FoodItem } from '$lib/types/food';
 import { BLS_CATEGORIES } from '$lib/types/food';
 
@@ -94,7 +94,7 @@ describe('isInCategories', () => {
     expect(
       isInCategories(
         createFood('X123456'),
-        [BLS_CATEGORIES.FERTIGGERICHTE_PFLANZLICH, BLS_CATEGORIES.FERTIGGERICHTE_PFLANZLICH_TIERISCH]
+        [BLS_CATEGORIES.FERTIGGERICHTE_PFLANZLICH, BLS_CATEGORIES.FERTIGGERICHTE_TIERISCH]
       )
     ).toBe(true);
 
