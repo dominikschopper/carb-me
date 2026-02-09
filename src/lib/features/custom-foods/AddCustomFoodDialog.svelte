@@ -189,20 +189,20 @@
     <div class="custom-food-form__header">
       <div class="custom-food-form__header-text">
         <h2 class="custom-food-form__title">
-          {editFood ? 'Lebensmittel bearbeiten' : 'Lebensmittel hinzufügen'}
+          {editFood ? 'Bearbeiten' : 'Hinzufügen'}
         </h2>
         <code class="custom-food-form__id">
           ID: {generatedId}
         </code>
+        <button
+          onclick={handleClose}
+          class="btn btn--ghost"
+          aria-label="Schließen"
+          type="button"
+        >
+          <span class="material-symbols-outlined text-tertiary">close</span>
+        </button>
       </div>
-      <button
-        onclick={handleClose}
-        class="btn btn--ghost"
-        aria-label="Schließen"
-        type="button"
-      >
-        <span class="material-symbols-outlined text-tertiary">close</span>
-      </button>
     </div>
 
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
@@ -424,14 +424,17 @@
   .custom-food-form__header-text {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
+    justify-content: space-between;
     gap: var(--space-sm);
+    width: 100%;
   }
 
   .custom-food-form__title {
     font-size: var(--text-lg);
     font-weight: var(--weight-bold);
     white-space: pre-line;
+    color:var(--color-text);
   }
 
   .custom-food-form__id {

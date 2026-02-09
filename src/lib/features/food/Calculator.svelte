@@ -204,6 +204,7 @@
     font-size: var(--text-lg);
     font-weight: var(--weight-bold);
     overflow-wrap: anywhere;
+    color: var(--color-text);
   }
 
   @media (min-width: 640px) {
