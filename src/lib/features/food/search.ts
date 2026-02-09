@@ -12,34 +12,25 @@ const fuseOptions: IFuseOptions<FoodItem> = {
   ignoreLocation: true,
   minMatchCharLength: 2,
   includeScore: true,
-  shouldSort: true, // Let Fuse handle initial sorting
+  shouldSort: true,
 };
 
-let fuseInstance: Fuse<FoodItem> | null = null;
-let lastFoodsLength = 0;
-
 /**
- * Initialize Fuse.js instance with food data
+ * Create a new Fuse.js search index for the given foods
  */
-export function initializeSearch(foods: FoodItem[]): void {
-  fuseInstance = new Fuse(foods, fuseOptions);
-  lastFoodsLength = foods.length;
+export function createSearchIndex(foods: FoodItem[]): Fuse<FoodItem> {
+  return new Fuse(foods, fuseOptions);
 }
 
 /**
  * Perform fuzzy search on food items with intelligent sorting
  */
-export function fuzzySearch(foods: FoodItem[], query: string): FoodItem[] {
+export function fuzzySearch(index: Fuse<FoodItem>, query: string): FoodItem[] {
   if (!query.trim()) {
-    return foods;
+    return [];
   }
 
-  // Only reinitialize if foods array changed
-  if (!fuseInstance || foods.length !== lastFoodsLength) {
-    initializeSearch(foods);
-  }
-
-  const results = fuseInstance!.search(query, { limit: 100 });
+  const results = index.search(query, { limit: 100 });
   const lowerQuery = query.toLowerCase().trim();
 
   // Pre-compute lowercase names once

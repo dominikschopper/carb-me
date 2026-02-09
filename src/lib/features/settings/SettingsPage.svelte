@@ -58,6 +58,7 @@
       )
     ) {
       settingsStore.clearAllData();
+      window.location.reload();
     }
   }
 

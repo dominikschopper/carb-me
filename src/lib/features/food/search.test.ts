@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { fuzzySearch, initializeSearch } from './search';
+import { describe, it, expect } from 'vitest';
+import { fuzzySearch, createSearchIndex } from './search';
 import type { FoodItem } from '$lib/types/food';
 
 // Test fixtures
@@ -61,31 +61,26 @@ const testFoods: FoodItem[] = [
 ];
 
 describe('fuzzySearch', () => {
-  beforeEach(() => {
-    initializeSearch(testFoods);
+  const index = createSearchIndex(testFoods);
+
+  it('returns empty array for empty query', () => {
+    const results = fuzzySearch(index, '');
+    expect(results).toEqual([]);
   });
 
-  it('returns all foods for empty query', () => {
-    const results = fuzzySearch(testFoods, '');
-    expect(results).toEqual(testFoods);
-  });
-
-  // Note: fuzzySearch returns all foods for whitespace queries, but in the UI
-  // this case is never reached because isSearching (in foods.svelte.ts) is false
-  // for whitespace-only queries, so FoodList shows the search prompt instead.
-  it('returns all foods for whitespace query', () => {
-    const results = fuzzySearch(testFoods, '   ');
-    expect(results).toEqual(testFoods);
+  it('returns empty array for whitespace query', () => {
+    const results = fuzzySearch(index, '   ');
+    expect(results).toEqual([]);
   });
 
   it('finds exact matches', () => {
-    const results = fuzzySearch(testFoods, 'Apfel');
+    const results = fuzzySearch(index, 'Apfel');
     expect(results.length).toBeGreaterThan(0);
     expect(results[0].name).toBe('Apfel');
   });
 
   it('prioritizes exact matches over partial matches', () => {
-    const results = fuzzySearch(testFoods, 'apfel');
+    const results = fuzzySearch(index, 'apfel');
 
     // "Apfel" should come first (exact match)
     expect(results[0].name).toBe('Apfel');
@@ -98,35 +93,35 @@ describe('fuzzySearch', () => {
   });
 
   it('finds items by partial match', () => {
-    const results = fuzzySearch(testFoods, 'pfel');
+    const results = fuzzySearch(index, 'pfel');
     expect(results.some((r) => r.name.includes('Apfel'))).toBe(true);
   });
 
   it('is case insensitive', () => {
-    const results = fuzzySearch(testFoods, 'APFEL');
+    const results = fuzzySearch(index, 'APFEL');
     expect(results.length).toBeGreaterThan(0);
     expect(results[0].name.toLowerCase()).toContain('apfel');
   });
 
   it('finds items with spaces in query', () => {
-    const results = fuzzySearch(testFoods, 'apfel roh');
+    const results = fuzzySearch(index, 'apfel roh');
     expect(results.some((r) => r.name === 'Apfel roh')).toBe(true);
   });
 
   it('finds items not in query', () => {
-    const results = fuzzySearch(testFoods, 'Birne');
+    const results = fuzzySearch(index, 'Birne');
     expect(results.length).toBeGreaterThan(0);
     expect(results[0].name).toBe('Birne');
   });
 
   it('returns empty array when no match found', () => {
-    const results = fuzzySearch(testFoods, 'xyznotfound');
+    const results = fuzzySearch(index, 'xyznotfound');
     expect(results).toEqual([]);
   });
 
   it('handles fuzzy matching', () => {
     // "Pizz" should match "Pizza Margherita"
-    const results = fuzzySearch(testFoods, 'Pizz');
+    const results = fuzzySearch(index, 'Pizz');
     expect(results.some((r) => r.name.includes('Pizza'))).toBe(true);
   });
 
@@ -142,27 +137,24 @@ describe('fuzzySearch', () => {
       blsCode: `T${i.toString().padStart(6, '0')}`,
     }));
 
-    initializeSearch(manyFoods);
-    const results = fuzzySearch(manyFoods, 'Test');
+    const largeIndex = createSearchIndex(manyFoods);
+    const results = fuzzySearch(largeIndex, 'Test');
     expect(results.length).toBeLessThanOrEqual(100);
   });
 });
 
-describe('initializeSearch', () => {
-  it('initializes without throwing', () => {
-    expect(() => initializeSearch(testFoods)).not.toThrow();
+describe('createSearchIndex', () => {
+  it('creates index without throwing', () => {
+    expect(() => createSearchIndex(testFoods)).not.toThrow();
   });
 
   it('handles empty array', () => {
-    expect(() => initializeSearch([])).not.toThrow();
+    expect(() => createSearchIndex([])).not.toThrow();
   });
 
-  it('reinitializes when called multiple times', () => {
-    initializeSearch(testFoods);
-    initializeSearch(testFoods.slice(0, 2));
-
-    // Should still work after reinitialization
-    const results = fuzzySearch(testFoods.slice(0, 2), 'Apfel');
+  it('works after recreation with different data', () => {
+    const smallIndex = createSearchIndex(testFoods.slice(0, 2));
+    const results = fuzzySearch(smallIndex, 'Apfel');
     expect(results.length).toBeGreaterThan(0);
   });
 });

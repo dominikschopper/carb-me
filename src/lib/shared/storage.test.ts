@@ -130,7 +130,6 @@ describe('STORAGE_KEYS', () => {
     expect(STORAGE_KEYS.FAVORITES).toBe('carbme_favorites');
     expect(STORAGE_KEYS.CURRENT_MEAL).toBe('carbme_current_meal');
     expect(STORAGE_KEYS.HISTORY).toBe('carbme_history');
-    expect(STORAGE_KEYS.THEME).toBe('carbme_theme');
     expect(STORAGE_KEYS.SETTINGS).toBe('carbme_settings');
     expect(STORAGE_KEYS.DISCLAIMER_ACCEPTED).toBe('carbme_disclaimer_accepted');
   });
@@ -139,9 +138,6 @@ describe('STORAGE_KEYS', () => {
 describe('DEFAULT_SETTINGS', () => {
   it('has correct default values', () => {
     expect(DEFAULT_SETTINGS.preferredUnit).toBe('BE');
-    expect(DEFAULT_SETTINGS.showCategories).toBe(true);
-    expect(DEFAULT_SETTINGS.showTags).toBe(true);
-    expect(DEFAULT_SETTINGS.itemsPerPage).toBe(20);
     expect(DEFAULT_SETTINGS.showEnergy).toBe(false);
     expect(DEFAULT_SETTINGS.energyUnit).toBe('kcal');
     expect(DEFAULT_SETTINGS.hiddenCategories).toEqual([]);

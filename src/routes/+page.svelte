@@ -14,20 +14,19 @@
   import { disclaimerStorage } from '$lib/shared/storage';
   import { onboardingService } from '$lib/features/onboarding/service';
   import type { FoodItem } from '$lib/types/food';
-  import { mealStore } from '$lib/stores/meal.svelte';
   import { swStore } from '$lib/features/update/serviceWorker.svelte';
 
   let activeTab = $state<'search' | 'custom' | 'meal' | 'settings'>('search');
   let selectedFood = $state<FoodItem | null>(null);
   let showCustomFoodDialog = $state(false);
   let editFood = $state<FoodItem | null>(null);
-  let loading = $state(true);
   let onboardingInitialized = $state(false);
 
   const filteredFoods = $derived(foodStore.filteredFoods);
   const favoriteFoods = $derived(foodStore.favoriteFoods);
   const isSearching = $derived(foodStore.isSearching);
   const searchQuery = $derived(foodStore.searchQuery);
+  const loading = $derived(foodStore.isLoading);
 
   // Check for disclaimer acceptance on mount
   $effect(() => {
@@ -40,13 +39,6 @@
         onboardingInitialized = true;
       }
     }
-  });
-
-  // Initialize food store
-  $effect(() => {
-    foodStore.loadFoodDatabase().then(() => {
-      loading = false;
-    });
   });
 
   function handleFoodSelect(food: FoodItem) {
@@ -80,80 +72,33 @@
     editFood = null;
   }
 
-  function addToMeal() {
-    const foodApple: FoodItem = {
-      blsCode: 'F110100',
-      name: 'Apfel roh',
-      "kh": 11.7,
-      "gBE": 103,
-      "gKHE": 85,
-      "categories": [
-        [
-          "Früchte + Obst"
-        ]
-      ],
-      "tags": [
-        "mittlereKH"
-      ],
-    };
-    mealStore.addItem(foodApple, 100, .97, 1.17);
-  }
-
-  function deleteFromMeal() {
-    mealStore.clear();
-  }
-
   function startOnboardingIfNeeded() {
     if (!onboardingService.shouldShow()) return;
 
-    // Wait for update notification to be dismissed before starting onboarding
-    // Check if update dialog is showing, and if so, delay onboarding
-    const checkAndStart = () => {
-      if (swStore.updateAvailable) {
-        console.log('[Onboarding] Update notification active, waiting...');
-        // Check again in 1 second
-        setTimeout(checkAndStart, 2500);
-        return;
-      }
-
+    // Initial delay allows update notification to appear first
+    setTimeout(() => {
       onboardingService.startTour({
+        isBlocked: () => swStore.updateAvailable,
         onComplete: () => {
-          console.log('Onboarding completed');
-          // Clear demo search
           foodStore.setSearchQuery('');
         },
         onSkip: () => {
-          console.log('Onboarding skipped');
-          // Clear demo search
           foodStore.setSearchQuery('');
         },
         onSearchDemo: (query) => {
-          setTimeout(async () => {
-            // Trigger search for demo (shows food cards for favorite star step)
-            const searchField: HTMLInputElement|null = document.querySelector('input[aria-label="Lebensmittel suchen"]');
-            console.log('the search', searchField);
+          setTimeout(() => {
+            const searchField: HTMLInputElement | null = document.querySelector('input[aria-label="Lebensmittel suchen"]');
             if (searchField) {
               searchField.value = query;
             }
             foodStore.setSearchQuery(query);
-          }, 700)
+          }, 700);
         },
-        onNavigateToCustom: () => {
-          deleteFromMeal();
-          activeTab = 'custom';
-        },
-        onNavigateToSettings: () => {
-          activeTab = 'settings';
-        },
-        onNavigateToMeal: () => {
-          activeTab = 'meal';
-          addToMeal();
-        },
+        onNavigateToCustom: () => { activeTab = 'custom'; },
+        onNavigateToSettings: () => { activeTab = 'settings'; },
+        onNavigateToMeal: () => { activeTab = 'meal'; },
       });
-    };
-
-    // Initial delay before checking (allows update notification to appear first)
-    setTimeout(checkAndStart, 500);
+    }, 500);
   }
 </script>
 

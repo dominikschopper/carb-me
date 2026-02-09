@@ -7,7 +7,6 @@ export const STORAGE_KEYS = {
   FAVORITES: 'carbme_favorites',
   CURRENT_MEAL: 'carbme_current_meal',
   HISTORY: 'carbme_history',
-  THEME: 'carbme_theme',
   SETTINGS: 'carbme_settings',
   DISCLAIMER_ACCEPTED: 'carbme_disclaimer_accepted',
   ONBOARDING: 'carbme_onboarding',
@@ -16,9 +15,6 @@ export const STORAGE_KEYS = {
 
 export const DEFAULT_SETTINGS: AppSettings = {
   preferredUnit: UNIT_TYPES.BE,
-  showCategories: true,
-  showTags: true,
-  itemsPerPage: 20,
   showEnergy: false,
   energyUnit: ENERGY_UNIT_TYPES.KCAL,
   hiddenCategories: [],

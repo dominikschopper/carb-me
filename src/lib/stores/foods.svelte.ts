@@ -1,4 +1,5 @@
-import { fuzzySearch, initializeSearch } from '$lib/features/food/search';
+import type Fuse from 'fuse.js';
+import { fuzzySearch, createSearchIndex } from '$lib/features/food/search';
 import { customFoodsStorage, favoritesStorage } from '$lib/shared/storage';
 import { isInCategories } from '$lib/features/food/filters';
 import type { FoodItem } from '$lib/types/food';
@@ -12,13 +13,15 @@ class FoodStore {
   searchQuery = $state('');
   isLoading = $state(true);
 
+  private searchIndex: Fuse<FoodItem> | null = null;
+
   // Derived states
   isSearching = $derived(this.searchQuery.trim().length > 0);
 
   filteredFoods = $derived.by(() => {
     let foods = [...this.allFoods, ...this.customFoods];
 
-    // BLS-Kategorie-Filter anwenden (Single Pass!)
+    // Apply BLS category filter (single pass)
     const hiddenCats = settingsStore.settings.hiddenCategories;
     if (hiddenCats.length > 0) {
       foods = foods.filter((food) => !isInCategories(food, hiddenCats));
@@ -28,7 +31,11 @@ class FoodStore {
       return foods;
     }
 
-    return fuzzySearch(foods, this.searchQuery);
+    if (!this.searchIndex) {
+      return foods;
+    }
+
+    return fuzzySearch(this.searchIndex, this.searchQuery);
   });
 
   favoriteFoods = $derived.by(() => {
@@ -48,9 +55,7 @@ class FoodStore {
       const response = await fetch('/lebensmittel-daten.json');
       const data = await response.json();
       this.allFoods = data.lebensmittel;
-
-      // Initialize search with all foods
-      initializeSearch([...this.allFoods, ...this.customFoods]);
+      this.rebuildSearchIndex();
       this.isLoading = false;
     } catch (error) {
       console.error('Error loading food database:', error);
@@ -80,9 +85,7 @@ class FoodStore {
     const customFood = { ...food, isCustom: true };
     this.customFoods.push(customFood);
     this.saveCustomFoods();
-
-    // Reinitialize search with updated foods
-    initializeSearch([...this.allFoods, ...this.customFoods]);
+    this.rebuildSearchIndex();
   }
 
   updateCustomFood(blsCode: string, updatedFood: FoodItem) {
@@ -90,9 +93,7 @@ class FoodStore {
     if (index !== -1) {
       this.customFoods[index] = { ...updatedFood, isCustom: true };
       this.saveCustomFoods();
-
-      // Reinitialize search with updated foods
-      initializeSearch([...this.allFoods, ...this.customFoods]);
+      this.rebuildSearchIndex();
     }
   }
 
@@ -108,22 +109,15 @@ class FoodStore {
     }
 
     this.saveCustomFoods();
-
-    // Reinitialize search
-    initializeSearch([...this.allFoods, ...this.customFoods]);
-  }
-
-  removeCustomFood(name: string) {
-    // Deprecated: use deleteCustomFood instead
-    this.customFoods = this.customFoods.filter((f) => f.name !== name);
-    this.saveCustomFoods();
-
-    // Reinitialize search
-    initializeSearch([...this.allFoods, ...this.customFoods]);
+    this.rebuildSearchIndex();
   }
 
   setSearchQuery(query: string) {
     this.searchQuery = query;
+  }
+
+  private rebuildSearchIndex() {
+    this.searchIndex = createSearchIndex([...this.allFoods, ...this.customFoods]);
   }
 
   private saveCustomFoods() {

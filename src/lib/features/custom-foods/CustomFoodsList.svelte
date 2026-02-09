@@ -257,6 +257,7 @@
 
 	.custom-foods__item-name {
 		font-weight: var(--weight-medium);
+    color:var(--color-text);
 	}
 
 	.custom-foods__item-subtitle {

@@ -1,6 +1,18 @@
 import { driver, type Driver } from 'driver.js';
 import 'driver.js/dist/driver.css';
 import { onboardingStorage } from '$lib/shared/storage';
+import { mealStore } from '$lib/stores/meal.svelte';
+import type { FoodItem } from '$lib/types/food';
+
+const DEMO_FOOD: FoodItem = {
+  blsCode: 'F110100',
+  name: 'Apfel roh',
+  kh: 11.7,
+  gBE: 103,
+  gKHE: 85,
+  categories: [['Früchte + Obst']],
+  tags: ['mittlereKH'],
+};
 
 export interface OnboardingOptions {
   onComplete?: () => void;
@@ -9,8 +21,7 @@ export interface OnboardingOptions {
   onNavigateToSettings?: () => void;
   onNavigateToMeal?: () => void;
   onSearchDemo?: (query: string) => void;
-  addToMeal?: () => void;
-  deleteFromMeal?: () => void;
+  isBlocked?: () => boolean;
 }
 
 class OnboardingService {
@@ -21,6 +32,12 @@ class OnboardingService {
 
     const state = onboardingStorage.get();
     if (state.completed || state.skipped) return;
+
+    // If something is blocking (e.g. update notification), wait and retry
+    if (options.isBlocked?.()) {
+      setTimeout(() => this.startTour(options), 2500);
+      return;
+    }
 
     this.driverInstance = driver({
       showProgress: true,
@@ -108,10 +125,10 @@ class OnboardingService {
             align: 'end',
             onNextClick: () => {
               options.onNavigateToMeal?.();
+              mealStore.addItem(DEMO_FOOD, 100, .97, 1.17);
               // Wait for Svelte to render the component before moving to next step
               setTimeout(() => {
                 this.driverInstance?.moveNext();
-
               }, 300);
             }
           }
@@ -145,6 +162,7 @@ class OnboardingService {
             side: 'top',
             align: 'start',
             onNextClick: () => {
+              mealStore.clear();
               options.onNavigateToCustom?.();
               // Wait for Svelte to render the component before moving to next step
               setTimeout(() => {

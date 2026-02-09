@@ -7,16 +7,7 @@
 
   function handleUpdate() {
     console.log('[UpdateNotification] User clicked update button');
-    swStore.markVersionSeen();
-
-    // Tell the waiting service worker to activate
-    if (swStore.registration?.waiting) {
-      console.log('[UpdateNotification] Sending SKIP_WAITING to service worker');
-      swStore.registration.waiting.postMessage({ type: 'SKIP_WAITING' });
-    }
-
-    // Reload the page to use the new service worker
-    window.location.reload();
+    swStore.applyUpdate();
   }
 
   function handleDismiss() {

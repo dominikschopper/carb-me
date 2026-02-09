@@ -31,7 +31,7 @@
 
   // Validation
   const isNameValid = $derived(name.trim().length > 0);
-  const isKhValid = $derived(typeof kh === 'number' && kh > 0);
+  const isKhValid = $derived(typeof kh === 'number' && kh > 0 && kh <= 100);
   const canSubmit = $derived(isNameValid && isKhValid);
 
   // Auto-calculated values
@@ -42,7 +42,7 @@
     return null;
   });
 
-  // Generated ID preview (nur im Create-Modus)
+  // Generated ID preview (create mode only)
   const generatedId = $derived(
     editFood ? editFood.blsCode : generateCustomFoodId(foodStore.customFoods)
   );
@@ -117,7 +117,7 @@
       tags: ['custom']
     };
 
-    // Optionale Energiewerte nur hinzufügen wenn vorhanden
+    // Only add optional energy values if present
     if (typeof kcal === 'number' && kcal > 0) {
       foodData.kcal = Math.round(kcal);
     }
@@ -205,6 +205,7 @@
       </button>
     </div>
 
+    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <form onsubmit={(e) => { e.preventDefault(); handleSubmit(); }} onkeydown={handleKeyDown}>
       <!-- Name (Required) -->
       <div class="custom-food-form__field">
@@ -217,6 +218,7 @@
           type="text"
           bind:value={name}
           onblur={handleNameBlur}
+          maxlength={100}
           placeholder="z.B. Hausgemachte Marmelade"
           class="input w-full {showNameError ? 'input--error' : ''}"
           required
@@ -232,7 +234,7 @@
         <!-- KH (Required) -->
         <div class="custom-food-form__field custom-food-form__field--half">
           <label for="kh-input" class="custom-food-form__label">
-            Kohlenhydrate (KH) pro 100{unit} <span class="text-danger">*</span>
+            KH pro 100{unit} <span class="text-danger">*</span>
           </label>
           <div class="custom-food-form__input-wrap">
             <input
@@ -241,6 +243,7 @@
               bind:value={kh}
               onblur={handleKhBlur}
               min="0"
+              max="100"
               step="0.1"
               inputmode="decimal"
               placeholder="z.B. 25.5"
@@ -251,11 +254,7 @@
           </div>
           {#if showKhError}
             <p class="custom-food-form__error" role="alert">
-              Kohlenhydrate müssen größer als 0 sein
-            </p>
-          {:else}
-            <p class="custom-food-form__hint">
-              Kohlenhydrate pro 100{unit} des Lebensmittels
+              KH müssen größer als 0 sein!
             </p>
           {/if}
         </div>
@@ -337,6 +336,7 @@
               value={kcal}
               oninput={handleKcalInput}
               min="0"
+              max="900"
               step="1"
               inputmode="numeric"
               placeholder="z.B. 250"
@@ -352,6 +352,7 @@
               value={kj}
               oninput={handleKjInput}
               min="0"
+              max="3800"
               step="1"
               inputmode="numeric"
               placeholder="z.B. 1046"
@@ -483,6 +484,7 @@
   .custom-food-form__row {
     display: flex;
     gap: var(--space-sm);
+    align-items: center;
   }
 
   .custom-food-form__field--half {
@@ -498,6 +500,7 @@
   .custom-food-form__unit-label {
     font-size: var(--text-sm);
     font-weight: var(--weight-medium);
+    color: var(--color-text-muted);
   }
 
   .custom-food-form__preview {

@@ -53,7 +53,7 @@ export function calculateUnitsFromCarbs(khPer100g: number): { gBE: number; gKHE:
 }
 
 /**
- * Konvertiert kcal zu kJ
+ * Converts kcal to kJ
  * 1 kcal = 4.184 kJ
  */
 export function kcalToKj(kcal: number): number {
@@ -61,7 +61,7 @@ export function kcalToKj(kcal: number): number {
 }
 
 /**
- * Konvertiert kJ zu kcal
+ * Converts kJ to kcal
  * 1 kJ = 0.239 kcal
  */
 export function kjToKcal(kj: number): number {

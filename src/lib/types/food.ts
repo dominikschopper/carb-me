@@ -78,9 +78,6 @@ export interface CalculationResult {
 
 export interface AppSettings {
   preferredUnit: UnitType;
-  showCategories: boolean;
-  showTags: boolean;
-  itemsPerPage: number;
   showEnergy: boolean;
   energyUnit: EnergyUnitType;
   hiddenCategories: BlsCategory[];

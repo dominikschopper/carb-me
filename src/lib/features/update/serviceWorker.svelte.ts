@@ -1,8 +1,6 @@
 import { APP_VERSION, DEFAULT_VERSION, getVersionNotes, type VersionNotes } from '$lib/version';
 import { lastSeenVersionStorage } from '$lib/shared/storage';
 
-const UPDATE_CHECK_INTERVAL_MS = 60 * 60 * 1000; // 60 minutes
-
 interface UpdateInfo {
   version: string;
   notes: VersionNotes | null;
@@ -10,92 +8,71 @@ interface UpdateInfo {
 }
 
 class ServiceWorkerStore {
-  registration = $state<ServiceWorkerRegistration | null>(null);
   updateAvailable = $state(false);
   updateInfo = $state<UpdateInfo | null>(null);
 
+  private updateSW: ((reloadPage?: boolean) => Promise<void>) | null = null;
+
   /**
-   * Initialize service worker registration and update detection.
+   * Initialize service worker via VitePWA's registerSW.
    * Call this once from +layout.svelte onMount.
-   * @param basePath - The base path from SvelteKit (e.g., '' or '/subdir')
    */
-  init(basePath: string) {
-    // Check for version mismatch on page load (independent of SW events)
-    this.checkForUpdate(APP_VERSION);
+  async init() {
+    // Check for version-based update on page load (independent of SW events)
+    this.checkVersionUpdate();
 
-    if (!('serviceWorker' in navigator)) return;
+    // Dynamic import to avoid SSR build issues — virtual:pwa-register
+    // depends on workbox-window which is only available client-side
+    const { registerSW } = await import('virtual:pwa-register');
 
-    // Register the built service worker (built from src/service-worker.js by VitePWA)
-    navigator.serviceWorker.register(`${basePath}/sw.js`).then(
-      (registration) => {
-        console.log('[SW] Registered:', registration.scope);
-        this.registration = registration;
+    this.updateSW = registerSW({
+      immediate: true,
+      onNeedRefresh: () => {
+        console.log('[SW] New service worker waiting, update available');
+        this.notifyUpdate(APP_VERSION);
+      },
+      onRegisteredSW: (swUrl: string, registration: ServiceWorkerRegistration | undefined) => {
+        console.log('[SW] Registered:', swUrl);
 
-        // Check if there's a waiting service worker already
-        if (registration.waiting) {
-          console.log('[SW] Update found on registration');
-          this.notifyUpdate(APP_VERSION);
-        }
+        if (registration) {
+          // Periodic update check (every 60 minutes)
+          setInterval(() => {
+            console.log('[SW] Checking for updates...');
+            registration.update();
+          }, 60 * 60 * 1000);
 
-        // Listen for new service worker installing
-        registration.addEventListener('updatefound', () => {
-          const newWorker = registration.installing;
-          console.log('[SW] New service worker installing');
-
-          newWorker?.addEventListener('statechange', () => {
-            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              console.log('[SW] New service worker installed and waiting');
-              this.notifyUpdate(APP_VERSION);
+          // Check for updates when page becomes visible
+          document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+              console.log('[SW] Page visible, checking for updates...');
+              registration.update();
             }
           });
-        });
-
-        // Periodic update check
-        setInterval(() => {
-          console.log('[SW] Checking for updates...');
-          registration.update();
-        }, UPDATE_CHECK_INTERVAL_MS);
-
-        // Check for updates when page becomes visible
-        document.addEventListener('visibilitychange', () => {
-          if (!document.hidden) {
-            console.log('[SW] Page visible, checking for updates...');
-            registration.update();
-          }
-        });
+        }
       },
-      (error) => {
+      onRegisterError: (error: unknown) => {
         console.log('[SW] Registration failed:', error);
       }
-    );
-
-    // Listener for controller change (SW was activated after user action)
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      console.log('[SW] New service worker activated');
     });
   }
 
-  private checkForUpdate(version: string) {
-    console.log('[SW Store] Checking for version update on page load');
-    this.notifyUpdate(version);
+  private checkVersionUpdate() {
+    this.notifyUpdate(APP_VERSION);
   }
 
   notifyUpdate(version: string) {
     const lastSeen = lastSeenVersionStorage.get();
 
-    // Don't show update notification if versions are the same or older
+    // Don't show if versions are the same or older
     if (this.compareVersions(lastSeen, version) >= 0) return;
 
-    // Check if this is a first install/load scenario
-    // If lastSeen is the default '1.0.0' and we're just loading the current version,
-    // save it but don't show notification
+    // First install — save version silently
     if (lastSeen === DEFAULT_VERSION) {
       console.log('[SW] First time seeing version, saving without notification');
       lastSeenVersionStorage.set(version);
       return;
     }
 
-    // At this point, we have a genuine update from an older version to a newer one
     console.log(`[SW] Update detected: ${lastSeen} -> ${version}`);
     this.updateAvailable = true;
     this.updateInfo = {
@@ -105,18 +82,22 @@ class ServiceWorkerStore {
     };
   }
 
+  /**
+   * Activate the waiting service worker and reload the page.
+   */
+  async applyUpdate() {
+    this.markVersionSeen();
+    await this.updateSW?.();
+    window.location.reload();
+  }
+
   dismissUpdate() {
-    console.log('[SW Store] dismissUpdate called, snoozing notification');
     this.updateAvailable = false;
     this.updateInfo = null;
-    // Don't save the version - the periodic update check (every 60 min)
-    // will re-trigger the notification
   }
 
   markVersionSeen() {
-    console.log('[SW Store] markVersionSeen called, saving version:', APP_VERSION);
     lastSeenVersionStorage.set(APP_VERSION);
-    console.log('[SW Store] Version saved, new lastSeen:', lastSeenVersionStorage.get());
   }
 
   private compareVersions(v1: string, v2: string): number {

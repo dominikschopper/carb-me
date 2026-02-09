@@ -8,8 +8,8 @@
 
   let { food, onClose }: { food: FoodItem | null; onClose: () => void } = $props();
 
-  let dialog: HTMLDialogElement;
-  let inputElement: HTMLInputElement;
+  let dialog = $state<HTMLDialogElement | null>(null);
+  let inputElement = $state<HTMLInputElement | null>(null);
   let grams = $state(100);
 
   const settings = $derived(settingsStore.settings);

@@ -28,7 +28,6 @@ describe('ServiceWorkerStore', () => {
     // Reset store state before each test
     swStore.updateAvailable = false;
     swStore.updateInfo = null;
-    swStore.registration = null;
 
     // Clear localStorage
     localStorageMock.clear();
@@ -147,13 +146,6 @@ describe('ServiceWorkerStore', () => {
 
       const savedVersion = lastSeenVersionStorage.get();
       expect(savedVersion).toBe(APP_VERSION);
-    });
-  });
-
-  describe('Service Worker Registration', () => {
-    it('should have registration property', () => {
-      // Registration is set internally by init(), just verify the property exists
-      expect(swStore.registration).toBe(null); // Default state
     });
   });
 

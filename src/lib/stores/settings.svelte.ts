@@ -5,9 +5,6 @@ import { UNIT_TYPES, ENERGY_UNIT_TYPES } from '$lib/types/food';
 class SettingsStore {
   settings = $state<AppSettings>({
     preferredUnit: UNIT_TYPES.BE,
-    showCategories: true,
-    showTags: true,
-    itemsPerPage: 20,
     showEnergy: false,
     energyUnit: ENERGY_UNIT_TYPES.KCAL,
     hiddenCategories: [],
@@ -42,13 +39,13 @@ class SettingsStore {
     const current = this.settings.hiddenCategories;
 
     if (hide && !current.includes(category)) {
-      // Kategorie hinzufügen
+      // Add category
       this.settings = {
         ...this.settings,
         hiddenCategories: [...current, category],
       };
     } else if (!hide && current.includes(category)) {
-      // Kategorie entfernen
+      // Remove category
       this.settings = {
         ...this.settings,
         hiddenCategories: current.filter(c => c !== category),
@@ -73,16 +70,10 @@ class SettingsStore {
     // Reset to defaults
     this.settings = {
       preferredUnit: UNIT_TYPES.BE,
-      showCategories: true,
-      showTags: true,
-      itemsPerPage: 20,
       showEnergy: false,
       energyUnit: ENERGY_UNIT_TYPES.KCAL,
       hiddenCategories: [],
     };
-
-    // Reload page to reset all stores
-    window.location.reload();
   }
 
   private saveToStorage() {
