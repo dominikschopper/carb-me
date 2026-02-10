@@ -1,8 +1,11 @@
 <script lang="ts">
   import type { FoodItem } from '$lib/types/food';
-  import { calculateUnitsFromCarbs, kcalToKj, kjToKcal } from '$lib/features/food/calculator';
+  import { calculateUnitsFromCarbs } from '$lib/features/food/calculator';
   import { generateCustomFoodId } from './id-generator';
   import { foodStore } from '$lib/stores/foods.svelte';
+  import EnergyInput from './EnergyInput.svelte';
+  import CarbsPreview from './CarbsPreview.svelte';
+  import SuccessToast from './SuccessToast.svelte';
 
   let { isOpen, onClose, editFood }: { isOpen: boolean; onClose: () => void; editFood?: FoodItem | null } = $props();
 
@@ -16,9 +19,6 @@
   let kcal = $state<number | ''>('');
   let kj = $state<number | ''>('');
   let subtitle = $state('');
-
-  // Track which energy field was last modified
-  let lastModifiedEnergy: 'kcal' | 'kj' | null = $state(null);
 
   // Touch state for validation
   let touched = $state({
@@ -69,34 +69,6 @@
 
   function handleKhBlur() {
     touched.kh = true;
-  }
-
-  function handleKcalInput(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
-    const numValue = value === '' ? '' : parseFloat(value);
-    kcal = numValue;
-
-    if (typeof numValue === 'number' && numValue > 0) {
-      lastModifiedEnergy = 'kcal';
-      kj = kcalToKj(numValue);
-    } else if (value === '') {
-      kj = '';
-      lastModifiedEnergy = null;
-    }
-  }
-
-  function handleKjInput(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
-    const numValue = value === '' ? '' : parseFloat(value);
-    kj = numValue;
-
-    if (typeof numValue === 'number' && numValue > 0) {
-      lastModifiedEnergy = 'kj';
-      kcal = kjToKcal(numValue);
-    } else if (value === '') {
-      kcal = '';
-      lastModifiedEnergy = null;
-    }
   }
 
   function handleSubmit() {
@@ -150,7 +122,6 @@
     kj = '';
     subtitle = '';
     touched = { name: false, kh: false };
-    lastModifiedEnergy = null;
   }
 
   function showSuccessToast(message: string) {
@@ -216,6 +187,7 @@
           id="name-input"
           bind:this={nameInput}
           type="text"
+          autocomplete="off"
           bind:value={name}
           onblur={handleNameBlur}
           maxlength={100}
@@ -294,74 +266,10 @@
       </div>
 
       <!-- Calculated Units -->
-      {#if calculatedUnits}
-        <div class="info-box custom-food-form__preview">
-          <p class="custom-food-form__preview-title">
-            Berechnete Werte
-          </p>
-          <div class="custom-food-form__preview-values">
-            <div class="custom-food-form__preview-item">
-              <div class="custom-food-form__preview-label">1 BE</div>
-              <div class="custom-food-form__preview-number text-primary">
-                {calculatedUnits.gBE}{unit}
-              </div>
-            </div>
-            <div class="text-muted">•</div>
-            <div class="custom-food-form__preview-item">
-              <div class="custom-food-form__preview-label">1 KHE</div>
-              <div class="custom-food-form__preview-number text-accent">
-                {calculatedUnits.gKHE}{unit}
-              </div>
-            </div>
-          </div>
-        </div>
-      {:else if typeof kh === 'number' && kh === 0}
-        <div class="info-box info-box--warning custom-food-form__preview">
-          <p class="custom-food-form__caution-text">
-            ⚠ Achtung: Bei 0 KH können keine BE/KHE berechnet werden.
-          </p>
-        </div>
-      {/if}
+      <CarbsPreview {calculatedUnits} {kh} {unit} />
 
       <!-- Energy (Optional) -->
-      <div class="custom-food-form__field custom-food-form__field--large">
-        <p class="custom-food-form__label">
-          Brennwert <span class="text-tertiary">(optional)</span>
-        </p>
-        <div class="custom-food-form__energy-row">
-          <div class="custom-food-form__energy-input">
-            <input
-              id="kcal-input"
-              type="number"
-              value={kcal}
-              oninput={handleKcalInput}
-              min="0"
-              max="900"
-              step="1"
-              inputmode="numeric"
-              placeholder="z.B. 250"
-              class="input w-full number-to-text"
-            />
-            <span class="custom-food-form__suffix">kcal</span>
-          </div>
-          <span class="text-muted">↔</span>
-          <div class="custom-food-form__energy-input">
-            <input
-              id="kj-input"
-              type="number"
-              value={kj}
-              oninput={handleKjInput}
-              min="0"
-              max="3800"
-              step="1"
-              inputmode="numeric"
-              placeholder="z.B. 1046"
-              class="input w-full number-to-text"
-            />
-            <span class="custom-food-form__suffix">kJ</span>
-          </div>
-        </div>
-      </div>
+      <EnergyInput bind:kcal bind:kj />
 
       <!-- Subtitle (Optional) -->
       <div class="custom-food-form__field custom-food-form__field--large">
@@ -371,6 +279,7 @@
         <input
           id="subtitle-input"
           type="text"
+          autocomplete="off"
           bind:value={subtitle}
           placeholder="z.B. Erdbeer, Omas Rezept"
           class="input w-full"
@@ -399,11 +308,7 @@
 </dialog>
 
 <!-- Success Toast -->
-{#if successMessage}
-  <div class="custom-food-form__toast">
-    ✓ {successMessage}
-  </div>
-{/if}
+<SuccessToast message={successMessage} />
 
 <style>
   .custom-food-form {
@@ -418,7 +323,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-block-end: var(--space-lg);
+    margin-block-end: var(--space-xxs);
   }
 
   .custom-food-form__header-text {
@@ -478,12 +383,6 @@
     color: var(--color-danger-text);
   }
 
-  .custom-food-form__hint {
-    margin-block-start: var(--size-3xs);
-    font-size: var(--text-xs);
-    color: var(--color-text-tertiary);
-  }
-
   .custom-food-form__row {
     display: flex;
     gap: var(--space-sm);
@@ -506,51 +405,6 @@
     color: var(--color-text-muted);
   }
 
-  .custom-food-form__preview {
-    margin-block-end: var(--space-lg);
-  }
-
-  .custom-food-form__preview-title {
-    margin-block-end: var(--space-xs);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-    color: var(--color-text-secondary);
-  }
-
-  .custom-food-form__preview-values {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
-    text-align: center;
-  }
-
-  .custom-food-form__preview-label {
-    font-size: var(--text-xs);
-    color: var(--color-text-secondary);
-  }
-
-  .custom-food-form__preview-number {
-    font-size: var(--text-lg);
-    font-weight: var(--weight-bold);
-  }
-
-  .custom-food-form__caution-text {
-    font-size: var(--text-sm);
-    color: var(--color-caution-text);
-  }
-
-  .custom-food-form__energy-row {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-  }
-
-  .custom-food-form__energy-input {
-    flex: 1;
-    position: relative;
-  }
-
   .custom-food-form__actions {
     display: flex;
     gap: var(--space-sm);
@@ -560,16 +414,4 @@
     flex: 1;
   }
 
-  .custom-food-form__toast {
-    position: fixed;
-    bottom: 5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 50;
-    border-radius: var(--radius-lg);
-    background-color: var(--color-success);
-    padding: var(--space-xs) var(--space-md);
-    color: var(--color-text-inverse);
-    box-shadow: var(--shadow-lg);
-  }
 </style>

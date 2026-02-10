@@ -45,6 +45,7 @@
     <span class="material-symbols-outlined icon-xl search-bar__icon">search</span>
     <input
       type="text"
+      autocomplete="off"
       value={inputValue}
       oninput={handleInput}
       onkeydown={handleKeyDown}

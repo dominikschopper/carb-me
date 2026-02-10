@@ -111,6 +111,7 @@
   .update-dialog__title {
     font-size: var(--text-xl);
     font-weight: var(--weight-bold);
+    color: var(--color-text)
   }
 
   .update-dialog__version {
@@ -131,6 +132,7 @@
     margin-block-end: var(--space-xs);
     font-size: var(--text-sm);
     font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
   }
 
   .update-dialog__highlights {
