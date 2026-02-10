@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.0] - 2026-02-09
+
+### Fixed
+- Service worker update checks now work in dev mode (setInterval + visibilitychange)
+- Resolved [404] GET /sw.js error during local development
+- Improved contrast and layout for better readability
+
+### Changed
+- Split AddCustomFoodDialog into sub-components (EnergyInput, CarbsPreview, SuccessToast)
+- Code review improvements: removed dead code, fixed warnings, cleaned up unused settings
+
+### Technical
+- vite.config.ts uses function-form defineConfig for mode access
+- workbox-window added as direct devDependency (pnpm strict hoisting)
+- Feature-based architecture refactoring
+- Removed Tailwind CSS, replaced with custom styles
+
 ## [1.11.1] - 2026-02-08
 
 ### Technical

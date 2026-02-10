@@ -11,6 +11,14 @@ export interface VersionNotes {
 }
 
 export const VERSION_NOTES: Record<string, VersionNotes> = {
+  '1.12.0': {
+    summary: 'Bugfixes & Refactoring',
+    highlights: [
+      'Service Worker Update-Prüfung funktioniert jetzt im Dev-Modus',
+      'Besserer Kontrast und Layout',
+      'Code-Verbesserungen aus dem Code-Review'
+    ]
+  },
   '1.11.0': {
     summary: 'PWA Update-Benachrichtigungen',
     highlights: [
