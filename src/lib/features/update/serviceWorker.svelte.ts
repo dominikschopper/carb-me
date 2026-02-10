@@ -39,7 +39,7 @@ class ServiceWorkerStore {
           setInterval(() => {
             console.log('[SW] Checking for updates...');
             registration.update();
-          }, 60 * 60 * 1000);
+          }, 1 * 60 * 1000);
 
           // Check for updates when page becomes visible
           document.addEventListener('visibilitychange', () => {
