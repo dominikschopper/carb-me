@@ -11,6 +11,13 @@ export interface VersionNotes {
 }
 
 export const VERSION_NOTES: Record<string, VersionNotes> = {
+  '1.12.1': {
+    summary: 'Offline-Modus & Bugfixes',
+    highlights: [
+      'App funktioniert jetzt vollständig offline',
+      'Autocomplete in Eingabefeldern deaktiviert'
+    ]
+  },
   '1.12.0': {
     summary: 'Bugfixes & Refactoring',
     highlights: [
