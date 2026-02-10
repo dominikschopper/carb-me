@@ -21,6 +21,10 @@ export default defineConfig(({ mode }) => ({
       registerType: 'prompt',
       workbox: {
         globPatterns: ['**/*.{js,css,html,png,svg,json,woff,woff2}'],
+        navigateFallback: '/',
+        additionalManifestEntries: [
+          { url: '/', revision: pkg.version }
+        ],
       },
       manifest: {
         name: 'carb-me - BE & KHE Rechner',
