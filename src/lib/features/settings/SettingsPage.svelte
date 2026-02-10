@@ -254,7 +254,13 @@
     <p class="settings__version">carb-me v{APP_VERSION}</p>
     <p class="settings__source">
       Open Source auf
-      <a rel="noopener noreferrer" href="https://github.com/dominikschopper/carb-me" class="settings__link">github.com/dominikschopper/carb-me</a>
+      <a rel="noopener noreferrer"
+        target="_blank"
+        href="https://github.com/dominikschopper/carb-me"
+        class="settings__link"
+        >
+        github.com/dominikschopper/carb-me
+      </a>
     </p>
     <a
       href={CHANGELOG_URL}
