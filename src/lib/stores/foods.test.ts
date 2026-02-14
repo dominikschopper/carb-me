@@ -327,3 +327,122 @@ describe('FoodStore - Duplicate BLS Code Handling', () => {
 		expect(filtered.length).toBe(3);
 	});
 });
+
+describe('FoodStore - Category Filtering', () => {
+	let foodStore: any;
+	let settingsStore: any;
+
+	beforeEach(async () => {
+		localStorageMock.clear();
+		// Mock fetch to return foods from different categories
+		global.fetch = vi.fn(() =>
+			Promise.resolve({
+				json: () =>
+					Promise.resolve({
+						lebensmittel: [
+							{
+								name: 'Bier',
+								kh: 3.1,
+								gBE: 387,
+								gKHE: 323,
+								blsCode: 'P123456', // Alcoholic drinks
+								categories: [['Alkoholische Getränke']],
+								tags: []
+							},
+							{
+								name: 'Apfel',
+								kh: 11.4,
+								gBE: 105,
+								gKHE: 88,
+								blsCode: 'O123456', // Fruit
+								categories: [['Obst']],
+								tags: []
+							},
+							{
+								name: 'Wein',
+								kh: 2.6,
+								gBE: 462,
+								gKHE: 385,
+								blsCode: 'P654321', // Alcoholic drinks
+								categories: [['Alkoholische Getränke']],
+								tags: []
+							}
+						]
+					})
+			} as Response)
+		);
+
+		vi.resetModules();
+		const foodsModule = await import('./foods.svelte');
+		foodStore = foodsModule.foodStore;
+		const settingsModule = await import('./settings.svelte');
+		settingsStore = settingsModule.settingsStore;
+		await foodStore.loadFoodDatabase();
+	});
+
+	it('filters out hidden categories when not searching', () => {
+		// Hide alcoholic drinks (P category)
+		settingsStore.toggleHiddenCategory('P', true);
+
+		const filtered = foodStore.filteredFoods;
+
+		// Should only include non-P foods (Apfel)
+		expect(filtered.length).toBe(1);
+		expect(filtered[0].name).toBe('Apfel');
+		expect(filtered.every((f: FoodItem) => !f.blsCode.startsWith('P'))).toBe(true);
+	});
+
+	it('filters out hidden categories when searching', () => {
+		// Hide alcoholic drinks (P category)
+		settingsStore.toggleHiddenCategory('P', true);
+
+		// Search for items that would match alcoholic drinks
+		foodStore.searchQuery = 'ie'; // Should match "Bier" and "Wein"
+
+		const filtered = foodStore.filteredFoods;
+
+		// Should NOT include any P-category items, even though they match the search
+		expect(filtered.every((f: FoodItem) => !f.blsCode.startsWith('P'))).toBe(true);
+
+		// Make sure we're not getting Bier or Wein
+		expect(filtered.find((f: FoodItem) => f.name === 'Bier')).toBeUndefined();
+		expect(filtered.find((f: FoodItem) => f.name === 'Wein')).toBeUndefined();
+	});
+
+	it('shows all results when no categories are hidden', () => {
+		// Ensure no categories are hidden
+		settingsStore.settings.hiddenCategories = [];
+
+		const filtered = foodStore.filteredFoods;
+
+		// Should include all foods
+		expect(filtered.length).toBe(3);
+	});
+
+	it('shows all matching results when searching and no categories are hidden', () => {
+		// Ensure no categories are hidden
+		settingsStore.settings.hiddenCategories = [];
+
+		// Search for 'Bier' which should match the alcoholic drink
+		foodStore.searchQuery = 'Bier';
+
+		const filtered = foodStore.filteredFoods;
+
+		// Should include Bier since P category is not hidden
+		expect(filtered.find((f: FoodItem) => f.name === 'Bier')).toBeDefined();
+		expect(filtered.length).toBeGreaterThan(0);
+	});
+
+	it('handles multiple hidden categories during search', () => {
+		// Hide alcoholic drinks (P) and fruit (O)
+		settingsStore.toggleHiddenCategory('P', true);
+		settingsStore.toggleHiddenCategory('O', true);
+
+		foodStore.searchQuery = 'ie'; // Matches "Bier" and "Wein" (P) - both should be hidden
+
+		const filtered = foodStore.filteredFoods;
+
+		// Should exclude both P and O categories
+		expect(filtered.length).toBe(0);
+	});
+});

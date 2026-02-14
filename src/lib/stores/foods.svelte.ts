@@ -35,7 +35,12 @@ class FoodStore {
       return foods;
     }
 
-    return fuzzySearch(this.searchIndex, this.searchQuery);
+    // Get search results and filter out hidden categories
+    const searchResults = fuzzySearch(this.searchIndex, this.searchQuery);
+    if (hiddenCats.length > 0) {
+      return searchResults.filter((food) => !isInCategories(food, hiddenCats));
+    }
+    return searchResults;
   });
 
   favoriteFoods = $derived.by(() => {
