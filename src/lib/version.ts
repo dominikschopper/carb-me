@@ -11,7 +11,13 @@ export interface VersionNotes {
 }
 
 export const VERSION_NOTES: Record<string, VersionNotes> = {
-  '1.12.2': {
+    '1.12.3': {
+        summary: 'Dependency Updates',
+        highlights: [
+            'Nur aktuellere Versionen der (wenigen) dependencies'
+        ]
+    },
+    '1.12.2': {
     summary: 'Kategoriefilter-Bugfix',
     highlights: [
       'Ausgeblendete Kategorien werden jetzt korrekt aus Suchergebnissen gefiltert'

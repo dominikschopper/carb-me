@@ -14,6 +14,7 @@ A free web app for calculating bread units (BE) and carbohydrate units (KHE) for
 - Offline-capable as Progressive Web App (PWA)
 - Printable food list
 - No registration, no data transfer - everything stays local on your device
+- currently in german only, but i am working on english and dutch translations
 
 ## Technology
 
