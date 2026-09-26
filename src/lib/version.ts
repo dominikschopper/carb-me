@@ -11,6 +11,12 @@ export interface VersionNotes {
 }
 
 export const VERSION_NOTES: Record<string, VersionNotes> = {
+    '1.12.4': {
+        summary: 'Housekeeping',
+        highlights: [
+            'Aufräumen vergessener Codereste + dependencies aktualisieren'
+        ]
+    },
     '1.12.3': {
         summary: 'Dependency Updates',
         highlights: [
