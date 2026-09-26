@@ -51,7 +51,7 @@ No Android Studio needed. Bubblewrap downloads SDK/build tools automatically.
 ### 2.2 Initialize project
 
 ```bash
-bubblewrap init --manifest https://<your-github-pages-url>/manifest.json
+bubblewrap init --manifest https://<your-github-pages-url>/manifest.webmanifest
 ```
 
 Bubblewrap prompts for:
