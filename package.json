@@ -14,7 +14,8 @@
     "lint": "prettier --check . && eslint .",
     "test:unit": "vitest",
     "test": "pnpm run test:unit -- --run",
-    "convert-bls": "tsx scripts/convert-bls-to-json.ts"
+    "convert-bls": "tsx scripts/convert-bls-to-json.ts",
+    "generate-maskable-icons": "node scripts/generate-maskable-icons.js"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.1",
