@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.0] - 2026-09-27
+
+### Added
+- Search now matches common alternate names/synonyms (e.g. "Naturjoghurt" finds "Joghurt", "Teigwaren" finds "Nudeln")
+
+### Fixed
+- Corrected spelling of compound food names split with a space in the source data (e.g. "Hafer Flocken" → "Haferflocken", plus Grütze/Kleie/Schrot/Grieß variants)
+- Fixed a duplicate food entry caused by two overlapping data-merge rules
+- Added missing "Brot:"/"Mehl:"/"Nudeln:" category prefixes to several food names for consistency
+- Tightened an overly loose `cookie` dependency override that broke local dev server startup
+
 ## [1.12.3] - 2026-04-03
 
 ### Fixed

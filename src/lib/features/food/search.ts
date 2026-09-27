@@ -5,6 +5,7 @@ const fuseOptions: IFuseOptions<FoodItem> = {
   keys: [
     { name: 'name', weight: 0.7 },
     { name: 'subtitle', weight: 0.5 },
+    { name: 'searchTerms', weight: 0.6 },
     { name: 'categories', weight: 0.2 },
     { name: 'tags', weight: 0.1 },
   ],
@@ -22,10 +23,36 @@ export function createSearchIndex(foods: FoodItem[]): Fuse<FoodItem> {
   return new Fuse(foods, fuseOptions);
 }
 
+function matchTier(text: string, query: string): number {
+  if (text === query) return 0;
+  if (text.startsWith(query + ' ')) return 1;
+  if (text.startsWith(query)) return 2;
+  if (text.includes(' ' + query) || text.includes(',' + query)) return 3;
+  if (text.includes(query)) return 4;
+  return 5;
+}
+
+function bestTier(item: FoodItem, lowerQuery: string): number {
+  if (item.searchTerms?.some((term) => term.toLowerCase() === lowerQuery)) {
+    return 0;
+  }
+  return matchTier(item.name.toLowerCase(), lowerQuery);
+}
+
+export type RawFirstMode = 'off' | 'tie-break' | 'always';
+
+function isRaw(item: FoodItem): boolean {
+  return item.name.toLowerCase().endsWith(' roh');
+}
+
 /**
  * Perform fuzzy search on food items with intelligent sorting
  */
-export function fuzzySearch(index: Fuse<FoodItem>, query: string): FoodItem[] {
+export function fuzzySearch(
+  index: Fuse<FoodItem>,
+  query: string,
+  rawFirstMode: RawFirstMode = 'off'
+): FoodItem[] {
   if (!query.trim()) {
     return [];
   }
@@ -33,40 +60,17 @@ export function fuzzySearch(index: Fuse<FoodItem>, query: string): FoodItem[] {
   const results = index.search(query, { limit: 100 });
   const lowerQuery = query.toLowerCase().trim();
 
-  // Pre-compute lowercase names once
   const scored = results.map((r) => ({
     item: r.item,
     score: r.score ?? 1,
-    lowerName: r.item.name.toLowerCase(),
+    tier: bestTier(r.item, lowerQuery),
+    raw: isRaw(r.item),
   }));
 
-  // Sort with custom priority
   scored.sort((a, b) => {
-    // Priority 1: Exact match
-    if (a.lowerName === lowerQuery) return -1;
-    if (b.lowerName === lowerQuery) return 1;
-
-    // Priority 2: Starts with query as complete word (e.g., "Apfel roh" for "apfel")
-    const wordBoundaryA = a.lowerName.startsWith(lowerQuery + ' ') || a.lowerName === lowerQuery;
-    const wordBoundaryB = b.lowerName.startsWith(lowerQuery + ' ') || b.lowerName === lowerQuery;
-    if (wordBoundaryA !== wordBoundaryB) return wordBoundaryA ? -1 : 1;
-
-    // Priority 3: Starts with query (prefix match, e.g., "Apfelkorn")
-    const startsA = a.lowerName.startsWith(lowerQuery);
-    const startsB = b.lowerName.startsWith(lowerQuery);
-    if (startsA !== startsB) return startsA ? -1 : 1;
-
-    // Priority 4: Contains query as word boundary
-    const wordInA = a.lowerName.includes(' ' + lowerQuery) || a.lowerName.includes(',' + lowerQuery);
-    const wordInB = b.lowerName.includes(' ' + lowerQuery) || b.lowerName.includes(',' + lowerQuery);
-    if (wordInA !== wordInB) return wordInA ? -1 : 1;
-
-    // Priority 5: Contains query anywhere
-    const containsA = a.lowerName.includes(lowerQuery);
-    const containsB = b.lowerName.includes(lowerQuery);
-    if (containsA !== containsB) return containsA ? -1 : 1;
-
-    // Priority 6: Fuzzy score
+    if (rawFirstMode === 'always' && a.raw !== b.raw) return a.raw ? -1 : 1;
+    if (a.tier !== b.tier) return a.tier - b.tier;
+    if (rawFirstMode === 'tie-break' && a.raw !== b.raw) return a.raw ? -1 : 1;
     return a.score - b.score;
   });
 

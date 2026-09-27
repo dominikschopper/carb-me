@@ -49,6 +49,7 @@ export interface FoodItem {
   gKHE: number; // Grams per Carb Unit
   categories: string[][];
   tags: string[];
+  searchTerms?: string[]; // Additional aliases that should surface this item in search
   unit?: string; // Optional for beverages (ml)
   isCustom?: boolean; // For user-created foods
   kcal?: number; // Kilocalories per 100g

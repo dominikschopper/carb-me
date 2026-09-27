@@ -1,7 +1,7 @@
 {
   "name": "carb-me",
   "private": true,
-  "version": "1.12.4",
+  "version": "1.13.0",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
@@ -51,7 +51,7 @@
   },
   "pnpm": {
     "overrides": {
-      "cookie": ">=0.7.0",
+      "cookie": "^0.7.0",
       "serialize-javascript": ">=7.0.5"
     }
   }

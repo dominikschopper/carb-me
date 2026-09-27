@@ -11,6 +11,14 @@ export interface VersionNotes {
 }
 
 export const VERSION_NOTES: Record<string, VersionNotes> = {
+    '1.13.0': {
+        summary: 'Bessere Suche',
+        highlights: [
+            'Suche findet Lebensmittel jetzt auch über gängige Alternativnamen (z. B. "Naturjoghurt" für Joghurt)',
+            'Rechtschreibfehler in Lebensmittelnamen korrigiert',
+            'Doppelten Lebensmitteleintrag behoben'
+        ]
+    },
     '1.12.4': {
         summary: 'Housekeeping',
         highlights: [

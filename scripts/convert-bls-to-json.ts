@@ -22,13 +22,48 @@ interface BlsConfig {
     blsCodes: string[];
     subtitle?: string;
   }>;
+  searchTerms: Array<{ blsCodes: string[]; terms: string[] }>;
+}
+
+interface NormalizationRule {
+  pattern: RegExp;
+  categories?: string[]; // undefined = applies to every category (e.g. Flocken, to catch "Hefe Flocken" in K)
+  replace: (match: string, ...groups: string[]) => string;
+  extraTerms?: (...groups: string[]) => string[]; // additional searchTerms to emit when this rule fires
+}
+
+const NAME_NORMALIZATION_RULES: NormalizationRule[] = [
+  {
+    pattern: /(\p{L}+)\s+Flocken\b/gu,
+    replace: (_m, word) => `${word}flocken`,
+  },
+  {
+    pattern: /(\p{L}+)\s+(Grütze|Kleie|Schrot|Grieß)\b/gu,
+    categories: ['C'],
+    replace: (_m, word, suffix) => `${word}${suffix.toLowerCase()}`,
+    extraTerms: (word, suffix) => (suffix === 'Grieß' ? [word, suffix, 'Gries'] : [word, suffix]),
+  },
+];
+
+function normalizeName(name: string, category: string): { name: string; extraTerms: string[] } {
+  const extraTerms: string[] = [];
+  let result = name;
+  for (const rule of NAME_NORMALIZATION_RULES) {
+    if (rule.categories && !rule.categories.includes(category)) continue;
+    result = result.replace(rule.pattern, (...args) => {
+      const groups = args.slice(1, -2) as string[]; // drop offset+full-string args String.replace appends
+      if (rule.extraTerms) extraTerms.push(...rule.extraTerms(...groups));
+      return rule.replace(args[0], ...groups);
+    });
+  }
+  return { name: result, extraTerms };
 }
 
 function loadBlsConfig(): BlsConfig {
   const configPath = resolve(PROJECT_ROOT, 'scripts/bls-data/bls-config.json');
   if (!existsSync(configPath)) {
     console.warn('!!No bls-config.json found, using defaults');
-    return { prefixes: {}, mergeGroups: [] };
+    return { prefixes: {}, mergeGroups: [], searchTerms: [] };
   }
   console.log('  >>Loading BLS config from:', configPath);
   return JSON.parse(readFileSync(configPath, 'utf-8'));
@@ -87,6 +122,7 @@ interface FoodItem {
   gKHE: number;
   categories: string[][];
   tags: string[];
+  searchTerms?: string[];
   unit?: string;
   kcal?: number;
   kj?: number;
@@ -100,6 +136,7 @@ interface ParsedFood {
   kj: number;
   blsCode: string;
   isManualMerge?: boolean; // Flag to skip automatic prefix (name already complete)
+  originalNames?: string[]; // names this entry replaced, preserved for search (Task 3)
 }
 
 /**
@@ -142,10 +179,14 @@ function parseCSVLine(line: string): string[] {
   return result;
 }
 
+// Obst, Gemüse, Kartoffeln, Hülsenfrüchte/Nüsse, Fisch, Fleisch, Geflügel/Wild.
+// Excludes Getreide (C) - too mixed (raw rice vs. Couscous).
+const UNPROCESSED_CATEGORIES = new Set(['F', 'G', 'K', 'H', 'T', 'U', 'V']);
+
 /**
  * Generate tags based on carbohydrate content
  */
-function generateTags(kh: number, blsCode: string): string[] {
+function generateTags(kh: number, blsCode: string, name: string): string[] {
   const tags: string[] = [];
 
   // Carb level tags
@@ -161,6 +202,10 @@ function generateTags(kh: number, blsCode: string): string[] {
   const category = blsCode.charAt(0);
   if (category === 'S' || category === 'N' || category === 'P') {
     tags.push('schnelleKH');
+  }
+
+  if (UNPROCESSED_CATEGORIES.has(category) && /\sroh$/i.test(name)) {
+    tags.push('unprocessed');
   }
 
   return tags;
@@ -288,6 +333,7 @@ function groupSimilarFoods(foods: ParsedFood[]): (ParsedFood & { subtitle?: stri
         kcal: medianKcal,
         kj: medianKj,
         blsCode: allBlsCodes,
+        originalNames: names,
       };
 
       result.push(merged);
@@ -351,6 +397,7 @@ function applyManualMergeGroups(
         kj: medianKj,
         blsCode: allBlsCodes,
         isManualMerge: true, // Skip automatic prefix
+        originalNames: matchingFoods.flatMap((f) => f.originalNames ?? [f.name]),
       });
 
       manualMergeCount += matchingFoods.length - 1;
@@ -362,6 +409,7 @@ function applyManualMergeGroups(
         name: group.name,
         subtitle: truncateSubtitle(group.subtitle || matchingFoods[0].subtitle),
         isManualMerge: true, // Skip automatic prefix
+        originalNames: matchingFoods[0].originalNames ?? [matchingFoods[0].name],
       });
     }
   }
@@ -413,6 +461,21 @@ function getPrefix(combinedBlsCode: string, prefixMap: Map<string, string>): str
   return '';
 }
 
+/**
+ * Collect all config search-term rules matching a food's BLS code(s), deduped
+ */
+function getSearchTerms(combinedBlsCode: string, rules: BlsConfig['searchTerms']): string[] {
+  const codes = combinedBlsCode.split('+');
+  const terms = new Set<string>();
+  for (const rule of rules) {
+    const matches = rule.blsCodes.some((configCode) => codes.some((code) => code.startsWith(configCode)));
+    if (matches) {
+      for (const term of rule.terms) terms.add(term);
+    }
+  }
+  return [...terms];
+}
+
 function isJuiceInFruits(food: ParsedFood) {
   const FRUIT_CATEGORY = 'F';
   const saftRegex = new RegExp('^\\w+saft\\b')
@@ -451,7 +514,7 @@ function convertBLStoJSON(): void {
     if (fields.length < 6) continue;
 
     const blsCode = fields[0];
-    const name = fields[1];
+    const { name, extraTerms: nameNormalizationTerms } = normalizeName(fields[1], blsCode.charAt(0));
     const kj = parseNumber(fields[3]);
     const kcal = parseNumber(fields[4]);
     const kh = parseNumber(fields[5]);
@@ -475,7 +538,14 @@ function convertBLStoJSON(): void {
     }
     seenNames.add(name);
 
-    parsedFoods.push({ name, kh, kcal, kj, blsCode });
+    parsedFoods.push({
+      name,
+      kh,
+      kcal,
+      kj,
+      blsCode,
+      originalNames: nameNormalizationTerms.length ? nameNormalizationTerms : undefined,
+    });
   }
 
   const beforeGrouping = parsedFoods.length;
@@ -496,7 +566,7 @@ function convertBLStoJSON(): void {
     const gBE = Math.round(1200 / parsed.kh);
     const gKHE = Math.round(1000 / parsed.kh);
     const category = getCategory(parsed.blsCode);
-    const tags = generateTags(parsed.kh, parsed.blsCode);
+    const tags = generateTags(parsed.kh, parsed.blsCode, parsed.name);
 
     // Apply prefix from config (skip for manual merge groups - name is already complete)
     const prefix = parsed.isManualMerge ? '' : getPrefix(parsed.blsCode, prefixMap);
@@ -521,6 +591,15 @@ function convertBLStoJSON(): void {
     // Add unit for beverages
     if (BEVERAGE_CATEGORIES.has(parsed.blsCode.charAt(0)) || isJuiceInFruits(parsed)) {
       food.unit = 'ml';
+    }
+
+    const configSearchTerms = getSearchTerms(parsed.blsCode, config.searchTerms);
+    const preservedNames = parsed.originalNames ?? [parsed.name];
+    const allSearchTerms = new Set([...preservedNames, ...configSearchTerms]);
+    allSearchTerms.delete(food.name);
+
+    if (allSearchTerms.size > 0) {
+      food.searchTerms = [...allSearchTerms];
     }
 
     return food;

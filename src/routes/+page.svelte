@@ -110,6 +110,18 @@
       <div class="app-shell__search">
         <SearchBar />
 
+        {#if import.meta.env.DEV}
+          <div class="dev-rank-toggle">
+            <span>Ranking (dev):</span>
+            {#each ['off', 'tie-break', 'always'] as const as mode}
+              <button
+                class="btn btn--ghost {foodStore.devRawFirstMode === mode ? 'selection-card--selected' : ''}"
+                onclick={() => (foodStore.devRawFirstMode = mode)}
+              >{mode}</button>
+            {/each}
+          </div>
+        {/if}
+
         {#if !isSearching}
           <!-- Call-to-Action Bereich -->
           <div class="card text-center app-shell__cta">
