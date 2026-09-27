@@ -27,9 +27,16 @@ class ServiceWorkerStore {
 
     this.updateSW = registerSW({
       immediate: true,
-      onNeedRefresh: () => {
+      onNeedRefresh: async () => {
         console.log('[SW] New service worker waiting, update available');
-        this.notifyUpdate(APP_VERSION);
+        try {
+          const res = await fetch('/version.json', { cache: 'no-store' });
+          const { version } = await res.json();
+          this.notifyUpdate(version);
+        } catch {
+          console.log('[SW] Could not determine new version, skipping notification');
+          // Decided: stay silent on fetch failure, don't show a generic fallback prompt.
+        }
       },
       onRegisteredSW: (swUrl: string, registration: ServiceWorkerRegistration | undefined) => {
         console.log('[SW] Registered:', swUrl);

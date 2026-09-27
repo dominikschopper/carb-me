@@ -2,7 +2,7 @@ import { defineConfig } from 'vitest/config';
 import { playwright } from '@vitest/browser-playwright';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
@@ -16,11 +16,20 @@ export default defineConfig(({ mode }) => ({
 
   plugins: [
     sveltekit(),
+    {
+      name: 'version-json',
+      apply: 'build',
+      closeBundle() {
+        mkdirSync(join(__dirname, 'build'), { recursive: true });
+        writeFileSync(join(__dirname, 'build/version.json'), JSON.stringify({ version: pkg.version }));
+      }
+    },
     SvelteKitPWA({
       strategies: 'generateSW',
       registerType: 'prompt',
       workbox: {
         globPatterns: ['**/*.{js,css,html,png,svg,json,woff,woff2}'],
+        globIgnores: ['version.json'],
         navigateFallback: '/',
         additionalManifestEntries: [
           { url: '/', revision: pkg.version }
