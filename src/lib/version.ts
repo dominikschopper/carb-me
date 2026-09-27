@@ -11,6 +11,12 @@ export interface VersionNotes {
 }
 
 export const VERSION_NOTES: Record<string, VersionNotes> = {
+    '1.13.1': {
+        summary: 'Update-Benachrichtigung repariert',
+        highlights: [
+            'Du wirst jetzt zuverlässig benachrichtigt, wenn eine neue Version verfügbar ist'
+        ]
+    },
     '1.13.0': {
         summary: 'Bessere Suche',
         highlights: [

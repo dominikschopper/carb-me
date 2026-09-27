@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 
 // Mock localStorage before imports
 const localStorageMock = {
@@ -19,7 +19,12 @@ const localStorageMock = {
 
 vi.stubGlobal('localStorage', localStorageMock);
 
+vi.mock('virtual:pwa-register', () => ({
+  registerSW: vi.fn(() => vi.fn())
+}));
+
 import { swStore } from './serviceWorker.svelte';
+import { registerSW } from 'virtual:pwa-register';
 import { lastSeenVersionStorage } from '$lib/shared/storage';
 import { APP_VERSION } from '$lib/version';
 
@@ -181,6 +186,47 @@ describe('ServiceWorkerStore', () => {
       // Try to notify again - should not show because version was saved
       swStore.notifyUpdate(nextVersion);
       expect(swStore.updateAvailable).toBe(false);
+    });
+  });
+
+  describe('onNeedRefresh (fetch-based version detection)', () => {
+    const originalFetch = global.fetch;
+
+    afterEach(() => {
+      global.fetch = originalFetch;
+    });
+
+    async function getOnNeedRefresh() {
+      await swStore.init();
+      const calls = vi.mocked(registerSW).mock.calls;
+      const options = calls[calls.length - 1][0] as { onNeedRefresh: () => Promise<void> };
+      return options.onNeedRefresh;
+    }
+
+    it('notifies with the fetched version, not the stale APP_VERSION, on success', async () => {
+      lastSeenVersionStorage.set(APP_VERSION);
+      global.fetch = vi.fn(() =>
+        Promise.resolve({
+          json: () => Promise.resolve({ version: '9.9.9' })
+        } as Response)
+      );
+
+      const onNeedRefresh = await getOnNeedRefresh();
+      await onNeedRefresh();
+
+      expect(swStore.updateAvailable).toBe(true);
+      expect(swStore.updateInfo?.version).toBe('9.9.9');
+    });
+
+    it('stays silent when the version fetch fails', async () => {
+      lastSeenVersionStorage.set(APP_VERSION);
+      global.fetch = vi.fn(() => Promise.reject(new Error('network error')));
+
+      const onNeedRefresh = await getOnNeedRefresh();
+      await onNeedRefresh();
+
+      expect(swStore.updateAvailable).toBe(false);
+      expect(swStore.updateInfo).toBe(null);
     });
   });
 });
