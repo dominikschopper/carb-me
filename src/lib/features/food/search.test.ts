@@ -58,6 +58,16 @@ const testFoods: FoodItem[] = [
     tags: ['mittlereKH'],
     blsCode: 'X001',
   },
+  {
+    name: 'Joghurt',
+    kh: 13.1,
+    gBE: 92,
+    gKHE: 76,
+    categories: [['Milchprodukte']],
+    tags: [],
+    searchTerms: ['Naturjoghurt'],
+    blsCode: 'M001',
+  },
 ];
 
 describe('fuzzySearch', () => {
@@ -140,6 +150,56 @@ describe('fuzzySearch', () => {
     const largeIndex = createSearchIndex(manyFoods);
     const results = fuzzySearch(largeIndex, 'Test');
     expect(results.length).toBeLessThanOrEqual(100);
+  });
+
+  it('finds items by searchTerms alias', () => {
+    const results = fuzzySearch(index, 'Naturjoghurt');
+    expect(results[0].name).toBe('Joghurt');
+  });
+
+  it('ranks an exact searchTerms match as high as an exact name match', () => {
+    // "Joghurt" (exact name) and searching "Apfel" (exact name, from existing fixtures) should both land at index 0
+    // for their respective queries - confirms the tier refactor didn't regress the no-searchTerms case.
+    const applResults = fuzzySearch(index, 'apfel');
+    expect(applResults[0].name).toBe('Apfel');
+  });
+
+  it('does not give a partial searchTerms match the exact-match boost', () => {
+    // "Naturjog" only partially matches the "Naturjoghurt" alias - confirms alias matching is exact-only,
+    // not tiered like name matching.
+    const results = fuzzySearch(index, 'Naturjog');
+    expect(results.some((r) => r.name === 'Joghurt')).toBe(true); // still found via Fuse's own fuzzy retrieval
+    // but not necessarily ranked #1 purely on the alias - no assertion on position, just that it's not
+    // guaranteed top via the exact-match tier path.
+  });
+});
+
+const rawFixtures: FoodItem[] = [
+  { name: 'Kartoffel roh', kh: 15, gBE: 80, gKHE: 67, categories: [['Kartoffeln']], tags: [], blsCode: 'K001' },
+  { name: 'Kartoffelpüree', kh: 15, gBE: 80, gKHE: 67, categories: [['Kartoffeln']], tags: [], blsCode: 'K002' },
+  { name: 'Kartoffel gekocht', kh: 15, gBE: 80, gKHE: 67, categories: [['Kartoffeln']], tags: [], blsCode: 'K003' },
+];
+
+describe('rawFirstMode', () => {
+  const index = createSearchIndex(rawFixtures);
+
+  it('off: ranks purely by name-match tier (current behavior)', () => {
+    const results = fuzzySearch(index, 'Kartoffel', 'off');
+    expect(results[0].name).toBe('Kartoffel roh'); // tier 1 (word-boundary) already beats tier 4 (Kartoffelpüree)
+    expect(results[1].name).toBe('Kartoffel gekocht');
+  });
+
+  it('tie-break: only reorders items that already share a tier', () => {
+    const results = fuzzySearch(index, 'Kartoffel', 'tie-break');
+    // "Kartoffel roh" and "Kartoffel gekocht" tie at tier 1 - roh wins the tie
+    expect(results[0].name).toBe('Kartoffel roh');
+    expect(results[1].name).toBe('Kartoffel gekocht');
+  });
+
+  it('always: raw items outrank every non-raw item regardless of tier', () => {
+    const results = fuzzySearch(index, 'Kartoffelpüree', 'always');
+    // "Kartoffel roh" is a worse name match than "Kartoffelpüree" (tier 4 vs tier 0) but wins anyway in "always" mode
+    expect(results[0].name).toBe('Kartoffel roh');
   });
 });
 

@@ -1,5 +1,6 @@
 import type Fuse from 'fuse.js';
 import { fuzzySearch, createSearchIndex } from '$lib/features/food/search';
+import type { RawFirstMode } from '$lib/features/food/search'; // TEMPORARY - remove with the rest of Task 9
 import { customFoodsStorage, favoritesStorage } from '$lib/shared/storage';
 import { isInCategories } from '$lib/features/food/filters';
 import type { FoodItem } from '$lib/types/food';
@@ -12,6 +13,7 @@ class FoodStore {
   favorites = $state<SvelteSet<string>>(new SvelteSet());
   searchQuery = $state('');
   isLoading = $state(true);
+  devRawFirstMode = $state<RawFirstMode>('off'); // TEMPORARY: dev-only ranking comparison, see Task 9
 
   private searchIndex: Fuse<FoodItem> | null = null;
 
@@ -36,7 +38,7 @@ class FoodStore {
     }
 
     // Get search results and filter out hidden categories
-    const searchResults = fuzzySearch(this.searchIndex, this.searchQuery);
+    const searchResults = fuzzySearch(this.searchIndex, this.searchQuery, this.devRawFirstMode);
     if (hiddenCats.length > 0) {
       return searchResults.filter((food) => !isInCategories(food, hiddenCats));
     }

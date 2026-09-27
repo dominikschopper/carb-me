@@ -64,7 +64,22 @@
       "B111600",
       "B111500",
       "B111200",
-      "B309000"
+      "B309000",
+      "B8A1000",
+      "B8A3000",
+      "B8B6000",
+      "B781600",
+      "B881100",
+      "B717000",
+      "B718000",
+      "B780500",
+      "B8B2000",
+      "B719000",
+      "B781200",
+      "B781400",
+      "B8B5000",
+      "B781500",
+      "B111272"
     ],
     "Knäckebrot": [
       "B6A5200",
@@ -109,7 +124,9 @@
       "C243000",
       "C413000",
       "C433000",
-      "C433100"
+      "C433100",
+      "H230400",
+      "H720400"
     ],
     "Stärke": [
       "K230000",
@@ -156,11 +173,22 @@
       "C359032",
       "C353132",
       "C354132"
+    ],
+    "Nudeln": [
+      "E438032", "E438062", "E438082", "E470000", "E470032", "E470042",
+      "E470082", "E470162", "E604332", "E609100", "E609132", "E609200", "E609232"
+    ],
+    "Nudelgericht": [
+      "X700242", "X702042", "X702142", "X702233", "X702343", "X702412", "X702512", "X702612",
+      "X703012", "X711242", "X711343", "X711412", "X711512", "X712343", "X713343", "X720343",
+      "X740162", "X740433", "X740612", "X740733", "X740763", "X740933", "X741033", "X741112",
+      "X742123", "X742233", "X742423", "X744133", "X744163", "X744233", "X744263", "X745023",
+      "X761033", "X7A1000", "X7A3020", "X7A3030"
     ]
   },
   "mergeGroups": [
     {
-      "name": "Roggenbrot",
+      "name": "Brot: Roggenbrot",
       "blsCodes": [
         "B221000",
         "B226800",
@@ -169,7 +197,7 @@
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Roggenmischbrot",
+      "name": "Brot: Roggenmischbrot",
       "blsCodes": [
         "B271000",
         "B275700",
@@ -185,7 +213,7 @@
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Weizenmischbrot",
+      "name": "Brot: Weizenmischbrot",
       "blsCodes": [
         "B251000",
         "B255700",
@@ -199,7 +227,7 @@
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Vollkornbrot",
+      "name": "Brot: Vollkornbrot",
       "blsCodes": [
         "B101000",
         "B106000",
@@ -234,7 +262,7 @@
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Dinkelbrot",
+      "name": "Brot: Dinkelbrot",
       "blsCodes": [
         "B710500",
         "B710600",
@@ -258,25 +286,7 @@
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Roggenvollkornknäckebrot",
-      "blsCodes": [
-        "B6A2100",
-        "B6A2200",
-        "B6A2300",
-        "B6A2400",
-        "B6A2500",
-        "B6A2600",
-        "B6A2700",
-        "B6A2800",
-        "B6A2900",
-        "B6A3000",
-        "B6A3100",
-        "B6A3200"
-      ],
-      "subtitle": "verschiedene Varianten"
-    },
-    {
-      "name": "Roggenvollkornbrot",
+      "name": "Brot: Roggenvollkornbrot",
       "blsCodes": [
         "B121000",
         "B122000",
@@ -290,7 +300,7 @@
       "subtitle": "verschiedene Varianten"
     },
     {
-      "name": "Weizenvollkornbrot",
+      "name": "Brot: Weizenvollkornbrot",
       "blsCodes": [
         "B111300",
         "B111400",
@@ -348,7 +358,18 @@
     {
       "name": "Knäckebrot: Roggen Vollkorn",
       "blsCodes": [
+        "B6A2000",
         "B6A2100",
+        "B6A2200",
+        "B6A2300",
+        "B6A2400",
+        "B6A2500",
+        "B6A2600",
+        "B6A2700",
+        "B6A2800",
+        "B6A2900",
+        "B6A3000",
+        "B6A3100",
         "B6A3200"
       ],
       "subtitle": "verschiedene Varianten"
@@ -455,6 +476,30 @@
         "E612132"
       ],
       "subtitle": "verschiedene Varianten"
-    }
+    },
+    {
+      "name": "Frühstücksflocken: gepufft",
+      "blsCodes": ["C534100", "C534200", "C534300", "C534400", "C534500", "C534600"],
+      "subtitle": "verschiedene Geschmacksrichtungen"
+    },
+    {
+      "name": "Frühstücksflocken: aus Vollkornweizenschrot",
+      "blsCodes": ["C539100", "C539200"],
+      "subtitle": "verschiedene Geschmacksrichtungen"
+    },
+    { "name": "Brühe", "blsCodes": ["R810000"] },
+    { "name": "Fleischbrühe", "blsCodes": ["R811000"] },
+    { "name": "Gemüsebrühe", "blsCodes": ["R821000"] },
+    { "name": "Hühnerbrühe", "blsCodes": ["R822000"] }
+  ],
+  "searchTerms": [
+    { "blsCodes": ["E"], "terms": ["Nudeln", "Teigwaren"] },
+    { "blsCodes": ["M2A3300", "M2A3200"], "terms": ["Naturjoghurt"] },
+    { "blsCodes": ["B6A2100"], "terms": ["Roggenvollkornknäckebrot"] },
+    { "blsCodes": ["U952000"], "terms": ["Schnitzel", "Schwein"] },
+    { "blsCodes": ["R810000"], "terms": ["Bouillon", "Suppe", "Brühwürfel", "Pulver"] },
+    { "blsCodes": ["R811000"], "terms": ["Fleischbouillon", "Fleischsuppe", "Brühwürfel", "Pulver", "Fleischbrühwürfel"] },
+    { "blsCodes": ["R821000"], "terms": ["Gemüsebouillon", "Gemüsesuppe", "Brühwürfel", "Pulver", "Gemüsebrühwürfel"] },
+    { "blsCodes": ["R822000"], "terms": ["Hühnerbouillon", "Hühnersuppe", "Brühwürfel", "Pulver", "Hühnerbrühwürfel"] }
   ]
 }
