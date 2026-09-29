@@ -194,7 +194,7 @@ class OnboardingService {
               // Wait for Svelte to render the component before moving to next step
               setTimeout(() => {
                 this.driverInstance?.moveNext();
-              }, 100);
+              }, 300);
             }
           }
         },

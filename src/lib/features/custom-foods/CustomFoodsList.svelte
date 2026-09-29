@@ -35,7 +35,6 @@
 
 <div class="custom-foods">
 	<div class="custom-foods__header">
-		<h2 class="custom-foods__title">Eigene Lebensmittel</h2>
 		<button
 			onclick={onAddClick}
 			data-onboarding="add-custom-food"

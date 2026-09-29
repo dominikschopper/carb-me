@@ -71,8 +71,6 @@
 </script>
 
 <div class="settings">
-  <h2 class="settings__page-title">Einstellungen</h2>
-
   <!-- feedback -->
   <div class="card settings__section">
     <h3 class="settings__title">Feedback zur App</h3>

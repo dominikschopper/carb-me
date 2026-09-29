@@ -3,7 +3,17 @@
   import { formatNumber } from '$lib/shared/formatting';
   import UnitDisplay from '$lib/shared/UnitDisplay.svelte';
 
-  let { onMealClick, onHomeClick }: { onMealClick?: () => void; onHomeClick?: () => void } = $props();
+  let {
+    onMealClick,
+    onHomeClick,
+    viewTitle,
+    viewTitleEl = $bindable()
+  }: {
+    onMealClick?: () => void;
+    onHomeClick?: () => void;
+    viewTitle: string;
+    viewTitleEl?: HTMLHeadingElement;
+  } = $props();
 
   const hasMealItems = $derived(mealStore.items.length > 0);
   const totalCarbs = $derived(mealStore.items.reduce((sum, item) => sum + (item.grams / 100) * item.food.kh, 0));
@@ -20,9 +30,15 @@
 <header class="header">
   <div class="header__inner">
     <div class="header__content">
-      <button onclick={handleHomeClick} class="header__brand" aria-label="Zur Startseite" type="button" role="link" data-onboarding="start">
-        carb-me
-      </button>
+      <div class="header__brand-group">
+        <h1 class="header__brand-heading">
+          <button onclick={handleHomeClick} class="header__brand" type="button" data-onboarding="start">
+            carb-me
+          </button>
+        </h1>
+
+        <h2 tabindex="-1" bind:this={viewTitleEl} class="header__view-title">{viewTitle}</h2>
+      </div>
 
       {#if hasMealItems}
         <button
@@ -73,6 +89,17 @@
     justify-content: space-between;
   }
 
+  .header__brand-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__brand-heading {
+    margin: 0;
+    font-size: var(--text-2xl);
+    font-weight: inherit;
+  }
+
   .header__brand {
     background: none;
     border: none;
@@ -86,6 +113,18 @@
 
   .header__brand:hover { opacity: 0.75; }
   .header__brand:active { transform: scale(0.95); }
+
+  .header__brand:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--color-focus-ring);
+  }
+
+  .header__view-title {
+    margin: 0 0 0 5px;
+    font-size: var(--text-lg);
+    font-weight: var(--weight-normal);
+    color: var(--color-text-secondary);
+  }
 
   .header__meal-btn {
     display: flex;

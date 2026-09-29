@@ -51,9 +51,13 @@
     </div>
   {:else}
     <!-- Search results (flat list sorted by fuzzy score) -->
-    {#each foods as food, index (`${food.blsCode || food.name}-${index}`)}
-      <FoodCard {food} onclick={() => onFoodSelect(food)} />
-    {/each}
+    <ul class="food-list__results">
+      {#each foods as food, index (`${food.blsCode || food.name}-${index}`)}
+        <li>
+          <FoodCard {food} onclick={() => onFoodSelect(food)} />
+        </li>
+      {/each}
+    </ul>
   {/if}
 </div>
 
@@ -114,6 +118,15 @@
     margin-block-start: var(--size-3xs);
     font-size: var(--text-sm);
     color: var(--color-text-tertiary);
+  }
+
+  .food-list__results {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   @media print {

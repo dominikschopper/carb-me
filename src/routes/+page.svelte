@@ -21,12 +21,23 @@
   let showCustomFoodDialog = $state(false);
   let editFood = $state<FoodItem | null>(null);
   let onboardingInitialized = $state(false);
+  let viewTitleEl = $state<HTMLHeadingElement>();
+  let previousTab: typeof activeTab | undefined;
 
   const filteredFoods = $derived(foodStore.filteredFoods);
   const favoriteFoods = $derived(foodStore.favoriteFoods);
   const isSearching = $derived(foodStore.isSearching);
   const searchQuery = $derived(foodStore.searchQuery);
   const loading = $derived(foodStore.isLoading);
+
+  const viewTitle = $derived(
+    {
+      search: 'Suche',
+      custom: 'Eigene Lebensmittel',
+      meal: 'Meine Mahlzeit',
+      settings: 'Einstellungen',
+    }[activeTab]
+  );
 
   // Check for disclaimer acceptance on mount
   $effect(() => {
@@ -48,6 +59,14 @@
   function closeCalculator() {
     selectedFood = null;
   }
+
+  $effect(() => {
+    const tab = activeTab;
+    if (previousTab !== undefined) {
+      viewTitleEl?.focus();
+    }
+    previousTab = tab;
+  });
 
   function goToMeal() {
     activeTab = 'meal';
@@ -103,7 +122,7 @@
 </script>
 
 <div class="app-shell">
-  <Header onMealClick={goToMeal} onHomeClick={goToHome} />
+  <Header bind:viewTitleEl {viewTitle} onMealClick={goToMeal} onHomeClick={goToHome} />
 
   <main class="app-shell__main">
     {#if activeTab === 'search'}

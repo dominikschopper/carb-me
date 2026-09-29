@@ -39,8 +39,7 @@
 </script>
 
 <div class="meal">
-  <div class="meal__header">
-    <h2 class="meal__title" data-onboarding="meal-list">Meine Mahlzeit</h2>
+  <div class="meal__header" data-onboarding="meal-list">
     {#if items.length > 0}
       <button
         onclick={clearAll}

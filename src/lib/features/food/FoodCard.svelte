@@ -27,76 +27,79 @@
   }
 </script>
 
-<div
-  class="card food-card"
-  onclick={handleCardClick}
-  role="button"
-  tabindex="0"
-  onkeydown={(e) => e.key === 'Enter' && handleCardClick()}
->
-  <div class="food-card__header" data-onboarding="calculator-open">
-    <div class="food-card__body">
-      <div class="food-card__title-row">
-        <hgroup>
-        <h3 class="food-card__title">
-          {food.name}
-          {#if food.isCustom}
-            <span class="food-card__custom-badge">(Eigenes)</span>
+<div class="food-card-wrapper">
+  <button type="button" class="card food-card" onclick={handleCardClick}>
+    <div class="food-card__header" data-onboarding="calculator-open">
+      <div class="food-card__body">
+        <div class="food-card__title-row">
+          <hgroup>
+          <h3 class="food-card__title">
+            {food.name}
+            {#if food.isCustom}
+              <span class="food-card__custom-badge">(Eigenes)</span>
+            {/if}
+          </h3>
+          {#if food.subtitle}
+            <p class="food-card__subtitle">{food.subtitle}</p>
           {/if}
-        </h3>
-        {#if food.subtitle}
-          <p class="food-card__subtitle">{food.subtitle}</p>
-        {/if}
-        </hgroup>
-      </div>
-
-      <div class="food-card__nutrients">
-        <span class="text-success">{food.kh}grKH</span> <span class="text-secondary">/ <GrOrMl value="100" unit={food.unit}></GrOrMl></span>
-        {#if settings.showEnergy && energyValue()}
-          <span class="food-card__dot">·</span>
-          <span class="text-warning">{energyValue()}</span>
-        {/if}
-      </div>
-
-      <div class="food-card__units">
-        <UnitDisplay>
-          {#snippet beContent()}
-            <span class="food-card__unit-badge bg-success-soft">1 BE = <GrOrMl value={food.gBE} unit={food.unit}></GrOrMl> </span>
-          {/snippet}
-          {#snippet kheContent()}
-            <span class="food-card__unit-badge bg-accent-soft">1 KHE = <GrOrMl value={food.gKHE} unit={food.unit}></GrOrMl></span>
-          {/snippet}
-        </UnitDisplay>
-      </div>
-
-      {#if food.categories && food.categories.length > 0}
-        <div class="food-card__categories">
-          {#each food.categories as category}
-            <span class="food-card__category">
-              {category.join(' › ')}
-            </span>
-          {/each}
+          </hgroup>
         </div>
-      {/if}
-    </div>
 
-    <button
-      onclick={toggleFavorite}
-      data-onboarding="favorite-star"
-      class="btn btn--ghost food-card__fav-btn"
-      aria-label={isFavorite ? 'Von Favoriten entfernen' : 'Zu Favoriten hinzufügen'}
-      type="button"
-    >
-      <span class="material-symbols-outlined {isFavorite ? 'text-favorite' : 'text-muted'}">
-        {isFavorite ? 'star' : 'star_outline'}
-      </span>
-    </button>
-  </div>
+        <div class="food-card__nutrients">
+          <span class="text-success">{food.kh}grKH</span> <span class="text-secondary">/ <GrOrMl value="100" unit={food.unit}></GrOrMl></span>
+          {#if settings.showEnergy && energyValue()}
+            <span class="food-card__dot">·</span>
+            <span class="text-warning">{energyValue()}</span>
+          {/if}
+        </div>
+
+        <div class="food-card__units">
+          <UnitDisplay>
+            {#snippet beContent()}
+              <span class="food-card__unit-badge bg-success-soft">1 BE = <GrOrMl value={food.gBE} unit={food.unit}></GrOrMl> </span>
+            {/snippet}
+            {#snippet kheContent()}
+              <span class="food-card__unit-badge bg-accent-soft">1 KHE = <GrOrMl value={food.gKHE} unit={food.unit}></GrOrMl></span>
+            {/snippet}
+          </UnitDisplay>
+        </div>
+
+        {#if food.categories && food.categories.length > 0}
+          <div class="food-card__categories">
+            {#each food.categories as category}
+              <span class="food-card__category">
+                {category.join(' › ')}
+              </span>
+            {/each}
+          </div>
+        {/if}
+      </div>
+    </div>
+  </button>
+
+  <button
+    onclick={toggleFavorite}
+    data-onboarding="favorite-star"
+    class="btn btn--ghost food-card__fav-btn"
+    aria-label={isFavorite ? 'Von Favoriten entfernen' : 'Zu Favoriten hinzufügen'}
+    type="button"
+  >
+    <span class="material-symbols-outlined {isFavorite ? 'text-favorite' : 'text-muted'}">
+      {isFavorite ? 'star' : 'star_outline'}
+    </span>
+  </button>
 </div>
 
 <style>
+  .food-card-wrapper {
+    position: relative;
+  }
+
   .food-card {
+    display: block;
     width: 100%;
+    font: inherit;
+    color: inherit;
     cursor: pointer;
     text-align: left;
     margin-block-end: var(--size-3xs);
@@ -109,6 +112,11 @@
 
   .food-card:active {
     transform: scale(0.98);
+  }
+
+  .food-card:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--color-focus-ring);
   }
 
   .food-card__header {
@@ -184,6 +192,9 @@
   }
 
   .food-card__fav-btn {
-    flex-shrink: 0;
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    z-index: 1;
   }
 </style>
